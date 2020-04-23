@@ -1,10 +1,45 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Matt Park`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@mattparksolutions`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        // disableAutoprefixing: false,
+        // disableMinification: false,
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        // displayName: false
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-redux`,
+      options: {
+        // [required] - path to your createStore module
+        pathToCreateStoreModule: './src/state/createStore',
+        // [optional] - options passed to `serialize-javascript`
+        // info: https://github.com/yahoo/serialize-javascript#options
+        // will be merged with these defaults:
+        serialize: {
+          space: 0,
+          isJSON: true,
+          unsafe: false,
+        },
+        // [optional] - if true will clean up after itself on the client, default:
+        cleanupOnClient: true,
+        // [optional] - name of key on `window` where serialized state will be stored, default:
+        windowKey: '__PRELOADED_STATE__',
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
