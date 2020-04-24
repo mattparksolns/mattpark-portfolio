@@ -2,12 +2,13 @@ import React from 'react'
 
 import {
   makeStyles,
+  Typography,
 } from '@material-ui/core'
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-  }
+  },
 }))
 
 const Footer = () => {
@@ -15,11 +16,11 @@ const Footer = () => {
 
   return (
     <footer className={classes.root}>
-      <p>
+      <Typography variant="caption">
         ©{new Date().getFullYear()} Matt Park
-        <br/>
+        <br />
         All rights reserved
-      </p>
+      </Typography>
     </footer>
   )
 }

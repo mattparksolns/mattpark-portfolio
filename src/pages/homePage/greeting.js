@@ -9,15 +9,13 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '80vh',
   },
   paper: {
-    width: '100%',
     background: 'ghostwhite',
   },
-  h1: {
+  greeting: {
+    width: '55vw',
     fontSize: '6vw',
-    // width: '30vw',
     fontFamily: 'serif',
   }
 }))
@@ -28,8 +26,8 @@ const Greeting = () => {
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <Typography className={classes.h1} variant="h1" gutterBottom>
-          My name is <b>Matt Park.</b> I am from the greater New York area.
+        <Typography className={classes.greeting} variant="h1" gutterBottom>
+          My name is <b>Matt Park.</b> I am Software Engineer from the greater New York area.
         </Typography>
       </Paper>
 

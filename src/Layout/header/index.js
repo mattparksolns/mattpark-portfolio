@@ -1,13 +1,11 @@
-import { Link } from "gatsby"
+import React from "react"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
 
 import {
   makeStyles,
 } from '@material-ui/core'
 
 import NavBar from './navBar'
-import NavBarMenu from "./navBarMenu"
 
 
 const useStyles = makeStyles((theme) => ({

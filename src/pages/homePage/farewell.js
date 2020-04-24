@@ -8,11 +8,16 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: 'lightgray',
   },
   paper: {
+    background: 'ghostwhite',
   },
   message: {
+    width: '60vw',
+  },
+  contactLink: {
+    textDecoration: 'none',
+    color: '#404040',
   },
   thankYouMessage: {
   },
@@ -27,7 +32,7 @@ const Farewell = () => {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Typography className={classes.message} variant="h2" gutterBottom>
-          Drop me a line, I'd like to hear from you!
+          <a className={classes.contactLink} href="/contact">Drop me a line,</a> I'd like to hear from you!
         </Typography>
         <Typography className={classes.thankYouMessage} variant="caption" gutterBottom>
           Thank you for scrolling all this way!

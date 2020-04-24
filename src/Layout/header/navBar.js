@@ -7,14 +7,13 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  MenuList,
   Menu,
   MenuItem,
   Typography,
 } from '@material-ui/core'
 import {
   Menu as MenuIcon,
-  Email,
+  Close,
   GitHub,
   LinkedIn,
 } from '@material-ui/icons'
@@ -24,16 +23,28 @@ import AnnouncementBar from "./announcementBar"
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: 'flex',
+    flexDirection: 'column',
   },
   appBar: {
     background: 'transparent',
     padding: '2rem 10vw',
+    [theme.breakpoints.down('sm')]: {
+      padding: 0,
+    },
+    [theme.breakpoints.up('md')]: {
+      padding: '0, 10vw',
+    },
     boxShadow: 'none',
   },
   toolbar: {
     display: 'flex',
     flexDirection: 'row',
     marginTop: '6vh',
+    padding: 0,
+  },
+  homeLink: {
+    textDecoration: 'none',
   },
   title: {
     color: 'black',
@@ -55,6 +66,8 @@ const useStyles = makeStyles((theme) => ({
   },
   link: {
     textDecoration: 'None',
+    width: '100%',
+    textAlign: 'center',
   }
 }))
 
@@ -71,10 +84,10 @@ const NavBar = ({ siteTitle }) => {
     setAnchorEl(null)
   }
 
-  const handleGithubLink = () => {
+  const handleGitHub = () => {
     window.open('https://github.com/mattparksolutions', '_blank')
   }
-  const handleLinkedInLink = () => {
+  const handleLinkedIn = () => {
     window.open('https://linkedin.com/in/mattparksolutions', '_blank')
   }
 
@@ -86,16 +99,18 @@ const NavBar = ({ siteTitle }) => {
         className={classes.appBar}
       >
         <Toolbar className={classes.toolbar}>
-          <Typography className={classes.title} variant="button">
-            {siteTitle}
-          </Typography>
+          <Link className={classes.homeLink} to="/">
+            <Typography className={classes.title} variant="button">
+              {siteTitle}
+            </Typography>
+          </Link>
           <div className={classes.grow} />
           <IconButton
             edge="start"
             className={classes.button}
             color="inherit"
             aria-label="GitHub Button"
-            onClick={handleGithubLink}
+            onClick={handleGitHub}
             disableRipple
             disableFocusRipple
           >
@@ -105,7 +120,7 @@ const NavBar = ({ siteTitle }) => {
             edge="start"
             className={classes.button}
             aria-label="LinkedIn Button"
-            onClick={handleLinkedInLink}
+            onClick={handleLinkedIn}
             disableRipple
             disableFocusRipple
           >
@@ -121,12 +136,14 @@ const NavBar = ({ siteTitle }) => {
             disableRipple
             disableFocusRipple
           >
-            <MenuIcon />
+            { isMenuOpen ? <Close /> : <MenuIcon /> }
+            {/*<MenuIcon />*/}
           </IconButton>
           <Menu
             id="menu"
             className={classes.menu}
             anchorEl={anchorEl}
+            getContentAnchorEl={null}
             anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
             transformOrigin={{ vertical: "top", horizontal: "right" }}
             keepMounted
@@ -138,7 +155,7 @@ const NavBar = ({ siteTitle }) => {
               }
             }}
           >
-            <MenuItem>
+            <MenuItem className={classes.menuItem}>
               <Link className={classes.link} to="/about">About</Link>
             </MenuItem>
             <MenuItem>

@@ -11,7 +11,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import {
   makeStyles,
-  Grid,
 } from '@material-ui/core'
 
 import "./layout.css"
@@ -24,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     margin: '22vh auto',
+    marginBottom: 0,
     padding: '0 10vw',
     [theme.breakpoints.down('sm')]: {
       padding: 0,
@@ -31,6 +31,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       padding: '0, 10vw',
     },
+  },
+  main: {
+    minHeight: '90vh',
+  },
+  footerHr: {
+    color: 'black',
+    backgroundColor: 'black',
+    height: 5,
   },
 }))
 
@@ -51,7 +59,8 @@ const Layout = ({ children }) => {
     <div className={classes.root}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className={classes.container}>
-        <main>{children}</main>
+        <main className={classes.main}>{children}</main>
+        <hr className={classes.footerHr} />
         <Footer />
       </div>
     </div>
