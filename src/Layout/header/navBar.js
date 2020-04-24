@@ -60,15 +60,15 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = ({ siteTitle }) => {
   const classes = useStyles()
-  const [menuAnchorEl, setMenuAnchorEl] = useState(null)
+  const [anchorEl, setAnchorEl] = useState(null)
 
-  const isMenuOpen = Boolean(menuAnchorEl)
+  const isMenuOpen = Boolean(anchorEl)
 
   const handleClick = (e) => {
-    setMenuAnchorEl(e.currentTarget)
+    setAnchorEl(e.currentTarget)
   }
   const handleClose = () => {
-    setMenuAnchorEl(null)
+    setAnchorEl(null)
   }
 
   const handleGithubLink = () => {
@@ -126,10 +126,17 @@ const NavBar = ({ siteTitle }) => {
           <Menu
             id="menu"
             className={classes.menu}
-            anchorEl={menuAnchorEl}
+            anchorEl={anchorEl}
+            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+            transformOrigin={{ vertical: "top", horizontal: "right" }}
             keepMounted
-            open={Boolean(menuAnchorEl)}
+            open={Boolean(anchorEl)}
             onClose={handleClose}
+            PaperProps={{
+              style: {
+                width: '20vw',
+              }
+            }}
           >
             <MenuItem>
               <Link className={classes.link} to="/about">About</Link>
