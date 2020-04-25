@@ -48,7 +48,14 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     color: 'black',
-    fontSize: 16,
+    fontFamily: 'Montserrat',
+    fontSize: 20,
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 20,
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: 18,
+    }
   },
   grow: {
     flexGrow: 1,

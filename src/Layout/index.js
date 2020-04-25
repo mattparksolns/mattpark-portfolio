@@ -33,12 +33,14 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   main: {
-    minHeight: '67vh',
+    minHeight: '72vh',
   },
   footerHr: {
     color: 'black',
     backgroundColor: 'black',
     height: 5,
+    marginBottom: 0,
+    margin: '0 5vw'
   },
 }))
 

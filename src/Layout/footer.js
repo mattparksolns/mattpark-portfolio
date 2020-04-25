@@ -8,6 +8,11 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    padding: '0 5vw',
+  },
+  footer: {
+    fontFamily: 'Montserrat',
+    fontSize: 13,
   },
 }))
 
@@ -16,8 +21,8 @@ const Footer = () => {
 
   return (
     <footer className={classes.root}>
-      <Typography variant="caption">
-        ©{new Date().getFullYear()} Matt Park
+      <Typography className={classes.footer}>
+        © {new Date().getFullYear()} Matt Park
         <br />
         All rights reserved
       </Typography>

@@ -23,11 +23,17 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'row',
+    [theme.breakpoints.down('lg')]: {
+      flexDirection: 'column',
+    }
   },
   contactinfo: {
     display: 'flex',
     flexDirection: 'column',
     width: '50%',
+    [theme.breakpoints.down('lg')]: {
+      width: '100%',
+    }
   },
   myName: {
     marginBottom: '10vh',
@@ -50,8 +56,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   button: {
-    width: '3vw',
-    height: '4vh',
+    width: 30,
+    height: 30,
   },
   icons: {
     marginTop: '5vh',

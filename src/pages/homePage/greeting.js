@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   greeting: {
     width: '55vw',
     fontSize: '6vw',
-    fontFamily: 'serif',
+    fontFamily: 'Montserrat',
   }
 }))
 
@@ -27,7 +27,7 @@ const Greeting = () => {
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Typography className={classes.greeting} variant="h1" gutterBottom>
-          My name is <b>Matt Park.</b> I am Software Engineer from the greater New York area.
+          My name is <b>Matt Park.</b> I am from the greater New York area.
         </Typography>
       </Paper>
 

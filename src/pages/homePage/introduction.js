@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between'
   },
   description: {
+    fontFamily: 'Montserrat',
     fontSize: '3vw',
   },
   left:{
