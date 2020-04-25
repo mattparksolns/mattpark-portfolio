@@ -6,7 +6,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    border: '1px solid black',
+    // border: '1px solid black',
     textAlign: 'right',
     display: 'flex',
     flexDirection: 'row',
@@ -33,7 +33,7 @@ const Introduction = () => {
         <Typography className={classes.description} variant="h2" gutterBottom>
           Forward Thinker,
           <br />
-          Problem Solver
+          Problem Solver,
           <br />
           and Web Tinkerer.
         </Typography>

@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     background: 'ghostwhite',
+    display: 'flex',
+    flexDirection: 'column',
   },
   message: {
     width: '60vw',
@@ -19,7 +21,20 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: '#404040',
   },
+  logoAndSignatureContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  logo: {
+  },
+  thanksAndSignatureContainer: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
   thankYouMessage: {
+    width: '18vw',
+    marginRight: '8vw',
   },
   signature: {
   },
@@ -34,12 +49,17 @@ const Farewell = () => {
         <Typography className={classes.message} variant="h2" gutterBottom>
           <a className={classes.contactLink} href="/contact">Drop me a line,</a> I'd like to hear from you!
         </Typography>
-        <Typography className={classes.thankYouMessage} variant="caption" gutterBottom>
-          Thank you for scrolling all this way!
-        </Typography>
-        <Typography className={classes.signature} variant="h3" gutterBottom>
-          -- Signature --
-        </Typography>
+        <div className={classes.logoAndSignatureContainer}>
+          <div className={classes.logo} />
+          <div className={classes.thanksAndSignatureContainer}>
+            <Typography className={classes.thankYouMessage} variant="subtitle1" gutterBottom>
+              Thank you for scrolling all this way!
+            </Typography>
+            <Typography className={classes.signature} variant="h4" gutterBottom>
+              -- Matt Park --
+            </Typography>
+          </div>
+        </div>
       </Paper>
     </div>
   )

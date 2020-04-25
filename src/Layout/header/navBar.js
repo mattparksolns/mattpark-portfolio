@@ -30,10 +30,10 @@ const useStyles = makeStyles((theme) => ({
     background: 'transparent',
     padding: '2rem 10vw',
     [theme.breakpoints.down('sm')]: {
-      padding: 0,
+      padding: '2rem 3vw',
     },
     [theme.breakpoints.up('md')]: {
-      padding: '0, 10vw',
+      padding: '2rem, 10vw',
     },
     boxShadow: 'none',
   },
@@ -84,13 +84,6 @@ const NavBar = ({ siteTitle }) => {
     setAnchorEl(null)
   }
 
-  const handleGitHub = () => {
-    window.open('https://github.com/mattparksolutions', '_blank')
-  }
-  const handleLinkedIn = () => {
-    window.open('https://linkedin.com/in/mattparksolutions', '_blank')
-  }
-
   return (
     <div className={classes.root}>
       <AnnouncementBar />
@@ -105,27 +98,29 @@ const NavBar = ({ siteTitle }) => {
             </Typography>
           </Link>
           <div className={classes.grow} />
-          <IconButton
-            edge="start"
-            className={classes.button}
-            color="inherit"
-            aria-label="GitHub Button"
-            onClick={handleGitHub}
-            disableRipple
-            disableFocusRipple
-          >
-            <GitHub />
-          </IconButton>
-          <IconButton
-            edge="start"
-            className={classes.button}
-            aria-label="LinkedIn Button"
-            onClick={handleLinkedIn}
-            disableRipple
-            disableFocusRipple
-          >
-            <LinkedIn />
-          </IconButton>
+          <a target="_blank" href="https://github.com/mattparksolutions">
+            <IconButton
+              edge="start"
+              className={classes.button}
+              color="inherit"
+              aria-label="GitHub Button"
+              disableRipple
+              disableFocusRipple
+            >
+              <GitHub />
+            </IconButton>
+          </a>
+          <a target="_blank" href="https://linkedin.com/in/mattparksolutions">
+            <IconButton
+              edge="start"
+              className={classes.button}
+              aria-label="LinkedIn Button"
+              disableRipple
+              disableFocusRipple
+            >
+              <LinkedIn />
+            </IconButton>
+          </a>
           <IconButton
             edge="start"
             className={classes.button}

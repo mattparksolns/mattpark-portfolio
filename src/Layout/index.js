@@ -26,14 +26,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: 0,
     padding: '0 10vw',
     [theme.breakpoints.down('sm')]: {
-      padding: 0,
+      padding: '0 3vw',
     },
     [theme.breakpoints.up('md')]: {
       padding: '0, 10vw',
     },
   },
   main: {
-    minHeight: '90vh',
+    minHeight: '67vh',
   },
   footerHr: {
     color: 'black',
