@@ -3,9 +3,9 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import Image from "../../Layout/image"
-import SEO from "../../Layout/seo"
-import Layout from "../../Layout"
+import Image from "../../layout/image"
+import SEO from "../../layout/seo"
+import Layout from "../../layout"
 
 import Greeting from './greeting'
 import Introduction from './introduction'

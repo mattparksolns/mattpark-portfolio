@@ -105,7 +105,7 @@ const NavBar = ({ siteTitle }) => {
             </Typography>
           </Link>
           <div className={classes.grow} />
-          <a target="_blank" href="https://github.com/mattparksolutions">
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
             <IconButton
               edge="start"
               className={classes.button}
@@ -117,7 +117,7 @@ const NavBar = ({ siteTitle }) => {
               <GitHub />
             </IconButton>
           </a>
-          <a target="_blank" href="https://linkedin.com/in/mattparksolutions">
+          <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
             <IconButton
               edge="start"
               className={classes.button}
