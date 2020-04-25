@@ -15,17 +15,28 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'darkgray',
     color: 'black',
     width: '100%',
-    height: '5vh',
+    height: '5.5vh',
     textAlign: 'center',
   },
   container: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: '1vh',
+  },
+  announcement: {
+    width: '98%',
+    fontSize: 18,
   },
   button: {
     color: 'black',
     '&:hover': {
       backgroundColor: 'transparent',
     },
-  }
+    padding: 0,
+  },
+  empty: {
+  },
 }))
 
 const AnnouncementBar = () => {
@@ -42,7 +53,7 @@ const AnnouncementBar = () => {
       { isHidden
         ? <div className={classes.empty} />
         : <div className={classes.container}>
-            <Typography variant="h6">
+            <Typography className={classes.announcement} variant="h6">
               COVID-19 Update
             </Typography>
             <IconButton
@@ -50,9 +61,9 @@ const AnnouncementBar = () => {
               className={classes.button}
               color="inherit"
               aria-label="Close AnnouncementBar Button"
-              onClick={() => handleClose}
-              // disableRipple
-              // disableFocusRipple
+              onClick={handleClose}
+              disableRipple
+              disableFocusRipple
             >
               <Close />
             </IconButton>

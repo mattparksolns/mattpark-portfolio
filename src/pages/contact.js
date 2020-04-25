@@ -131,14 +131,6 @@ const ContactPage = () => {
             </div>
           </div>
           <div className={classes.messageForm}>
-            <FormControl>
-              <InputLabel htmlFor="my-input">Name</InputLabel>
-              <Input id="my-input" aria-describedby="my-helper-text" />
-              <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
-              <InputLabel htmlFor="my-input">Email</InputLabel>
-              <Input id="my-input" aria-describedby="my-helper-text" />
-              <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
-            </FormControl>
           </div>
         </div>
       </div>
