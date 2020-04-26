@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const HomePage = () => {
+const Home = () => {
   const classes = useStyles()
 
   return (
@@ -38,4 +38,4 @@ const HomePage = () => {
     </Layout>
 )}
 
-export default HomePage
+export default Home

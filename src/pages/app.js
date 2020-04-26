@@ -1,14 +1,18 @@
 import React from "react"
 import { Router } from '@reach/router'
 
-import HomePage from './homePage'
-import ContactPage from "./contact"
+import Home from './home'
+import About from './about'
+import Blog from './blog'
+import Contact from "./contact"
 
 const App = () => {
   return (
     <Router>
-      <HomePage path="/" />
-      <ContactPage path="/contact" />
+      <Home path="/" />
+      <About path="/about" />
+      <Blog path="/blog" />
+      <Contact path="/contact" />
     </Router>
   )
 }

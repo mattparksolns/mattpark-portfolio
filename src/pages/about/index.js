@@ -4,7 +4,7 @@ import {
   Typography,
 } from '@material-ui/core'
 
-import Layout from '../layout'
+import Layout from '../../layout'
 
 const useStyles = makeStyles((theme) => ({
   root: {
