@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
 const ContactForm = () => {
   const classes = useStyles()
 
-  // const [ipv4, setIpv4] = useState('')
+  const [ipv4, setIpv4] = useState('')
   const [ipv6, setIpv6] = useState('')
   const [geodata, setGeodata] = useState({})
   const [name, setName] = useState('')
@@ -58,12 +58,12 @@ const ContactForm = () => {
   }
 
   useEffect(() => {
-    // axios.get('https://api.ipify.org?format=json').then((response) => {
-    //   console.log(response)
-    //   setIpv4(response.data)
-    // }).catch((error) => {
-    //   console.log(error)
-    // })
+    axios.get('https://api.ipify.org?format=json').then((response) => {
+      console.log(response)
+      setIpv4(response.data)
+    }).catch((error) => {
+      console.log(error)
+    })
     axios.get('https://api6.ipify.org?format=json').then((response) => {
       console.log(response)
       setIpv6(response.data)

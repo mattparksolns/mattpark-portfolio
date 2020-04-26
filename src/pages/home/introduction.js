@@ -10,17 +10,21 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'right',
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'flex-end',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'flex-start',
+      textAlign: 'left',
+    },
   },
   description: {
     fontFamily: 'Montserrat',
     fontSize: '3vw',
-  },
-  left:{
-    width: '65vw',
-  },
-  right: {
-    width: '45vw',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '4vw',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '5vw',
+    },
   },
 }))
 
@@ -29,16 +33,13 @@ const Introduction = () => {
 
   return (
     <div className={classes.root}>
-      <div className={classes.left} />
-      <div className={classes.right}>
-        <Typography className={classes.description} variant="h2" gutterBottom>
-          Forward Thinker,
-          <br />
-          Problem Solver,
-          <br />
-          and Web Tinkerer.
-        </Typography>
-      </div>
+      <Typography className={classes.description} variant="h2" gutterBottom>
+        Forward Thinker,
+        <br />
+        Problem Solver,
+        <br />
+        and Web Tinkerer.
+      </Typography>
     </div>
   )
 }

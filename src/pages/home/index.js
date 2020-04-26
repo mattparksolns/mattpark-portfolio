@@ -29,7 +29,7 @@ const Home = () => {
         <div className={classes.container}>
           <Greeting />
           <Introduction />
-          <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+          <div style={{ marginBottom: `1.45rem` }}>
             <Image />
           </div>
         </div>

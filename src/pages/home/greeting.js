@@ -14,8 +14,16 @@ const useStyles = makeStyles((theme) => ({
     background: 'ghostwhite',
   },
   greeting: {
-    width: '55vw',
+    width: '70%',
     fontSize: '6vw',
+    [theme.breakpoints.down('sm')]: {
+      width: '80%',
+      fontSize: '8vw',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+      fontsize: '10vw',
+    },
     fontFamily: 'Montserrat',
   }
 }))

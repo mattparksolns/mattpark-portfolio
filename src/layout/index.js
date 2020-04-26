@@ -48,9 +48,8 @@ const useStyles = makeStyles((theme) => ({
 const Layout = ({ children }) => {
   const classes = useStyles()
 
-  useEffect(() => {
-
-  },[])
+  // useEffect(() => {
+  // },[])
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {

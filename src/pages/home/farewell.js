@@ -14,8 +14,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     margin: '0 5vw',
+    marginTop: '10vh',
     paddingTop: '5vh',
-    paddingBottom: '5vh',
+    paddingBottom: '15vh',
   },
   message: {
     fontFamily: 'Montserrat',
@@ -43,21 +44,37 @@ const useStyles = makeStyles((theme) => ({
   logoAndSignatureContainer: {
     display: 'flex',
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    marginRight: '10vw',
+    justifyContent: 'flex-end',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'flex-start',
+    },
     alignItems: 'flex-start',
   },
   logo: {
-    height: '40vh'
+    width: '18vw'
   },
   thanksAndSignatureContainer: {
     display: 'flex',
     flexDirection: 'column',
-    marginRight: '10vw',
+    // marginRight: '10vw',
   },
   thankYouMessage: {
     fontFamily: 'Montserrat',
-    fontSize: 14,
-    width: '12vw',
+    width: '18vw',
+    fontSize: '1.5vw',
+    [theme.breakpoints.down('md')]: {
+      width: '22vw',
+      fontSize: '1.8vw',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '26vw',
+      fontSize: '2.2vw',
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '38vw',
+      fontSize: '3vw',
+    },
   },
   signature: {
   },
