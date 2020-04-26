@@ -1,4 +1,5 @@
-import { createStore } from 'redux'
+import { createStore, applyMiddleware, } from 'redux'
+import LogRocket from 'logrocket'
 
 function reducer() {
   //...
@@ -6,5 +7,9 @@ function reducer() {
 
 // preloadedState will be passed in by the plugin
 export default preloadedState => {
-  return createStore(reducer, preloadedState)
+  return createStore(
+    reducer,
+    preloadedState,
+    applyMiddleware(LogRocket.reduxMiddleware()),
+  )
 }

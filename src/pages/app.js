@@ -6,6 +6,13 @@ import About from './about'
 import Blog from './blog'
 import Contact from "./contact"
 
+
+const LazyComponent = ({ Component, ...props }) => (
+  <React.Suspense fallback={"<p>Loading...</p>"}>
+    <Component {...props} />
+  </React.Suspense>
+)
+
 const App = () => {
   return (
     <Router>

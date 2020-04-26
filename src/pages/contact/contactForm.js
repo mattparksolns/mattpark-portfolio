@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, {
+  useState,
+  useEffect,
+} from 'react'
 import {
   makeStyles,
   Typography,
@@ -43,6 +46,9 @@ const useStyles = makeStyles((theme) => ({
 const ContactForm = () => {
   const classes = useStyles()
 
+  // const [ipv4, setIpv4] = useState('')
+  const [ipv6, setIpv6] = useState('')
+  const [geodata, setGeodata] = useState({})
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -51,24 +57,42 @@ const ContactForm = () => {
     setPrivacyPolicyChecked(!privacyPolicyChecked)
   }
 
+  useEffect(() => {
+    // axios.get('https://api.ipify.org?format=json').then((response) => {
+    //   console.log(response)
+    //   setIpv4(response.data)
+    // }).catch((error) => {
+    //   console.log(error)
+    // })
+    axios.get('https://api6.ipify.org?format=json').then((response) => {
+      console.log(response)
+      setIpv6(response.data)
+    }).catch((error) => {
+      console.log(error)
+    })
+    axios.get('https://geolocation-db.com/json/6db070f0-7c27-11ea-8264-e974339fc182').then((response) => {
+      console.log(response)
+      setGeodata(response.data)
+    }).catch((error) => {
+      console.log(error)
+    })
+  }, [])
+
   const handleSubmit = () => {
     if(!validator.isEmpty(name) && validator.isEmail(email) && !validator.isEmpty(message) && privacyPolicyChecked) {
-      axios.get('https://geolocation-db.com/json/6db070f0-7c27-11ea-8264-e974339fc182')
-      .then((response) => {
-        console.log(response)
+      axios.post("https://formspree.io/xnqbeekg", {
+        name,
+        email,
+        message,
+        privacyPolicyChecked,
+        ipv4,
+        ipv6,
+        geodata,
+      }).then((response) => {
+          console.log(response)
       }).catch((error) => {
         console.log(error)
       })
-      // axios.post("https://formspree.io/xnqbeekg", {
-      //   name,
-      //   email,
-      //   message,
-      //   privacyPolicyChecked,
-      // }).then((response) => {
-      //     console.log(response)
-      // }).catch((error) => {
-      //   console.log(error)
-      // })
     } else {
       console.log('Invalid Input')
     }
