@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
   },
   paper: {
-    background: 'ghostwhite',
+    background: 'none',
     display: 'flex',
     flexDirection: 'column',
     margin: '0 5vw',

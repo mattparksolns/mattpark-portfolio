@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
   },
   paper: {
-    background: 'ghostwhite',
+    background: 'none',
   },
   greeting: {
     width: '70%',
@@ -33,6 +33,7 @@ const Greeting = () => {
 
   return (
     <div className={classes.root}>
+
       <Paper className={classes.paper}>
         <Typography className={classes.greeting} variant="h1" gutterBottom>
           My name is <b>Matt Park.</b> I am from the greater New York area.

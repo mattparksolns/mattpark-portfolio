@@ -94,18 +94,20 @@ const NavBar = ({ siteTitle }) => {
   return (
     <div className={classes.root}>
       <AnnouncementBar />
-      <AppBar
-        title={siteTitle}
-        className={classes.appBar}
-      >
+      <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <Link className={classes.homeLink} to="/">
+          <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
             <Typography className={classes.title} variant="button">
               {siteTitle}
             </Typography>
           </Link>
           <div className={classes.grow} />
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
+          <a
+            title="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/mattparksolutions"
+          >
             <IconButton
               edge="start"
               className={classes.button}
@@ -117,7 +119,12 @@ const NavBar = ({ siteTitle }) => {
               <GitHub />
             </IconButton>
           </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
+          <a
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://linkedin.com/in/mattparksolutions"
+          >
             <IconButton
               edge="start"
               className={classes.button}
