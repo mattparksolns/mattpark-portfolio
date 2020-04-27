@@ -189,7 +189,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: url('../../assets/images/background.png') no-repeat;
+  background: gainsboro url('../../assets/images/background.png') no-repeat;
   background-position: center;
   background-attachment: fixed;
   color: hsla(0, 0%, 0%, 0.8);
