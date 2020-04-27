@@ -26,16 +26,23 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
+  empty: {
+  },
   appBar: {
     background: 'transparent',
-    padding: '2rem 10vw',
-    [theme.breakpoints.down('sm')]: {
-      padding: '2rem 3vw',
-    },
-    [theme.breakpoints.up('md')]: {
-      padding: '2rem, 10vw',
-    },
+    // padding: '2rem 10vw',
+    // [theme.breakpoints.down('sm')]: {
+    //   padding: '2rem 3vw',
+    // },
+    // [theme.breakpoints.up('md')]: {
+    //   padding: '2rem, 10vw',
+    // },
     boxShadow: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  announcementBar: {
+    width: '100%',
   },
   toolbar: {
     display: 'flex',
@@ -72,6 +79,7 @@ const useStyles = makeStyles((theme) => ({
   menuItem: {
   },
   link: {
+    color: 'black',
     textDecoration: 'None',
     width: '100%',
     textAlign: 'center',
@@ -81,6 +89,7 @@ const useStyles = makeStyles((theme) => ({
 const NavBar = ({ siteTitle }) => {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
+  const [isHidden, setIsHidden] = useState(false)
 
   const isMenuOpen = Boolean(anchorEl)
 
@@ -90,11 +99,18 @@ const NavBar = ({ siteTitle }) => {
   const handleClose = () => {
     setAnchorEl(null)
   }
+  const handleCloseAnnouncementBar = () => {
+    setIsHidden(true)
+  }
 
   return (
     <div className={classes.root}>
-      <AnnouncementBar />
+      {/*<AnnouncementBar />*/}
       <AppBar className={classes.appBar}>
+        { isHidden
+          ? <div className={classes.empty} />
+          : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
+        }
         <Toolbar className={classes.toolbar}>
           <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
             <Typography className={classes.title} variant="button">
