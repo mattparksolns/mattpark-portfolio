@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   name: {
     // color: 'crimson',
-    color: '#484848',
+    color: 'gray',
     textDecoration: 'none',
   }
 }))
