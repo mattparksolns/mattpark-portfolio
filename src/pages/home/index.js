@@ -29,9 +29,22 @@ const useStyles = makeStyles((theme) => ({
     background: '#d91616',
     width: '12.2vw',
     position: 'absolute',
-    top: '30vh',
+    top: '40%',
     right: '20vw',
     transform: 'rotate(45deg)',
+    transition: 'all .6s ease-out',
+  },
+  stripe: {
+    // marginTop: '100vh',
+    height: 2,
+    background: '#d91616',
+    width: '130%',
+    position: 'absolute',
+    top: '165%',
+    left: '50%',
+    transform: 'translate(-50%, -50%) rotate(-45deg)',
+    transition: 'all 2s ease-out',
+    transitionDelay: '.6s',
   },
 }))
 
@@ -49,6 +62,7 @@ const Home = () => {
         <div className={classes.container}>
           <Greeting />
           <div className={classes.miniStripe} />
+          <div className={classes.stripe} />
           <Introduction />
         </div>
         <Farewell />
