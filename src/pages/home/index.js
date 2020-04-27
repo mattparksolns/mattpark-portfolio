@@ -6,6 +6,7 @@ import {
 import SEO from "../../layout/seo"
 import Layout from "../../layout"
 
+import BlobVideo from '../../../assets/videos/blob-video.mp4'
 import Greeting from './greeting'
 import Introduction from './introduction'
 import Farewell from './farewell'
@@ -26,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
   },
   miniStripe: {
     height: 2,
-    background: '#d91616',
+    // background: '#d91616',
+    background: 'black',
     width: '12.2vw',
     position: 'absolute',
     top: '40%',
@@ -37,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
   stripe: {
     // marginTop: '100vh',
     height: 2,
-    background: '#d91616',
+    // background: '#d91616',
+    background: 'black',
     width: '130%',
     position: 'absolute',
     top: '165%',
@@ -54,7 +57,7 @@ const Home = () => {
   return (
     <Layout>
       <video className={classes.video} autoPlay muted loop id="blobVideo">
-        <source src="https://meesverberne.com/wp-content/uploads/2020/01/background-video.mp4" type="video/mp4" />
+        <source src={BlobVideo} type="video/mp4" />
         <p>video</p>
       </video>
       <div className={classes.root}>

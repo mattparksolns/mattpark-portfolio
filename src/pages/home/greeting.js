@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core'
 
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
   },
@@ -25,6 +26,11 @@ const useStyles = makeStyles((theme) => ({
       fontsize: '10vw',
     },
     fontFamily: 'Montserrat',
+  },
+  name: {
+    // color: 'crimson',
+    color: '#484848',
+    textDecoration: 'none',
   }
 }))
 
@@ -36,7 +42,9 @@ const Greeting = () => {
 
       <Paper className={classes.paper}>
         <Typography className={classes.greeting} variant="h1" gutterBottom>
-          My name is <b>Matt Park.</b> I am from the greater New York area.
+          My name is
+          <a title="LinkedIn" className={classes.name} href="https://linkedin.com/in/mattparksolutions"><b> Matt Park. </b></a>
+          I am from the greater New York area.
         </Typography>
       </Paper>
 

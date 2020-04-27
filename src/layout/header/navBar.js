@@ -60,8 +60,8 @@ const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
-  button: {
-    color: 'black',
+  icon: {
+    color: '#181818',
     '&:hover': {
       backgroundColor: 'transparent',
     },
@@ -110,9 +110,9 @@ const NavBar = ({ siteTitle }) => {
           >
             <IconButton
               edge="start"
-              className={classes.button}
+              className={classes.icon}
               color="inherit"
-              aria-label="GitHub Button"
+              aria-label="GitHub Icon"
               disableRipple
               disableFocusRipple
             >
@@ -127,8 +127,8 @@ const NavBar = ({ siteTitle }) => {
           >
             <IconButton
               edge="start"
-              className={classes.button}
-              aria-label="LinkedIn Button"
+              className={classes.icon}
+              aria-label="LinkedIn Icon"
               disableRipple
               disableFocusRipple
             >
@@ -137,9 +137,9 @@ const NavBar = ({ siteTitle }) => {
           </a>
           <IconButton
             edge="start"
-            className={classes.button}
+            className={classes.icon}
             color="inherit"
-            aria-label="Menu Button"
+            aria-label="Menu Icon"
             aria-haspopup="true"
             onClick={handleClick}
             disableRipple

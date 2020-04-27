@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   description: {
+    // color: 'ghostwhite',
     fontFamily: 'Montserrat',
     fontSize: '3vw',
     [theme.breakpoints.down('sm')]: {

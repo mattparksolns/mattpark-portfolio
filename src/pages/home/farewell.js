@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '15vh',
   },
   message: {
+    // color: 'ghostwhite',
     fontFamily: 'Montserrat',
     fontSize: '3vw',
     width: '45vw',
@@ -39,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
   },
   contactLink: {
     textDecoration: 'none',
-    color: 'darkgray',
+    // color: 'crimson',
+    color: '#282828',
   },
   logoAndSignatureContainer: {
     display: 'flex',
@@ -60,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
     // marginRight: '10vw',
   },
   thankYouMessage: {
+    // color: 'ghostwhite',
     fontFamily: 'Montserrat',
     width: '18vw',
     fontSize: '1.5vw',
@@ -77,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   signature: {
+    // color: 'ghostwhite',
   },
 }))
 
