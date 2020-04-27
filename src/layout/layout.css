@@ -189,9 +189,10 @@ html {
   box-sizing: inherit;
 }
 body {
-  background: gainsboro url('../../assets/images/background.png') no-repeat;
-  background-position: center;
-  background-attachment: fixed;
+  background: gainsboro;
+  /*background: gainsboro url('../../assets/images/softwareengineer.png') no-repeat;*/
+  /*background-position: center;*/
+  /*background-attachment: fixed;*/
   color: hsla(0, 0%, 0%, 0.8);
   font-family: georgia, serif;
   font-weight: normal;

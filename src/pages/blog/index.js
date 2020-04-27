@@ -19,7 +19,7 @@ const Blog = () => {
     <Layout>
       <div className={classes.root}>
         <Typography variant="h1">My Blog</Typography>
-        <Typography variant="caption">This is the blog section.</Typography>
+        <Typography variant="h4">Under construction..</Typography>
       </div>
     </Layout>
   )

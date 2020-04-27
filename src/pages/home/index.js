@@ -6,7 +6,7 @@ import {
 import SEO from "../../layout/seo"
 import Layout from "../../layout"
 
-import BlobVideo from '../../../assets/videos/blob-video2.mp4'
+import BlobVideo from '../../../assets/videos/blob-video.mp4'
 import Greeting from './greeting'
 import Introduction from './introduction'
 import Farewell from './farewell'
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
   },
   video: {
-    opacity: '70%',
+    opacity: '60%',
     // height: '100%',
     width: '100%',
     position: 'absolute',
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   miniStripe: {
     height: 2,
     // background: '#d91616',
-    background: 'white',
+    background: 'black',
     width: '12.2vw',
     position: 'absolute',
     top: '40%',
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     // marginTop: '100vh',
     height: 2,
     // background: '#d91616',
-    background: 'white',
+    background: 'black',
     width: '130%',
     position: 'absolute',
     top: '165%',
