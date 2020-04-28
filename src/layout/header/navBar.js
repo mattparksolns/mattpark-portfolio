@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '8.4vw',
     paddingRight: '7.3vw',
     [theme.breakpoints.down('sm')]: {
-      padding: '0 3vw',
+      padding: '0 0',
     },
     [theme.breakpoints.up('md')]: {
       paddingLeft: '8.4vw',
@@ -108,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menu: {
+    borderRadius: 0,
     width: '40vw',
     [theme.breakpoints.down('xs')]: {
       width: '60vw',
@@ -154,17 +155,22 @@ const NavBar = ({ siteTitle }) => {
               </Typography>
             </Link>
             <div className={classes.links}>
-              <Link title="About" className={classes.link} to="/about">
+              <Link className={classes.link} to="/about">
                 <Typography variant="subtitle1">
                   About
                 </Typography>
               </Link>
-              <Link title="Blog" className={classes.link} to="/blog">
+              <Link className={classes.link} to="/work">
+                <Typography variant="subtitle1">
+                  Work
+                </Typography>
+              </Link>
+              <Link className={classes.link} to="/blog">
                 <Typography variant="subtitle1">
                   Blog
                 </Typography>
               </Link>
-              <Link title="Contact" className={classes.link} to="/contact">
+              <Link className={classes.link} to="/contact">
                 <Typography variant="subtitle1">
                   Contact
                 </Typography>
@@ -225,10 +231,14 @@ const NavBar = ({ siteTitle }) => {
               keepMounted
               open={Boolean(anchorEl)}
               onClose={handleClose}
+              disableScrollLock={true}
               PaperProps={{ className: classNames(classes.menu) }}
             >
               <MenuItem className={classes.menuItem}>
                 <Link className={classes.menuItem} to="/about">About</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link className={classes.menuItem} to="/work">Work</Link>
               </MenuItem>
               <MenuItem>
                 <Link className={classes.menuItem} to="/blog">Blog</Link>

@@ -6,9 +6,7 @@ import {
 import SEO from "../../layout/seo"
 import Layout from "../../layout"
 
-import BlobVideo from '../../../assets/videos/blob-video.mp4'
 import Greeting from './greeting'
-import Introduction from './introduction'
 import Farewell from './farewell'
 
 
@@ -16,6 +14,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
   },
   container: {
+    display: 'flex',
+    flexDirection: 'column',
   },
   video: {
     opacity: '60%',
@@ -27,28 +27,41 @@ const useStyles = makeStyles((theme) => ({
     zIndex: -1,
   },
   miniStripe: {
+    zIndex: 1,
     height: 2,
     // background: '#d91616',
-    background: 'black',
+    background: 'darkslategray',
     width: '12.2vw',
     position: 'absolute',
-    top: '40%',
-    right: '20vw',
     transform: 'rotate(45deg)',
     transition: 'all .6s ease-out',
+    top: '35%',
+    right: '11%',
+    [theme.breakpoints.down('md')]: {
+      top: '32%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      top: '30%',
+      right: '4%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      top: '27%',
+    },
   },
   stripe: {
-    // marginTop: '100vh',
     height: 2,
     // background: '#d91616',
-    background: 'black',
-    width: '130%',
+    background: 'darkslategray',
+    width: '140%',
     position: 'absolute',
-    top: '165%',
-    left: '50%',
     transform: 'translate(-50%, -50%) rotate(-45deg)',
     transition: 'all 2s ease-out',
     transitionDelay: '.6s',
+    left: '50%',
+    top: '160%',
+    [theme.breakpoints.down('md')]: {
+      top: '120%',
+    }
   },
 }))
 
@@ -56,19 +69,12 @@ const Home = () => {
   const classes = useStyles()
 
   return (
-    <Layout>
-      <video className={classes.video} autoPlay muted loop id="blobVideo">
-        <source src={BlobVideo} type="video/mp4" />
-        <p>video</p>
-      </video>
-      <div className={classes.root}>
+    <Layout className={classes.root}>
+      <div className={classes.container}>
         <SEO title="Home" />
-        <div className={classes.container}>
-          <Greeting />
-          <div className={classes.miniStripe} />
-          <div className={classes.stripe} />
-          <Introduction />
-        </div>
+        <div className={classes.miniStripe} />
+        <div className={classes.stripe} />
+        <Greeting />
         <Farewell />
       </div>
     </Layout>

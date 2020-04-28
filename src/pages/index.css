@@ -3,12 +3,12 @@
     src: url('../../assets/fonts/Montserrat/montserrat-medium-webfont.woff')
 }
 html {
-    overflow-y: scroll;
     font-family: Montserrat, serif, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }
 body {
+    overflow-x: hidden;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
