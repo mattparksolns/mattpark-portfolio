@@ -64,10 +64,11 @@ const AnnouncementBar = ({ handleCloseAnnouncementBar }) => {
           className={classes.button}
           color="inherit"
           aria-label="Close AnnouncementBar Button"
+          onClick={handleCloseAnnouncementBar}
           disableRipple
           disableFocusRipple
         >
-          <Close onClick={handleCloseAnnouncementBar} />
+          <Close />
         </Button>
       </div>
       {/*{ isHidden*/}

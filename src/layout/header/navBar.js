@@ -38,16 +38,20 @@ const useStyles = makeStyles((theme) => ({
     //   padding: '2rem, 10vw',
     // },
     boxShadow: 'none',
+  },
+  toolbar: {
     display: 'flex',
     flexDirection: 'column',
   },
   announcementBar: {
-    width: '100%',
+    // zIndex: 9,
   },
-  toolbar: {
+  navContainer: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: '6vh',
+    width: '100%',
+    justifyContent: 'space-between',
+    marginTop: '10vh',
     padding: 0,
   },
   homeLink: {
@@ -100,96 +104,98 @@ const NavBar = ({ siteTitle }) => {
     setAnchorEl(null)
   }
   const handleCloseAnnouncementBar = () => {
+    console.log('handleCloseAnnouncementBar: ')
     setIsHidden(true)
   }
 
   return (
     <div className={classes.root}>
-      {/*<AnnouncementBar />*/}
       <AppBar className={classes.appBar}>
-        { isHidden
-          ? <div className={classes.empty} />
-          : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
-        }
         <Toolbar className={classes.toolbar}>
-          <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
-            <Typography className={classes.title} variant="button">
-              {siteTitle}
-            </Typography>
-          </Link>
-          <div className={classes.grow} />
-          <a
-            title="GitHub"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://github.com/mattparksolutions"
-          >
+          { isHidden
+            ? <div className={classes.empty} />
+            : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
+          }
+          <div className={classes.navContainer}>
+            <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
+              <Typography className={classes.title} variant="button">
+                {siteTitle}
+              </Typography>
+            </Link>
+            <div className={classes.grow} />
+            <a
+              title="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/mattparksolutions"
+            >
+              <IconButton
+                edge="start"
+                className={classes.icon}
+                color="inherit"
+                aria-label="GitHub Icon"
+                disableRipple
+                disableFocusRipple
+              >
+                <GitHub />
+              </IconButton>
+            </a>
+            <a
+              title="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://linkedin.com/in/mattparksolutions"
+            >
+              <IconButton
+                edge="start"
+                className={classes.icon}
+                aria-label="LinkedIn Icon"
+                disableRipple
+                disableFocusRipple
+              >
+                <LinkedIn />
+              </IconButton>
+            </a>
             <IconButton
               edge="start"
               className={classes.icon}
               color="inherit"
-              aria-label="GitHub Icon"
+              aria-label="Menu Icon"
+              aria-haspopup="true"
+              onClick={handleClick}
               disableRipple
               disableFocusRipple
             >
-              <GitHub />
+              { isMenuOpen ? <Close /> : <MenuIcon /> }
+              {/*<MenuIcon />*/}
             </IconButton>
-          </a>
-          <a
-            title="LinkedIn"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://linkedin.com/in/mattparksolutions"
-          >
-            <IconButton
-              edge="start"
-              className={classes.icon}
-              aria-label="LinkedIn Icon"
-              disableRipple
-              disableFocusRipple
+            <Menu
+              id="menu"
+              className={classes.menu}
+              anchorEl={anchorEl}
+              getContentAnchorEl={null}
+              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              transformOrigin={{ vertical: "top", horizontal: "right" }}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+              PaperProps={{
+                style: {
+                  width: '20vw',
+                }
+              }}
             >
-              <LinkedIn />
-            </IconButton>
-          </a>
-          <IconButton
-            edge="start"
-            className={classes.icon}
-            color="inherit"
-            aria-label="Menu Icon"
-            aria-haspopup="true"
-            onClick={handleClick}
-            disableRipple
-            disableFocusRipple
-          >
-            { isMenuOpen ? <Close /> : <MenuIcon /> }
-            {/*<MenuIcon />*/}
-          </IconButton>
-          <Menu
-            id="menu"
-            className={classes.menu}
-            anchorEl={anchorEl}
-            getContentAnchorEl={null}
-            anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-            PaperProps={{
-              style: {
-                width: '20vw',
-              }
-            }}
-          >
-            <MenuItem className={classes.menuItem}>
-              <Link className={classes.link} to="/about">About</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link className={classes.link} to="/blog">Blog</Link>
-            </MenuItem>
-            <MenuItem>
-              <Link className={classes.link} to="/contact">Contact</Link>
-            </MenuItem>
-          </Menu>
+              <MenuItem className={classes.menuItem}>
+                <Link className={classes.link} to="/about">About</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link className={classes.link} to="/blog">Blog</Link>
+              </MenuItem>
+              <MenuItem>
+                <Link className={classes.link} to="/contact">Contact</Link>
+              </MenuItem>
+            </Menu>
+          </div>
         </Toolbar>
       </AppBar>
 
