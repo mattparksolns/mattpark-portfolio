@@ -35,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     transform: 'rotate(45deg)',
     transition: 'all .6s ease-out',
-    top: '35%',
-    right: '11%',
+    top: '40%',
+    right: '16%',
     [theme.breakpoints.down('md')]: {
-      top: '32%',
+      top: '35%',
+      right: '12%',
     },
     [theme.breakpoints.down('sm')]: {
       top: '30%',
@@ -52,17 +53,35 @@ const useStyles = makeStyles((theme) => ({
     height: 2,
     // background: '#d91616',
     background: 'darkslategray',
-    width: '140%',
+    width: '141%',
     position: 'absolute',
     transform: 'translate(-50%, -50%) rotate(-45deg)',
     transition: 'all 2s ease-out',
     transitionDelay: '.6s',
     left: '50%',
-    top: '160%',
+    top: '140%',
     [theme.breakpoints.down('md')]: {
       top: '120%',
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      top: '95%',
+    },
+    [theme.breakpoints.down('xs')]: {
+      top: '80%',
+    },
   },
+  letter: {
+    stroke: 'black',
+    strokeWidth: 2,
+  },
+  letterText: {
+    transform: 'translate(720 1106)',
+    fill: 'black',
+    fontSize: 400,
+    fontFamily: 'TimesNewRomanPS-BoldMT, Times New Roman',
+    fontWeight: 700,
+    letterSpacing: '1em',
+  }
 }))
 
 const Home = () => {
@@ -74,6 +93,15 @@ const Home = () => {
         <SEO title="Home" />
         <div className={classes.miniStripe} />
         <div className={classes.stripe} />
+        <div className={classes.letter}>
+          <svg width="405" height="443" viewBox="0 0 405 443">
+            <g transform="translate(-531 -750)">
+              <text className={classes.letterText}>
+                <tspan x="-188.77" y="0">M</tspan>
+              </text>
+            </g>
+          </svg>
+        </div>
         <Greeting />
         <Farewell />
       </div>

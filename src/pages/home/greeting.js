@@ -27,10 +27,10 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '5.5vw',
     [theme.breakpoints.down('sm')]: {
       width: '80%',
-      fontSize: '8vw',
+      fontSize: '7.5vw',
     },
     [theme.breakpoints.down('xs')]: {
-      fontsize: '13vw',
+      fontsize: '12.5vw',
     },
     fontFamily: 'Montserrat',
   },
