@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-
+import classNames from 'classnames'
 import {
   makeStyles,
   AppBar,
@@ -30,13 +30,15 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     background: 'transparent',
-    // padding: '2rem 10vw',
-    // [theme.breakpoints.down('sm')]: {
-    //   padding: '2rem 3vw',
-    // },
-    // [theme.breakpoints.up('md')]: {
-    //   padding: '2rem, 10vw',
-    // },
+    paddingLeft: '8.4vw',
+    paddingRight: '7.3vw',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 3vw',
+    },
+    [theme.breakpoints.up('md')]: {
+      paddingLeft: '8.4vw',
+      paddingRight: '7.3vw',
+    },
     boxShadow: 'none',
   },
   toolbar: {
@@ -44,13 +46,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   announcementBar: {
-    // zIndex: 9,
   },
   navContainer: {
     display: 'flex',
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
+    alignItems: 'center',
     marginTop: '10vh',
     padding: 0,
   },
@@ -68,6 +70,28 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 18,
     }
   },
+  links: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'None',
+    },
+    marginLeft: '4vw',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  link: {
+    fontSize: 18,
+    margin: '1vw',
+    paddingTop: '1vh',
+    height: '100%',
+    color: 'black',
+    textDecoration: 'None',
+    borderBottom: '2px solid transparent',
+    '&:hover': {
+      borderBottom: '2px solid black',
+    }
+  },
   grow: {
     flexGrow: 1,
   },
@@ -77,23 +101,30 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'transparent',
     },
   },
+  menuIcon: {
+    display: 'None',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
+  },
   menu: {
-    width: '30vw',
+    width: '40vw',
+    [theme.breakpoints.down('xs')]: {
+      width: '60vw',
+    }
   },
   menuItem: {
-  },
-  link: {
+    width: '100%',
     color: 'black',
     textDecoration: 'None',
-    width: '100%',
     textAlign: 'center',
-  }
+  },
 }))
 
 const NavBar = ({ siteTitle }) => {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
-  const [isHidden, setIsHidden] = useState(false)
+  const [isAnnouncementClosed, setIsAnnouncementClosed] = useState(false)
 
   const isMenuOpen = Boolean(anchorEl)
 
@@ -105,23 +136,40 @@ const NavBar = ({ siteTitle }) => {
   }
   const handleCloseAnnouncementBar = () => {
     console.log('handleCloseAnnouncementBar: ')
-    setIsHidden(true)
+    setIsAnnouncementClosed(true)
   }
 
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          { isHidden
+          { isAnnouncementClosed
             ? <div className={classes.empty} />
             : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
           }
           <div className={classes.navContainer}>
             <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
-              <Typography className={classes.title} variant="button">
+              <Typography className={classes.title} variant="h1">
                 {siteTitle}
               </Typography>
             </Link>
+            <div className={classes.links}>
+              <Link title="About" className={classes.link} to="/about">
+                <Typography variant="subtitle1">
+                  About
+                </Typography>
+              </Link>
+              <Link title="Blog" className={classes.link} to="/blog">
+                <Typography variant="subtitle1">
+                  Blog
+                </Typography>
+              </Link>
+              <Link title="Contact" className={classes.link} to="/contact">
+                <Typography variant="subtitle1">
+                  Contact
+                </Typography>
+              </Link>
+            </div>
             <div className={classes.grow} />
             <a
               title="GitHub"
@@ -158,7 +206,7 @@ const NavBar = ({ siteTitle }) => {
             </a>
             <IconButton
               edge="start"
-              className={classes.icon}
+              className={`${classes.icon} ${classes.menuIcon}`}
               color="inherit"
               aria-label="Menu Icon"
               aria-haspopup="true"
@@ -166,12 +214,10 @@ const NavBar = ({ siteTitle }) => {
               disableRipple
               disableFocusRipple
             >
-              { isMenuOpen ? <Close /> : <MenuIcon /> }
-              {/*<MenuIcon />*/}
+              { anchorEl ? <Close /> : <MenuIcon /> }
             </IconButton>
             <Menu
               id="menu"
-              className={classes.menu}
               anchorEl={anchorEl}
               getContentAnchorEl={null}
               anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
@@ -179,20 +225,16 @@ const NavBar = ({ siteTitle }) => {
               keepMounted
               open={Boolean(anchorEl)}
               onClose={handleClose}
-              PaperProps={{
-                style: {
-                  width: '20vw',
-                }
-              }}
+              PaperProps={{ className: classNames(classes.menu) }}
             >
               <MenuItem className={classes.menuItem}>
-                <Link className={classes.link} to="/about">About</Link>
+                <Link className={classes.menuItem} to="/about">About</Link>
               </MenuItem>
               <MenuItem>
-                <Link className={classes.link} to="/blog">Blog</Link>
+                <Link className={classes.menuItem} to="/blog">Blog</Link>
               </MenuItem>
               <MenuItem>
-                <Link className={classes.link} to="/contact">Contact</Link>
+                <Link className={classes.menuItem} to="/contact">Contact</Link>
               </MenuItem>
             </Menu>
           </div>

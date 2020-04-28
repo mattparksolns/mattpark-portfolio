@@ -11,21 +11,19 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    zIndex: 2,
     position: 'fixed',
+    left: 0,
     backgroundColor: 'gray',
     // color: 'black',
     width: '100%',
     height: '5.5vh',
     textAlign: 'center',
-    pointerEvents: 'none',
   },
   container: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
     paddingTop: '1vh',
-    pointerEvents: 'none',
   },
   announcement: {
     width: '98%',
@@ -33,9 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     color: 'black',
-    // '&:hover': {
-    //   backgroundColor: 'transparent',
-    // },
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
     padding: 0,
   },
   empty: {
@@ -71,25 +69,6 @@ const AnnouncementBar = ({ handleCloseAnnouncementBar }) => {
           <Close />
         </Button>
       </div>
-      {/*{ isHidden*/}
-      {/*  ? <div className={classes.empty} />*/}
-      {/*  : <div className={classes.container}>*/}
-      {/*      <Typography className={classes.announcement} variant="h6">*/}
-      {/*        COVID-19 Update*/}
-      {/*      </Typography>*/}
-      {/*      <IconButton*/}
-      {/*        edge="start"*/}
-      {/*        className={classes.button}*/}
-      {/*        color="inherit"*/}
-      {/*        aria-label="Close AnnouncementBar Button"*/}
-      {/*        onClick={(e) => handleClose(e)}*/}
-      {/*        disableRipple*/}
-      {/*        disableFocusRipple*/}
-      {/*      >*/}
-      {/*        <Close />*/}
-      {/*      </IconButton>*/}
-      {/*    </div>*/}
-      {/*}*/}
     </div>
   )
 }
