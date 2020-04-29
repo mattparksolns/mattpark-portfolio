@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   letter: {
+    border: '1px solid black',
     stroke: 'black',
     strokeWidth: 2,
   },
