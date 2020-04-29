@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
   },
   container: {
-    margin: '22vh auto',
+    margin: '20vh auto',
     marginBottom: 0,
     padding: '0 10vw',
     [theme.breakpoints.down('sm')]: {

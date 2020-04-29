@@ -5,6 +5,8 @@ import {
   Typography,
 } from '@material-ui/core'
 
+import SignatureImage from './signatureImage'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -99,9 +101,7 @@ const Farewell = () => {
             <Typography className={classes.thankYouMessage} variant="subtitle1" gutterBottom>
               <i>Thank you for scrolling all this way!</i>
             </Typography>
-            <Typography className={classes.signature} variant="h4" gutterBottom>
-              -- Matt Park --
-            </Typography>
+            <SignatureImage className={classes.signature} />
           </div>
         </div>
       </Paper>

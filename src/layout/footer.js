@@ -8,6 +8,7 @@ import {
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    marginTop: '2vh',
     padding: '0 5vw',
   },
   footer: {
