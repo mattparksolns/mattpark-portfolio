@@ -70,16 +70,22 @@ const useStyles = makeStyles((theme) => ({
   },
   letter: {
     border: '1px solid black',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
   },
   letterText: {
     stroke: 'black',
     strokeWidth: 2,
     transform: 'translate(720 1106)',
-    fill: 'black',
+    fill: 'transparent',
     fontSize: 400,
     fontFamily: 'TimesNewRomanPS-BoldMT, Times New Roman',
     fontWeight: 700,
     letterSpacing: '1em',
+  },
+  svg: {
+    boxSizing: 'border-box',
   }
 }))
 
@@ -93,7 +99,7 @@ const Home = () => {
         <div className={classes.miniStripe} />
         <div className={classes.stripe} />
         <div className={classes.letter}>
-          <svg width="405" height="443" viewBox="0 0 405 443">
+          <svg className={classes.svg} width="405" height="443" viewBox="0 0 405 443">
             <g transform="translate(-531 -750)">
               <text className={classes.letterText}>
                 <tspan x="-188.77" y="0">M</tspan>

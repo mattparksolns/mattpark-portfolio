@@ -10,7 +10,6 @@ import SEO from "../../layout/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    border: '1px solid black',
     margin: '0 5vw',
     display: 'flex',
     flexDirection: 'row',
