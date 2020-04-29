@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Layout = ({ children }) => {
+const Layout = ({ pageTitle, children }) => {
   const classes = useStyles()
 
   // useEffect(() => {

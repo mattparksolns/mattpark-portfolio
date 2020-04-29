@@ -41,8 +41,13 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {
+    "babel-jest": "^25.5.0",
+    "babel-preset-gatsby": "^0.4.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.5.0",
     "logrocket": "^1.0.7",
-    "prettier": "2.0.4"
+    "prettier": "2.0.4",
+    "react-test-renderer": "^16.13.1"
   },
   "keywords": [
     "gatsby"

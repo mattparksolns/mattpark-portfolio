@@ -5,6 +5,7 @@ import {
 } from '@material-ui/core'
 
 import Layout from '../../layout'
+import SEO from "../../layout/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -17,6 +18,7 @@ const Blog = () => {
 
   return (
     <Layout>
+      <SEO title="Matt Park" pageTitle="Blog" />
       <div className={classes.root}>
         <Typography variant="h1">My Blog</Typography>
         <Typography variant="h4">Under construction..</Typography>

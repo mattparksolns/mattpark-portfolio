@@ -6,10 +6,11 @@ import {
 import Layout from "../../layout"
 import ContactInfo from './contactInfo'
 import ContactForm from './contactForm'
+import SEO from "../../layout/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // border: '1px solid black',
+    border: '1px solid black',
     margin: '0 5vw',
     display: 'flex',
     flexDirection: 'row',
@@ -26,6 +27,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO title="Matt Park" pageTitle="Contact" />
       <div className={classes.root}>
         <ContactInfo />
         <ContactForm />

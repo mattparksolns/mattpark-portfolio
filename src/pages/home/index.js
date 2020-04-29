@@ -12,8 +12,6 @@ import Farewell from './farewell'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-  },
-  container: {
     display: 'flex',
     flexDirection: 'column',
   },
@@ -72,10 +70,10 @@ const useStyles = makeStyles((theme) => ({
   },
   letter: {
     border: '1px solid black',
-    stroke: 'black',
-    strokeWidth: 2,
   },
   letterText: {
+    stroke: 'black',
+    strokeWidth: 2,
     transform: 'translate(720 1106)',
     fill: 'black',
     fontSize: 400,
@@ -89,9 +87,9 @@ const Home = () => {
   const classes = useStyles()
 
   return (
-    <Layout className={classes.root}>
-      <div className={classes.container}>
-        <SEO title="Home" />
+    <Layout>
+      <SEO title="Matt Park" pageTitle="Home" />
+      <div className={classes.root}>
         <div className={classes.miniStripe} />
         <div className={classes.stripe} />
         <div className={classes.letter}>
