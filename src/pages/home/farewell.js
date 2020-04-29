@@ -42,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
   },
   contactLink: {
     textDecoration: 'none',
-    // color: 'crimson',
     color: 'gray',
   },
   logoAndSignatureContainer: {
