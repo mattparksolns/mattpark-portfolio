@@ -2,6 +2,8 @@ import React, {
   useState,
   useEffect,
 } from 'react'
+import validator from 'validator'
+import axios from 'axios'
 import {
   makeStyles,
   Typography,
@@ -13,32 +15,35 @@ import {
 import {
   Send,
 } from '@material-ui/icons'
-import validator from 'validator'
-import axios from 'axios'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     // border: '1px solid black',
-    width: '40%',
-    [theme.breakpoints.down('md')]: {
+    width: '50%',
+    [theme.breakpoints.down('sm')]: {
       width: '100%',
     }
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'flex-end',
   },
   inputField: {
     marginTop: '2vh',
+    width: '100%',
   },
-  privacyPolicyLabel: {
+  privacyPolicyText: {
     fontFamily: 'Montserrat',
   },
-  sendButtonContainer: {
+  button: {
     marginTop: '2vh',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
+    borderRadius: 0,
+    color: 'white',
+    backgroundColor: 'black',
+    '&:hover': {
+      backgroundColor: '#383838',
+    },
   },
 }))
 
@@ -145,23 +150,21 @@ const ContactForm = () => {
           control={<Checkbox required name="privacypolicy" color="default" onChange={handlePrivacyPolicyCheckbox}/>}
           label={
             <Typography
-              className={classes.privacyPolicyLabel}
+              className={classes.privacyPolicyText}
               variant="caption"
             >
               I understand that Matt will securely hold my data in accordance with their privacy policy.
             </Typography>}
         />
-        <div className={classes.sendButtonContainer}>
-          <div />
-          <Button
-            type="submit"
-            variant="contained"
-            size="large"
-            endIcon={<Send />}
-          >
-            Send
-          </Button>
-        </div>
+        <Button
+          className={classes.button}
+          type="submit"
+          variant="contained"
+          size="large"
+          endIcon={<Send />}
+        >
+          Send
+        </Button>
       </form>
     </div>
   )

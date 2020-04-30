@@ -1,6 +1,5 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
-import PropTypes from "prop-types"
 import classNames from 'classnames'
 import {
   makeStyles,
@@ -122,7 +121,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NavBar = ({ siteTitle }) => {
+const NavBar = () => {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const [isAnnouncementClosed, setIsAnnouncementClosed] = useState(false)
@@ -151,7 +150,7 @@ const NavBar = ({ siteTitle }) => {
           <div className={classes.navContainer}>
             <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
               <Typography className={classes.title} variant="h1">
-                {siteTitle}
+                Matt Park
               </Typography>
             </Link>
             <div className={classes.links}>
@@ -226,10 +225,10 @@ const NavBar = ({ siteTitle }) => {
               id="menu"
               anchorEl={anchorEl}
               getContentAnchorEl={null}
-              anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
               transformOrigin={{ vertical: "top", horizontal: "right" }}
               keepMounted
-              open={Boolean(anchorEl)}
+              open={isMenuOpen}
               onClose={handleClose}
               disableScrollLock={true}
               PaperProps={{ className: classNames(classes.menu) }}
@@ -250,17 +249,8 @@ const NavBar = ({ siteTitle }) => {
           </div>
         </Toolbar>
       </AppBar>
-
     </div>
   )
-}
-
-NavBar.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-NavBar.defaultProps = {
-  siteTitle: ``,
 }
 
 export default NavBar

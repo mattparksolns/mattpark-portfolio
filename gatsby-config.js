@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Matt Park`,
-    description: `Software Engineer`,
+    title: `Matt Park - Software Engineer`,
+    description: `My name is Matt Park and I am from the greater New York area. I am a software engineer.`,
     author: `@mattparksolutions`,
   },
   plugins: [

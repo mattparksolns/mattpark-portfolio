@@ -1,6 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
-
 import {
   makeStyles,
 } from '@material-ui/core'
@@ -15,22 +13,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const classes = useStyles()
 
   return (
     <header className={classes.root}>
-      <NavBar siteTitle={siteTitle} />
+      <NavBar />
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

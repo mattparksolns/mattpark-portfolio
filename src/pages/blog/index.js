@@ -18,7 +18,7 @@ const Blog = () => {
 
   return (
     <Layout>
-      <SEO title="Matt Park" pageTitle="Blog" />
+      <SEO pageTitle="Blog" />
       <div className={classes.root}>
         <Typography variant="h1">My Blog</Typography>
         <Typography variant="h4">Under construction..</Typography>

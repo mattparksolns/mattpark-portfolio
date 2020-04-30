@@ -4,16 +4,16 @@ import {
 } from '@material-ui/core'
 
 import Layout from "../../layout"
+import SEO from "../../layout/seo"
 import ContactInfo from './contactInfo'
 import ContactForm from './contactForm'
-import SEO from "../../layout/seo"
 
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: '0 5vw',
     display: 'flex',
     flexDirection: 'row',
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down('sm')]: {
       flexDirection: 'column',
     },
     justifyContent: 'space-between',
@@ -26,7 +26,7 @@ const Contact = () => {
 
   return (
     <Layout>
-      <SEO title="Matt Park" pageTitle="Contact" />
+      <SEO pageTitle="Contact" />
       <div className={classes.root}>
         <ContactInfo />
         <ContactForm />

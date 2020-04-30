@@ -3,9 +3,8 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import SEO from "../../layout/seo"
 import Layout from "../../layout"
-
+import SEO from "../../layout/seo"
 import Greeting from './greeting'
 import Farewell from './farewell'
 
@@ -94,7 +93,7 @@ const Home = () => {
 
   return (
     <Layout>
-      <SEO title="Matt Park" pageTitle="Home" />
+      <SEO pageTitle="Home" />
       <div className={classes.root}>
         <div className={classes.miniStripe} />
         <div className={classes.stripe} />

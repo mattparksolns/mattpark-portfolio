@@ -42,15 +42,6 @@ const useStyles = makeStyles((theme) => ({
 
 const AnnouncementBar = ({ handleCloseAnnouncementBar }) => {
   const classes = useStyles()
-  const [isHidden, setIsHidden] = useState(false)
-
-  const handleClose = () => {
-    console.log('isHidden: ' + isHidden)
-    setIsHidden(!isHidden)
-    if(isHidden) {
-      return 'none'
-    }
-  }
 
   return (
     <div className={classes.root}>

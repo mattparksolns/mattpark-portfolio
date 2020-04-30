@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {
   makeStyles,
   Typography,
@@ -12,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     padding: '0 5vw',
   },
   footer: {
-    // color: 'ghostwhite',
     color: 'black',
     fontFamily: 'Montserrat',
     fontSize: 13,

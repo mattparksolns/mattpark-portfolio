@@ -1,14 +1,5 @@
-/**
- * Index component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-import React, { useEffect } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
 import {
   makeStyles,
 } from '@material-ui/core'
@@ -45,25 +36,12 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Layout = ({ pageTitle, children }) => {
+const Layout = ({ children }) => {
   const classes = useStyles()
-
-  // useEffect(() => {
-  // },[])
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <div className={classes.root}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header />
       <div className={classes.container}>
         <main className={classes.main}>{children}</main>
         <hr className={classes.footerHr} />

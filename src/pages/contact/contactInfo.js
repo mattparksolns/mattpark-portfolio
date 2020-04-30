@@ -7,8 +7,8 @@ import {
 import {
   GitHub,
   LinkedIn,
-  Email,
-  PhoneInTalk,
+  MailOutline,
+  PhoneInTalkOutlined,
 } from '@material-ui/icons'
 
 
@@ -17,38 +17,36 @@ const useStyles = makeStyles((theme) => ({
     // border: '1px solid black',
     display: 'flex',
     flexDirection: 'column',
-    width: '50%',
-    [theme.breakpoints.down('md')]: {
+    justifyContent: 'space-between',
+    width: '45%',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-start',
       width: '100%',
     }
   },
-  container: {
-  },
   myName: {
-    marginBottom: '9vh',
-    fontSize: '8.2vw',
-    [theme.breakpoints.down('md')]: {
-      fontSize: '14vw',
-    },
+    fontSize: '7.4vw',
     [theme.breakpoints.down('sm')]: {
       fontSize: '18vw',
     },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '19vw',
-    }
+  },
+  myInfo: {
+    marginBottom: '5vh',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '5vh',
+    },
   },
   link: {
     textDecoration: 'none',
     color: 'black',
     '&:hover': {
-      // fontColor: 'gray',
       backgroundColor: 'transparent',
     }
   },
   phoneLink: {
-    fontSize: '3.5vw',
     marginLeft: '2vw',
-    [theme.breakpoints.down('md')]: {
+    fontSize: '3vw',
+    [theme.breakpoints.down('sm')]: {
       fontSize: '7.55vw',
       marginLeft: '4vw',
     },
@@ -57,9 +55,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   emailLink: {
-    fontSize: '1.95vw',
     marginLeft: '1.8vw',
-    [theme.breakpoints.down('md')]: {
+    fontSize: '1.7vw',
+    [theme.breakpoints.down('sm')]: {
       fontSize: '4.15vw',
       marginLeft: '4vw',
     },
@@ -75,14 +73,16 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     height: '5vh',
-    width: '5vw',
+    width: '3vw',
     [theme.breakpoints.down('sm')]: {
-      height: '8vh',
-      width: '8vw',
+      width: '5vw',
     }
   },
   icons: {
-    marginTop: '5vh',
+    marginTop: '2vh',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '0',
+    }
   },
 }))
 
@@ -95,61 +95,63 @@ const ContactInfo = () => {
       <Typography className={classes.myName} variant="h1">
         Matt Park
       </Typography>
-      <a className={classes.link} target="_top" href="tel:+1201-591-3323">
-        <IconButton
-          edge="start"
-          className={classes.iconButton}
-          color="inherit"
-          aria-label="Phone Button"
-          disableRipple
-          disableFocusRipple
-        >
-          <PhoneInTalk className={classes.icon} />
-          <Typography className={classes.phoneLink} variant="h4">
-            (201) 591 - 3323
-          </Typography>
-        </IconButton>
-      </a>
-      <a className={classes.link} target="_top" href="mailto:mattparksolutions@gmail.com">
-        <IconButton
-          edge="start"
-          className={classes.iconButton}
-          color="inherit"
-          aria-label="Email Button"
-          disableRipple
-          disableFocusRipple
-        >
-          <Email className={classes.icon} />
-          <Typography className={classes.emailLink} variant="h4">
-            mattparksolutions@gmail.com
-          </Typography>
-        </IconButton>
-      </a>
-      <div className={classes.icons}>
-        <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
+      <div className={classes.myInfo}>
+        <a className={classes.link} target="_top" href="tel:+1201-591-3323">
           <IconButton
             edge="start"
             className={classes.iconButton}
             color="inherit"
-            aria-label="GitHub Button"
+            aria-label="Phone Button"
             disableRipple
             disableFocusRipple
           >
-            <GitHub className={classes.icon} />
+            <PhoneInTalkOutlined className={classes.icon} />
+            <Typography className={classes.phoneLink} variant="h4">
+              (201) 591 - 3323
+            </Typography>
           </IconButton>
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
+        <a className={classes.link} target="_top" href="mailto:mattparksolutions@gmail.com">
           <IconButton
             edge="start"
             className={classes.iconButton}
             color="inherit"
-            aria-label="LinkedIn Button"
+            aria-label="Email Button"
             disableRipple
             disableFocusRipple
           >
-            <LinkedIn className={classes.icon} />
+            <MailOutline className={classes.icon} />
+            <Typography className={classes.emailLink} variant="h4">
+              mattparksolutions@gmail.com
+            </Typography>
           </IconButton>
         </a>
+        <div className={classes.icons}>
+          <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
+            <IconButton
+              edge="start"
+              className={classes.iconButton}
+              color="inherit"
+              aria-label="GitHub Button"
+              disableRipple
+              disableFocusRipple
+            >
+              <GitHub className={classes.icon} />
+            </IconButton>
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
+            <IconButton
+              edge="start"
+              className={classes.iconButton}
+              color="inherit"
+              aria-label="LinkedIn Button"
+              disableRipple
+              disableFocusRipple
+            >
+              <LinkedIn className={classes.icon} />
+            </IconButton>
+          </a>
+        </div>
       </div>
     </div>
   )

@@ -9,6 +9,7 @@ import Contact from "./contact"
 
 
 const App = () => {
+
   return (
     <Router>
       <Home path="/" />

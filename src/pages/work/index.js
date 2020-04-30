@@ -18,7 +18,7 @@ const Work = () => {
 
   return (
     <Layout>
-      <SEO title="Matt Park" pageTitle="Work" />
+      <SEO pageTitle="Work" />
       <div className={classes.root}>
         <Typography variant="h1">My Projects</Typography>
         <Typography variant="h4">
