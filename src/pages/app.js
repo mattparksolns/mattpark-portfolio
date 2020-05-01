@@ -2,8 +2,6 @@ import React from "react"
 import { Router } from '@reach/router'
 // import { BrowserRouter, Route } from 'react-router-dom'
 
-import Layout from '../layout'
-import NavBar from  '../layout/header/navbar'
 import Home from './home'
 import About from './about'
 import Work from './work'

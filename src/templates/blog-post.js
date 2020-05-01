@@ -14,12 +14,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const BlogPostTemplate = ({
-  data, /* this prop will be injected by the GraphQL query below.*/
-}) => {
+const BlogPostTemplate = ({ data, pageContext, location }) => {
   const classes = useStyles()
+  // const { markdownRemark } = data
+  // const { frontmatter, html } = markdownRemark
   const { markdownRemark: post } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = post
+
+
+  // export const pageQuery = graphql`
+  //     query BlogPostByPath($path: String!) {
+  //         markdownRemark(frontmatter: { path: { eq: $path } }) {
+  //             html
+  //             frontmatter {
+  //                 date(formatString: "MMMM DD, YYYY")
+  //                 path
+  //                 title
+  //             }
+  //         }
+  //     }
+  // `
+
   return (
     <div className={classes.root}>
       <Helmet title={frontmatter.title} />
@@ -36,8 +51,8 @@ const BlogPostTemplate = ({
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
-      markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query BlogPostByPath($slug: String!) {
+      markdownRemark(fields: { slug: { eq: $slug } }) {
           html
           frontmatter {
               date(formatString: "MMMM DD, YYYY")

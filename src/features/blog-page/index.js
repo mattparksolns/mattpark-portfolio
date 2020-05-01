@@ -15,11 +15,10 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const BlogPage = () => {
+const BlogPage = ({ data, location }) => {
   const classes = useStyles()
-
   return (
-    <Layout className={classes.root}>
+    <Layout className={classes.root} location={location}>
       <SEO pageTitle="Blog" />
       <div className={classes.container}>
         <Typography variant="h1">My Blog</Typography>

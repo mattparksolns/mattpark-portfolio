@@ -3,7 +3,7 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import Navbar from './navbar'
+import NavBar from './navbar'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className={classes.root}>
-      <Navbar />
+      <NavBar />
     </header>
   )
 }

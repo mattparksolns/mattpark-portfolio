@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Layout = ({ children }) => {
+const Layout = ({ location, children }) => {
   const classes = useStyles()
 
   return (
