@@ -11,6 +11,8 @@ import Farewell from './farewell'
 
 const useStyles = makeStyles((theme) => ({
   root: {
+  },
+  container: {
     display: 'flex',
     flexDirection: 'column',
   },
@@ -92,9 +94,9 @@ const Home = () => {
   const classes = useStyles()
 
   return (
-    <Layout>
+    <Layout className={classes.root}>
       <SEO pageTitle="Home" />
-      <div className={classes.root}>
+      <div className={classes.container}>
         <div className={classes.miniStripe} />
         <div className={classes.stripe} />
         <div className={classes.letter}>

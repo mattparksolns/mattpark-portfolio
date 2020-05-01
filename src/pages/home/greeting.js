@@ -5,7 +5,7 @@ import {
   Paper,
   Typography,
 } from '@material-ui/core'
-import BackgroundImage from "./backgroundImage"
+import BackgroundImage from "./background-image"
 
 
 const useStyles = makeStyles((theme) => ({

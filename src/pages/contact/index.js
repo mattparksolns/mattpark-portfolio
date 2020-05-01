@@ -5,8 +5,8 @@ import {
 
 import Layout from "../../layout"
 import SEO from "../../layout/seo"
-import ContactInfo from './contactInfo'
-import ContactForm from './contactForm'
+import ContactInfo from './contact-info'
+import ContactForm from './contact-form'
 
 const useStyles = makeStyles((theme) => ({
   root: {

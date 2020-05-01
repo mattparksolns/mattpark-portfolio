@@ -3,7 +3,7 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import NavBar from './navBar'
+import NavBar from './navbar'
 
 
 const useStyles = makeStyles((theme) => ({

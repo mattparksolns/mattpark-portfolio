@@ -1,4 +1,4 @@
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import React, { useState } from "react"
 import classNames from 'classnames'
 import {
@@ -17,7 +17,7 @@ import {
   LinkedIn,
 } from '@material-ui/icons'
 
-import AnnouncementBar from "./announcementBar"
+import AnnouncementBar from "./announcement-bar"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -121,8 +121,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NavBar = () => {
+const NavBar = ({ location }) => {
   const classes = useStyles()
+
+  const data = useStaticQuery(graphql`
+      query {
+          site {
+              siteMetadata {
+                  title
+              }
+          }
+      }
+  `)
+
+  const siteTitle = data.site.siteMetadata.title
+
   const [anchorEl, setAnchorEl] = useState(null)
   const [isAnnouncementClosed, setIsAnnouncementClosed] = useState(false)
 
@@ -148,7 +161,7 @@ const NavBar = () => {
             : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
           }
           <div className={classes.navContainer}>
-            <Link title="Matt Park - Software Engineer" className={classes.homeLink} to="/">
+            <Link title={siteTitle} className={classes.homeLink} to="/">
               <Typography className={classes.title} variant="h1">
                 Matt Park
               </Typography>
