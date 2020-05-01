@@ -1,4 +1,5 @@
 import { Link } from "gatsby"
+// import { Link } from "react-router-dom"
 import React, { useState } from "react"
 import classNames from 'classnames'
 import {
@@ -17,7 +18,7 @@ import {
   LinkedIn,
 } from '@material-ui/icons'
 
-import AnnouncementBar from "./announcementBar"
+import AnnouncementBar from "./announcement-bar"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -121,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NavBar = () => {
+const Navbar = () => {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const [isAnnouncementClosed, setIsAnnouncementClosed] = useState(false)
@@ -253,4 +254,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default Navbar

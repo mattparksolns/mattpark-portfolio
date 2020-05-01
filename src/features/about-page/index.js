@@ -10,16 +10,18 @@ import SEO from "../../layout/seo"
 const useStyles = makeStyles((theme) => ({
   root: {
   },
+  container:{
+  },
 }))
 
 
-const About = () => {
+const AboutPage = () => {
   const classes = useStyles()
 
   return (
-    <Layout>
+    <Layout className={classes.root}>
       <SEO pageTitle="About" />
-      <div className={classes.root}>
+      <div className={classes.container}>
         <Typography variant="h1">About Me</Typography>
         <Typography variant="h4">
           Under construction..
@@ -29,4 +31,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutPage

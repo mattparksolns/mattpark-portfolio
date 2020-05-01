@@ -5,7 +5,7 @@ import {
   Typography,
 } from '@material-ui/core'
 
-import SignatureImage from './signatureImage'
+import SignatureImage from './signature-image'
 
 
 const useStyles = makeStyles((theme) => ({
