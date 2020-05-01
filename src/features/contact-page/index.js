@@ -3,8 +3,6 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import Layout from "../../layout"
-import SEO from "../../layout/seo"
 import ContactInfo from './contact-info'
 import ContactForm from './contact-form'
 
@@ -25,13 +23,10 @@ const Contact = () => {
   const classes = useStyles()
 
   return (
-    <Layout>
-      <SEO pageTitle="Contact" />
-      <div className={classes.root}>
-        <ContactInfo />
-        <ContactForm />
-      </div>
-    </Layout>
+    <div className={classes.root}>
+      <ContactInfo />
+      <ContactForm />
+    </div>
   )
 }
 export default Contact

@@ -3,16 +3,12 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import Layout from "../../layout"
-import SEO from "../../layout/seo"
 import Greeting from './greeting'
 import Farewell from './farewell'
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-  },
-  container: {
     display: 'flex',
     flexDirection: 'column',
   },
@@ -94,24 +90,21 @@ const Home = () => {
   const classes = useStyles()
 
   return (
-    <Layout className={classes.root}>
-      <SEO pageTitle="Home" />
-      <div className={classes.container}>
-        <div className={classes.miniStripe} />
-        <div className={classes.stripe} />
-        <div className={classes.letter}>
-          <svg className={classes.svg} width="405" height="443" viewBox="0 0 405 443">
-            <g transform="translate(-531 -750)">
-              <text className={classes.letterText}>
-                <tspan x="-188.77" y="0">M</tspan>
-              </text>
-            </g>
-          </svg>
-        </div>
-        <Greeting />
-        <Farewell />
+    <div className={classes.root}>
+      <div className={classes.miniStripe} />
+      <div className={classes.stripe} />
+      <div className={classes.letter}>
+        <svg className={classes.svg} width="405" height="443" viewBox="0 0 405 443">
+          <g transform="translate(-531 -750)">
+            <text className={classes.letterText}>
+              <tspan x="-188.77" y="0">M</tspan>
+            </text>
+          </g>
+        </svg>
       </div>
-    </Layout>
+      <Greeting />
+      <Farewell />
+    </div>
 )}
 
 export default Home

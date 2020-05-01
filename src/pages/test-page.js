@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Test = ({ data }) => {
+const TestPage = ({ data }) => {
   const classes = useStyles()
   console.log(data)
   // const { markdownRemark: post } = data // data.markdownRemark holds your post data
@@ -22,9 +22,9 @@ const Test = ({ data }) => {
 
   return (
     <Layout>
-      <SEO pageTitle="Test" />
+      <SEO pageTitle="TestPage" />
       <div className={classes.root}>
-        <Typography variant="h1">Test</Typography>
+        <Typography variant="h1">TestPage</Typography>
         <Typography variant="h4">
           testing shit..
         </Typography>
@@ -46,4 +46,4 @@ export const pageQuery = graphql`
     }
 `
 
-export default Test
+export default TestPage

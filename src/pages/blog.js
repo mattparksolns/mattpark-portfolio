@@ -1,10 +1,15 @@
 import React from 'react'
-import BlogPage from '../features/about-page'
+
+import Layout from '../layout'
+import SEO from '../layout'
+import BlogPage from '../features/blog-page'
 
 const Blog = () => {
   return (
-    <BlogPage>
-    </BlogPage>
+    <Layout>
+      <SEO pageTitle="Blog" />
+      <BlogPage />
+    </Layout>
   )
 }
 

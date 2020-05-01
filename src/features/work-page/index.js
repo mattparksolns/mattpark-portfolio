@@ -10,12 +10,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AboutPage = () => {
+const Work = () => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
-      <Typography variant="h1">About Me</Typography>
+      <Typography variant="h1">My Projects</Typography>
       <Typography variant="h4">
         Under construction..
       </Typography>
@@ -23,4 +23,4 @@ const AboutPage = () => {
   )
 }
 
-export default AboutPage
+export default Work
