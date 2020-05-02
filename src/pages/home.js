@@ -6,10 +6,8 @@ import HomePage from '../features/home-page'
 
 const Home = () => {
   return (
-    <Layout>
-      <SEO pageTitle="Home" />
-      <HomePage />
-    </Layout>
+    <HomePage>
+    </HomePage>
   )
 }
 

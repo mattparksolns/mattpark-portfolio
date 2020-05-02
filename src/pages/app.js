@@ -8,26 +8,31 @@ import Work from './work'
 import Blog from './blog'
 import Contact from './contact'
 import TestPage from './test-page'
+import SEO from "../layout"
+import HomePage from "../features/home-page"
+import Layout from "../layout"
 
 
 const App = () => {
 
   return (
-    <Router>
-      <Home path="/" />
-      <About path="/about" />
-      <Work path="/work" />
-      <Blog path="/blog" />
-      <Contact path="/contact" />
-      <TestPage path="/test" />
-      {/*<Layout>*/}
-      {/*  <Route component={Home} path="/" exact />*/}
-      {/*  <Route component={About} path="/about" />*/}
-      {/*  <Route component={Work} path="/work-page" />*/}
-      {/*  <Route component={Blog} path="/blog-page" />*/}
-      {/*  <Route component={Contact} path="/contact-page" />*/}
-      {/*</Layout>*/}
-    </Router>
+    <Layout>
+      <Router>
+        <Home path="/" />
+        <About path="/about" />
+        <Work path="/work" />
+        <Blog path="/blog" />
+        <Contact path="/contact" />
+        <TestPage path="/test" />
+        {/*<Layout>*/}
+        {/*  <Route component={Home} path="/" exact />*/}
+        {/*  <Route component={About} path="/about" />*/}
+        {/*  <Route component={Work} path="/work-page" />*/}
+        {/*  <Route component={Blog} path="/blog-page" />*/}
+        {/*  <Route component={Contact} path="/contact-page" />*/}
+        {/*</Layout>*/}
+      </Router>
+    </Layout>
   )
 }
 
