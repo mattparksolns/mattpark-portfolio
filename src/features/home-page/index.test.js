@@ -1,5 +1,6 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+// import renderer from 'react-test-renderer'
+// import { render } from '@testing-library/react'
 
 import HomePage from './index'
 
@@ -10,7 +11,7 @@ describe("HomePage", () => {
   })
 
   // it("renders correctly", () => {
-  //   const tree = renderer.create(<HomePage />).toJSON()
+  //   const tree = render(<HomePage />)
   //   expect(tree).toMatchSnapshot()
   // })
 })

@@ -36,7 +36,7 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -57,7 +57,7 @@ module.exports = {
       resolve: `gatsby-plugin-react-redux`,
       options: {
         // [required] - path to your createStore module
-        pathToCreateStoreModule: './src/state/createStore',
+        pathToCreateStoreModule: "./src/state/createStore",
         // [optional] - options passed to `serialize-javascript`
         // info: https://github.com/yahoo/serialize-javascript#options
         // will be merged with these defaults:
@@ -69,7 +69,7 @@ module.exports = {
         // [optional] - if true will clean up after itself on the client, default:
         cleanupOnClient: true,
         // [optional] - name of key on `window` where serialized state will be stored, default:
-        windowKey: '__PRELOADED_STATE__',
+        windowKey: "__PRELOADED_STATE__",
       },
     },
     {
@@ -150,7 +150,7 @@ module.exports = {
       resolve: `gatsby-plugin-catch-links`,
       options: {
         excludePattern: /(excluded-link|external)/,
-      }
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -169,8 +169,8 @@ module.exports = {
               // It's important to specify the maxWidth (in pixels) of
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
-              maxWidth: 1200
-            }
+              maxWidth: 1200,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
@@ -178,7 +178,10 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {},
+    },
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
@@ -195,6 +198,5 @@ module.exports = {
         // displayName: false
       },
     },
-
   ],
 }
