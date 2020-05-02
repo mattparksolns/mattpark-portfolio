@@ -1,5 +1,6 @@
-import { Link, graphql, useStaticQuery } from "gatsby"
-import React, { useState } from "react"
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import classNames from 'classnames'
 import {
   makeStyles,
@@ -15,9 +16,12 @@ import {
   Close,
   GitHub,
   LinkedIn,
+  ToggleOn,
+  ToggleOff,
 } from '@material-ui/icons'
 
-import AnnouncementBar from "./announcement-bar"
+import { toggleDarkMode } from '../../actions'
+import AnnouncementBar from './announcement-bar'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -121,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NavBar = ({ location }) => {
+const NavBar = ({ location, dispatch, isDarkMode }) => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
@@ -141,15 +145,21 @@ const NavBar = ({ location }) => {
 
   const isMenuOpen = Boolean(anchorEl)
 
-  const handleClick = (e) => {
-    setAnchorEl(e.currentTarget)
+  const toggleTheme = () => {
+    dispatch(toggleDarkMode(!isDarkMode))
   }
-  const handleClose = () => {
-    setAnchorEl(null)
-  }
-  const handleCloseAnnouncementBar = () => {
+
+  const closeAnnouncementBar = () => {
     console.log('handleCloseAnnouncementBar: ')
     setIsAnnouncementClosed(true)
+  }
+
+  const toggleMenu = (e) => {
+    if(isMenuOpen) {
+      setAnchorEl(null)
+    } else {
+      setAnchorEl(e.currentTarget)
+    }
   }
 
   return (
@@ -158,7 +168,7 @@ const NavBar = ({ location }) => {
         <Toolbar className={classes.toolbar}>
           { isAnnouncementClosed
             ? <div className={classes.empty} />
-            : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
+            : <AnnouncementBar className={classes.announcementBar} closeAnnouncementBar={closeAnnouncementBar} />
           }
           <div className={classes.navContainer}>
             <Typography id="my-name" className={classes.logo} variant="h1">
@@ -216,11 +226,21 @@ const NavBar = ({ location }) => {
             </a>
             <IconButton
               edge="start"
+              className={classes.icon}
+              aria-label="Theme Toggle Icon"
+              onClick={toggleTheme}
+              disableRipple
+              disableFocusRipple
+            >
+              { isDarkMode ? <ToggleOn /> : <ToggleOff />}
+            </IconButton>
+            <IconButton
+              edge="start"
               className={`${classes.icon} ${classes.menuIcon}`}
               color="inherit"
               aria-label="Menu Icon"
               aria-haspopup="true"
-              onClick={handleClick}
+              onClick={toggleMenu}
               disableRipple
               disableFocusRipple
             >
@@ -234,7 +254,7 @@ const NavBar = ({ location }) => {
               transformOrigin={{ vertical: "top", horizontal: "right" }}
               keepMounted
               open={isMenuOpen}
-              onClose={handleClose}
+              onClose={toggleMenu}
               disableScrollLock={true}
               PaperProps={{ className: classNames(classes.menu) }}
             >
@@ -258,4 +278,6 @@ const NavBar = ({ location }) => {
   )
 }
 
-export default NavBar
+export default connect(state => ({
+  isDarkMode: state.app.isDarkMode
+}), null)(NavBar)

@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const AnnouncementBar = ({ handleCloseAnnouncementBar }) => {
+const AnnouncementBar = ({ closeAnnouncementBar }) => {
   const classes = useStyles()
 
   return (
@@ -53,7 +53,7 @@ const AnnouncementBar = ({ handleCloseAnnouncementBar }) => {
           className={classes.button}
           color="inherit"
           aria-label="Close AnnouncementBar Button"
-          onClick={handleCloseAnnouncementBar}
+          onClick={closeAnnouncementBar}
           disableRipple
           disableFocusRipple
         >

@@ -1,22 +1,33 @@
 import * as Gatsby from 'gatsby'
 import React from 'react'
 import renderer from 'react-test-renderer'
+import { Provider } from 'react-redux'
+import configureStore from 'redux-mock-store'
 
 import ContactPage from './index'
 
-const createNodeMock= (element) => {
-  if (element.type === 'p') {
-    return {}
-  }
-  return null
-}
+
+const mockStore = configureStore([])
 
 describe("ContactPage", () => {
-  it("passes", () => {
-    expect(true).toBe(true)
+  let store
+  let tree
+
+  beforeEach(() => {
+    store = mockStore({
+      ipv4: '',
+      ipv6: '',
+      geoData: '',
+    })
+
+    tree = renderer.create(
+      <Provider store={store}>
+        <ContactPage />
+      </Provider>
+    ).toJSON()
   })
+
   it("renders correctly", () => {
-    const tree = renderer.create(<ContactPage />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

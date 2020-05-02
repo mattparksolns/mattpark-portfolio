@@ -2,17 +2,16 @@ import React from "react"
 import { Router } from '@reach/router'
 // import { BrowserRouter, Route } from 'react-router-dom'
 
+import Layout from "../layout"
 import Home from '../features/home-page'
 import About from './about'
 import Work from './work'
 import Blog from './blog'
 import Contact from './contact'
 import TestPage from './test-page'
-import SEO from "../layout"
-import Layout from "../layout"
 
 
-const App = () => {
+const App = ({ dispatch }) => {
   return (
     <Layout>
       <Router>
