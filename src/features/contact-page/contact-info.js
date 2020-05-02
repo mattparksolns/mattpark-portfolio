@@ -106,7 +106,7 @@ const ContactInfo = () => {
             disableFocusRipple
           >
             <PhoneInTalkOutlined className={classes.icon} />
-            <Typography className={classes.phoneLink} variant="h4">
+            <Typography className={classes.phoneLink} variant="h2">
               (201) 591 - 3323
             </Typography>
           </IconButton>
@@ -121,7 +121,7 @@ const ContactInfo = () => {
             disableFocusRipple
           >
             <MailOutline className={classes.icon} />
-            <Typography className={classes.emailLink} variant="h4">
+            <Typography className={classes.emailLink} variant="h2">
               mattparksolutions@gmail.com
             </Typography>
           </IconButton>

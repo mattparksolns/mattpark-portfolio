@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Work = () => {
+const WorkPage = () => {
   const classes = useStyles()
 
   return (
@@ -23,4 +23,4 @@ const Work = () => {
   )
 }
 
-export default Work
+export default WorkPage

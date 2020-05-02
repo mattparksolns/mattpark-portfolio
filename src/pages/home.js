@@ -1,13 +1,15 @@
 import React from 'react'
 
-import Layout from '../layout'
-import SEO from '../layout'
+import Layout from "../layout"
+import SEO from "../layout/seo"
 import HomePage from '../features/home-page'
 
 const Home = () => {
   return (
-    <HomePage>
-    </HomePage>
+    <Layout>
+      <SEO pageTitle="Home" />
+      <HomePage />
+    </Layout>
   )
 }
 

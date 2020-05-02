@@ -9,12 +9,10 @@ import Blog from './blog'
 import Contact from './contact'
 import TestPage from './test-page'
 import SEO from "../layout"
-import HomePage from "../features/home-page"
 import Layout from "../layout"
 
 
 const App = () => {
-
   return (
     <Layout>
       <Router>

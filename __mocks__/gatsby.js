@@ -23,5 +23,18 @@ module.exports = {
       })
   ),
   StaticQuery: jest.fn(),
-  useStaticQuery: jest.fn(),
+  useStaticQuery: jest.fn()
+    .mockReturnValue(
+    {
+      site: {
+        siteMetadata: {
+          title: "Matt Park - Software Engineer",
+          description: "description",
+          author: {
+            name: "Matt Park",
+          },
+        },
+      }
+    }
+  )
 }

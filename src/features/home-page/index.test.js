@@ -8,6 +8,7 @@ describe("HomePage", () => {
   it("passes", () => {
     expect(true).toBe(true)
   })
+
   // it("renders correctly", () => {
   //   const tree = renderer.create(<HomePage />).toJSON()
   //   expect(tree).toMatchSnapshot()

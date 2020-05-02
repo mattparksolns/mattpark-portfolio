@@ -17,9 +17,8 @@ const Header = () => {
   const classes = useStyles()
 
   return (
-    <header className={classes.root}>
-      <NavBar />
-    </header>
+    <NavBar>
+    </NavBar>
   )
 }
 

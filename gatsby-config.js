@@ -4,12 +4,12 @@ module.exports = {
     author: {
       name: `Matt Park`,
       username: `@mattparksolutions`,
-      summary: ``,
+      summary: `Web Tinkerer`,
     },
     description: `My name is Matt Park and I am from the greater New York area. I am a software engineer.`,
     siteUrl: `https://mattpark.now.sh/`,
     social: {
-      twitter: ``,
+      twitter: `@matttpark`,
       linkedIn: `mattparksolutions`,
       gitHub: `mattparksolutions`,
     },

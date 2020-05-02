@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: 'fixed',
     left: 0,
-    backgroundColor: 'gray',
+    backgroundColor: '#282828',
     // color: 'black',
     width: '100%',
     height: '5.5vh',
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 18,
   },
   button: {
-    color: 'black',
+    color: 'white',
     '&:hover': {
       backgroundColor: 'transparent',
     },
@@ -46,7 +46,7 @@ const AnnouncementBar = ({ handleCloseAnnouncementBar }) => {
   return (
     <div className={classes.root}>
       <div className={classes.container}>
-        <Typography className={classes.announcement} variant="h6">
+        <Typography className={classes.announcement} variant="h1">
           COVID-19 Update
         </Typography>
         <Button

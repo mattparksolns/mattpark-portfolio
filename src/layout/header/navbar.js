@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
   homeLink: {
     textDecoration: 'none',
   },
-  title: {
+  myName: {
     color: 'black',
     fontFamily: 'Montserrat',
     fontSize: 20,
@@ -162,28 +162,28 @@ const NavBar = ({ location }) => {
           }
           <div className={classes.navContainer}>
             <Link title={siteTitle} className={classes.homeLink} to="/">
-              <Typography className={classes.title} variant="h1">
+              <Typography id="my-name" className={classes.myName} variant="h1">
                 Matt Park
               </Typography>
             </Link>
             <div className={classes.links}>
               <Link className={classes.link} to="/about">
-                <Typography variant="subtitle1">
+                <Typography>
                   About
                 </Typography>
               </Link>
               <Link className={classes.link} to="/work">
-                <Typography variant="subtitle1">
+                <Typography>
                   Work
                 </Typography>
               </Link>
               <Link className={classes.link} to="/blog">
-                <Typography variant="subtitle1">
+                <Typography>
                   Blog
                 </Typography>
               </Link>
               <Link className={classes.link} to="/contact">
-                <Typography variant="subtitle1">
+                <Typography>
                   Contact
                 </Typography>
               </Link>

@@ -7,6 +7,7 @@ import {
 import "./layout.css"
 import Header from "./header"
 import Footer from './footer'
+import SEO from "./seo"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,12 +37,13 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Layout = ({ location, children }) => {
+const Layout = ({ pageTitle, location, children }) => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       <Header />
+      <SEO pageTitle={pageTitle} />
       <div className={classes.container}>
         <main className={classes.main}>{children}</main>
         <hr className={classes.footerHr} />

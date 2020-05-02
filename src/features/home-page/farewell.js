@@ -97,7 +97,7 @@ const Farewell = () => {
         <div className={classes.logoAndSignatureContainer}>
           <div className={classes.logo} />
           <div className={classes.thanksAndSignatureContainer}>
-            <Typography className={classes.thankYouMessage} variant="subtitle1" gutterBottom>
+            <Typography className={classes.thankYouMessage} variant="caption" gutterBottom>
               <i>Thank you for scrolling all this way!</i>
             </Typography>
             <SignatureImage className={classes.signature} />
