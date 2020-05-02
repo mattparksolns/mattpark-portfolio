@@ -25,7 +25,7 @@ describe("Accessibility tests", () => {
   })
 
   it("Focuses on the footer link and asserts its attributes", () => {
-    cy.get("#my-name")
+    cy.get('a').first()
       .should("have.text", "Matt Park")
       .should("not.have.css", "color", "white")
   })

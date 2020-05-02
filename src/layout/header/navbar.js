@@ -51,14 +51,14 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     width: '100%',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop: '10vh',
+    alignItems: 'flex-end',
     padding: 0,
   },
-  homeLink: {
-    textDecoration: 'none',
+  logo: {
   },
-  myName: {
+  logoLink: {
+    // border: '1px solid black',
+    textDecoration: 'none',
     color: 'black',
     fontFamily: 'Montserrat',
     fontSize: 20,
@@ -161,31 +161,23 @@ const NavBar = ({ location }) => {
             : <AnnouncementBar className={classes.announcementBar} handleCloseAnnouncementBar={handleCloseAnnouncementBar} />
           }
           <div className={classes.navContainer}>
-            <Link title={siteTitle} className={classes.homeLink} to="/">
-              <Typography id="my-name" className={classes.myName} variant="h1">
+            <Typography id="my-name" className={classes.logo} variant="h1">
+              <Link title={siteTitle} className={classes.logoLink} to="/">
                 Matt Park
-              </Typography>
-            </Link>
+              </Link>
+            </Typography>
             <div className={classes.links}>
               <Link className={classes.link} to="/about">
-                <Typography>
-                  About
-                </Typography>
+                About
               </Link>
               <Link className={classes.link} to="/work">
-                <Typography>
-                  Work
-                </Typography>
+                Work
               </Link>
               <Link className={classes.link} to="/blog">
-                <Typography>
-                  Blog
-                </Typography>
+                Blog
               </Link>
               <Link className={classes.link} to="/contact">
-                <Typography>
-                  Contact
-                </Typography>
+                Contact
               </Link>
             </div>
             <div className={classes.grow} />

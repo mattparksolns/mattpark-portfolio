@@ -16,7 +16,7 @@
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "gatsby": "^2.20.36",
-    "gatsby-cli": "^2.12.1",
+    "gatsby-cli": "^2.12.7",
     "gatsby-image": "^2.3.4",
     "gatsby-plugin-catch-links": "^2.3.0",
     "gatsby-plugin-emotion": "^4.3.0",
@@ -47,6 +47,7 @@
     "react-is": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.1",
     "react-testing-library": "^8.0.1",
     "react-typography": "^0.16.19",
     "redux": "^4.0.5",
@@ -107,12 +108,12 @@
     "test:coverage": "jest --verbose --coverage",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "set 'NODE_ENV=production' && start-storybook -p 6006",
+    "build-storybook": "set 'NODE_ENV=production' && build-storybook"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/mattparksolutions/mattpark-client"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
