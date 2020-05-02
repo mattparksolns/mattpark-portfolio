@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const ContactForm = ({ ipv4, ipv6, geoData, setIPv4 }) => {
+const ContactForm = ({ ipv4, ipv6, geoData, setIPv4, setIPv6, setGeoData }) => {
   const classes = useStyles()
 
   const [name, setName] = useState('')
@@ -70,10 +70,8 @@ const ContactForm = ({ ipv4, ipv6, geoData, setIPv4 }) => {
 
   useEffect(() => {
     axios.get('https://api.ipify.org?format=json').then((response) => {
-      console.log(`ipv4: ${ipv4}`)
-      // console.log(response)
+      console.log(response)
       setIPv4(response.data)
-      console.log(`ipv4: ${ipv4}`)
     }).catch((error) => {
       console.log(error)
     })
@@ -179,20 +177,18 @@ const ContactForm = ({ ipv4, ipv6, geoData, setIPv4 }) => {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    ipv4: state.ipv4,
-    ipv6: state.ipv6,
-    geoData: state.geoData,
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setIPv4: ip => { dispatch(setIPv4(ip)) },
-    setIPv6: ip => { dispatch(setIPv6(ip)) },
-    setGeoData: data => { dispatch(setGeoData(data)) },
-  }
-}
+const mapStateToProps = (state) => ({
+  ipv4: state.app.ipv4,
+  ipv6: state.app.ipv6,
+  geoData: state.app.geoData,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setIPv4: ip => dispatch(setIPv4(ip)),
+  setIPv6: ip => dispatch(setIPv6(ip)),
+  setGeoData: data => dispatch(setGeoData(data)),
+})
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

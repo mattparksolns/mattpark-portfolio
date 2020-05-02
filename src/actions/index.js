@@ -11,16 +11,12 @@ export const setIPv4 = (ipv4) => ({
   ipv4,
 })
 
-export const setIPv6 = (ipv6) => (dispatch) => {
-  return dispatch({
-    type: actionTypes.SET_IPV6,
-    ipv6,
-  })
-}
+export const setIPv6 = (ipv6) => ({
+  type: actionTypes.SET_IPV6,
+  ipv6,
+})
 
-export const setGeoData = (geoData) => (dispatch) => {
-  return dispatch({
-    type: actionTypes.SET_GEODATA,
-    geoData,
-  })
-}
+export const setGeoData = (geoData) => ({
+  type: actionTypes.SET_GEODATA,
+  geoData,
+})

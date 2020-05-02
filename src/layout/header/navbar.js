@@ -146,6 +146,7 @@ const NavBar = ({ location, dispatch, isDarkMode }) => {
   const isMenuOpen = Boolean(anchorEl)
 
   const toggleTheme = () => {
+    console.log(`isDarkMode: ${isDarkMode}`)
     dispatch(toggleDarkMode(!isDarkMode))
   }
 
