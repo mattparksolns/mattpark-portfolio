@@ -12,7 +12,7 @@ export default ({ element }) => {
   const store = createStore()
   return (
     <Provider store={store}>
-      <MuiThemeProvider theme={getTheme('lightTheme')}>
+      <MuiThemeProvider theme={getTheme('darkTheme')}>
         {element}
       </MuiThemeProvider>
     </Provider>

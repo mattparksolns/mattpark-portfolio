@@ -15,9 +15,11 @@ describe("ContactPage", () => {
 
   beforeEach(() => {
     store = mockStore({
-      ipv4: '',
-      ipv6: '',
-      geoData: '',
+      app: {
+        ipv4: '',
+        ipv6: '',
+        geoData: '',
+      }
     })
 
     tree = renderer.create(

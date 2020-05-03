@@ -20,7 +20,7 @@ import {
   ToggleOff,
 } from '@material-ui/icons'
 
-import { toggleDarkMode } from '../../actions'
+import { toggleDarkMode } from "../../actions";
 import AnnouncementBar from './announcement-bar'
 
 
@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NavBar = ({ location, dispatch, isDarkMode }) => {
+const NavBar = ({ location, dispatch, isDarkMode, toggleDarkMode }) => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
@@ -146,8 +146,7 @@ const NavBar = ({ location, dispatch, isDarkMode }) => {
   const isMenuOpen = Boolean(anchorEl)
 
   const toggleTheme = () => {
-    console.log(`isDarkMode: ${isDarkMode}`)
-    dispatch(toggleDarkMode(!isDarkMode))
+    toggleDarkMode(!isDarkMode)
   }
 
   const closeAnnouncementBar = () => {
@@ -279,6 +278,15 @@ const NavBar = ({ location, dispatch, isDarkMode }) => {
   )
 }
 
-export default connect(state => ({
-  isDarkMode: state.app.isDarkMode
-}), null)(NavBar)
+const mapStateToProps = (state) => ({
+  isDarkMode: state.app.isDarkMode,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  toggleDarkMode: isDarkMode => dispatch(toggleDarkMode(isDarkMode)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavBar)

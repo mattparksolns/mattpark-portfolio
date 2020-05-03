@@ -8,7 +8,3 @@
 import wrapWithProvider from "./wrap-with-provider"
 export const wrapRootElement = wrapWithProvider
 
-
-// exports.onClientEntry = () => {
-//   LogRocket.init('rwnma2/mattpark')
-// }
