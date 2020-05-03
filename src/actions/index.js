@@ -1,20 +1,22 @@
 import * as actionTypes from './actionTypes'
-import axios from 'axios'
 
 
-const receiveIPv4 = (ipv4) => ({
-  type: actionTypes.GET_IPV4,
+export const toggleDarkMode = (isDarkMode) => ({
+  type: actionTypes.TOGGLE_DARKMODE,
+  isDarkMode,
+})
+
+export const setIPv4 = (ipv4) => ({
+  type: actionTypes.SET_IPV4,
   ipv4,
 })
 
-const getIPv4 = (url, props) => {
-  return (dispatch) => {
-    axios.get(url)
-    .then((response) => {
-      dispatch(receiveIPv4(response.data))
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-  }
-}
+export const setIPv6 = (ipv6) => ({
+  type: actionTypes.SET_IPV6,
+  ipv6,
+})
+
+export const setGeoData = (geoData) => ({
+  type: actionTypes.SET_GEODATA,
+  geoData,
+})

@@ -1,22 +1,31 @@
-import { createStore as reduxCreateStore, applyMiddleware, } from 'redux'
-import * as actionTypes from '../actions/actionTypes'
-import LogRocket from 'logrocket'
-import { init } from "../../.cache/navigation"
+import { createStore as reduxCreateStore, applyMiddleware, compose } from 'redux'
+import rootReducer from '.'
 
-const initialState = {
-  ipv4: '',
-  ipv6: '',
-  geodata: {},
+import thunk from 'redux-thunk'
+import promise from 'redux-promise'
+import { createLogger } from 'redux-logger'
+import LogRocket from 'logrocket'
+
+LogRocket.init('rwnma2/mattpark')
+
+const middlewares = [ thunk, promise ]
+if (process.env.NODE_ENV !== 'production') {
+  middlewares.push(createLogger())
 }
-const reducer = (state=initialState, action) => {
-  switch (action.type) {
-    case actionTypes.GET_IPV4:
-      return [...state, ...action.ipv4]
-    default:
-      return state
-  }
-}
+const middlewareEnhancer = applyMiddleware(...middlewares, LogRocket.reduxMiddleware())
+const composedEnhancers = compose(middlewareEnhancer)
 
 // preloadedState will be passed in by the plugin
-const createStore = () => reduxCreateStore(reducer, initialState)
+const createStore = (state={}) => {
+  const store = reduxCreateStore(
+    rootReducer,
+    state,
+    composedEnhancers
+  )
+  if (process.env.NODE_ENV !== 'production' && module.hot) {
+    module.hot.accept('reducers', () => store.replaceReducer(rootReducer))
+  }
+  return store
+}
+
 export default createStore

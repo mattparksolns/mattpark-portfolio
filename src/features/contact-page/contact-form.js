@@ -2,6 +2,7 @@ import React, {
   useState,
   useEffect,
 } from 'react'
+import { connect } from 'react-redux'
 import validator from 'validator'
 import axios from 'axios'
 import {
@@ -15,6 +16,14 @@ import {
 import {
   Send,
 } from '@material-ui/icons'
+
+import reducer from '../../state/app'
+import {
+  setIPv4,
+  setIPv6,
+  setGeoData,
+} from '../../actions'
+import { GET_IPV4, GET_IPV6, GET_GEODATA } from "../../actions/actionTypes";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,12 +57,9 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const ContactForm = () => {
+const ContactForm = ({ ipv4, ipv6, geoData, setIPv4, setIPv6, setGeoData }) => {
   const classes = useStyles()
 
-  const [ipv4, setIpv4] = useState('')
-  const [ipv6, setIpv6] = useState('')
-  const [geodata, setGeodata] = useState({})
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -65,19 +71,19 @@ const ContactForm = () => {
   useEffect(() => {
     axios.get('https://api.ipify.org?format=json').then((response) => {
       console.log(response)
-      setIpv4(response.data)
+      setIPv4(response.data)
     }).catch((error) => {
       console.log(error)
     })
     axios.get('https://api6.ipify.org?format=json').then((response) => {
       console.log(response)
-      setIpv6(response.data)
+      setIPv6(response.data)
     }).catch((error) => {
       console.log(error)
     })
     axios.get('https://geolocation-db.com/json/6db070f0-7c27-11ea-8264-e974339fc182').then((response) => {
       console.log(response)
-      setGeodata(response.data)
+      setGeoData(response.data)
     }).catch((error) => {
       console.log(error)
     })
@@ -86,13 +92,14 @@ const ContactForm = () => {
   const handleSubmit = () => {
     if(!validator.isEmpty(name) && validator.isEmail(email) && !validator.isEmpty(message) && privacyPolicyChecked) {
       axios.post("https://formspree.io/xnqbeekg", {
+      // axios.post("https://getform.io/f/1e500d01-7ba1-43ee-9a70-b37c95dde299", {
         name,
         email,
         message,
         privacyPolicyChecked,
         ipv4,
         ipv6,
-        geodata,
+        geoData,
       }).then((response) => {
           console.log(response)
       }).catch((error) => {
@@ -169,4 +176,20 @@ const ContactForm = () => {
     </div>
   )
 }
-export default ContactForm
+
+const mapStateToProps = (state) => ({
+  ipv4: state.app.ipv4,
+  ipv6: state.app.ipv6,
+  geoData: state.app.geoData,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setIPv4: ip => dispatch(setIPv4(ip)),
+  setIPv6: ip => dispatch(setIPv6(ip)),
+  setGeoData: data => dispatch(setGeoData(data)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContactForm)

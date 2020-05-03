@@ -6,12 +6,13 @@ import AboutPage from './index'
 
 
 describe("AboutPage", () => {
-  // beforeEach(() => {
-  //   jest.mock('./index', () => 'AboutPage')
-  // })
+  let tree
+
+  beforeEach(() => {
+    tree = renderer.create(<AboutPage />).toJSON()
+  })
 
   it("renders correctly", () => {
-    const tree = renderer.create(<AboutPage />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

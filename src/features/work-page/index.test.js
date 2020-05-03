@@ -6,12 +6,14 @@ import WorkPage from './index'
 
 
 describe("WorkPage", () => {
-  it("passes", () => {
-    expect(true).toBe(true)
+  let tree
+
+  beforeEach(() => {
+    tree = renderer.create(<WorkPage />).toJSON()
   })
 
+
   it("renders correctly", () => {
-    const tree = renderer.create(<WorkPage />).toJSON()
     expect(tree).toMatchSnapshot()
   })
 })

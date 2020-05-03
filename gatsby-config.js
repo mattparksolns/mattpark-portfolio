@@ -21,7 +21,7 @@ module.exports = {
         name: `Matt Park Portfolio`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#303030`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.

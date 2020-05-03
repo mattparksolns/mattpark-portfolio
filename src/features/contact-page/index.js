@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const Contact = () => {
+const ContactPage = () => {
   const classes = useStyles()
 
   return (
@@ -29,4 +29,4 @@ const Contact = () => {
     </div>
   )
 }
-export default Contact
+export default ContactPage
