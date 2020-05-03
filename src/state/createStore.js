@@ -23,7 +23,7 @@ const createStore = (state={}) => {
     composedEnhancers
   )
   if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('reducers', () => store.replaceReducer(rootReducer))
+    module.hot.accept('.', () => store.replaceReducer(rootReducer))
   }
   return store
 }
