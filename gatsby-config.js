@@ -21,7 +21,7 @@ module.exports = {
         name: `Matt Park Portfolio`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#303030`,
+        background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
@@ -141,12 +141,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-catch-links`,
       options: {
         excludePattern: /(excluded-link|external)/,
@@ -181,6 +175,22 @@ module.exports = {
     {
       resolve: `gatsby-plugin-emotion`,
       options: {},
+    },
+    `gatsby-plugin-dark-mode`,
+    {
+      resolve: 'gatsby-plugin-use-dark-mode',
+      options: {
+        classNameDark: 'dark-mode',
+        classNameLight: 'light-mode',
+        storageKey: 'darkMode',
+        minify: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
     },
     {
       resolve: `gatsby-plugin-material-ui`,

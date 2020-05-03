@@ -7,3 +7,25 @@
 // You can delete this file if you're not using it
 import wrapWithProvider from "./wrap-with-provider"
 export const wrapRootElement = wrapWithProvider
+import { createElement } from 'react'
+
+
+const applyDarkModeClass = `
+(() => {    
+  try {
+    var mode = localStorage.getItem('theme')
+    if (mode === 'dark') {
+      document.body.classList.add('dark')
+    }
+  } catch (e) {}
+})()
+`
+
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  const script = createElement('script', {
+    dangerouslySetInnerHTML: {
+      __html: applyDarkModeClass,
+    },
+  });
+  setPreBodyComponents([script]);
+};

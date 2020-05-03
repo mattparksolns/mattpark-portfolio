@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     position: 'fixed',
     left: 0,
-    backgroundColor: '#282828',
+    backgroundColor: '#131217',
     // color: 'black',
     width: '100%',
     height: '5.5vh',
@@ -35,8 +35,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'transparent',
     },
     padding: 0,
-  },
-  empty: {
   },
 }))
 

@@ -1,18 +1,14 @@
 import React from 'react'
-
 import {
   makeStyles,
-  Paper,
   Typography,
 } from '@material-ui/core'
+
 import BackgroundImage from "./background-image"
 
 
 const useStyles = makeStyles((theme) => ({
   root: {
-  },
-  paper: {
-    background: 'None',
     position: 'relative',
   },
   backgroundImage: {
@@ -35,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Montserrat',
   },
   name: {
-    color: 'darkslategray',
+    color: 'gainsboro',
     textDecoration: 'none',
   },
   description: {
@@ -58,21 +54,19 @@ const Greeting = () => {
 
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <BackgroundImage className={classes.backgroundImage} />
-        <Typography className={classes.greeting} variant="h1" gutterBottom>
-          My name is
-          <a title="LinkedIn" className={classes.name} href="https://linkedin.com/in/mattparksolutions"><b> Matt Park. </b></a>
-          I am from the greater New York area.
-        </Typography>
-        <Typography className={classes.description} variant="h2" gutterBottom>
-          Forward Thinker,
-          <br />
-          Problem Solver,
-          <br />
-          and Web Tinkerer.
-        </Typography>
-      </Paper>
+      <BackgroundImage className={classes.backgroundImage} />
+      <Typography className={classes.greeting} variant="h1" gutterBottom>
+        My name is
+        <a title="LinkedIn" className={classes.name} href="https://linkedin.com/in/mattparksolutions"><b> Matt Park. </b></a>
+        I am from the greater New York area.
+      </Typography>
+      <Typography className={classes.description} variant="h2" gutterBottom>
+        Forward Thinker,
+        <br />
+        Problem Solver,
+        <br />
+        and Web Tinkerer.
+      </Typography>
     </div>
   )
 }

@@ -1,10 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import {
   makeStyles,
+  Button,
 } from '@material-ui/core'
 
 import "./layout.css"
+// import ThemeContext from '../themes/ThemeContext'
+// import { BACKGROUND_TRANSITION_TIME, EASE_IN_OUT_TRANSITION, getTheme } from '../utils/theme'
 import Header from "./header"
 import Footer from './footer'
 import SEO from "./seo"
@@ -38,6 +41,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Layout = ({ pageTitle, location, children }) => {
+  // const rootPath = `${__PATH_PREFIX__}/`
+  // const { theme, toggleTheme } = useContext(ThemeContext)
+  // const { color, background, secondary } = getTheme(theme)
+  // const darkTheme = getTheme('dark')
+
   const classes = useStyles()
 
   return (
@@ -45,6 +53,7 @@ const Layout = ({ pageTitle, location, children }) => {
       <Header />
       <SEO pageTitle={pageTitle} />
       <div className={classes.container}>
+        <Button>button</Button>
         <main className={classes.main}>{children}</main>
         <hr className={classes.footerHr} />
         <Footer />

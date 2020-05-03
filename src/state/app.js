@@ -1,7 +1,7 @@
 import * as actionTypes from '../actions/actionTypes'
 
 const initialState = {
-  isDarkMode: false,
+  themeType: 'light',
   ipv4: '',
   ipv6: '',
   geoData: {},
@@ -15,7 +15,7 @@ export const getIpv4 = ipv4 => ({
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.TOGGLE_DARKMODE:
-      return { ...state, isDarkMode: action.isDarkMode }
+      return { ...state, themeType: action.themeType }
     case actionTypes.GET_IPV4:
       return state.ipv4
     case actionTypes.SET_IPV4:

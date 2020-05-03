@@ -17,13 +17,11 @@ import {
   Send,
 } from '@material-ui/icons'
 
-import reducer from '../../state/app'
 import {
   setIPv4,
   setIPv6,
   setGeoData,
 } from '../../actions'
-import { GET_IPV4, GET_IPV6, GET_GEODATA } from "../../actions/actionTypes";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,11 +46,11 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: '2vh',
     borderRadius: 0,
-    color: 'white',
-    backgroundColor: 'black',
-    '&:hover': {
-      backgroundColor: '#383838',
-    },
+    // color: 'white',
+    // backgroundColor: 'black',
+    // '&:hover': {
+    //   backgroundColor: '#383838',
+    // },
   },
 }))
 

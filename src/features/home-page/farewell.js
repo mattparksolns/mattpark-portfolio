@@ -10,9 +10,6 @@ import SignatureImage from './signature-image'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-  },
-  paper: {
-    background: 'none',
     display: 'flex',
     flexDirection: 'column',
     margin: '0 5vw',
@@ -42,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contactLink: {
     textDecoration: 'none',
-    color: 'darkslategray',
+    color: 'gainsboro',
   },
   logoAndSignatureContainer: {
     display: 'flex',
@@ -90,20 +87,18 @@ const Farewell = () => {
 
   return (
     <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <Typography className={classes.message} variant="h2" gutterBottom>
-          <a className={classes.contactLink} href="/contact"><i>Drop me a line,</i></a> I'd like to hear from you!
-        </Typography>
-        <div className={classes.logoAndSignatureContainer}>
-          <div className={classes.logo} />
-          <div className={classes.thanksAndSignatureContainer}>
-            <Typography className={classes.thankYouMessage} variant="caption" gutterBottom>
-              <i>Thank you for scrolling all this way!</i>
-            </Typography>
-            <SignatureImage className={classes.signature} />
-          </div>
+      <Typography className={classes.message} variant="h2" gutterBottom>
+        <a className={classes.contactLink} href="/contact"><i>Drop me a line,</i></a> I'd like to hear from you!
+      </Typography>
+      <div className={classes.logoAndSignatureContainer}>
+        <div className={classes.logo} />
+        <div className={classes.thanksAndSignatureContainer}>
+          <Typography className={classes.thankYouMessage} variant="caption" gutterBottom>
+            <i>Thank you for scrolling all this way!</i>
+          </Typography>
+          <SignatureImage className={classes.signature} />
         </div>
-      </Paper>
+      </div>
     </div>
   )
 }

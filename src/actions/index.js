@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes'
 
 
-export const toggleDarkMode = (isDarkMode) => ({
+export const toggleDarkMode = (themeType) => ({
   type: actionTypes.TOGGLE_DARKMODE,
-  isDarkMode,
+  themeType,
 })
 
 export const setIPv4 = (ipv4) => ({

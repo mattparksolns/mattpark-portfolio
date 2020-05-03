@@ -1,7 +1,8 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { useState } from 'react'
+import React, { useContext, useState, useEffect } from "react";
 import { connect } from 'react-redux'
 import classNames from 'classnames'
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import {
   makeStyles,
   AppBar,
@@ -20,7 +21,9 @@ import {
   ToggleOff,
 } from '@material-ui/icons'
 
-import { toggleDarkMode } from "../../actions";
+import { BACKGROUND_TRANSITION_TIME, EASE_IN_OUT_TRANSITION, getTheme } from '../../utils/theme'
+import ThemeContext from '../../themes/ThemeContext'
+import { toggleDarkMode } from "../../actions"
 import AnnouncementBar from './announcement-bar'
 
 
@@ -29,10 +32,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
   },
-  empty: {
-  },
   appBar: {
-    background: 'transparent',
+    background: 'none',
     paddingLeft: '8.4vw',
     paddingRight: '7.3vw',
     [theme.breakpoints.down('sm')]: {
@@ -47,8 +48,6 @@ const useStyles = makeStyles((theme) => ({
   toolbar: {
     display: 'flex',
     flexDirection: 'column',
-  },
-  announcementBar: {
   },
   navContainer: {
     display: 'flex',
@@ -125,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const NavBar = ({ location, dispatch, isDarkMode, toggleDarkMode }) => {
+const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
@@ -140,14 +139,38 @@ const NavBar = ({ location, dispatch, isDarkMode, toggleDarkMode }) => {
 
   const siteTitle = data.site.siteMetadata.title
 
+  let websiteTheme
+  if (typeof window !== `undefined`) {
+    websiteTheme = window.__theme
+  }
+
+  const [theme, toggleTheme] = useContext(ThemeContext)
+  const { color, background, secondary } = getTheme(theme)
+  const darkTheme = getTheme('dark')
+
+  // useEffect(() => {
+  //   setTheme(window.__theme)
+  //   window.__onThemeChange = () => {
+  //     setTheme(window.__theme)
+  //   }
+  // }, [])
+
+  // const toggleTheme = () => {
+  //   window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark')
+  // }
+  // const toggleTheme = () => {
+  //   if (themeType === 'dark') {
+  //     toggleDarkMode('light')
+  //   } else {
+  //     toggleDarkMode('dark')
+  //   }
+  // }
+
+
   const [anchorEl, setAnchorEl] = useState(null)
   const [isAnnouncementClosed, setIsAnnouncementClosed] = useState(false)
 
   const isMenuOpen = Boolean(anchorEl)
-
-  const toggleTheme = () => {
-    toggleDarkMode(!isDarkMode)
-  }
 
   const closeAnnouncementBar = () => {
     console.log('handleCloseAnnouncementBar: ')
@@ -167,8 +190,8 @@ const NavBar = ({ location, dispatch, isDarkMode, toggleDarkMode }) => {
       <AppBar className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           { isAnnouncementClosed
-            ? <div className={classes.empty} />
-            : <AnnouncementBar className={classes.announcementBar} closeAnnouncementBar={closeAnnouncementBar} />
+            ? <div />
+            : <AnnouncementBar closeAnnouncementBar={closeAnnouncementBar} />
           }
           <div className={classes.navContainer}>
             <Typography id="my-name" className={classes.logo} variant="h1">
@@ -232,7 +255,7 @@ const NavBar = ({ location, dispatch, isDarkMode, toggleDarkMode }) => {
               disableRipple
               disableFocusRipple
             >
-              { isDarkMode ? <ToggleOn /> : <ToggleOff />}
+              { themeType === 'light' ? <ToggleOff /> : <ToggleOn />}
             </IconButton>
             <IconButton
               edge="start"
@@ -279,11 +302,11 @@ const NavBar = ({ location, dispatch, isDarkMode, toggleDarkMode }) => {
 }
 
 const mapStateToProps = (state) => ({
-  isDarkMode: state.app.isDarkMode,
+  themeType: state.app.themeType,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleDarkMode: isDarkMode => dispatch(toggleDarkMode(isDarkMode)),
+  toggleDarkMode: themeType => dispatch(toggleDarkMode(themeType)),
 })
 
 export default connect(

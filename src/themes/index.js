@@ -5,8 +5,8 @@ import { darkTheme } from './dark'
 
 
 const themes = {
-  lightTheme,
-  darkTheme,
+  light: lightTheme,
+  dark: darkTheme,
 }
 
 const getTheme = (theme) => (
