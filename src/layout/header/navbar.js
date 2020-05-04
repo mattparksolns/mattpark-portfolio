@@ -159,6 +159,11 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
   //   window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark')
   // }
   const toggleTheme = () => {
+    // if (window.theme === 'light') {
+    //   window.theme = 'dark'
+    // } else {
+    //   window.theme = 'light'
+    // }
     if (themeType === 'dark') {
       toggleDarkMode('light')
     } else {

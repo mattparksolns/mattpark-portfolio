@@ -14,10 +14,14 @@ import { createElement } from 'react'
 // (function(){
 //   try {
 //     var mode = localStorage.getItem('theme')
-//     if (mode === 'dark') {
+//     if (mode === undefined) {
+//       localStorage.setItem('theme', 'light')
+//     } else if (mode === 'dark') {
 //       document.body.classList.add('dark')
 //     }
-//   } catch (e) {}
+//   } catch (e) {
+//     console.log('error: ' + e)
+//   }
 // })()
 // `
 //
@@ -26,6 +30,6 @@ import { createElement } from 'react'
 //     dangerouslySetInnerHTML: {
 //       __html: applyDarkModeClass,
 //     },
-//   });
-//   setPreBodyComponents([script]);
-// };
+//   })
+//   setPreBodyComponents([script])
+// }
