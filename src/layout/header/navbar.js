@@ -144,9 +144,9 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
     websiteTheme = window.__theme
   }
 
-  const [theme, toggleTheme] = useContext(ThemeContext)
-  const { color, background, secondary } = getTheme(theme)
-  const darkTheme = getTheme('dark')
+  // const [theme, toggleTheme] = useContext(ThemeContext)
+  // const { color, background, secondary } = getTheme(theme)
+  // const darkTheme = getTheme('dark')
 
   // useEffect(() => {
   //   setTheme(window.__theme)
@@ -158,13 +158,13 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
   // const toggleTheme = () => {
   //   window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark')
   // }
-  // const toggleTheme = () => {
-  //   if (themeType === 'dark') {
-  //     toggleDarkMode('light')
-  //   } else {
-  //     toggleDarkMode('dark')
-  //   }
-  // }
+  const toggleTheme = () => {
+    if (themeType === 'dark') {
+      toggleDarkMode('light')
+    } else {
+      toggleDarkMode('dark')
+    }
+  }
 
 
   const [anchorEl, setAnchorEl] = useState(null)
@@ -255,7 +255,7 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
               disableRipple
               disableFocusRipple
             >
-              { themeType === 'light' ? <ToggleOff /> : <ToggleOn />}
+              { themeType === 'light' ? <ToggleOff /> : <ToggleOn /> }
             </IconButton>
             <IconButton
               edge="start"
