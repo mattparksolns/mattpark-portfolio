@@ -1,10 +1,10 @@
 import React from "react"
 import { Router } from '@reach/router'
 // import { BrowserRouter, Route } from 'react-router-dom'
-import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
+import { ThemeProvider, CssBaseline } from '@material-ui/core'
 
 import getTheme from '../themes'
-import ThemeProvider from '../themes/ThemeProvider'
+// import ThemeProvider from '../themes/ThemeProvider'
 import Layout from "../layout"
 import Home from '../features/home-page'
 import About from './about'
@@ -18,7 +18,7 @@ import { connect } from "react-redux";
 const App = ({ dispatch, themeType }) => {
 
   return (
-    <MuiThemeProvider theme={getTheme(themeType)}>
+    <ThemeProvider theme={getTheme(themeType)}>
       <CssBaseline />
       <Layout>
         <Router>
@@ -37,7 +37,7 @@ const App = ({ dispatch, themeType }) => {
           {/*</Layout>*/}
         </Router>
       </Layout>
-    </MuiThemeProvider>
+    </ThemeProvider>
   )
 }
 
