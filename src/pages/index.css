@@ -1,9 +1,4 @@
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../../content/assets/fonts/Montserrat/montserrat-medium-webfont.woff')
-}
 html {
-    font-family: Montserrat, serif, sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
 }

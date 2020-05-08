@@ -1,9 +1,31 @@
 import { createMuiTheme } from '@material-ui/core'
 
+import baseTheme from './base'
 
-export const lightTheme = createMuiTheme({
+const lightTheme = createMuiTheme({
+  ...baseTheme,
+  overrides: {
+    MuiButton: {
+      text: {
+        color: '#000000',
+      },
+    },
+  },
+  colors: {
+    myName: '#000000',
+    link: '#000000',
+    text: '#000000',
+    footerHr: '#000000',
+  },
+  text: {
+    primary: '#000000',
+  },
   palette: {
     type: 'light',
+    background: {
+      paper: 'ghostwhite',
+      default: '#ffffff',
+    },
     primary: {
       main: '#1565c0',
     },
@@ -32,3 +54,5 @@ export const lightTheme = createMuiTheme({
   },
 
 })
+
+export default lightTheme

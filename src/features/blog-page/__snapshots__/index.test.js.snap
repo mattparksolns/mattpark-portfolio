@@ -1,18 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Blog renders correctly 1`] = `
-<div
-  className="makeStyles-root-1"
->
+Array [
   <h1
     className="MuiTypography-root MuiTypography-h1"
   >
     My Blog
-  </h1>
-  <h4
-    className="MuiTypography-root MuiTypography-h4"
+  </h1>,
+  <h2
+    className="MuiTypography-root MuiTypography-h2"
   >
     Under construction..
-  </h4>
-</div>
+  </h2>,
+]
 `;

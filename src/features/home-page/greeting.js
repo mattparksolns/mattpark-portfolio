@@ -5,8 +5,6 @@ import {
 } from '@material-ui/core'
 
 import BackgroundImage from "./background-image"
-import { toggleDarkMode } from "../../actions";
-import { connect } from "react-redux";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -17,12 +15,13 @@ const useStyles = makeStyles((theme) => ({
     // position: 'absolute',
     height: '60vh',
   },
-  text: {
+  greeting: {
+    color: theme.colors.text,
     position: 'absolute',
     top: 0,
     left: 0,
     width: '70%',
-    fontSize: '5.5vw',
+    fontSize: '5vw',
     [theme.breakpoints.down('sm')]: {
       width: '80%',
       fontSize: '7.5vw',
@@ -33,15 +32,11 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Montserrat',
   },
   name: {
-    color: 'darkgray',
-    textDecoration: 'none',
-  },
-  nameDark:{
-    color: 'white',
+    color: theme.colors.myName,
     textDecoration: 'none',
   },
   description: {
-    // color: 'ghostwhite',
+    color: theme.colors.text,
     fontFamily: 'Montserrat',
     textAlign: 'right',
     fontSize: '3vw',
@@ -55,15 +50,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-const Greeting = ({ themeType }) => {
+const Greeting = () => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
       <BackgroundImage className={classes.backgroundImage} />
-      <Typography className={classes.text} variant="h1" gutterBottom>
+      <Typography className={classes.greeting} variant="h1" gutterBottom>
         My name is
-        <a title="LinkedIn" className={themeType === 'light' ? classes.name : classes.nameDark} href="https://linkedin.com/in/mattparksolutions"><b> Matt Park. </b></a>
+        <b>
+          <a className={classes.name} title="LinkedIn"
+            href="https://linkedin.com/in/mattparksolutions"> Matt Park. </a>
+        </b>
         I am from the greater New York area.
       </Typography>
       <Typography className={classes.description} variant="h2" gutterBottom>
@@ -77,17 +75,4 @@ const Greeting = ({ themeType }) => {
   )
 }
 
-// export default Greeting
-
-const mapStateToProps = (state) => ({
-  themeType: state.app.themeType,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  // toggleDarkMode: themeType => dispatch(toggleDarkMode(themeType)),
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Greeting)
+export default Greeting

@@ -1,6 +1,5 @@
-import { Theme } from '@material-ui/core'
-import { lightTheme } from './light'
-import { darkTheme } from './dark'
+import lightTheme from './light'
+import darkTheme from './dark'
 
 
 
@@ -9,7 +8,35 @@ const themes = {
   dark: darkTheme,
 }
 
-const getTheme = (theme) => (
+export const getTheme = (theme) => (
   themes[theme]
 )
-export default getTheme
+
+import React from "react"
+import { connect } from "react-redux"
+import { CssBaseline, ThemeProvider } from "@material-ui/core";
+
+const MyThemeProvider = ({ children, themeType }) => {
+  console.log(themeType)
+  return (
+    <ThemeProvider theme={getTheme(themeType)}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  )
+}
+// export default ThemeProvider
+
+
+const mapStateToProps = (state) => ({
+  themeType: state.app.themeType,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  // getTheme: themeType => dispatch(getTheme(themeType)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyThemeProvider)

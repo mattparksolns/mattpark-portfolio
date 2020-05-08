@@ -1,10 +1,11 @@
 import React from "react"
-import {
-  makeStyles,
-} from '@material-ui/core'
+import { makeStyles, ThemeProvider } from '@material-ui/core'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 import Greeting from './greeting'
 import Farewell from './farewell'
+import SEO from '../../components/seo'
+import { getTheme } from '../../themes'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -88,9 +89,10 @@ const useStyles = makeStyles((theme) => ({
 
 const Home = () => {
   const classes = useStyles()
-
   return (
-    <div className={classes.root}>
+    <>
+    <ThemeProvider theme={getTheme(window.__theme)}>
+      <CssBaseline />
       <div className={classes.miniStripe} />
       <div className={classes.stripe} />
       <div className={classes.letter}>
@@ -104,7 +106,8 @@ const Home = () => {
       </div>
       <Greeting />
       <Farewell />
-    </div>
+    </ThemeProvider>
+    </>
 )}
 
 export default Home

@@ -1,19 +1,34 @@
 import { createMuiTheme } from '@material-ui/core'
 
-export const darkTheme = createMuiTheme({
+import baseTheme from './base'
+
+const darkTheme = createMuiTheme({
+  ...baseTheme,
+  overrides: {
+    MuiButton: {
+      text: {
+        color: '#ffffff',
+      }
+    },
+  },
+  colors: {
+    myName: '#ffffff',
+    link: 'ghostwhite',
+    text: '#ffffff',
+    footerHr: '#ffffff'
+  },
+  text: {
+    primary: '#ffffff',
+    secondary: '#ffffff',
+  },
   palette: {
     type: 'dark',
     background: {
-      paper: '#131217',
+      paper: '#1a191f',
       default: '#131217',
-    },
-    text: {
-      primary: '#ffffff',
-      secondary: 'gray',
     },
     primary: {
       main: '#131217',
-      contrastText: '#ffffff',
     },
     secondary: {
       main: '#131217'
@@ -23,3 +38,5 @@ export const darkTheme = createMuiTheme({
     },
   },
 })
+
+export default darkTheme

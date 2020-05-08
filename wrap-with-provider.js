@@ -1,9 +1,9 @@
 import React from "react"
-import { Provider } from "react-redux"
-import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core'
-import { MuiThemeProvider } from '@material-ui/core'
+import { Provider } from "react-redux";
+import { CssBaseline, MuiThemeProvider } from "@material-ui/core";
 
-import getTheme from './src/themes'
+import { getTheme } from './src/themes'
+import Layout from './src/layout'
 import createStore from "./src/state/createStore"
 
 const wrapWithProvider = ({ element }) => {
@@ -11,9 +11,15 @@ const wrapWithProvider = ({ element }) => {
   //  - there is fresh store for each SSR page
   //  - it will be called only once in browser, when React mounts
   const store = createStore()
+
   return (
     <Provider store={store}>
-      {element}
+      <MuiThemeProvider theme={getTheme(window.__theme)}>
+        <CssBaseline />
+        <Layout>
+          {element}
+        </Layout>
+      </MuiThemeProvider>
     </Provider>
   )
 }

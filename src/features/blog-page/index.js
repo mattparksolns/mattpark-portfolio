@@ -1,24 +1,18 @@
 import React from 'react'
-import {
-  makeStyles,
-  Typography,
-} from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-  },
-}))
+import SEO from '../../components/seo'
 
 const BlogPage = ({ data, location }) => {
-  const classes = useStyles()
+  // const classes = useStyles()
   return (
-    <div className={classes.root}>
+    <>
+      <SEO pageTitle="Blog" />
       <Typography variant="h1">My Blog</Typography>
-      <Typography variant="h4">
+      <Typography variant="h2">
         Under construction..
       </Typography>
-    </div>
+    </>
   )
 }
 

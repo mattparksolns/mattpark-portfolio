@@ -1,13 +1,11 @@
-import React from "react"
+import React from 'react'
+import HomePage from '../features/home-page'
+import SEO from '../components/seo'
 
-import './index.css'
-import App from './app'
-
-const IndexPage = () => {
-  return (
-    <App>
-    </App>
-  )
-}
-
-export default IndexPage
+const Home = () => (
+  <>
+    <SEO />
+    <HomePage />
+  </>
+)
+export default Home

@@ -30,8 +30,6 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
   }
 }
 
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)

@@ -4,14 +4,8 @@ import {
   Typography,
 } from '@material-ui/core'
 
-import Layout from '../layout'
-import SEO from "../layout/seo"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-  },
-}))
 
 
 const TestPage = ({ data }) => {
@@ -21,15 +15,13 @@ const TestPage = ({ data }) => {
   // const { frontmatter, html } = post
 
   return (
-    <Layout>
+    <>
       <SEO pageTitle="TestPage" />
-      <div className={classes.root}>
-        <Typography variant="h1">TestPage</Typography>
-        <Typography variant="h4">
-          testing shit..
-        </Typography>
-      </div>
-    </Layout>
+      <Typography variant="h1">Test Page</Typography>
+      <Typography variant="h2">
+        testing shit..
+      </Typography>
+    </>
   )
 }
 

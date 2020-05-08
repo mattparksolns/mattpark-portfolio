@@ -3,6 +3,7 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
+import SEO from '../../components/seo'
 import ContactInfo from './contact-info'
 import ContactForm from './contact-form'
 
@@ -17,13 +18,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
 }))
-
-
 const ContactPage = () => {
   const classes = useStyles()
 
   return (
     <div className={classes.root}>
+      <SEO pageTitle="Contact" />
       <ContactInfo />
       <ContactForm />
     </div>

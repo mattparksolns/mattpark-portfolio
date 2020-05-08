@@ -52,8 +52,6 @@ const AnnouncementBar = ({ closeAnnouncementBar }) => {
           color="inherit"
           aria-label="Close AnnouncementBar Button"
           onClick={closeAnnouncementBar}
-          disableRipple
-          disableFocusRipple
         >
           <Close />
         </Button>

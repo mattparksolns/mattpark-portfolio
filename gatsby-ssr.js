@@ -1,35 +1,80 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React, { createElement } from 'react'
 
-// You can delete this file if you're not using it
 import wrapWithProvider from "./wrap-with-provider"
 export const wrapRootElement = wrapWithProvider
-import { createElement } from 'react'
 
 
-// const applyDarkModeClass = `
-// (function(){
-//   try {
-//     var mode = localStorage.getItem('theme')
-//     if (mode === undefined) {
-//       localStorage.setItem('theme', 'light')
-//     } else if (mode === 'dark') {
-//       document.body.classList.add('dark')
-//     }
-//   } catch (e) {
-//     console.log('error: ' + e)
-//   }
-// })()
-// `
-//
 // export const onRenderBody = ({ setPreBodyComponents }) => {
-//   const script = createElement('script', {
-//     dangerouslySetInnerHTML: {
-//       __html: applyDarkModeClass,
-//     },
-//   })
-//   setPreBodyComponents([script])
+//   setPreBodyComponents([
+//     React.createElement('script', {
+//       dangerouslySetInnerHTML: {
+//         __html: `
+//           (() => {
+//             window.__onThemeChange = function() {};
+//             function setTheme(newTheme) {
+//               window.__theme = newTheme;
+//               preferredTheme = newTheme;
+//               document.body.className = newTheme;
+//               window.__onThemeChange(newTheme);
+//             }
+//             let preferredTheme;
+//             try {
+//               preferredTheme = localStorage.getItem('theme');
+//             } catch (err) { }
+//             window.__setPreferredTheme = function(newTheme) {
+//               setTheme(newTheme);
+//               try {
+//                 localStorage.setItem('theme', newTheme);
+//               } catch (err) {}
+//             }
+//             let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+//             darkQuery.addListener((e) => {
+//               window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+//             });
+//             setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
+//           })();
+//         `,
+//       },
+//     }),
+//   ])
+//   // setPreBodyComponents([script])
 // }
+
+const ThemeScript = () => {
+  let codeToRunOnClient = `
+    (() => {
+      window.__onThemeChange = function() {};
+      function setTheme(newTheme) {
+        window.__theme = newTheme;
+        preferredTheme = newTheme;
+        document.body.className = newTheme;
+        window.__onThemeChange(newTheme);
+      }
+      let preferredTheme;
+      try {
+        preferredTheme = localStorage.getItem('theme');
+      } catch (err) { }
+      window.__setPreferredTheme = function(newTheme) {
+        setTheme(newTheme);
+        try {
+          localStorage.setItem('theme', newTheme);
+        } catch (err) {}
+      }
+      let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      darkQuery.addListener((e) => {
+        window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+      });
+      setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
+    })();
+  `
+  return (
+    <script
+      dangerouslySetInnerHTML={{ __html: codeToRunOnClient }}
+    />
+  )
+}
+
+// NOTE: why do i have to pass in a key value
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  setPreBodyComponents(<ThemeScript key={1} />)
+}

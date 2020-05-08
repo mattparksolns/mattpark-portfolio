@@ -1,12 +1,12 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { useContext, useState, useEffect } from "react";
+import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
+import React, { useState, useEffect } from "react"
 import { connect } from 'react-redux'
 import classNames from 'classnames'
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import {
   makeStyles,
   AppBar,
   Toolbar,
+  Link,
   IconButton,
   Menu,
   MenuItem,
@@ -17,14 +17,11 @@ import {
   Close,
   GitHub,
   LinkedIn,
-  ToggleOn,
-  ToggleOff,
 } from '@material-ui/icons'
 
-import { BACKGROUND_TRANSITION_TIME, EASE_IN_OUT_TRANSITION, getTheme } from '../../utils/theme'
-import ThemeContext from '../../themes/ThemeContext'
-import { toggleDarkMode } from "../../actions"
+import DarkModeSwitch from './dark-mode-switch'
 import AnnouncementBar from './announcement-bar'
+import MobileMenu from './mobile-menu'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -62,8 +59,7 @@ const useStyles = makeStyles((theme) => ({
   logoLink: {
     // border: '1px solid black',
     textDecoration: 'none',
-    color: 'black',
-    fontFamily: 'Montserrat',
+    // color: 'black',
     fontSize: 20,
     [theme.breakpoints.up('lg')]: {
       fontSize: 20,
@@ -73,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   links: {
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       display: 'None',
     },
     marginLeft: '4vw',
@@ -87,7 +83,7 @@ const useStyles = makeStyles((theme) => ({
     margin: '1vw',
     paddingTop: '1vh',
     height: '100%',
-    color: 'black',
+    // color: 'black',
     textDecoration: 'None',
     borderBottom: '2px solid transparent',
     '&:hover': {
@@ -98,33 +94,30 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   icon: {
-    color: '#181818',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
+    color: 'black',
+    // '&:hover': {
+    //   backgroundColor: 'transparent',
+    // },
   },
   menuIcon: {
     display: 'None',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
+    [theme.breakpoints.down('xs')]: {
+      display: 'inline',
     },
   },
   menu: {
     borderRadius: 0,
-    width: '40vw',
-    [theme.breakpoints.down('xs')]: {
-      width: '60vw',
-    }
+    width: '15em',
   },
   menuItem: {
     width: '100%',
-    color: 'black',
+    color: theme.colors.link,
     textDecoration: 'None',
     textAlign: 'center',
   },
 }))
 
-const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
+const NavBar = ({ location, dispatch }) => {
   const classes = useStyles()
 
   const data = useStaticQuery(graphql`
@@ -139,55 +132,21 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
 
   const siteTitle = data.site.siteMetadata.title
 
-  let websiteTheme
-  if (typeof window !== `undefined`) {
-    websiteTheme = window.__theme
-  }
-
-  // const [theme, toggleTheme] = useContext(ThemeContext)
-  // const { color, background, secondary } = getTheme(theme)
-  // const darkTheme = getTheme('dark')
-
-  // useEffect(() => {
-  //   setTheme(window.__theme)
-  //   window.__onThemeChange = () => {
-  //     setTheme(window.__theme)
-  //   }
-  // }, [])
-
-  // const toggleTheme = () => {
-  //   window.__setPreferredTheme(websiteTheme === 'dark' ? 'light' : 'dark')
-  // }
-  const toggleTheme = () => {
-    // if (window.theme === 'light') {
-    //   window.theme = 'dark'
-    // } else {
-    //   window.theme = 'light'
-    // }
-    if (themeType === 'dark') {
-      toggleDarkMode('light')
-    } else {
-      toggleDarkMode('dark')
-    }
-  }
-
+  const [theme, setTheme] = useState(null)
+  useEffect(() => {
+    setTheme(window.__theme)
+    window.__onThemeChange = () => setTheme(window.__theme)
+  }, [])
 
   const [anchorEl, setAnchorEl] = useState(null)
   const [isAnnouncementClosed, setIsAnnouncementClosed] = useState(false)
 
-  const isMenuOpen = Boolean(anchorEl)
-
   const closeAnnouncementBar = () => {
-    console.log('handleCloseAnnouncementBar: ')
     setIsAnnouncementClosed(true)
   }
 
   const toggleMenu = (e) => {
-    if(isMenuOpen) {
-      setAnchorEl(null)
-    } else {
-      setAnchorEl(e.currentTarget)
-    }
+    setAnchorEl(anchorEl ? null : e.currentTarget)
   }
 
   return (
@@ -200,26 +159,18 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
           }
           <div className={classes.navContainer}>
             <Typography id="my-name" className={classes.logo} variant="h1">
-              <Link title={siteTitle} className={classes.logoLink} to="/">
+              <GatsbyLink title={siteTitle} className={classes.logoLink} to="/">
                 Matt Park
-              </Link>
+              </GatsbyLink>
             </Typography>
             <div className={classes.links}>
-              <Link className={classes.link} to="/about">
-                About
-              </Link>
-              <Link className={classes.link} to="/work">
-                Work
-              </Link>
-              <Link className={classes.link} to="/blog">
-                Blog
-              </Link>
-              <Link className={classes.link} to="/contact">
-                Contact
-              </Link>
+              <GatsbyLink className={classes.link} to="/about">About</GatsbyLink>
+              <GatsbyLink className={classes.link} to="/work">Work</GatsbyLink>
+              <GatsbyLink className={classes.link} to="/blog">Blog</GatsbyLink>
+              <GatsbyLink className={classes.link} to="/contact">Contact</GatsbyLink>
             </div>
             <div className={classes.grow} />
-            <a
+            <Link
               title="GitHub"
               target="_blank"
               rel="noopener noreferrer"
@@ -228,15 +179,10 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
               <IconButton
                 edge="start"
                 className={classes.icon}
-                color="inherit"
-                aria-label="GitHub Icon"
-                disableRipple
-                disableFocusRipple
-              >
-                <GitHub />
-              </IconButton>
-            </a>
-            <a
+                aria-label="GitHub"
+              ><GitHub /></IconButton>
+            </Link>
+            <Link
               title="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
@@ -245,59 +191,37 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
               <IconButton
                 edge="start"
                 className={classes.icon}
-                aria-label="LinkedIn Icon"
-                disableRipple
-                disableFocusRipple
-              >
-                <LinkedIn />
-              </IconButton>
-            </a>
-            <IconButton
-              edge="start"
-              className={classes.icon}
-              aria-label="Theme Toggle Icon"
-              onClick={toggleTheme}
-              disableRipple
-              disableFocusRipple
-            >
-              { themeType === 'light' ? <ToggleOff /> : <ToggleOn /> }
-            </IconButton>
+                aria-label="LinkedIn"
+              ><LinkedIn /></IconButton>
+            </Link>
+            <DarkModeSwitch
+              name="darkModeSwitch"
+              checked={theme === 'dark'}
+              onChange={() => window.__setPreferredTheme(theme === 'dark' ? 'light' : 'dark')}
+            />
+            <MobileMenu anchorEl={anchorEl} toggleMenu={toggleMenu} />
             <IconButton
               edge="start"
               className={`${classes.icon} ${classes.menuIcon}`}
-              color="inherit"
-              aria-label="Menu Icon"
+              aria-label="Menu"
               aria-haspopup="true"
               onClick={toggleMenu}
-              disableRipple
-              disableFocusRipple
-            >
-              { anchorEl ? <Close /> : <MenuIcon /> }
-            </IconButton>
+            >{ anchorEl ? <Close /> : <MenuIcon /> }</IconButton>
             <Menu
-              id="menu"
               anchorEl={anchorEl}
               getContentAnchorEl={null}
               anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
               transformOrigin={{ vertical: "top", horizontal: "right" }}
               keepMounted
-              open={isMenuOpen}
+              open={Boolean(anchorEl)}
               onClose={toggleMenu}
               disableScrollLock={true}
               PaperProps={{ className: classNames(classes.menu) }}
             >
-              <MenuItem className={classes.menuItem}>
-                <Link className={classes.menuItem} to="/about">About</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link className={classes.menuItem} to="/work">Work</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link className={classes.menuItem} to="/blog">Blog</Link>
-              </MenuItem>
-              <MenuItem>
-                <Link className={classes.menuItem} to="/contact">Contact</Link>
-              </MenuItem>
+              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/about">About</GatsbyLink></MenuItem>
+              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/work">Work</GatsbyLink></MenuItem>
+              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/blog">Blog</GatsbyLink></MenuItem>
+              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/contact">Contact</GatsbyLink></MenuItem>
             </Menu>
           </div>
         </Toolbar>
@@ -305,16 +229,10 @@ const NavBar = ({ location, dispatch, themeType, toggleDarkMode }) => {
     </div>
   )
 }
-
-const mapStateToProps = (state) => ({
-  themeType: state.app.themeType,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  toggleDarkMode: themeType => dispatch(toggleDarkMode(themeType)),
-})
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  (state) => ({
+    themeType: state.app.themeType,
+  }),
+  (dispatch) => ({
+  }),
 )(NavBar)

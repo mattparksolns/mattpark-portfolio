@@ -3,23 +3,18 @@ import {
   makeStyles,
   Typography,
 } from '@material-ui/core'
+import SEO from '../../components/seo'
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-  },
-}))
 
 const AboutPage = () => {
-  const classes = useStyles()
-
   return (
-    <div className={classes.root}>
+    <>
+      <SEO pageTitle="About" />
       <Typography variant="h1">About Me</Typography>
-      <Typography variant="h4">
+      <Typography variant="h2">
         Under construction..
       </Typography>
-    </div>
+    </>
   )
 }
 

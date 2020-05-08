@@ -3,6 +3,7 @@ import {
   makeStyles,
   Typography,
 } from '@material-ui/core'
+import SEO from '../../components/seo'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -11,15 +12,16 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const WorkPage = () => {
-  const classes = useStyles()
+  // const classes = useStyles()
 
   return (
-    <div className={classes.root}>
+    <>
+      <SEO pageTitle="Work" />
       <Typography variant="h1">My Projects</Typography>
       <Typography variant="h4">
         Under construction..
       </Typography>
-    </div>
+    </>
   )
 }
 

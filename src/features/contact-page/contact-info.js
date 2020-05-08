@@ -102,8 +102,6 @@ const ContactInfo = () => {
             className={classes.iconButton}
             color="inherit"
             aria-label="Phone Button"
-            disableRipple
-            disableFocusRipple
           >
             <PhoneInTalkOutlined className={classes.icon} />
             <Typography className={classes.phoneLink} variant="h2">
@@ -117,8 +115,6 @@ const ContactInfo = () => {
             className={classes.iconButton}
             color="inherit"
             aria-label="Email Button"
-            disableRipple
-            disableFocusRipple
           >
             <MailOutline className={classes.icon} />
             <Typography className={classes.emailLink} variant="h2">
@@ -133,8 +129,6 @@ const ContactInfo = () => {
               className={classes.iconButton}
               color="inherit"
               aria-label="GitHub Button"
-              disableRipple
-              disableFocusRipple
             >
               <GitHub className={classes.icon} />
             </IconButton>
@@ -145,8 +139,6 @@ const ContactInfo = () => {
               className={classes.iconButton}
               color="inherit"
               aria-label="LinkedIn Button"
-              disableRipple
-              disableFocusRipple
             >
               <LinkedIn className={classes.icon} />
             </IconButton>

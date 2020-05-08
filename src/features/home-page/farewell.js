@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
   contactLink: {
     textDecoration: 'none',
-    color: 'gainsboro',
+    color: 'darkgray',
   },
   logoAndSignatureContainer: {
     display: 'flex',
@@ -93,7 +93,7 @@ const Farewell = () => {
       <div className={classes.logoAndSignatureContainer}>
         <div className={classes.logo} />
         <div className={classes.thanksAndSignatureContainer}>
-          <Typography className={classes.thankYouMessage} variant="caption" gutterBottom>
+          <Typography className={classes.thankYouMessage} component="p" gutterBottom>
             <i>Thank you for scrolling all this way!</i>
           </Typography>
           <SignatureImage className={classes.signature} />
