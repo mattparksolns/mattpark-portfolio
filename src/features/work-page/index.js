@@ -3,7 +3,7 @@ import {
   makeStyles,
   Typography,
 } from '@material-ui/core'
-import SEO from '../../components/seo'
+import SEO from '../seo'
 
 
 const useStyles = makeStyles((theme) => ({

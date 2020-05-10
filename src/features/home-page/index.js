@@ -4,7 +4,7 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 
 import Greeting from './greeting'
 import Farewell from './farewell'
-import SEO from '../../components/seo'
+import SEO from '../seo'
 import { getTheme } from '../../themes'
 
 

@@ -62,22 +62,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-react-redux`,
-      options: {
-        pathToCreateStoreModule: "./src/state/createStore",
-        // [optional] - options passed to `serialize-javascript`
-        // info: https://github.com/yahoo/serialize-javascript#options
-        // will be merged with these defaults:
-        serialize: {
-          space: 0,
-          isJSON: true,
-          unsafe: false,
-        },
-        cleanupOnClient: true,
-        windowKey: "__PRELOADED_STATE__",
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-165323903-1`,

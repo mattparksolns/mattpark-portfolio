@@ -20,11 +20,6 @@ const themeBase = createMuiTheme({
         '@font-face': [montserrat, patuaOne],
       },
     },
-    MuiIconButtonBase: {
-      '&:hover': {
-        backgroundColor: 'transparent',
-      }
-    }
   },
 })
 

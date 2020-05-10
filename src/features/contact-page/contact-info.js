@@ -1,8 +1,8 @@
 import React from 'react'
 import {
-  makeStyles,
+  withStyles,
   Typography,
-  IconButton,
+  Link,
 } from '@material-ui/core'
 import {
   GitHub,
@@ -12,7 +12,7 @@ import {
 } from '@material-ui/icons'
 
 
-const useStyles = makeStyles((theme) => ({
+const ContactInfo = withStyles((theme) => ({
   root: {
     // border: '1px solid black',
     display: 'flex',
@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   myName: {
-    fontSize: '7.4vw',
+    fontSize: '7vw',
     [theme.breakpoints.down('sm')]: {
       fontSize: '18vw',
     },
@@ -34,6 +34,14 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '5vh',
     [theme.breakpoints.down('sm')]: {
       marginTop: '5vh',
+    },
+    display: 'flex',
+    flexDirection: 'column',
+    '& a': {
+      color: 'black',
+      '&:hover': {
+        color: 'gray',
+      }
     },
   },
   link: {
@@ -44,108 +52,57 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   phoneLink: {
-    marginLeft: '2vw',
     fontSize: '3vw',
     [theme.breakpoints.down('sm')]: {
       fontSize: '7.55vw',
-      marginLeft: '4vw',
     },
-    '&:hover': {
-      color: 'gray',
-    },
+    alignItems: 'flex-end',
   },
   emailLink: {
-    marginLeft: '1.8vw',
-    fontSize: '1.7vw',
+    fontSize: '1.97vw',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '4.15vw',
-      marginLeft: '4vw',
-    },
-    '&:hover': {
-      color: 'gray',
-    },
-  },
-  iconButton: {
-    color: 'black',
-    '&:hover': {
-      backgroundColor: 'transparent',
+      fontSize: '5vw',
     },
   },
   icon: {
-    height: '5vh',
-    width: '3vw',
-    [theme.breakpoints.down('sm')]: {
-      width: '5vw',
-    }
+    height: '30px',
+    width: '30px',
   },
-  icons: {
+  socialMediaLinks: {
     marginTop: '2vh',
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '0',
-    }
+    '& a': {
+      marginRight: '1.2vw',
+      [theme.breakpoints.down('sm')]: {
+        marginRight: '1.5vw',
+      },
+    },
   },
-}))
-
-
-const ContactInfo = () => {
-  const classes = useStyles()
-
+}))(({ classes }) => {
   return (
     <div className={classes.root}>
       <Typography className={classes.myName} variant="h1">
         Matt Park
       </Typography>
       <div className={classes.myInfo}>
-        <a className={classes.link} target="_top" href="tel:+1201-591-3323">
-          <IconButton
-            edge="start"
-            className={classes.iconButton}
-            color="inherit"
-            aria-label="Phone Button"
-          >
-            <PhoneInTalkOutlined className={classes.icon} />
-            <Typography className={classes.phoneLink} variant="h2">
-              (201) 591 - 3323
-            </Typography>
-          </IconButton>
-        </a>
-        <a className={classes.link} target="_top" href="mailto:mattparksolutions@gmail.com">
-          <IconButton
-            edge="start"
-            className={classes.iconButton}
-            color="inherit"
-            aria-label="Email Button"
-          >
-            <MailOutline className={classes.icon} />
-            <Typography className={classes.emailLink} variant="h2">
-              mattparksolutions@gmail.com
-            </Typography>
-          </IconButton>
-        </a>
-        <div className={classes.icons}>
-          <a target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
-            <IconButton
-              edge="start"
-              className={classes.iconButton}
-              color="inherit"
-              aria-label="GitHub Button"
-            >
+        <Typography>
+          <Link className={classes.phoneLink} target="_top" href="tel:+1201-591-3323" underline="none">
+            <PhoneInTalkOutlined className={classes.icon} /> (201) 591 - 3323
+          </Link>
+          <br/>
+          <Link className={classes.emailLink} target="_top" href="mailto:mattparksolutions@gmail.com" underline="none">
+            <MailOutline className={classes.icon} /> mattparksolutions@gmail.com
+          </Link>
+        </Typography>
+        <Typography className={classes.socialMediaLinks}>
+          <Link title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
               <GitHub className={classes.icon} />
-            </IconButton>
-          </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
-            <IconButton
-              edge="start"
-              className={classes.iconButton}
-              color="inherit"
-              aria-label="LinkedIn Button"
-            >
-              <LinkedIn className={classes.icon} />
-            </IconButton>
-          </a>
-        </div>
+          </Link>
+          <Link title= "LinkedIn" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
+            <LinkedIn className={classes.icon} />
+          </Link>
+        </Typography>
       </div>
     </div>
   )
-}
+})
 export default ContactInfo

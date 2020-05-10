@@ -1,12 +1,9 @@
-import React, {
-  useState,
-  useEffect,
-} from 'react'
+import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 import validator from 'validator'
 import axios from 'axios'
 import {
-  makeStyles,
+  withStyles,
   Typography,
   FormControlLabel,
   TextField,
@@ -23,9 +20,8 @@ import {
   setGeoData,
 } from '../../actions'
 
-const useStyles = makeStyles((theme) => ({
+const ContactForm = withStyles((theme) => ({
   root: {
-    // border: '1px solid black',
     width: '50%',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -39,25 +35,44 @@ const useStyles = makeStyles((theme) => ({
   inputField: {
     marginTop: '2vh',
     width: '100%',
+    borderRadius: 0,
+  },
+  cssLabel: {
+    '&$cssFocused': {
+      color: '#000000',
+    }
+  },
+  cssFocused: {
+  },
+  cssOutlinedInput: {
+    borderRadius: 0,
+    '&$cssFocused $notchedOutline': {
+      borderColor: '#000000',
+    },
+  },
+  notchedOutline: {
+    borderColor: '#000000',
   },
   privacyPolicyText: {
     fontFamily: 'Montserrat',
+    // fontSize: '1.5vw',
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5vw',
+    }
   },
   button: {
     marginTop: '2vh',
     borderRadius: 0,
-    // color: 'white',
-    // backgroundColor: 'black',
-    // '&:hover': {
-    //   backgroundColor: '#383838',
-    // },
+    color: theme.text.inverse,
+    '& .MuiSvgIcon-root': {
+      color: theme.text.inverse,
+    },
+    backgroundColor: theme.text.primary,
+    '&:hover': {
+      backgroundColor: '#383838',
+    },
   },
-}))
-
-
-const ContactForm = ({ ipv4, ipv6, geoData, setIPv4, setIPv6, setGeoData }) => {
-  const classes = useStyles()
-
+}))(({ classes, ipv4, ipv6, geoData, setIPv4, setIPv6, setGeoData }) => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -117,47 +132,69 @@ const ContactForm = ({ ipv4, ipv6, geoData, setIPv4, setIPv6, setGeoData }) => {
       >
         <TextField
           required
+          color="primary"
           className={classes.inputField}
-          id="name"
           name="name"
           label="Name"
           variant="outlined"
           type="text"
           value={name}
           onChange={e => setName(e.target.value)}
+          InputLabelProps={{ classes: {
+            root: classes.cssLabel,
+            focused: classes.cssFocused,
+          }}}
+          InputProps={{ classes: {
+            root: classes.cssOutlinedInput,
+            focused: classes.cssFocused,
+            notchedOutline: classes.notchedOutline
+          }}}
         />
         <TextField
           required
           className={classes.inputField}
-          id="Email"
           name="email"
           label="Email"
           variant="outlined"
           type="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
+          InputLabelProps={{ classes: {
+              root: classes.cssLabel,
+              focused: classes.cssFocused,
+            }}}
+          InputProps={{ classes: {
+              root: classes.cssOutlinedInput,
+              focused: classes.cssFocused,
+              notchedOutline: classes.notchedOutline
+            }}}
         />
         <TextField
           required
           className={classes.inputField}
           multiline
           rows={8}
-          id="Message"
           name="message"
           label="Message"
           variant="outlined"
           type="text"
           value={message}
           onChange={e => setMessage(e.target.value)}
+          InputLabelProps={{ classes: {
+              root: classes.cssLabel,
+              focused: classes.cssFocused,
+            }}}
+          InputProps={{ classes: {
+              root: classes.cssOutlinedInput,
+              focused: classes.cssFocused,
+              notchedOutline: classes.notchedOutline
+            }}}
         />
         <FormControlLabel
           className={classes.inputField}
           control={<Checkbox required name="privacypolicy" color="default" onChange={handlePrivacyPolicyCheckbox}/>}
           label={
-            <Typography
-              className={classes.privacyPolicyText}
-              variant="caption"
-            >
+            <Typography className={classes.privacyPolicyText}>
               I understand that Matt will securely hold my data in accordance with their privacy policy.
             </Typography>}
         />
@@ -173,21 +210,16 @@ const ContactForm = ({ ipv4, ipv6, geoData, setIPv4, setIPv6, setGeoData }) => {
       </form>
     </div>
   )
-}
-
-const mapStateToProps = (state) => ({
-  ipv4: state.app.ipv4,
-  ipv6: state.app.ipv6,
-  geoData: state.app.geoData,
 })
-
-const mapDispatchToProps = (dispatch) => ({
-  setIPv4: ip => dispatch(setIPv4(ip)),
-  setIPv6: ip => dispatch(setIPv6(ip)),
-  setGeoData: data => dispatch(setGeoData(data)),
-})
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  (state) => ({
+    ipv4: state.app.ipv4,
+    ipv6: state.app.ipv6,
+    geoData: state.app.geoData,
+  }),
+  (dispatch) => ({
+    setIPv4: ip => dispatch(setIPv4(ip)),
+    setIPv6: ip => dispatch(setIPv6(ip)),
+    setGeoData: data => dispatch(setGeoData(data)),
+  })
 )(ContactForm)

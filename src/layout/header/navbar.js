@@ -1,20 +1,15 @@
 import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
 import React, { useState, useEffect } from "react"
 import { connect } from 'react-redux'
-import classNames from 'classnames'
 import {
-  makeStyles,
+  withStyles,
   AppBar,
   Toolbar,
   Link,
   IconButton,
-  Menu,
-  MenuItem,
   Typography,
 } from '@material-ui/core'
 import {
-  Menu as MenuIcon,
-  Close,
   GitHub,
   LinkedIn,
 } from '@material-ui/icons'
@@ -24,7 +19,7 @@ import AnnouncementBar from './announcement-bar'
 import MobileMenu from './mobile-menu'
 
 
-const useStyles = makeStyles((theme) => ({
+const NavBar = withStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -95,31 +90,9 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: 'black',
-    // '&:hover': {
-    //   backgroundColor: 'transparent',
-    // },
-  },
-  menuIcon: {
-    display: 'None',
-    [theme.breakpoints.down('xs')]: {
-      display: 'inline',
-    },
-  },
-  menu: {
-    borderRadius: 0,
-    width: '15em',
-  },
-  menuItem: {
-    width: '100%',
-    color: theme.colors.link,
-    textDecoration: 'None',
-    textAlign: 'center',
-  },
-}))
-
-const NavBar = ({ location, dispatch }) => {
-  const classes = useStyles()
-
+    marginRight: 10,
+  }
+}))(({ classes, location, dispatch }) => {
   const data = useStaticQuery(graphql`
       query {
           site {
@@ -158,7 +131,7 @@ const NavBar = ({ location, dispatch }) => {
             : <AnnouncementBar closeAnnouncementBar={closeAnnouncementBar} />
           }
           <div className={classes.navContainer}>
-            <Typography id="my-name" className={classes.logo} variant="h1">
+            <Typography className={classes.logo} variant="h1">
               <GatsbyLink title={siteTitle} className={classes.logoLink} to="/">
                 Matt Park
               </GatsbyLink>
@@ -175,60 +148,25 @@ const NavBar = ({ location, dispatch }) => {
               target="_blank"
               rel="noopener noreferrer"
               href="https://github.com/mattparksolutions"
-            >
-              <IconButton
-                edge="start"
-                className={classes.icon}
-                aria-label="GitHub"
-              ><GitHub /></IconButton>
-            </Link>
+            ><GitHub className={classes.icon} /></Link>
             <Link
               title="LinkedIn"
               target="_blank"
               rel="noopener noreferrer"
               href="https://linkedin.com/in/mattparksolutions"
-            >
-              <IconButton
-                edge="start"
-                className={classes.icon}
-                aria-label="LinkedIn"
-              ><LinkedIn /></IconButton>
-            </Link>
+            ><LinkedIn className={classes.icon} /></Link>
             <DarkModeSwitch
               name="darkModeSwitch"
               checked={theme === 'dark'}
               onChange={() => window.__setPreferredTheme(theme === 'dark' ? 'light' : 'dark')}
             />
             <MobileMenu anchorEl={anchorEl} toggleMenu={toggleMenu} />
-            <IconButton
-              edge="start"
-              className={`${classes.icon} ${classes.menuIcon}`}
-              aria-label="Menu"
-              aria-haspopup="true"
-              onClick={toggleMenu}
-            >{ anchorEl ? <Close /> : <MenuIcon /> }</IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              getContentAnchorEl={null}
-              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-              transformOrigin={{ vertical: "top", horizontal: "right" }}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={toggleMenu}
-              disableScrollLock={true}
-              PaperProps={{ className: classNames(classes.menu) }}
-            >
-              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/about">About</GatsbyLink></MenuItem>
-              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/work">Work</GatsbyLink></MenuItem>
-              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/blog">Blog</GatsbyLink></MenuItem>
-              <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.menuItem} to="/contact">Contact</GatsbyLink></MenuItem>
-            </Menu>
           </div>
         </Toolbar>
       </AppBar>
     </div>
   )
-}
+})
 export default connect(
   (state) => ({
     themeType: state.app.themeType,

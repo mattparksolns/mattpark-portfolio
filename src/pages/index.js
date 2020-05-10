@@ -1,6 +1,6 @@
 import React from 'react'
 import HomePage from '../features/home-page'
-import SEO from '../components/seo'
+import SEO from '../features/seo'
 
 const Home = () => (
   <>

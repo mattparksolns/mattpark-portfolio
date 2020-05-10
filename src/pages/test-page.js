@@ -4,7 +4,7 @@ import {
   Typography,
 } from '@material-ui/core'
 
-import SEO from "../components/seo"
+import SEO from "../features/seo"
 import { graphql } from "gatsby"
 
 

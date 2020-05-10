@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
 
-import SEO from '../../components/seo'
+import SEO from '../seo'
 
 const BlogPage = ({ data, location }) => {
   // const classes = useStyles()

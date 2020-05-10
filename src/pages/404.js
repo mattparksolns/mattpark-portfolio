@@ -1,7 +1,7 @@
 import React from "react"
 import { Typography } from '@material-ui/core'
 
-import SEO from "../components/seo"
+import SEO from "../features/seo"
 
 const NotFoundPage = () => <>
   <SEO title="404: Not found" />

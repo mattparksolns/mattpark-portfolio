@@ -25,32 +25,72 @@
 
 ## TODO
 
+### Notes:
+* https://www.gatsbyjs.org/docs/using-client-side-only-packages/
 
 ### Basic Setup
-
-* [ ] dark and light theme
-* [ ] loading screen
-* [ ] NavBar a -> Link and Link -> GatsbyLink
-* [ ] NavBar use grid
-* [ ] custom buttons
-* [ ] only use Material Components
-* [ ] center letter M
 * [ ] setup gatsby-plugin-manifest
-* [ ] [setup react-helmet](https://www.npmjs.com/package/react-helmet)
-* [ ] use Material-UI Container
-* [ ] contact-page form: use FormGroup
-* [ ] cursor
-* [ ] check if i need typography
-* [ ] get rid of adding .dark to body in gatsby-ssr.js
 * [ ] take care of images warning
-* [ ] optimize
 * [ ] pure component
-* [ ] SEO
-* [ ] mui focus-visible
+* [ ] setup accessibility (aria-labels)
+* [ ] [Redux](https://github.com/le0nik/gatsby-plugin-react-redux)
+  * [ ] thunk vs saga? use batch to dispatch multiple actions with one rerender
+  * [ ] use batch to ensure that multiple actions dispatched outside of React only result in a single render update
+  * [ ] serialize json
+  * [ ] remove server-side injected state
+  * [ ] <http://somebody32.github.io/high-performance-redux/>
+
+### Analytics
+* [ ] google analytics
+* [ ] logrocket
+
+### Front-End
+* [ ] dark and light theme
+* [ ] get rid of adding .dark to body in gatsby-ssr.js
 * [ ] <https://www.material-ui.com/guides/minimizing-bundle-size/>
+* [ ] only use Components?
+* [ ] loading screen
+* [ ] resize footer length on large screen
+* [ ] cursor
+* [ ] mui focus-visible
+* [ ] use withStyles instead of makeStyles
 
-### Copywriting and Design
+### SEO
+* [ ] [setup react-helmet](https://www.npmjs.com/package/react-helmet)
+* [ ] gatsby-plugin-sitemap
+* [ ] robots.txt
+
+### Optimize
+* [ ] [gatsby-plugin-guess-js](https://www.gatsbyjs.org/packages/gatsby-plugin-guess-js/)
+* [ ] look up gatsby image
+* [ ] use lighthouse
+* [ ] [webpagetest](https://webpagetest.org/)
+* [ ] <https://www.gatsbyjs.org/docs/add-custom-webpack-config/>
+* [ ] <https://benchling.engineering/a-deep-dive-into-react-perf-debugging-fd2063f5a667>
+* [ ] useMemo or PureComponent?
+
+### Dependencies
+* [ ] do i need classnames?
+
+### NavBar
+* [ ] NavBar use grid
+* [ ] Menu style transition
+
+### Home Page
+* [ ] center letter M
+
+### Contact Page
+* [ ] ContactInfo link icons change color on hover
+* [ ] contact-page form: use FormGroup
+* [ ] style button
+* [ ] email and phone icons align correctly when small screen
+* [ ] input fields don't turn blue on focus
+* [ ] style warning message
+* [ ] make input border-radius 0
+
+
+### About Page
 * [ ] write About Page
+
+### Blog Page
 * [ ] write 5 blog posts
-
-

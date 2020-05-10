@@ -5,20 +5,34 @@ import baseTheme from './base'
 const lightTheme = createMuiTheme({
   ...baseTheme,
   overrides: {
+    ...baseTheme.overrides,
     MuiButton: {
       text: {
         color: '#000000',
       },
     },
+    MuiIconButton: {
+      root: {
+        color: '#000000',
+        '&:hover': {
+          backgroundColor: 'transparent',
+        }
+      }
+    },
+    MuiSvgIcon: {
+      root: {
+        color: '#000000',
+      }
+    }
   },
   colors: {
     myName: '#000000',
-    link: '#000000',
     text: '#000000',
     footerHr: '#000000',
   },
   text: {
     primary: '#000000',
+    inverse: '#ffffff',
   },
   palette: {
     type: 'light',

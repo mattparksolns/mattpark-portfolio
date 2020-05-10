@@ -5,15 +5,28 @@ import baseTheme from './base'
 const darkTheme = createMuiTheme({
   ...baseTheme,
   overrides: {
+    ...baseTheme.overrides,
     MuiButton: {
       text: {
         color: '#ffffff',
       }
     },
+    MuiIconButton: {
+      root: {
+        color: '#ffffff',
+        '&:hover': {
+          backgroundColor: 'transparent',
+        }
+      }
+    },
+    MuiSvgIcon: {
+      root: {
+        color: '#ffffff',
+      }
+    }
   },
   colors: {
     myName: '#ffffff',
-    link: 'ghostwhite',
     text: '#ffffff',
     footerHr: '#ffffff'
   },

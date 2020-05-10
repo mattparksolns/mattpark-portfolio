@@ -3,7 +3,7 @@ import {
   makeStyles,
 } from '@material-ui/core'
 
-import SEO from '../../components/seo'
+import SEO from '../seo'
 import ContactInfo from './contact-info'
 import ContactForm from './contact-form'
 
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
 }))
-const ContactPage = () => {
+const ContactPage = ({ location }) => {
   const classes = useStyles()
 
   return (

@@ -1,4 +1,4 @@
-import { Link as GatsbyLink } from 'gatsby'
+import { Link } from 'gatsby'
 import React from 'react'
 import classNames from 'classnames'
 import { withStyles, IconButton, Menu, MenuItem } from '@material-ui/core'
@@ -10,19 +10,14 @@ const MobileMenu = withStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       display: 'inline',
     },
-    color: '#000000',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
   },
   paper: {
-    backgroundColor: 'darkgray',
     borderRadius: 0,
     width: '15em',
   },
-  item: {
+  link: {
     width: '100%',
-    color: theme.colors.link,
+    color: theme.text.primary,
     textDecoration: 'None',
     textAlign: 'center',
   },
@@ -40,6 +35,7 @@ const MobileMenu = withStyles((theme) => ({
         getContentAnchorEl={null}
         anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
         transformOrigin={{ vertical: "top", horizontal: "right" }}
+        transitionDuration={600}
         keepMounted
         open={Boolean(anchorEl)}
         onClose={toggleMenu}
@@ -48,10 +44,10 @@ const MobileMenu = withStyles((theme) => ({
           paper: classes.paper,
         }}
       >
-        <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.item} to="/about">About</GatsbyLink></MenuItem>
-        <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.item} to="/work">Work</GatsbyLink></MenuItem>
-        <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.item} to="/blog">Blog</GatsbyLink></MenuItem>
-        <MenuItem onClick={toggleMenu}><GatsbyLink className={classes.item} to="/contact">Contact</GatsbyLink></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/about">About</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/work">Work</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/blog">Blog</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/contact">Contact</Link></MenuItem>
       </Menu>
     </>
   )
