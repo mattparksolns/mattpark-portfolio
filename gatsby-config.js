@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `static/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/content/assets`,
+        path: `${__dirname}/static/assets`,
       },
     },
 
@@ -66,6 +66,12 @@ module.exports = {
       options: {
         trackingId: `UA-165323903-1`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout`)
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -129,12 +135,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-catch-links`,
-      options: {
-        excludePattern: /(excluded-link|external)/,
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -159,6 +159,12 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
       },
     },
   ],

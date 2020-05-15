@@ -7,8 +7,8 @@ const darkTheme = createMuiTheme({
   overrides: {
     ...baseTheme.overrides,
     MuiButton: {
-      text: {
-        color: '#ffffff',
+      label: {
+        color: '#000000',
       }
     },
     MuiIconButton: {
@@ -23,7 +23,7 @@ const darkTheme = createMuiTheme({
       root: {
         color: '#ffffff',
       }
-    }
+    },
   },
   colors: {
     myName: '#ffffff',
@@ -33,6 +33,10 @@ const darkTheme = createMuiTheme({
   text: {
     primary: '#ffffff',
     secondary: '#ffffff',
+    hover: '#62757f',
+    hover2: '#90a4ae',
+    hover3: '#c1d5e0',
+    inverse: '#000000',
   },
   palette: {
     type: 'dark',

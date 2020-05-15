@@ -1,8 +1,9 @@
 /// <reference types="cypress" />
-
 describe("Accessibility tests", () => {
   beforeEach(() => {
     cy.visit('/').get('main').injectAxe()
+    // cy.visit('http://localhost:8000/')
+    // cy.injectAxe()
   })
 
   it("Has no detectable accessibility violations on load", () => {
@@ -11,14 +12,15 @@ describe("Accessibility tests", () => {
     //     "rule-id": { enabled: false },
     //   },
     // }
-    const axeRunContext = {
-      exclude: [[".gatsby-highlight"], ["#an-id"]],
-    }
+    // const axeRunContext = {
+    //   exclude: [[".gatsby-highlight"], ["#an-id"]],
+    // }
     // cy.checkA11y(axeRunContext, axeRunOptions)
-    cy.checkA11y(axeRunContext)
+    // cy.checkA11y(axeRunContext)
+    cy.checkA11y()
   })
 
-  it("Navigates to page 2 and checks for accessibility violations", () => {
+  it("Navigates to Contact page and checks for accessibility violations", () => {
     cy.findByText(/Drop me a line/i)
       .click()
       .checkA11y()

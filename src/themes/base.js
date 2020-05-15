@@ -1,12 +1,19 @@
 import { createMuiTheme } from '@material-ui/core'
 
-import { montserrat, patuaOne } from '../../content/assets/fonts/'
-
 const themeBase = createMuiTheme({
   typography: {
-    fontFamily: 'Montserrat, Arial',
+    fontFamily: ['Montserrat'].join(','),
     button: {
-      fontSize: '1rem',
+      fontSize: '1.2rem',
+    },
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        a: {
+          textDecoration: 'none',
+        },
+      },
     }
   },
   props: {
@@ -14,13 +21,5 @@ const themeBase = createMuiTheme({
       disableRipple: true,
     },
   },
-  overrides: {
-    MuiCssBaseline: {
-      '@global': {
-        '@font-face': [montserrat, patuaOne],
-      },
-    },
-  },
 })
-
 export default themeBase

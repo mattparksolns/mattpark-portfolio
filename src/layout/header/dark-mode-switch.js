@@ -34,13 +34,5 @@ const DarkModeSwitch = withStyles((theme) => ({
     transition: theme.transitions.create(['background-color', 'border'])
   },
   checked: {},
-}))(({ classes, ...props }) => {
-  return (
-    <Switch
-      classes={classes}
-      {...props}
-    />
-  )
-})
-
+}))(Switch)
 export default DarkModeSwitch

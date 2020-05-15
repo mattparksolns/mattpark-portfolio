@@ -1,3 +1,15 @@
+@import url('../../static/assets/fonts/PatuaOne/stylesheet.css');
+@import url('../../static/assets/fonts/Montserrat/stylesheet.css');
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  overflow-x: hidden;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 article,
 aside,
 details,

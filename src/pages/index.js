@@ -1,11 +1,12 @@
 import React from 'react'
-import HomePage from '../features/home-page'
+
+import HomePage from '../page-components/home-page'
 import SEO from '../features/seo'
 
-const Home = () => (
+const Home = ({ location }) => (
   <>
     <SEO />
-    <HomePage />
+    <HomePage location={location} />
   </>
 )
 export default Home

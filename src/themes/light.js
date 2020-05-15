@@ -7,8 +7,17 @@ const lightTheme = createMuiTheme({
   overrides: {
     ...baseTheme.overrides,
     MuiButton: {
-      text: {
-        color: '#000000',
+      root: {
+        borderRadius: 0,
+      },
+      contained: {
+        '& *': {
+          color: '#ffffff',
+        },
+        backgroundColor: '#000000',
+        '&:hover': {
+          backgroundColor: '#34515e',
+        },
       },
     },
     MuiIconButton: {
@@ -23,7 +32,7 @@ const lightTheme = createMuiTheme({
       root: {
         color: '#000000',
       }
-    }
+    },
   },
   colors: {
     myName: '#000000',
@@ -32,6 +41,9 @@ const lightTheme = createMuiTheme({
   },
   text: {
     primary: '#000000',
+    hover: '#8eacbb',
+    hover2: '#607d8b',
+    hover3: '#34515e',
     inverse: '#ffffff',
   },
   palette: {

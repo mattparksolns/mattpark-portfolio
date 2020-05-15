@@ -1,16 +1,10 @@
+import { graphql } from "gatsby"
 import React from 'react'
-import {
-  makeStyles,
-  Typography,
-} from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 
 import SEO from "../features/seo"
-import { graphql } from "gatsby"
 
-
-const TestPage = ({ data }) => {
-  const classes = useStyles()
-  console.log(data)
+const TestPage = ({ data, location }) => {
   // const { markdownRemark: post } = data // data.markdownRemark holds your post data
   // const { frontmatter, html } = post
 

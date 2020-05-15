@@ -34,26 +34,28 @@
 * [ ] pure component
 * [ ] setup accessibility (aria-labels)
 * [ ] [Redux](https://github.com/le0nik/gatsby-plugin-react-redux)
-  * [ ] thunk vs saga? use batch to dispatch multiple actions with one rerender
-  * [ ] use batch to ensure that multiple actions dispatched outside of React only result in a single render update
-  * [ ] serialize json
+  * [ ] use batch to ensure that multiple actions dispatched outside of React only result in a single render update?
   * [ ] remove server-side injected state
   * [ ] <http://somebody32.github.io/high-performance-redux/>
+* [ ] setup pwa
+* [ ] cors
 
 ### Analytics
 * [ ] google analytics
 * [ ] logrocket
 
 ### Front-End
-* [ ] dark and light theme
-* [ ] get rid of adding .dark to body in gatsby-ssr.js
-* [ ] <https://www.material-ui.com/guides/minimizing-bundle-size/>
-* [ ] only use Components?
-* [ ] loading screen
-* [ ] resize footer length on large screen
-* [ ] cursor
-* [ ] mui focus-visible
 * [ ] use withStyles instead of makeStyles
+* [ ] only use Components?
+* [ ] use spacing instead of vw/vh when possible
+* [ ] use react-icon setup social icons
+* [ ] loading screen
+* [ ] cursor
+* [ ] <https://www.material-ui.com/guides/minimizing-bundle-size/>
+* [ ] mui focus-visible
+
+### Typography
+* [ ] look into gatsby typography and rhythm
 
 ### SEO
 * [ ] [setup react-helmet](https://www.npmjs.com/package/react-helmet)
@@ -68,29 +70,35 @@
 * [ ] <https://www.gatsbyjs.org/docs/add-custom-webpack-config/>
 * [ ] <https://benchling.engineering/a-deep-dive-into-react-perf-debugging-fd2063f5a667>
 * [ ] useMemo or PureComponent?
+* [ ] [jankfree](http://jankfree.org/)
+
+### Testing
+* [ ] gitignore __snapshots__?
+* [ ] layout
 
 ### Dependencies
 * [ ] do i need classnames?
 
-### NavBar
-* [ ] NavBar use grid
+### Layout
 * [ ] Menu style transition
+* [ ] can i implement display logic in child components?
 
 ### Home Page
 * [ ] center letter M
 
 ### Contact Page
-* [ ] ContactInfo link icons change color on hover
-* [ ] contact-page form: use FormGroup
-* [ ] style button
 * [ ] email and phone icons align correctly when small screen
-* [ ] input fields don't turn blue on focus
 * [ ] style warning message
-* [ ] make input border-radius 0
-
+* [ ] contact-page form: use Formik?
+* [x] ContactInfo link icons change color on hover
+* [x] style button
+* [x] input fields don't turn blue on focus
 
 ### About Page
 * [ ] write About Page
 
 ### Blog Page
 * [ ] write 5 blog posts
+
+## install script
+    npm install react-redux @material-ui/core @material-ui/icons gatsby-plugin-typography gatsby-plugin-react-helmet-canonical-urls gatsby-plugin-google-analytics gatsby-plugin-feed gatsby-plugin-transformer-remark gatsby-remark-images gatsby-remark-prismjs prismjs gatsby-remark-copy-linked-files gatsby-remark-smartypants

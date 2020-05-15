@@ -1,63 +1,41 @@
 import React from 'react'
-import {
-  makeStyles,
-  Typography,
-  Button,
-} from '@material-ui/core'
-import {
-  Close,
-} from "@material-ui/icons"
+import PropTypes from 'prop-types'
+import { withStyles, Container, Typography, Button } from '@material-ui/core'
+import { Close } from "@material-ui/icons"
 
-
-const useStyles = makeStyles((theme) => ({
+const AnnouncementBar = withStyles((theme) => ({
   root: {
-    position: 'fixed',
-    left: 0,
-    backgroundColor: '#131217',
-    // color: 'black',
-    width: '100%',
+    backgroundColor: theme.text.primary,
+    padding: 0,
+    margin: 0,
     height: '5.5vh',
     textAlign: 'center',
-  },
-  container: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: '1vh',
   },
   announcement: {
-    width: '98%',
+    width: '100%',
     fontSize: 18,
+    marginTop: 10,
+    color: theme.text.inverse,
   },
   button: {
-    color: 'white',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-    padding: 0,
+    color: theme.text.inverse,
   },
-}))
-
-const AnnouncementBar = ({ closeAnnouncementBar }) => {
-  const classes = useStyles()
-
+}))(({ classes, closeAnnouncementBar }) => {
   return (
-    <div className={classes.root}>
-      <div className={classes.container}>
-        <Typography className={classes.announcement} variant="h1">
-          COVID-19 Update
-        </Typography>
-        <Button
-          className={classes.button}
-          color="inherit"
-          aria-label="Close AnnouncementBar Button"
-          onClick={closeAnnouncementBar}
-        >
-          <Close />
-        </Button>
-      </div>
-    </div>
+    <Container className={classes.root} maxWidth="xl">
+      <Typography className={classes.announcement} variant="h1">
+        COVID-19 Update
+      </Typography>
+      <Button aria-label="close" onClick={closeAnnouncementBar}>
+        <Close className={classes.button} />
+      </Button>
+    </Container>
   )
+})
+AnnouncementBar.propTypes = {
+  closeAnnouncementBar: PropTypes.func.isRequired,
 }
-
 export default AnnouncementBar

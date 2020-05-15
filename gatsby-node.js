@@ -8,7 +8,6 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
 
-
 exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
   const config = getConfig()
   if (stage.startsWith('develop') && config.resolve) {

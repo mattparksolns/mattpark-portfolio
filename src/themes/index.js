@@ -1,7 +1,9 @@
+import React, { useEffect } from 'react'
+import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
 import lightTheme from './light'
 import darkTheme from './dark'
-
-
+import { connect } from 'react-redux'
+import { toggleDarkMode } from '../store/actions'
 
 const themes = {
   light: lightTheme,
@@ -12,31 +14,27 @@ export const getTheme = (theme) => (
   themes[theme]
 )
 
-import React from "react"
-import { connect } from "react-redux"
-import { CssBaseline, ThemeProvider } from "@material-ui/core";
-
-const MyThemeProvider = ({ children, themeType }) => {
-  console.log(themeType)
+const ThemeProvider = ({ children, themeType, toggleDarkMode }) => {
+  useEffect(() => {
+    toggleDarkMode(window.__theme)
+    window.__onThemeChange = () => toggleDarkMode(window.__theme)
+    // if (window) {
+    // } else {
+    //   toggleDarkMode(themeType)
+    // }
+  }, [themeType, toggleDarkMode])
   return (
-    <ThemeProvider theme={getTheme(themeType)}>
+    <MuiThemeProvider theme={themes[themeType]}>
       <CssBaseline />
       {children}
-    </ThemeProvider>
+    </MuiThemeProvider>
   )
 }
-// export default ThemeProvider
-
-
-const mapStateToProps = (state) => ({
-  themeType: state.app.themeType,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  // getTheme: themeType => dispatch(getTheme(themeType)),
-})
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyThemeProvider)
+  (state) => ({
+    themeType: state.app.themeType,
+  }),
+  (dispatch) => ({
+    toggleDarkMode: (themeType) => dispatch(toggleDarkMode(themeType))
+  }),
+)(ThemeProvider)

@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import classNames from 'classnames'
+import PropTypes from 'prop-types'
 import { withStyles, IconButton, Menu, MenuItem } from '@material-ui/core'
 import { Close, Menu as MenuIcon } from '@material-ui/icons'
 
@@ -26,15 +26,15 @@ const MobileMenu = withStyles((theme) => ({
     <>
       <IconButton
         className={classes.icon}
-        aria-label="Menu"
-        aria-haspopup="true"
+        aria-label='menu'
+        aria-haspopup='true'
         onClick={toggleMenu}
       >{ anchorEl ? <Close /> : <MenuIcon /> }</IconButton>
       <Menu
         anchorEl={anchorEl}
         getContentAnchorEl={null}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        transformOrigin={{ vertical: "top", horizontal: "right" }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
         transitionDuration={600}
         keepMounted
         open={Boolean(anchorEl)}
@@ -44,12 +44,15 @@ const MobileMenu = withStyles((theme) => ({
           paper: classes.paper,
         }}
       >
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/about">About</Link></MenuItem>
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/work">Work</Link></MenuItem>
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/blog">Blog</Link></MenuItem>
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to="/contact">Contact</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/about'>About</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/work'>Work</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/blog'>Blog</Link></MenuItem>
+        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/contact'>Contact</Link></MenuItem>
       </Menu>
     </>
   )
 })
+MobileMenu.propTypes = {
+  toggleMenu: PropTypes.func.isRequired,
+}
 export default MobileMenu

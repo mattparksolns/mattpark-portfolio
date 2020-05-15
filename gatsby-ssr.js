@@ -10,7 +10,6 @@ const ThemeScript = () => {
       function setTheme(newTheme) {
         window.__theme = newTheme;
         preferredTheme = newTheme;
-        document.body.className = newTheme;
         window.__onThemeChange(newTheme);
       }
       let preferredTheme;
