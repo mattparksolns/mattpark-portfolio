@@ -43,17 +43,16 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
-        path: `${__dirname}/static/assets`,
-      },
+        name: `images`,
+        path: `${__dirname}/static/assets/images/`,
+      }
     },
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,6 +60,7 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
+    `gatsby-plugin-no-javascript`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

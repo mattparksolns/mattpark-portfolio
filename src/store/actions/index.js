@@ -1,9 +1,9 @@
 import * as actionTypes from './actionTypes'
 import axios from 'axios'
 
-export const toggleDarkMode = (themeType) => ({
+export const toggleDarkMode = (paletteType) => ({
   type: actionTypes.TOGGLE_DARKMODE,
-  themeType,
+  paletteType,
 })
 
 export const setIPv4 = (ipv4) => ({
@@ -17,7 +17,7 @@ export const setIPv6 = (ipv6) => ({
 })
 
 export const setGeoData = (geoData) => ({
-  type: actionTypes.SET_GEODATA,
+  type: actionTypes.SET_GEO_DATA,
   geoData,
 })
 

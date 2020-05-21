@@ -5,24 +5,28 @@ import baseTheme from './base'
 const darkTheme = createMuiTheme({
   ...baseTheme,
   overrides: {
-    ...baseTheme.overrides,
-    MuiButton: {
-      label: {
-        color: '#000000',
-      }
-    },
-    MuiIconButton: {
-      root: {
-        color: '#ffffff',
-        '&:hover': {
-          backgroundColor: 'transparent',
+    MuiCssBaseline: {
+      '@global': {
+        main: {
+          '& input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active':  {
+            '-webkit-box-shadow': '0 0 0 30px transparent inset !important',
+          }
         }
-      }
+      },
     },
-    MuiSvgIcon: {
+    MuiButton: {
       root: {
-        color: '#ffffff',
-      }
+        borderRadius: 0,
+      },
+      contained: {
+        '& *': {
+          color: '#000000',
+        },
+        backgroundColor: '#ffffff',
+        '&:hover': {
+          backgroundColor: '#c1d5e0',
+        },
+      },
     },
   },
   colors: {
@@ -45,7 +49,7 @@ const darkTheme = createMuiTheme({
       default: '#131217',
     },
     primary: {
-      main: '#131217',
+      main: '#ffffff',
     },
     secondary: {
       main: '#131217'

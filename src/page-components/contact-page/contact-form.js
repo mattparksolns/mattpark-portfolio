@@ -50,8 +50,6 @@ const ContactForm = withStyles((theme) => ({
       }).catch((error) => {
         console.log(error)
       })
-    } else {
-      console.log('Invalid Input')
     }
   }
 

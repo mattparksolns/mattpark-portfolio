@@ -28,26 +28,27 @@ const Farewell = withStyles((theme) => ({
     },
   },
   contactLink: {
-    color: theme.text.hover2,
+    // color: theme.text.hover2,
     '&:hover': {
-      color: theme.text.hover,
+      // color: theme.text.hover,
     },
   },
   logoAndSignatureContainer: {
     display: 'flex',
     flexDirection: 'row',
-    margin: '8vh 10vw 0',
+    marginTop: '8vh',
     justifyContent: 'flex-end',
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'flex-start',
     },
   },
   logo: {
-    width: '18vw'
+    width: '20vw'
   },
   thanksAndSignatureContainer: {
     display: 'flex',
     flexDirection: 'column',
+    // marginRight:
   },
   thankYouMessage: {
     // color: 'ghostwhite',

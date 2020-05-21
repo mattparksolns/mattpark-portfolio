@@ -1,40 +1,31 @@
-import React, { useEffect } from 'react'
-import { MuiThemeProvider, CssBaseline } from '@material-ui/core'
-import lightTheme from './light'
-import darkTheme from './dark'
+import React, { useMemo, useEffect } from 'react'
+import { MuiThemeProvider, CssBaseline, useMediaQuery } from '@material-ui/core'
 import { connect } from 'react-redux'
+
 import { toggleDarkMode } from '../store/actions'
+import getBaseTheme from './base'
 
-const themes = {
-  light: lightTheme,
-  dark: darkTheme,
-}
-
-export const getTheme = (theme) => (
-  themes[theme]
-)
-
-const ThemeProvider = ({ children, themeType, toggleDarkMode }) => {
+const ThemeProvider = ({ children, paletteType, toggleDarkMode }) => {
+  // const prefersDarkMode = useMediaQuery(`(prefers-color-scheme: ${window.__theme})`)
   useEffect(() => {
     toggleDarkMode(window.__theme)
-    window.__onThemeChange = () => toggleDarkMode(window.__theme)
-    // if (window) {
-    // } else {
-    //   toggleDarkMode(themeType)
-    // }
-  }, [themeType, toggleDarkMode])
+    window.__onThemeChange = () => {
+      toggleDarkMode(window.__theme)
+    }
+  }, [toggleDarkMode])
+  const theme = useMemo(() => getBaseTheme({ paletteType }), [paletteType])
   return (
-    <MuiThemeProvider theme={themes[themeType]}>
+    <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      {children}
+        {children}
     </MuiThemeProvider>
   )
 }
 export default connect(
-  (state) => ({
-    themeType: state.app.themeType,
+  state => ({
+    paletteType: state.app.paletteType,
   }),
-  (dispatch) => ({
-    toggleDarkMode: (themeType) => dispatch(toggleDarkMode(themeType))
+  dispatch => ({
+    toggleDarkMode: paletteType => dispatch(toggleDarkMode(paletteType)),
   }),
 )(ThemeProvider)

@@ -16,7 +16,7 @@ describe("ContactPage", () => {
   beforeEach(() => {
     store = mockStore({
       app: {
-        themeType: 'light',
+        paletteType: 'light',
         ipv4: '',
         ipv6: '',
         geoData: '',
@@ -25,7 +25,7 @@ describe("ContactPage", () => {
 
     tree = renderer.create(
       <Provider store={store}>
-        <MuiThemeProvider theme={getTheme(store.getState().app.themeType)}>
+        <MuiThemeProvider theme={getTheme(store.getState().app.paletteType)}>
           <ContactPage />
         </MuiThemeProvider>
       </Provider>

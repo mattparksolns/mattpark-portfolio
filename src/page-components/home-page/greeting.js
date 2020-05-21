@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link as GatsbyLink } from 'gatsby'
 import { withStyles, Typography, Link } from '@material-ui/core'
 
 import BackgroundImage from "./background-image"
@@ -8,7 +9,7 @@ const Greeting = withStyles((theme) => ({
     position: 'relative',
   },
   greeting: {
-    color: theme.colors.text,
+    // color: theme.colors.text,
     position: 'absolute',
     top: 0,
     left: 0,
@@ -24,13 +25,13 @@ const Greeting = withStyles((theme) => ({
   },
   myName: {
     fontWeight: 'bold',
-    color: theme.text.hover3,
+    // color: theme.text.hover3,
     '&:hover': {
-      color: theme.text.hover2
+      // color: theme.text.hover2
     }
   },
   description: {
-    color: theme.colors.text,
+    // color: theme.colors.text,
     textAlign: 'right',
     fontSize: '3vw',
     [theme.breakpoints.down('sm')]: {
@@ -47,7 +48,7 @@ const Greeting = withStyles((theme) => ({
       <BackgroundImage />
       <Typography className={classes.greeting} variant="h1" gutterBottom>
         My name is
-        <Link className={classes.myName} title="LinkedIn" underline="none"
+        <Link className={classes.myName} title="LinkedIn"
           href="https://linkedin.com/in/mattparksolutions"> Matt Park. </Link>
         I am from the greater New York area.
       </Typography>

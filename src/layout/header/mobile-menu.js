@@ -1,6 +1,5 @@
 import { Link } from 'gatsby'
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from "react";
 import { withStyles, IconButton, Menu, MenuItem } from '@material-ui/core'
 import { Close, Menu as MenuIcon } from '@material-ui/icons'
 
@@ -13,46 +12,48 @@ const MobileMenu = withStyles((theme) => ({
   },
   paper: {
     borderRadius: 0,
-    width: '15em',
+    width: '15rem',
   },
-  link: {
-    width: '100%',
-    color: theme.text.primary,
-    textDecoration: 'None',
-    textAlign: 'center',
+  list: {
+    padding: 0,
+    '& > li > a': {
+      width: '100%',
+      textAlign: 'center',
+    },
   },
-}))(({ classes, anchorEl, toggleMenu }) => {
+}))(({ classes }) => {
+  const [anchorEl, setAnchorEl] = useState(null)
+
+  const toggleMenu = (e) => {
+    setAnchorEl(anchorEl ? null : e.currentTarget)
+  }
   return (
     <>
-      <IconButton
-        className={classes.icon}
-        aria-label='menu'
-        aria-haspopup='true'
-        onClick={toggleMenu}
-      >{ anchorEl ? <Close /> : <MenuIcon /> }</IconButton>
-      <Menu
-        anchorEl={anchorEl}
-        getContentAnchorEl={null}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transitionDuration={600}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={toggleMenu}
-        disableScrollLock={true}
-        classes={{
-          paper: classes.paper,
-        }}
+      <IconButton className={classes.icon}
+                  aria-label='menu'
+                  aria-haspopup='true'
+                  onClick={toggleMenu}>
+        { anchorEl ? <Close /> : <MenuIcon /> }</IconButton>
+      <Menu anchorEl={anchorEl}
+            getContentAnchorEl={null}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+            transitionDuration={600}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={toggleMenu}
+            disableScrollLock={true}
+            classes={{
+              paper: classes.paper,
+              list: classes.list,
+            }}
       >
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/about'>About</Link></MenuItem>
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/work'>Work</Link></MenuItem>
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/blog'>Blog</Link></MenuItem>
-        <MenuItem onClick={toggleMenu}><Link className={classes.link} to='/contact'>Contact</Link></MenuItem>
+        <MenuItem><Link onClick={toggleMenu} to='/about'>About</Link></MenuItem>
+        <MenuItem><Link onClick={toggleMenu} to='/work'>Work</Link></MenuItem>
+        <MenuItem><Link onClick={toggleMenu} to='/blog'>Blog</Link></MenuItem>
+        <MenuItem><Link onClick={toggleMenu} to='/contact'>Contact</Link></MenuItem>
       </Menu>
     </>
   )
 })
-MobileMenu.propTypes = {
-  toggleMenu: PropTypes.func.isRequired,
-}
 export default MobileMenu

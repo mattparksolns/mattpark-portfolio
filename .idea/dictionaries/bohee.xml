@@ -2,11 +2,18 @@
   <dictionary name="bohee">
     <words>
       <w>axios</w>
+      <w>contentinfo</w>
+      <w>darkmode</w>
+      <w>feedburner</w>
       <w>frontmatter</w>
+      <w>geodata</w>
       <w>loadershim</w>
       <w>mattpark</w>
       <w>mattparksolutions</w>
       <w>matttpark</w>
+      <w>noninfringement</w>
+      <w>preact</w>
+      <w>prismjs</w>
       <w>woff</w>
     </words>
   </dictionary>

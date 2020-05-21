@@ -18,8 +18,10 @@ const Layout = withStyles((theme) => ({
   return (
     <>
       <Header />
-      <main className={classes.main} role={"main"}>{children}</main>
-      <Footer />
+      <main className={classes.main}>
+        {children}
+      </main>
+      <Footer location={location} />
     </>
   )
 })

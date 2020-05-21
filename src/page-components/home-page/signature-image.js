@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 const SignatureImage = () => {
   const data = useStaticQuery(graphql`
       query {
-          placeholderImage: file(relativePath: { eq: "images/signature.png" }) {
+          placeholderImage: file(relativePath: { eq: "signature.png" }) {
               childImageSharp {
                   fluid(maxWidth: 300) {
                       ...GatsbyImageSharpFluid
@@ -14,8 +14,6 @@ const SignatureImage = () => {
           }
       }
   `)
-
   return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
 }
-
 export default SignatureImage

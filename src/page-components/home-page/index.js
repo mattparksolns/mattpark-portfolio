@@ -6,15 +6,6 @@ import Farewell from './farewell'
 
 
 const HomePage = withStyles((theme) => ({
-  video: {
-    opacity: '60%',
-    // height: '100%',
-    width: '100%',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    zIndex: -1,
-  },
   miniStripe: {
     zIndex: 1,
     height: 2,

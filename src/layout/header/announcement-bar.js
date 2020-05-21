@@ -1,41 +1,33 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withStyles, Container, Typography, Button } from '@material-ui/core'
+import React, { useState } from "react";
+import { withStyles, Typography, IconButton } from '@material-ui/core'
 import { Close } from "@material-ui/icons"
 
 const AnnouncementBar = withStyles((theme) => ({
   root: {
-    backgroundColor: theme.text.primary,
+    // backgroundColor: theme.text.primary,
+    backgroundColor: 'black',
     padding: 0,
     margin: 0,
-    height: '5.5vh',
+    height: '4.5vh',
     textAlign: 'center',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    '& > h6': {
+      width: '100%',
+      fontSize: 14,
+      marginBottom: 0,
+      // color: theme.text.inverse,
+    },
   },
-  announcement: {
-    width: '100%',
-    fontSize: 18,
-    marginTop: 10,
-    color: theme.text.inverse,
-  },
-  button: {
-    color: theme.text.inverse,
-  },
-}))(({ classes, closeAnnouncementBar }) => {
-  return (
-    <Container className={classes.root} maxWidth="xl">
-      <Typography className={classes.announcement} variant="h1">
-        COVID-19 Update
-      </Typography>
-      <Button aria-label="close" onClick={closeAnnouncementBar}>
-        <Close className={classes.button} />
-      </Button>
-    </Container>
-  )
+}))(({ classes }) => {
+  const [announcementShown, closeAnnouncement] = useState(true)
+  return announcementShown && (
+      <div className={classes.root}>
+        <Typography variant={"h6"}>COVID-19 Update</Typography>
+        <IconButton onClick={e => closeAnnouncement(false)} color={"inherit"}>
+          <Close /></IconButton>
+      </div>
+    )
 })
-AnnouncementBar.propTypes = {
-  closeAnnouncementBar: PropTypes.func.isRequired,
-}
 export default AnnouncementBar

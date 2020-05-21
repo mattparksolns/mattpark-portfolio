@@ -41,11 +41,11 @@ const ContactInfo = withStyles((theme) => ({
       fontSize: '7.55vw',
     },
     alignItems: 'flex-end',
-    color: theme.text.primary,
+    // color: theme.text.primary,
     '&:hover': {
-      color: theme.text.hover2,
+      // color: theme.text.hover2,
       '& > svg': {
-        color: theme.text.hover2,
+        // color: theme.text.hover2,
       }
     }
   },
@@ -62,11 +62,11 @@ const ContactInfo = withStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       fontSize: '5vw',
     },
-    color: theme.text.primary,
+    // color: theme.text.primary,
     '&:hover': {
-      color: theme.text.hover2,
+      // color: theme.text.hover2,
       '& > svg': {
-        color: theme.text.hover2,
+        // color: theme.text.hover2,
       }
     }
   },

@@ -4,9 +4,9 @@ import { withStyles, TextField } from '@material-ui/core'
 
 const StyledTextField = withStyles((theme) => ({
   label: {
-    color: theme.text.hover2,
+    // color: theme.text.hover2,
     '&$focused': {
-      color: theme.text.primary,
+      // color: theme.text.primary,
     }
   },
   focused: {
@@ -14,11 +14,11 @@ const StyledTextField = withStyles((theme) => ({
   outlinedInput: {
     borderRadius: 0,
       '&$focused $notchedOutline': {
-      borderColor: theme.text.primary,
+      // borderColor: theme.text.primary,
     },
   },
   notchedOutline: {
-    borderColor: theme.text.primary,
+    // borderColor: theme.text.primary,
   }
 }))(({ classes, label, value, onChange, ...props }) => {
   return (

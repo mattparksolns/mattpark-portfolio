@@ -1,13 +1,14 @@
-import React, { createElement } from 'react'
+import { createElement } from 'react'
 
-import wrapWithProviders from "./wrap-with-providers"
-export const wrapRootElement = wrapWithProviders
+import { SsrRootWrapper, SsrPageWrapper, BrowserRootWrapper } from "./wrap-with-providers"
+export const wrapRootElement = SsrRootWrapper
+// export const wrapPageElement = SsrPageWrapper
 
-const ThemeScript = () => {
+export const onRenderBody = ({ setPreBodyComponents }) => {
   let codeToRunOnClient = `
     (() => {
       window.__onThemeChange = function() {};
-      function setTheme(newTheme) {
+      const setTheme = (newTheme) => {
         window.__theme = newTheme;
         preferredTheme = newTheme;
         window.__onThemeChange(newTheme);
@@ -15,28 +16,29 @@ const ThemeScript = () => {
       let preferredTheme;
       try {
         preferredTheme = localStorage.getItem('theme');
-      } catch (err) { }
-      window.__setPreferredTheme = function(newTheme) {
+      } catch (error) {
+        console.error(error);
+      }
+      window.__setPreferredTheme = (newTheme) => {
         setTheme(newTheme);
         try {
           localStorage.setItem('theme', newTheme);
-        } catch (err) {}
+        } catch (error) {
+          console.error(error)
+        }
       }
-      let darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      darkQuery.addListener((e) => {
+      let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+      prefersDarkMode.addListener((e) => {
         window.__setPreferredTheme(e.matches ? 'light' : 'dark')
       });
-      setTheme(preferredTheme || (darkQuery.matches ? 'light' : 'dark'));
+      setTheme(preferredTheme || (prefersDarkMode.matches ? 'dark' : 'light'));
     })();
   `
-  return (
-    <script
-      dangerouslySetInnerHTML={{ __html: codeToRunOnClient }}
-    />
-  )
-}
-
-// NOTE: why do i have to pass in a key value
-export const onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents(<ThemeScript key={1} />)
+  const script = createElement('script', {
+    key: 'script',
+    dangerouslySetInnerHTML: {
+      __html: codeToRunOnClient
+    }
+  })
+  setPreBodyComponents([script])
 }
