@@ -1,44 +1,44 @@
 import { createElement } from 'react'
 
-import { SsrRootWrapper, SsrPageWrapper, BrowserRootWrapper } from "./wrap-with-providers"
+import { SsrRootWrapper, SsrPageWrapper, BrowserRootWrapper } from "./src/utils/provider-wrappers"
 export const wrapRootElement = SsrRootWrapper
-// export const wrapPageElement = SsrPageWrapper
 
 export const onRenderBody = ({ setPreBodyComponents }) => {
-  let codeToRunOnClient = `
-    (() => {
-      window.__onThemeChange = function() {};
-      const setTheme = (newTheme) => {
-        window.__theme = newTheme;
-        preferredTheme = newTheme;
-        window.__onThemeChange(newTheme);
-      }
-      let preferredTheme;
-      try {
-        preferredTheme = localStorage.getItem('theme');
-      } catch (error) {
-        console.error(error);
-      }
-      window.__setPreferredTheme = (newTheme) => {
-        setTheme(newTheme);
-        try {
-          localStorage.setItem('theme', newTheme);
-        } catch (error) {
-          console.error(error)
-        }
-      }
-      let prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-      prefersDarkMode.addListener((e) => {
-        window.__setPreferredTheme(e.matches ? 'light' : 'dark')
-      });
-      setTheme(preferredTheme || (prefersDarkMode.matches ? 'dark' : 'light'));
-    })();
-  `
-  const script = createElement('script', {
-    key: 'script',
+  const themeScript = createElement('script', {
+    key: 'themeScript',
     dangerouslySetInnerHTML: {
-      __html: codeToRunOnClient
+      __html: `
+        (() => {
+          window.__onThemeChange = () => {};
+          const setTheme = themeType => {
+            window.__theme = themeType;
+            preferredTheme = themeType;
+            window.__onThemeChange(themeType);
+            document.documentElement.style.setProperty('--initial-theme-type', themeType);
+            document.documentElement.style.setProperty('--color-bg', themeType === 'dark' ? 'black' : 'white');
+          }
+          let preferredTheme;
+          try {
+            preferredTheme = localStorage.getItem('theme');
+          } catch (error) {
+            console.error(error);
+          }
+          window.__setPreferredTheme = themeType => {
+            setTheme(themeType);
+            try {
+              localStorage.setItem('theme', themeType);
+            } catch (error) {
+              console.error(error)
+            }
+          }
+          let prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
+          prefersDarkTheme.addListener(e => {
+            window.__setPreferredTheme(e.matches ? 'light' : 'dark')
+          });
+          setTheme(preferredTheme || (prefersDarkTheme.matches ? 'dark' : 'light'));
+        })();
+      `
     }
   })
-  setPreBodyComponents([script])
+  setPreBodyComponents([themeScript])
 }

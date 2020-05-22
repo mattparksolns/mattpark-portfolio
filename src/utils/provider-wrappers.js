@@ -1,19 +1,19 @@
 import React from "react"
-import { Provider as ReduxProvider } from "react-redux";
+import { Provider as ReduxProvider } from "react-redux"
 
-import ThemeProvider from "./src/themes";
-import configureAppStore from "./src/store/configureStore"
-import { getUserData } from "./src/store/actions";
+import configureAppStore from "../store/configureStore"
+import { getUserData } from "../store/actions"
+import ThemeProvider from "../themes"
 
 export const BrowserRootWrapper = ({ element }) => {
   const store = configureAppStore()
   store.dispatch(getUserData())
   return (
-    <ReduxProvider store={store}>
-      <ThemeProvider>
+    <ThemeProvider>
+      <ReduxProvider store={store}>
         {element}
-      </ThemeProvider>
-    </ReduxProvider>
+      </ReduxProvider>
+    </ThemeProvider>
   )
 }
 

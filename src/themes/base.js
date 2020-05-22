@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core'
 
-const getBaseTheme = ({ paletteType }) =>
+const getBaseTheme = ({ themeType }) =>
   createMuiTheme({
     typography: {
       fontFamily: ['Montserrat'].join(','),
@@ -9,13 +9,13 @@ const getBaseTheme = ({ paletteType }) =>
       },
     },
     palette: {
-      type: paletteType,
+      type: themeType,
       background: {
-        paper: paletteType === 'dark' ? '#1a191f' : 'ghostwhite',
-        default: paletteType === 'dark' ? '#131217' : '#ffffff',
+        paper: themeType === 'dark' ? '#1a191f' : 'ghostwhite',
+        default: themeType === 'dark' ? '#131217' : '#ffffff',
       },
       text: {
-        primary: paletteType === 'dark' ? '#ffffff' : '#000000',
+        primary: themeType === 'dark' ? '#ffffff' : '#000000',
       }
     },
     overrides: {
