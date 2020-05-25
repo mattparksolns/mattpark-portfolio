@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static/assets/images/`,
+        name: `assets`,
+        path: `${__dirname}/static/assets/`,
       }
     },
     {
@@ -60,24 +60,31 @@ module.exports = {
         path: `${__dirname}/content/blog`,
       },
     },
-    `gatsby-plugin-no-javascript`,
+    {
+      resolve: `gatsby-plugin-catch-links`,
+      options: {
+        excludePattern: /(excluded-link|external)/,
+      }
+    },
+    // `gatsby-plugin-no-javascript`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-165323903-1`,
       },
     },
-    // `gatsby-theme-material-ui`,
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: `gatsby-plugin-material-ui`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/layout`)
+        // stylesProvider: {
+        //   injectFirst: true,
+        // }
       }
     },
     {

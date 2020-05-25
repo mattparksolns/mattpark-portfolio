@@ -1,7 +1,8 @@
 import { createMuiTheme } from '@material-ui/core'
 
-const getBaseTheme = ({ themeType }) =>
-  createMuiTheme({
+const getBaseTheme = ({ themeType }) => {
+  const isDark = themeType === 'dark'
+  return createMuiTheme({
     typography: {
       fontFamily: ['Montserrat'].join(','),
       button: {
@@ -9,10 +10,10 @@ const getBaseTheme = ({ themeType }) =>
       },
     },
     palette: {
-      type: themeType,
+      type: themeType || 'light',
       background: {
-        paper: themeType === 'dark' ? '#1a191f' : 'ghostwhite',
-        default: themeType === 'dark' ? '#131217' : '#ffffff',
+        paper: isDark ? '#1a191f' : 'ghostwhite',
+        default: isDark ? '#131217' : themeType ? '#ffffff' : 'transparent',
       },
       text: {
         primary: themeType === 'dark' ? '#ffffff' : '#000000',
@@ -25,7 +26,7 @@ const getBaseTheme = ({ themeType }) =>
             textDecoration: 'none',
           },
           main: {
-            '& input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active':  {
+            '& input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
               '-webkit-box-shadow': '0 0 0 30px transparent inset !important',
             }
           }
@@ -38,4 +39,5 @@ const getBaseTheme = ({ themeType }) =>
       }
     }
   })
+}
 export default getBaseTheme

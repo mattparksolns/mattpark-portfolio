@@ -1,9 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { withStyles, Switch } from '@material-ui/core'
 import { connect } from "react-redux";
-import { ThemeContext } from '../../themes'
-
-import { toggleDarkMode } from "../../store/actions";
 
 const DarkModeSwitch = withStyles((theme) => ({
   root: {
@@ -36,28 +33,18 @@ const DarkModeSwitch = withStyles((theme) => ({
     transition: theme.transitions.create(['background-color', 'border'])
   },
   checked: {},
-}))(({ classes, ...props }) => {
-  const { themeType, setThemeType } = useContext(ThemeContext)
-  // useEffect(() => {
-  //   toggleDarkMode(window.__theme)
-  //   window.__onThemeChange = () => {
-  //     toggleDarkMode(window.__theme)
-  //   }
-  // }, [toggleDarkMode])
+}))(({ classes, themeType, ...props }) => {
   return (
     <Switch classes={{ ...classes }}
             checked={themeType === 'dark'}
-            onChange={e => window.__setPreferredTheme(themeType === 'dark' ? 'light' : 'dark')}
+            onChange={e => window.__setThemeType(themeType === 'dark' ? 'light' : 'dark')}
             inputProps={{ 'aria-label': 'dark-mode switch' }}
             { ...props }/>
   )
 })
-export default DarkModeSwitch
-// export default connect(
-//   state => ({
-//     paletteType: state.app.paletteType
-//   }),
-//   dispatch => ({
-//     // toggleDarkMode: paletteType => dispatch(toggleDarkMode(paletteType)),
-//   })
-// )(DarkModeSwitch)
+// export default DarkModeSwitch
+export default connect(
+  state => ({
+    themeType: state.app.themeType
+  }),
+)(DarkModeSwitch)

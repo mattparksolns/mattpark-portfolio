@@ -1,44 +1,81 @@
-import { createElement } from 'react'
-
-import { SsrRootWrapper, SsrPageWrapper, BrowserRootWrapper } from "./src/utils/provider-wrappers"
+import { SsrRootWrapper, PageWrapper } from "./src/utils/provider-wrappers"
 export const wrapRootElement = SsrRootWrapper
+export const wrapPageElement = PageWrapper
 
+import React, { createElement } from 'react'
+
+import Terser from 'terser'
 export const onRenderBody = ({ setPreBodyComponents }) => {
-  const themeScript = createElement('script', {
-    key: 'themeScript',
+  const boundFn = () => {
+    window.__onThemeChange = () => {};
+    window.__setThemeType = themeType => {
+      window.__theme = themeType;
+      window.__onThemeChange();
+      try {
+        localStorage.setItem('themeType', themeType);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    let preferredTheme
+    try {
+      preferredTheme = localStorage.getItem('themeType')
+    } catch (error) {
+      console.error(error)
+    }
+    const mql = window.matchMedia('(prefers-color-scheme: dark)')
+    mql.addEventListener('change', e => {
+      window.__setThemeType(e.matches ? 'dark' : 'light');
+    })
+    window.__theme = preferredTheme || (mql.matches ? 'dark' : 'light')
+    document.documentElement.style.setProperty(
+      '--color-bg',
+      window.__theme === 'dark' ? '#121317' : '#ffffff')
+  }
+  let calledFunction = `(${String(boundFn)})()`
+  calledFunction = Terser.minify(calledFunction).code
+
+  const ThemeScript = createElement('script', {
+    key: 'theme-script',
     dangerouslySetInnerHTML: {
-      __html: `
-        (() => {
-          window.__onThemeChange = () => {};
-          const setTheme = themeType => {
-            window.__theme = themeType;
-            preferredTheme = themeType;
-            window.__onThemeChange(themeType);
-            document.documentElement.style.setProperty('--initial-theme-type', themeType);
-            document.documentElement.style.setProperty('--color-bg', themeType === 'dark' ? 'black' : 'white');
-          }
-          let preferredTheme;
-          try {
-            preferredTheme = localStorage.getItem('theme');
-          } catch (error) {
-            console.error(error);
-          }
-          window.__setPreferredTheme = themeType => {
-            setTheme(themeType);
-            try {
-              localStorage.setItem('theme', themeType);
-            } catch (error) {
-              console.error(error)
-            }
-          }
-          let prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)');
-          prefersDarkTheme.addListener(e => {
-            window.__setPreferredTheme(e.matches ? 'light' : 'dark')
-          });
-          setTheme(preferredTheme || (prefersDarkTheme.matches ? 'dark' : 'light'));
-        })();
-      `
+      __html: calledFunction
     }
   })
-  setPreBodyComponents([themeScript])
+  setPreBodyComponents([ThemeScript])
 }
+
+import { Provider as ReduxProvider } from 'react-redux'
+import { renderToString } from 'react-dom/server'
+import { ServerStyleSheets, StylesProvider } from '@material-ui/core'
+import ThemeProvider from './src/themes'
+import configureAppStore from './src/store'
+// import { getPageContext } from './src/themes'
+import getBaseTheme from './src/themes/base'
+
+// export const replaceRenderer = ({
+//   bodyComponent,
+//   replaceBodyHTMLString,
+//   setHeadComponents,
+// }) => {
+//   const store = configureAppStore()
+//   const sheets = new ServerStyleSheets()
+//   const bodyHTML = renderToString(
+//     sheets.collect(
+//       <ReduxProvider store={store}>
+//         <ThemeProvider>
+//           {bodyComponent}
+//         </ThemeProvider>
+//       </ReduxProvider>
+//     )
+//   )
+//   replaceBodyHTMLString(bodyHTML)
+//   setHeadComponents([
+//     <style type={"text/css"}
+//            id={"jss-server-side"}
+//            key={"jss-server-side"}
+//            dangerouslySetInnerHTML={{
+//              __html: sheets.toString()
+//            }}/>
+//   ])
+// }
+

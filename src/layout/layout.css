@@ -8,6 +8,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
+  background-color: var(--color-bg);
   overflow-x: hidden;
   margin: 0;
   -webkit-font-smoothing: antialiased;

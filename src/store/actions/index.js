@@ -1,22 +1,22 @@
-import * as actionTypes from './actionTypes'
+import actionTypes from './actionTypes'
 import axios from 'axios'
 
-export const toggleDarkMode = (paletteType) => ({
-  type: actionTypes.TOGGLE_DARKMODE,
-  paletteType,
+export const setThemeType = themeType => ({
+  type: actionTypes.SET_THEME_TYPE,
+  themeType,
 })
 
-export const setIPv4 = (ipv4) => ({
+export const setIPv4 = ipv4 => ({
   type: actionTypes.SET_IPV4,
   ipv4,
 })
 
-export const setIPv6 = (ipv6) => ({
+export const setIPv6 = ipv6 => ({
   type: actionTypes.SET_IPV6,
   ipv6,
 })
 
-export const setGeoData = (geoData) => ({
+export const setGeoData = geoData => ({
   type: actionTypes.SET_GEO_DATA,
   geoData,
 })
@@ -28,16 +28,16 @@ export const getUserData = () => dispatch => {
   }).catch((error) => {
     console.log(error)
   })
-  axios.get('https://api6.ipify.org?format=json').then((response) => {
+  axios.get('https://api6.ipify.org?format=json').then(response => {
     console.log(response)
     dispatch(setIPv6(response.data))
   }).catch((error) => {
     console.log(error)
   })
-  axios.get('https://geolocation-db.com/json/6db070f0-7c27-11ea-8264-e974339fc182').then((response) => {
+  axios.get('https://geolocation-db.com/json/6db070f0-7c27-11ea-8264-e974339fc182').then(response => {
     console.log(response)
     dispatch(setGeoData(response.data))
-  }).catch((error) => {
+  }).catch(error => {
     console.log(error)
   })
 }
