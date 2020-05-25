@@ -25,7 +25,7 @@ const AnnouncementBar = withStyles((theme) => ({
   return announcementShown && (
       <div className={classes.root}>
         <Typography variant={"h6"}>COVID-19 Update</Typography>
-        <IconButton onClick={e => closeAnnouncement(false)} color={"inherit"}>
+        <IconButton aria-label="close" onClick={e => closeAnnouncement(false)} color={"inherit"}>
           <Close /></IconButton>
       </div>
     )

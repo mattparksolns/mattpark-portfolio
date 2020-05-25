@@ -1,4 +1,4 @@
-import { Link as GatsbyLink, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
 import React from "react"
 import {
   withStyles,
@@ -73,15 +73,15 @@ const Header = withStyles((theme) => ({
       <AnnouncementBar />
       <Toolbar className={classes.toolbar} component={"nav"}>
         <Typography className={classes.logo} variant="h1">
-          <GatsbyLink title={siteTitle} to="/">
+          <Link title={siteTitle} to="/">
             Matt Park
-          </GatsbyLink>
+          </Link>
         </Typography>
         <div className={classes.pageLinks}>
-          <GatsbyLink to="/about">About</GatsbyLink>
-          <GatsbyLink to="/work">Work</GatsbyLink>
-          <GatsbyLink to="/blog">Blog</GatsbyLink>
-          <GatsbyLink to="/contact">Contact</GatsbyLink>
+          <Link component={GatsbyLink} to="/about">About</Link>
+          <Link component={GatsbyLink} to="/work">Work</Link>
+          <Link component={GatsbyLink} to="/blog">Blog</Link>
+          <Link component={GatsbyLink} to="/contact">Contact</Link>
         </div>
         <div className={classes.grow} />
         <div className={classes.socials}>

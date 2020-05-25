@@ -26,7 +26,7 @@ exports[`ContactPage renders correctly 1`] = `
           target="_top"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
             focusable="false"
             viewBox="0 0 24 24"
@@ -51,7 +51,7 @@ exports[`ContactPage renders correctly 1`] = `
           target="_top"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
             focusable="false"
             viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ exports[`ContactPage renders correctly 1`] = `
         className="MuiTypography-root Component-socialMediaLinks-9 MuiTypography-h2"
       >
         <a
-          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+          className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-colorPrimary"
           href="https://github.com/mattparksolutions"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -81,7 +81,7 @@ exports[`ContactPage renders correctly 1`] = `
           title="GitHub"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
             focusable="false"
             viewBox="0 0 24 24"
@@ -92,7 +92,7 @@ exports[`ContactPage renders correctly 1`] = `
           </svg>
         </a>
         <a
-          className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+          className="MuiTypography-root MuiLink-root MuiLink-underlineNone MuiTypography-colorPrimary"
           href="https://linkedin.com/in/mattparksolutions"
           onBlur={[Function]}
           onFocus={[Function]}
@@ -101,7 +101,7 @@ exports[`ContactPage renders correctly 1`] = `
           title="LinkedIn"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge"
             focusable="false"
             viewBox="0 0 24 24"
@@ -115,14 +115,14 @@ exports[`ContactPage renders correctly 1`] = `
     </div>
   </div>
   <form
-    className="Component-form-55"
+    className="Component-form-10"
     onSubmit={[Function]}
   >
     <div
       className="MuiFormControl-root MuiTextField-root"
     >
       <label
-        className="MuiFormLabel-root MuiInputLabel-root Component-label-56 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+        className="MuiFormLabel-root MuiInputLabel-root Component-label-11 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
         data-shrink={false}
       >
         Name
@@ -135,7 +135,7 @@ exports[`ContactPage renders correctly 1`] = `
         </span>
       </label>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root Component-outlinedInput-58 MuiInputBase-formControl"
+        className="MuiInputBase-root MuiOutlinedInput-root Component-outlinedInput-13 MuiInputBase-formControl"
         onClick={[Function]}
       >
         <input
@@ -154,10 +154,10 @@ exports[`ContactPage renders correctly 1`] = `
         />
         <fieldset
           aria-hidden={true}
-          className="PrivateNotchedOutline-root-118 MuiOutlinedInput-notchedOutline Component-notchedOutline-59"
+          className="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline Component-notchedOutline-14"
         >
           <legend
-            className="PrivateNotchedOutline-legendLabelled-120"
+            className="PrivateNotchedOutline-legendLabelled-17"
           >
             <span>
               Name
@@ -171,7 +171,7 @@ exports[`ContactPage renders correctly 1`] = `
       className="MuiFormControl-root MuiTextField-root"
     >
       <label
-        className="MuiFormLabel-root MuiInputLabel-root Component-label-56 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+        className="MuiFormLabel-root MuiInputLabel-root Component-label-11 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
         data-shrink={false}
       >
         Email
@@ -184,7 +184,7 @@ exports[`ContactPage renders correctly 1`] = `
         </span>
       </label>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root Component-outlinedInput-58 MuiInputBase-formControl"
+        className="MuiInputBase-root MuiOutlinedInput-root Component-outlinedInput-13 MuiInputBase-formControl"
         onClick={[Function]}
       >
         <input
@@ -203,10 +203,10 @@ exports[`ContactPage renders correctly 1`] = `
         />
         <fieldset
           aria-hidden={true}
-          className="PrivateNotchedOutline-root-118 MuiOutlinedInput-notchedOutline Component-notchedOutline-59"
+          className="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline Component-notchedOutline-14"
         >
           <legend
-            className="PrivateNotchedOutline-legendLabelled-120"
+            className="PrivateNotchedOutline-legendLabelled-17"
           >
             <span>
               Email
@@ -220,7 +220,7 @@ exports[`ContactPage renders correctly 1`] = `
       className="MuiFormControl-root MuiTextField-root"
     >
       <label
-        className="MuiFormLabel-root MuiInputLabel-root Component-label-56 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
+        className="MuiFormLabel-root MuiInputLabel-root Component-label-11 MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined Mui-required Mui-required"
         data-shrink={false}
       >
         Message
@@ -233,7 +233,7 @@ exports[`ContactPage renders correctly 1`] = `
         </span>
       </label>
       <div
-        className="MuiInputBase-root MuiOutlinedInput-root Component-outlinedInput-58 MuiInputBase-formControl MuiInputBase-multiline MuiOutlinedInput-multiline"
+        className="MuiInputBase-root MuiOutlinedInput-root Component-outlinedInput-13 MuiInputBase-formControl MuiInputBase-multiline MuiOutlinedInput-multiline"
         onClick={[Function]}
       >
         <textarea
@@ -252,10 +252,10 @@ exports[`ContactPage renders correctly 1`] = `
         />
         <fieldset
           aria-hidden={true}
-          className="PrivateNotchedOutline-root-118 MuiOutlinedInput-notchedOutline Component-notchedOutline-59"
+          className="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline Component-notchedOutline-14"
         >
           <legend
-            className="PrivateNotchedOutline-legendLabelled-120"
+            className="PrivateNotchedOutline-legendLabelled-17"
           >
             <span>
               Message
@@ -270,7 +270,7 @@ exports[`ContactPage renders correctly 1`] = `
     >
       <span
         aria-disabled={false}
-        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-134 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
+        className="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-19 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary"
         onBlur={[Function]}
         onDragLeave={[Function]}
         onFocus={[Function]}
@@ -290,14 +290,14 @@ exports[`ContactPage renders correctly 1`] = `
           <input
             aria-label="privacy policy"
             checked={false}
-            className="PrivateSwitchBase-input-137"
+            className="PrivateSwitchBase-input-22"
             data-indeterminate={false}
             onChange={[Function]}
             required={true}
             type="checkbox"
           />
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root"
             focusable="false"
             viewBox="0 0 24 24"
@@ -340,7 +340,7 @@ exports[`ContactPage renders correctly 1`] = `
           className="MuiButton-endIcon MuiButton-iconSizeLarge"
         >
           <svg
-            aria-hidden="true"
+            aria-hidden={true}
             className="MuiSvgIcon-root"
             focusable="false"
             viewBox="0 0 24 24"

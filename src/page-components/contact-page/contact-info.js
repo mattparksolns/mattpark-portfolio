@@ -1,5 +1,6 @@
 import React from 'react'
-import { withStyles, Typography, Link } from '@material-ui/core'
+import { withStyles, Typography } from '@material-ui/core'
+import Link from '../../components/Link'
 import {
   GitHub,
   LinkedIn,

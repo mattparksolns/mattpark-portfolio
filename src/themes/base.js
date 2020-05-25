@@ -16,8 +16,11 @@ const getBaseTheme = ({ themeType }) => {
         default: isDark ? '#131217' : themeType ? '#ffffff' : 'transparent',
       },
       text: {
-        primary: themeType === 'dark' ? '#ffffff' : '#000000',
-      }
+        primary: isDark ? '#ffffff' : '#000000',
+      },
+      primary: {
+        main: isDark ? '#ffffff' : '#131217',
+      },
     },
     overrides: {
       MuiCssBaseline: {

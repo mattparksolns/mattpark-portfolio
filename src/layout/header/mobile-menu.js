@@ -1,6 +1,6 @@
-import { Link } from 'gatsby'
+import { Link as GatsbyLink } from 'gatsby'
 import React, { useState } from "react";
-import { withStyles, IconButton, Menu, MenuItem } from '@material-ui/core'
+import { withStyles, Link, IconButton, Menu, MenuItem } from '@material-ui/core'
 import { Close, Menu as MenuIcon } from '@material-ui/icons'
 
 const MobileMenu = withStyles((theme) => ({
@@ -48,10 +48,10 @@ const MobileMenu = withStyles((theme) => ({
               list: classes.list,
             }}
       >
-        <MenuItem><Link onClick={toggleMenu} to='/about'>About</Link></MenuItem>
-        <MenuItem><Link onClick={toggleMenu} to='/work'>Work</Link></MenuItem>
-        <MenuItem><Link onClick={toggleMenu} to='/blog'>Blog</Link></MenuItem>
-        <MenuItem><Link onClick={toggleMenu} to='/contact'>Contact</Link></MenuItem>
+        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/about'>About</Link></MenuItem>
+        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/work'>Work</Link></MenuItem>
+        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/blog'>Blog</Link></MenuItem>
+        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/contact'>Contact</Link></MenuItem>
       </Menu>
     </>
   )

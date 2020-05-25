@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
 import { withStyles, Typography, Link } from '@material-ui/core'
 
 import BackgroundImage from "./background-image"
@@ -49,8 +48,7 @@ const Greeting = withStyles((theme) => ({
       <Typography className={classes.greeting} variant="h1" gutterBottom>
         My name is
         <Link className={classes.myName} title="LinkedIn"
-              target={"_blank"}
-              rel={"noopener noreferrer"}
+              target={"_blank"} rel={"noopener noreferrer"}
               href="https://linkedin.com/in/mattparksolutions"> Matt Park. </Link>
         I am from the greater New York area.
       </Typography>
