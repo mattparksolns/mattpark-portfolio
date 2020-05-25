@@ -20,25 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/nodejs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/nodejs.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/videos/accessibility.test.js.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/videos/accessibility.test.js.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Link.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Link.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/header/announcement-bar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/announcement-bar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/header/dark-mode-switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/dark-mode-switch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/header/mobile-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/mobile-menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/contact-page/__snapshots__/contact-info.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/contact-page/__snapshots__/contact-info.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/contact-page/__snapshots__/index.test.js.snap" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/contact-page/__snapshots__/index.test.js.snap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/contact-page/contact-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/contact-page/contact-info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/contact-page/contact-info.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/contact-page/contact-info.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/contact-page/index.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/contact-page/index.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/home-page/farewell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/home-page/farewell.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page-components/home-page/greeting.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/home-page/greeting.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/themes/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/themes/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +150,7 @@
       <workItem from="1590104377218" duration="39919000" />
       <workItem from="1590186838277" duration="155000" />
       <workItem from="1590187026262" duration="58293000" />
-      <workItem from="1590370604301" duration="6927000" />
+      <workItem from="1590370604301" duration="7860000" />
     </task>
     <servers />
   </component>
