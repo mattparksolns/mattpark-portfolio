@@ -1,60 +1,31 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import {
-  makeStyles,
-} from '@material-ui/core'
+import { withStyles } from '@material-ui/core'
 
 import "./layout.css"
 import Header from "./header"
 import Footer from './footer'
-import SEO from "./seo"
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-  },
-  container: {
-    margin: '20vh auto',
-    marginBottom: 0,
-    padding: '0 10vw',
-    [theme.breakpoints.down('sm')]: {
-      padding: '0 3vw',
-    },
-    [theme.breakpoints.up('md')]: {
-      padding: '0, 10vw',
-    },
-  },
+const Layout = withStyles((theme) => ({
   main: {
     minHeight: '72vh',
+    margin: '20vh 10vw 0',
+    [theme.breakpoints.down('sm')]: {
+      margin: '20vh 3vw 0',
+    },
   },
-  footerHr: {
-    // backgroundColor: '#d91616',
-    backgroundColor: 'black',
-    height: 2,
-    marginBottom: 0,
-    margin: '0 5vw'
-  },
-}))
-
-
-const Layout = ({ pageTitle, location, children }) => {
-  const classes = useStyles()
-
+}))(({ classes, location, children }) => {
   return (
-    <div className={classes.root}>
+    <>
       <Header />
-      <SEO pageTitle={pageTitle} />
-      <div className={classes.container}>
-        <main className={classes.main}>{children}</main>
-        <hr className={classes.footerHr} />
-        <Footer />
-      </div>
-    </div>
+      <main className={classes.main}>
+        {children}
+      </main>
+      <Footer location={location} />
+    </>
   )
-}
-
+})
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
-
 export default Layout

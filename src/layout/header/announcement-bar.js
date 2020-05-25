@@ -1,67 +1,33 @@
-import React from 'react'
-import {
-  makeStyles,
-  Typography,
-  Button,
-} from '@material-ui/core'
-import {
-  Close,
-} from "@material-ui/icons"
+import React, { useState } from "react";
+import { withStyles, Typography, IconButton } from '@material-ui/core'
+import { Close } from "@material-ui/icons"
 
-
-const useStyles = makeStyles((theme) => ({
+const AnnouncementBar = withStyles((theme) => ({
   root: {
-    position: 'fixed',
-    left: 0,
-    backgroundColor: '#282828',
-    // color: 'black',
-    width: '100%',
-    height: '5.5vh',
+    // backgroundColor: theme.text.primary,
+    backgroundColor: 'black',
+    padding: 0,
+    margin: 0,
+    height: '4.5vh',
     textAlign: 'center',
-  },
-  container: {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingTop: '1vh',
-  },
-  announcement: {
-    width: '98%',
-    fontSize: 18,
-  },
-  button: {
-    color: 'white',
-    '&:hover': {
-      backgroundColor: 'transparent',
+    '& > h6': {
+      width: '100%',
+      fontSize: 14,
+      marginBottom: 0,
+      // color: theme.text.inverse,
     },
-    padding: 0,
   },
-  empty: {
-  },
-}))
-
-const AnnouncementBar = ({ closeAnnouncementBar }) => {
-  const classes = useStyles()
-
-  return (
-    <div className={classes.root}>
-      <div className={classes.container}>
-        <Typography className={classes.announcement} variant="h1">
-          COVID-19 Update
-        </Typography>
-        <Button
-          className={classes.button}
-          color="inherit"
-          aria-label="Close AnnouncementBar Button"
-          onClick={closeAnnouncementBar}
-          disableRipple
-          disableFocusRipple
-        >
-          <Close />
-        </Button>
+}))(({ classes }) => {
+  const [announcementShown, closeAnnouncement] = useState(true)
+  return announcementShown && (
+      <div className={classes.root}>
+        <Typography variant={"h6"}>COVID-19 Update</Typography>
+        <IconButton aria-label="close" onClick={e => closeAnnouncement(false)} color={"inherit"}>
+          <Close /></IconButton>
       </div>
-    </div>
-  )
-}
-
+    )
+})
 export default AnnouncementBar

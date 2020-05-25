@@ -1,11 +1,52 @@
 import { createMuiTheme } from '@material-ui/core'
 
+import baseTheme from './base'
 
-export const lightTheme = createMuiTheme({
+const lightTheme = createMuiTheme({
+  ...baseTheme,
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active':  {
+          '-webkit-box-shadow': '0 0 0 30px #131217 inset !important',
+        }
+      },
+    },
+    MuiButton: {
+      root: {
+        borderRadius: 0,
+      },
+      contained: {
+        '& *': {
+          color: '#ffffff',
+        },
+        backgroundColor: '#000000',
+        '&:hover': {
+          backgroundColor: '#34515e',
+        },
+      },
+    },
+  },
+  colors: {
+    myName: '#000000',
+    text: '#000000',
+    footerHr: '#000000',
+  },
+  text: {
+    primary: '#000000',
+    hover: '#8eacbb',
+    hover2: '#607d8b',
+    hover3: '#34515e',
+    inverse: '#ffffff',
+  },
   palette: {
     type: 'light',
+    background: {
+      paper: 'ghostwhite',
+      default: '#ffffff',
+    },
     primary: {
-      main: '#1565c0',
+      main: '#000000',
     },
     secondary: {
       main: '#673ab7',
@@ -32,3 +73,5 @@ export const lightTheme = createMuiTheme({
   },
 
 })
+
+export default lightTheme

@@ -74,3 +74,4 @@ yarn-error.log
 # Cypress
 cypress/videos
 cypress/screenshots
+__mocks__/__mock_queries__/

@@ -1,13 +1,5 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
-
-
 
 exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
   const config = getConfig()
@@ -30,8 +22,6 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
   }
 }
 
-// Implement the Gatsby API “createPages”. This is called once the
-// data layer is bootstrapped to let plugins create pages from data.
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
@@ -60,8 +50,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (result.errors) {
     throw result.errors
   }
-
-  // Create blog-page post pages.
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
       path: `${node.fields.slug}`,

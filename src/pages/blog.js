@@ -1,16 +1,12 @@
 import React from 'react'
 
-import Layout from '../layout'
-import SEO from '../layout/seo'
-import BlogPage from '../features/blog-page'
+import BlogPage from '../page-components/blog-page'
+import SEO from '../features/seo'
 
-const Blog = () => {
-  return (
-    <Layout>
-      <SEO pageTitle="Blog" />
-      <BlogPage />
-    </Layout>
-  )
-}
-
+const Blog = ({ location }) => (
+  <>
+    <SEO pageTitle="Blog" />
+    <BlogPage location={location} />
+  </>
+)
 export default Blog

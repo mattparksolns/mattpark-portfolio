@@ -1,9 +1,3 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
-import wrapWithProvider from "./wrap-with-provider"
-export const wrapRootElement = wrapWithProvider
-
+import { BrowserRootWrapper, PageWrapper } from "./src/utils/provider-wrappers"
+export const wrapRootElement = BrowserRootWrapper
+export const wrapPageElement = PageWrapper

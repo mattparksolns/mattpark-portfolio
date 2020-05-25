@@ -19,33 +19,40 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Matt Park Portfolio`,
-        short_name: `starter`,
+        short_name: `mattpark`,
         start_url: `/`,
-        background_color: `#303030`,
+        background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `static/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
       },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://mattpark.now.sh`,
+        noTrailingSlash: true,
+        noQueryString: true,
+      }
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `assets`,
-        path: `${__dirname}/content/assets`,
-      },
+        path: `${__dirname}/static/assets/`,
+      }
     },
-
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -54,29 +61,31 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-react-redux`,
+      resolve: `gatsby-plugin-catch-links`,
       options: {
-        // [required] - path to your createStore module
-        pathToCreateStoreModule: "./src/state/createStore",
-        // [optional] - options passed to `serialize-javascript`
-        // info: https://github.com/yahoo/serialize-javascript#options
-        // will be merged with these defaults:
-        serialize: {
-          space: 0,
-          isJSON: true,
-          unsafe: false,
-        },
-        // [optional] - if true will clean up after itself on the client, default:
-        cleanupOnClient: true,
-        // [optional] - name of key on `window` where serialized state will be stored, default:
-        windowKey: "__PRELOADED_STATE__",
-      },
+        excludePattern: /(excluded-link|external)/,
+      }
     },
+    // `gatsby-plugin-no-javascript`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `UA-165323903-1`,
       },
+    },
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/utils/typography`,
+    //   },
+    // },
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        // stylesProvider: {
+        //   injectFirst: true,
+        // }
+      }
     },
     {
       resolve: `gatsby-plugin-feed`,
@@ -140,18 +149,6 @@ module.exports = {
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-catch-links`,
-      options: {
-        excludePattern: /(excluded-link|external)/,
-      },
-    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -176,26 +173,6 @@ module.exports = {
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-emotion`,
-      options: {},
-    },
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        // disableAutoprefixing: false,
-        // disableMinification: false,
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        // displayName: false
       },
     },
   ],

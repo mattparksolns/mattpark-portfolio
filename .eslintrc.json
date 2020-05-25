@@ -6,9 +6,12 @@
       "jsx": true
     }
   },
+  "plugins": [
+  ],
   "rules": {
   },
   "extends": [
-    "plugin:cypress/recommended"
+    "plugin:cypress/recommended",
+    "plugin:react-hooks/recommended"
   ]
 }

@@ -1,16 +1,12 @@
 import React from 'react'
 
-import Layout from '../layout'
-import SEO from '../layout/seo'
-import AboutPage from '../features/about-page'
+import AboutPage from '../page-components/about-page'
+import SEO from '../features/seo'
 
-const About = () => {
-  return (
-    <Layout>
-      <SEO pageTitle="About" />
-      <AboutPage />
-    </Layout>
-  )
-}
-
+const About = ({ location }) => (
+  <>
+    <SEO pageTitle="About" canonical={location.pathname} />
+    <AboutPage location={location} />
+  </>
+)
 export default About

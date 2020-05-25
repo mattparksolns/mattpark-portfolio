@@ -1,14 +1,13 @@
 import React from "react"
+import { Typography } from '@material-ui/core'
 
-import Index from "../layout"
-import SEO from "../layout/seo"
+import SEO from "../features/seo"
 
-const NotFoundPage = () => (
-  <Index>
+const NotFoundPage = ({ location }) => (
+  <>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist...</p>
-  </Index>
+    <Typography variant="h2" component="p">404 NOT FOUND</Typography>
+    <Typography variant="h6">You just hit a route that doesn&#39;t exist...</Typography>
+  </>
 )
-
 export default NotFoundPage
