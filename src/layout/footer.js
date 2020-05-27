@@ -1,6 +1,5 @@
 import React from 'react'
-import { withStyles, Typography } from '@material-ui/core'
-import Link from '../components/Link'
+import { withStyles, Link, Typography } from '@material-ui/core'
 import SignatureImage from "../page-components/home-page/signature-image";
 
 const Footer = withStyles((theme) => ({

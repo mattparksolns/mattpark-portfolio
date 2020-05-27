@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles, TextField } from '@material-ui/core'
 
-const StyledTextField = withStyles((theme) => ({
+const StyledTextField = withStyles(theme => ({
   label: {
     // color: theme.text.hover2,
     '&$focused': {

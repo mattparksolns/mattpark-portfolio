@@ -21,6 +21,12 @@ const Greeting = withStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       fontsize: '12.5vw',
     },
+    '& > a': {
+      fontWeight: 'bold',
+      '&:hover': {
+
+      }
+    }
   },
   myName: {
     fontWeight: 'bold',
@@ -47,8 +53,7 @@ const Greeting = withStyles((theme) => ({
       <BackgroundImage />
       <Typography className={classes.greeting} variant="h1" gutterBottom>
         My name is
-        <Link className={classes.myName} title="LinkedIn"
-              target={"_blank"} rel={"noopener noreferrer"}
+        <Link title="LinkedIn" target={"_blank"} rel={"noopener noreferrer"}
               href="https://linkedin.com/in/mattparksolutions"> Matt Park. </Link>
         I am from the greater New York area.
       </Typography>

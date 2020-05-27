@@ -1,12 +1,7 @@
 import React from 'react'
 import { withStyles, Typography } from '@material-ui/core'
 import Link from '../../components/Link'
-import {
-  GitHub,
-  LinkedIn,
-  MailOutline,
-  PhoneInTalkOutlined,
-} from '@material-ui/icons'
+import { FiPhoneCall, RiMailSendLine, FiGithub, FaLinkedinIn } from 'react-icons/all'
 
 const ContactInfo = withStyles((theme) => ({
   root: {
@@ -20,9 +15,13 @@ const ContactInfo = withStyles((theme) => ({
     }
   },
   myName: {
-    fontSize: '6vw',
+    whiteSpace: 'nowrap',
+    fontSize: '7vw',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '16.5vw',
+      fontSize: '18vw',
+    },
+    '@media only screen and (max-width: 360px)': {
+      fontSize: '17vw'
     },
   },
   myInfo: {
@@ -35,56 +34,55 @@ const ContactInfo = withStyles((theme) => ({
     },
     display: 'flex',
     flexDirection: 'column',
-  },
-  phoneLink: {
-    fontSize: '3vw',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '7.55vw',
+    '& svg': {
+      fontSize: '4vw',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '8vw',
+      },
+      '@media only screen and (max-width: 360px)': {
+        fontSize: 28,
+      }
     },
-    alignItems: 'flex-end',
-    // color: theme.text.primary,
-    '&:hover': {
-      // color: theme.text.hover2,
-      '& > svg': {
-        // color: theme.text.hover2,
+    '& > h2:first-child': {
+      display: 'flex',
+      flexDirection: 'column',
+      '& > a': {
+        whiteSpace: 'nowrap',
+        marginTop: '3vh',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        '& > span': {
+          marginLeft: '1.5vw',
+        },
       }
     }
   },
-  phoneText: {
-    display: 'inline',
-    position: 'relative',
-    top: -10,
+  phoneLink: {
+    fontSize: '4vw',
     [theme.breakpoints.down('sm')]: {
-      top: -5,
+      fontSize: '10.5vw',
+    },
+    '@media only screen and (max-width: 360px)': {
+      fontSize: '9vw'
     },
   },
   emailLink: {
-    fontSize: '1.6vw',
+    fontSize: '1.83vw',
     [theme.breakpoints.down('sm')]: {
       fontSize: '5vw',
     },
-    // color: theme.text.primary,
-    '&:hover': {
-      // color: theme.text.hover2,
-      '& > svg': {
-        // color: theme.text.hover2,
-      }
-    }
-  },
-  emailText: {
-    display: 'inline',
-    position: 'relative',
-    top: -12,
-    [theme.breakpoints.down('sm')]: {
-      top: -9,
+    '@media only screen and (max-width: 350px)': {
+      fontSize: '4.5vw',
     },
   },
-  socialMediaLinks: {
-    marginTop: '2vh',
+  socials: {
+    marginTop: '4vh',
     '& a': {
-      marginRight: '1.2vw',
-      [theme.breakpoints.down('sm')]: {
-        marginRight: '1.5vw',
+      fontSize: 40,
+      marginRight: '2vw',
+      [theme.breakpoints.down('xs')]: {
+        marginRight: '4vw',
       },
     },
   },
@@ -97,20 +95,18 @@ const ContactInfo = withStyles((theme) => ({
       <div className={classes.myInfo}>
         <Typography variant="h2">
           <Link className={classes.phoneLink} target="_top" href="tel:+1201-591-3323" underline="none">
-            <PhoneInTalkOutlined fontSize="large" /> <span className={classes.phoneText}>(201) 591 - 3323</span>
+            <FiPhoneCall /><span>(201) 591 - 3323</span>
           </Link>
-          <br/>
+          {/*<br/>*/}
           <Link className={classes.emailLink} target="_top" href="mailto:mattparksolutions@gmail.com" underline="none">
-            <MailOutline fontSize="large" /> <span className={classes.emailText}>mattparksolutions@gmail.com</span>
+            <RiMailSendLine /><span className={classes.emailText}>mattparksolutions@gmail.com</span>
           </Link>
         </Typography>
-        <Typography className={classes.socialMediaLinks} variant="h2">
-          <Link title="GitHub" target="_blank" rel="noopener noreferrer" href="https://github.com/mattparksolutions">
-              <GitHub fontSize="large" />
-          </Link>
-          <Link title="LinkedIn" target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/mattparksolutions">
-            <LinkedIn fontSize="large" />
-          </Link>
+        <Typography className={classes.socials} variant="h2">
+          <Link title="GitHub" target="_blank" rel="noopener noreferrer"
+                href="https://github.com/mattparksolutions"><FiGithub /></Link>
+          <Link title="LinkedIn" target="_blank" rel="noopener noreferrer"
+                href="https://linkedin.com/in/mattparksolutions"><FaLinkedinIn /></Link>
         </Typography>
       </div>
     </div>

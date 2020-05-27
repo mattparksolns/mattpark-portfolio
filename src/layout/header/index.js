@@ -6,8 +6,10 @@ import {
   Toolbar,
   Link,
   Typography,
+  SvgIcon
 } from '@material-ui/core'
-import { GitHub, LinkedIn } from '@material-ui/icons'
+import blueGrey from '@material-ui/core/colors/blueGrey'
+import { FiGithub, FaLinkedinIn } from 'react-icons/all'
 
 import DarkModeSwitch from './dark-mode-switch'
 import AnnouncementBar from './announcement-bar'
@@ -19,7 +21,8 @@ const Header = withStyles((theme) => ({
     boxShadow: 'none',
   },
   toolbar: {
-    padding: '0 10vw 0',
+    whiteSpace: 'nowrap',
+    padding: '7vh 10vw 0',
     [theme.breakpoints.down('sm')]: {
       padding: '0 3vw 0',
     },
@@ -30,6 +33,11 @@ const Header = withStyles((theme) => ({
   },
   logo: {
     fontSize: 20,
+    '& > a': {
+      '&:hover': {
+        color: theme.palette.text.primary
+      }
+    }
   },
   pageLinks: {
     [theme.breakpoints.down('xs')]: {
@@ -37,14 +45,13 @@ const Header = withStyles((theme) => ({
     },
     marginLeft: theme.spacing(5),
     '& > a': {
-      // color: theme.text.primary,
       fontSize: 16,
       marginLeft: theme.spacing(2),
       paddingBottom: theme.spacing(1.5),
       height: '100%',
       borderBottom: '2px solid transparent',
       '&:hover': {
-        borderBottom: '2px solid black',
+        borderBottom: theme.isDark ? `2px solid ${blueGrey[200]}` : `2px solid ${blueGrey[600]}`,
       }
     },
   },
@@ -53,7 +60,7 @@ const Header = withStyles((theme) => ({
   },
   socials: {
     '& > a': {
-      marginRight: theme.spacing(1.5),
+      marginRight: theme.spacing(2),
     },
   }
 }))(({ classes }) => {
@@ -70,10 +77,10 @@ const Header = withStyles((theme) => ({
 
   return (
     <AppBar className={classes.appBar}>
-      <AnnouncementBar />
+      {/*<AnnouncementBar />*/}
       <Toolbar className={classes.toolbar} component={"nav"}>
         <Typography className={classes.logo} variant="h1">
-          <Link title={siteTitle} to="/">
+          <Link component={GatsbyLink} title={siteTitle} to="/">
             Matt Park
           </Link>
         </Typography>
@@ -89,13 +96,12 @@ const Header = withStyles((theme) => ({
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://github.com/mattparksolutions">
-            <GitHub /></Link>
+            <FiGithub size={20} /></Link>
           <Link title="LinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://linkedin.com/in/mattparksolutions">
-            <LinkedIn /></Link>
-
+            <FaLinkedinIn size={20} /></Link>
         </div>
         <DarkModeSwitch />
         <MobileMenu />

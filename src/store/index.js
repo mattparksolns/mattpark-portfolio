@@ -1,5 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
-import rootReducer from './reducers'
+import rootReducer, { getUserData } from './reducers'
 import promise from 'redux-promise'
 import logger from 'redux-logger'
 
@@ -9,10 +9,11 @@ const configureAppStore = (preloadedState={}) => {
     middleware: [...getDefaultMiddleware(), logger, promise],
     preloadedState,
   })
-  if (process.env.NODE_ENV !== 'production' && module.hot) {
+  if (process.env.NODE_ENV === 'development' && module.hot) {
     module.hot.accept('./reducers', () =>
       store.replaceReducer(rootReducer))
   }
+  typeof window !== "undefined" && store.dispatch(getUserData())
   return store
 }
-export default configureAppStore
+export default preloadedState => configureAppStore(preloadedState)

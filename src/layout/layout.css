@@ -9,7 +9,6 @@ html {
 }
 body {
   background-color: var(--color-bg);
-  overflow-x: hidden;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

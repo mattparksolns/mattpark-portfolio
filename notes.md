@@ -27,4 +27,4 @@
 * https://www.gatsbyjs.org/docs/using-client-side-only-packages/
 
 ## install script
-    npm install react-redux @material-ui/core @material-ui/icons gatsby-plugin-typography gatsby-plugin-react-helmet-canonical-urls gatsby-plugin-google-analytics gatsby-plugin-feed gatsby-plugin-transformer-remark gatsby-remark-images gatsby-remark-prismjs prismjs gatsby-remark-copy-linked-files gatsby-remark-smartypants
+    npm install react-redux @material-ui/core @material-ui/icons gatsby-plugin-typography gatsby-plugin-react-helmet-canonical-urls gatsby-plugin-google-analytics gatsby-plugin-feed gatsby-plugin-transformer-remark gatsby-remark-images gatsby-remark-prismjs gatsby-remark-copy-linked-files gatsby-remark-smartypants

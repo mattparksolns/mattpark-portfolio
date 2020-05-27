@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `static/assets/images/favicon-32x32.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -66,25 +66,18 @@ module.exports = {
         excludePattern: /(excluded-link|external)/,
       }
     },
-    // `gatsby-plugin-no-javascript`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-165323903-1`,
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         // stylesProvider: {
         //   injectFirst: true,
         // }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout`)
       }
     },
     {
@@ -171,8 +164,19 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-smartypants`,
+            options: {
+              dashes: "oldschool",
+            }
+          },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-165323903-1`,
       },
     },
   ],

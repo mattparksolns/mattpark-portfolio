@@ -7,8 +7,9 @@ const MobileMenu = withStyles((theme) => ({
   icon: {
     display: 'None',
     [theme.breakpoints.down('xs')]: {
-      display: 'inline',
+      display: 'block',
     },
+    padding: 5,
   },
   paper: {
     borderRadius: 0,
