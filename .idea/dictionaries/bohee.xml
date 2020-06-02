@@ -3,6 +3,7 @@
     <words>
       <w>avenir</w>
       <w>axios</w>
+      <w>clsx</w>
       <w>contentinfo</w>
       <w>covid</w>
       <w>darkmode</w>
@@ -20,10 +21,12 @@
       <w>noopener</w>
       <w>noreferrer</w>
       <w>oldschool</w>
+      <w>polyfilled</w>
       <w>preact</w>
       <w>prismjs</w>
       <w>roboto</w>
       <w>segoe</w>
+      <w>thankyou</w>
       <w>woff</w>
     </words>
   </dictionary>

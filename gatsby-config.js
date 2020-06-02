@@ -21,10 +21,10 @@ module.exports = {
         name: `Matt Park Portfolio`,
         short_name: `mattpark`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#121317`,
+        theme_color: `#121317`,
         display: `minimal-ui`,
-        icon: `static/assets/images/favicon-32x32.png`,
+        icon: `static/assets/images/mattpark-favicon.png`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -141,6 +141,14 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

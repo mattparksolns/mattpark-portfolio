@@ -3,8 +3,6 @@ import renderer from 'react-test-renderer'
 
 import AboutPage from './index'
 
-
-
 describe("AboutPage", () => {
   let tree
 

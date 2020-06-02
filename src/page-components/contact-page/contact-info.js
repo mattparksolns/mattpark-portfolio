@@ -1,9 +1,13 @@
 import React from 'react'
-import { withStyles, Typography } from '@material-ui/core'
-import Link from '../../components/Link'
-import { FiPhoneCall, RiMailSendLine, FiGithub, FaLinkedinIn } from 'react-icons/all'
+import { withStyles, Box, Typography, Link } from '@material-ui/core'
+import {
+  MdLocationCity, GoLocation,
+  FiPhone, FiPhoneCall,
+  RiMailLine, RiMailSendLine,
+  FiGithub, FaLinkedinIn
+} from 'react-icons/all'
 
-const ContactInfo = withStyles((theme) => ({
+const ContactInfo = withStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -12,7 +16,7 @@ const ContactInfo = withStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       justifyContent: 'flex-start',
       width: '100%',
-    }
+    },
   },
   myName: {
     whiteSpace: 'nowrap',
@@ -25,12 +29,12 @@ const ContactInfo = withStyles((theme) => ({
     },
   },
   myInfo: {
-    marginBottom: '5vh',
     [theme.breakpoints.down('sm')]: {
-      marginTop: '20vh',
+      marginTop: '2vw',
+      marginBottom: '5vw',
     },
     [theme.breakpoints.down('xs')]: {
-      marginTop: '5vh',
+      marginTop: '2vw',
     },
     display: 'flex',
     flexDirection: 'column',
@@ -43,20 +47,50 @@ const ContactInfo = withStyles((theme) => ({
         fontSize: 28,
       }
     },
-    '& > h2:first-child': {
+  },
+  contactInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    '& > a': {
+      whiteSpace: 'nowrap',
+      marginTop: '1vw',
+      [theme.breakpoints.down('xs')]: {
+        marginTop: '3vw',
+      },
+      '@media only screen and (max-width: 200px)': {
+        marginTop: 0,
+      },
       display: 'flex',
-      flexDirection: 'column',
-      '& > a': {
-        whiteSpace: 'nowrap',
-        marginTop: '3vh',
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        '& > span': {
-          marginLeft: '1.5vw',
+      flexDirection: 'row',
+      alignItems: 'center',
+      '& > svg': {
+        transition: 'opacity .8s cubic-bezier(.19,1,.22,1)',
+      },
+      '&:hover': {
+        '& > svg:not($hoverIcon)': {
+          opacity: 0,
         },
-      }
+        '& > $hoverIcon':{
+          opacity: 1
+        },
+      },
+      '& > span': {
+        marginLeft: '1.5vw',
+      },
     }
+  },
+  hoverIcon: {
+    position: "absolute",
+    opacity: 0,
+  },
+  locationLink: {
+    fontSize: '2.9vw',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '7.8vw',
+    },
+    '@media only screen and (max-width: 360px)': {
+      fontSize: '7.2vw'
+    },
   },
   phoneLink: {
     fontSize: '4vw',
@@ -64,7 +98,7 @@ const ContactInfo = withStyles((theme) => ({
       fontSize: '10.5vw',
     },
     '@media only screen and (max-width: 360px)': {
-      fontSize: '9vw'
+      fontSize: '10vw'
     },
   },
   emailLink: {
@@ -78,7 +112,10 @@ const ContactInfo = withStyles((theme) => ({
   },
   socials: {
     marginTop: '4vh',
-    '& a': {
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 0,
+    },
+    '& > a': {
       fontSize: 40,
       marginRight: '2vw',
       [theme.breakpoints.down('xs')]: {
@@ -88,18 +125,30 @@ const ContactInfo = withStyles((theme) => ({
   },
 }))(({ classes }) => {
   return (
-    <div className={classes.root}>
+    <Box className={classes.root}>
       <Typography className={classes.myName} variant="h1">
         Matt Park
       </Typography>
       <div className={classes.myInfo}>
-        <Typography variant="h2">
-          <Link className={classes.phoneLink} target="_top" href="tel:+1201-591-3323" underline="none">
-            <FiPhoneCall /><span>(201) 591 - 3323</span>
+        <Typography className={classes.contactInfo} variant="h2">
+          <Link className={classes.locationLink}
+                target={"_blank"} rel={"noopener noreferrer"}
+                href={"https://goo.gl/maps/qm8HMXfbXSABazKRA"}>
+            <GoLocation className={classes.hoverIcon} /><MdLocationCity />
+            <span>
+              New York, New York<br />
+              United States
+            </span>
           </Link>
-          {/*<br/>*/}
-          <Link className={classes.emailLink} target="_top" href="mailto:mattparksolutions@gmail.com" underline="none">
-            <RiMailSendLine /><span className={classes.emailText}>mattparksolutions@gmail.com</span>
+          <Link className={classes.phoneLink}
+                target={"_top"} href={"tel:+1201-591-3323"}>
+            <FiPhoneCall className={classes.hoverIcon} /><FiPhone />
+            <span>(201) 591 - 3323</span>
+          </Link>
+          <Link className={classes.emailLink}
+                target={"_top"} href={"mailto:mattparksolutions@gmail.com"}>
+            <RiMailSendLine className={classes.hoverIcon} /><RiMailLine />
+            <span>mattparksolutions@gmail.com</span>
           </Link>
         </Typography>
         <Typography className={classes.socials} variant="h2">
@@ -109,7 +158,7 @@ const ContactInfo = withStyles((theme) => ({
                 href="https://linkedin.com/in/mattparksolutions"><FaLinkedinIn /></Link>
         </Typography>
       </div>
-    </div>
+    </Box>
   )
 })
 export default ContactInfo

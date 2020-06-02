@@ -13,4 +13,7 @@ describe("Blog", () => {
   it("renders correctly", () => {
     expect(tree).toMatchSnapshot()
   })
+  it("passes", () => {
+    expect(true).toBe(true)
+  })
 })

@@ -3,15 +3,17 @@ export const wrapRootElement = RootWrapper
 
 import React, { createElement } from 'react'
 import Terser from 'terser'
-export const onRenderBody = ({ setPreBodyComponents }) => {
+export const onRenderBody = ({ setPreBodyComponents, setPostBodyComponents }) => {
   let themeScriptFn = () => {
     window.__onThemeChange = () => {};
     window.__setThemeType = themeType => {
       window.__theme = themeType;
       window.__onThemeChange();
-      document.body.style.setProperty(
-        '--color-bg',
-        themeType === 'dark' ? '#121317' : '#ffffff')
+      if(themeType === 'dark') {
+        document.body.classList.add('dark')
+      } else {
+        document.body.classList.remove('dark')
+      }
       try {
         localStorage.setItem('themeType', themeType);
       } catch (error) {
@@ -40,5 +42,42 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
     }
   })
   setPreBodyComponents([ThemeScript])
-}
 
+  // let mouseScriptFn = () => {
+  //   let currentMousePos = { x: -1, y: -1 }
+  //
+  //   $(document).ready(() => {
+  //
+  //     $("body").hover(() =>{
+  //       $(".innerMouseIndicator, .mouseIndicator").addClass("show")
+  //     }, () => {
+  //       $(".innerMouseIndicator, .mouseIndicator").removeClass("show")
+  //     })
+  //
+  //     $(window).mousemove(e => {
+  //       $(".innerMouseIndicator, .mouseIndicator").addClass("show");
+  //       let currentX = currentMousePos.x = e.pageX
+  //       let currentY = currentMousePos.x = e.pageY - $(window).scrollTop()
+  //       $(".innerMouseIndicator").css({"transform":"translate3d(" + currentX + "px, " + currentY + "px, 0)"})
+  //       setTimeout(() =>{
+  //         $(".mouseIndicator").css({"transform":"translate3d(" + currentX + "px, " + currentY + "px, 0)"})
+  //       }, 100)
+  //     })
+  //
+  //     $(".activeMouse").hover(() => {
+  //       $(".mouseIndicator").addClass("active")
+  //     }, () => {
+  //       $(".mouseIndicator").removeClass("active")
+  //     })
+  //   })
+  // }
+  // mouseScriptFn = `(${String(mouseScriptFn)})()`
+  // mouseScriptFn = Terser.minify(mouseScriptFn).code
+  // const MouseScript = createElement('script', {
+  //   key: 'theme-script',
+  //   dangerouslySetInnerHTML: {
+  //     __html: mouseScriptFn
+  //   }
+  // })
+  // setPostBodyComponents([MouseScript])
+}

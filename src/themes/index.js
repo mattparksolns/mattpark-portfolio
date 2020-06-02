@@ -1,10 +1,11 @@
-import React, { useMemo, useEffect, useState } from 'react'
+import React, { useMemo, useEffect, useState, Suspense } from 'react'
 import { StylesProvider, MuiThemeProvider, CssBaseline } from '@material-ui/core'
 import { connect } from 'react-redux'
 import PropTypes from "prop-types";
 
 import { setThemeType } from '../store/reducers'
 import getBaseTheme from './base'
+import NoiseBackground from './noise-background'
 
 const ThemeProvider = ({ children, themeType, setThemeType }) => {
   const [isClient, setClient] = useState(false)
@@ -20,12 +21,15 @@ const ThemeProvider = ({ children, themeType, setThemeType }) => {
     getBaseTheme({ themeType }),[themeType])
 
   return isClient && (
-    <StylesProvider>
-      <MuiThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </MuiThemeProvider>
-    </StylesProvider>
+    <Suspense fallback={<NoiseBackground />}>
+      <StylesProvider>
+        <MuiThemeProvider theme={theme}>
+          <CssBaseline />
+          <NoiseBackground />
+          {children}
+        </MuiThemeProvider>
+      </StylesProvider>
+    </Suspense>
   )
 }
 ThemeProvider.propTypes = {

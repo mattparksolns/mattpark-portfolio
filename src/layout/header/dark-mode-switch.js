@@ -1,23 +1,26 @@
 import React  from 'react'
 import { connect } from "react-redux";
 import { withStyles, Switch } from '@material-ui/core'
-import blueGrey from '@material-ui/core/colors/blueGrey'
+import { grey, blueGrey } from '@material-ui/core/colors'
 
-const DarkModeSwitch = withStyles((theme) => ({
+const DarkModeSwitch = withStyles(theme => ({
   root: {
-    margin: theme.spacing(0, 1, 1, 0),
+    transition: 'all .8s cubic-bezier(.19,1,.9,1)',
+    [theme.breakpoints.down('xs')]: {
+      marginRight: theme.spacing(1)
+    },
     padding: 0,
-    width: 38,
-    height: 22,
+    width: 34,
+    height: 20,
   },
   switchBase: {
-    padding: 1,
-    color: blueGrey[900],
+    padding: 0,
+    color: theme.palette.primary.main,
     '&$checked': {
-      color: blueGrey[100],
-      transform: 'translateX(16px)',
+      color: theme.palette.primary.main,
+      transform: 'translateX(14px)',
       '& + $track': {
-        backgroundColor: theme.palette.grey[600],
+        backgroundColor: theme.palette.background.default,
         opacity: 1,
       }
     },
@@ -28,7 +31,8 @@ const DarkModeSwitch = withStyles((theme) => ({
   },
   track: {
     borderRadius: 26 / 2,
-    backgroundColor: theme.palette.grey[600],
+    border: `2px solid ${theme.palette.primary.main}`,
+    backgroundColor: theme.palette.background.default,
     opacity: 1,
     transition: theme.transitions.create(['background-color', 'border']),
   },
