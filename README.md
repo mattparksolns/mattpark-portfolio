@@ -32,6 +32,6 @@ I'd like to hear from you!
 Thank you for visiting<br />
 my portfolio.
 
-<a href="#--matt-parks-portfolio">
+<a href="#drop-me-a-lineid-like-to-hear-from-you------------">
   <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
 </a>
