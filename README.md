@@ -24,8 +24,9 @@ Thank you for visiting<br />
 my portfolio.
 
 <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
+<br /><br />
 
-<a title="LinkedIn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mattparksolns/">
+<a title="LinkedIn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mattparksolns/" style="margin-right: 20px">
   <img alt="linkedin" src="./static/assets/icons/linkedin.svg" width="16" /></a>
 <a title="Twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/mattparksolns">
   <img alt="twitter" src="./static/assets/icons/twitter.svg" width="16" /></a>
