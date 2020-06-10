@@ -1,6 +1,6 @@
 <p align="center">
   <a title="Matt Park - Software Engineer" target="_blank" rel="noopener noreferrer" href="https://mattpark.now.sh">
-    <img alt="Matt Park" src="./static/assets/icons/mattpark-readme-icon.png" width="60" />
+    <img alt="Matt Park" src="./static/assets/icons/mattpark-favicon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -8,6 +8,7 @@
 </h1>
 
 ### My name is Matt Park.<br />I'm a New York City based<br />software engineer.
+
 
 Forward Thinker<br />
 Problem Solver<br />
