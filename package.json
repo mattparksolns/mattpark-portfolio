@@ -4,9 +4,42 @@
   "description": "Matt Park - Software Engineer",
   "version": "0.1.0",
   "author": {
-    "name": "Matt Park <mattparksolutions@gmail.com>",
-    "email": "mattparksolutions@gmail.com",
+    "name": "Matt Park <mattparksolns@gmail.com>",
+    "email": "mattparksolns@gmail.com",
     "url": "https://mattpark.now.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattparksolutions/mattpark-portfolio"
+  },
+  "bugs": {
+    "url": "https://github.com/mattparksolutions/mattpark-portfolio/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "matt",
+    "matt park",
+    "software engineer"
+  ],
+  "scripts": {
+    "build": "gatsby build",
+    "jaeger-build": "gatsby build --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
+    "develop": "gatsby develop",
+    "dev": "npm run develop",
+    "jaeger-dev": "gatsby develop --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
+    "start": "npm run develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --verbose --coverage",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
+    "storybook": "set 'NODE_ENV=production' && start-storybook -p 6006",
+    "build-storybook": "set 'NODE_ENV=production' && build-storybook"
   },
   "dependencies": {
     "@material-ui/core": "^4.9.11",
@@ -14,7 +47,6 @@
     "@material-ui/styles": "^4.9.14",
     "@reduxjs/toolkit": "^1.3.6",
     "axios": "^0.19.2",
-    "clsx": "^1.1.0",
     "emailjs-com": "^2.4.1",
     "gatsby": "^2.20.37",
     "gatsby-image": "^2.3.4",
@@ -41,7 +73,6 @@
     "gatsby-transformer-sharp": "^2.4.6",
     "intersection-observer": "^0.10.0",
     "node-sass": "^4.14.1",
-    "object-fit-images": "^3.2.4",
     "prismjs": "^1.20.0",
     "react": "^16.12.0",
     "react-dom": "^16.13.1",
@@ -82,36 +113,5 @@
     "redux-mock-store": "^1.5.4",
     "start-server-and-test": "^1.11.0",
     "surge": "^0.21.3"
-  },
-  "keywords": [
-    "matt"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "jaeger-build": "gatsby build --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
-    "develop": "gatsby develop",
-    "dev": "npm run develop",
-    "jaeger-dev": "gatsby develop --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
-    "start": "npm run develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run",
-    "test": "jest --verbose",
-    "test:watch": "jest --watchAll --verbose",
-    "test:coverage": "jest --verbose --coverage",
-    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
-    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
-    "storybook": "set 'NODE_ENV=production' && start-storybook -p 6006",
-    "build-storybook": "set 'NODE_ENV=production' && build-storybook"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/mattparksolutions/mattpark-client"
-  },
-  "bugs": {
-    "url": "https://github.com/mattparksolutions/mattpark-client/issues"
   }
 }
