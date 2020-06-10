@@ -45,7 +45,7 @@ module.exports = {
         background_color: `#121317`,
         theme_color: `#121317`,
         display: `minimal-ui`,
-        icon: `static/assets/images/mattpark-favicon.png`,
+        icon: `static/assets/icons/mattpark-favicon.png`,
         cache_busting_mode: 'none',
       },
     },
