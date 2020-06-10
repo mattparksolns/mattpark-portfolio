@@ -6,7 +6,7 @@ module.exports = {
       username: `@mattparksolns`,
       summary: `Web Tinkerer`,
     },
-    description: `My name is Matt Park and I am from the greater New York area. I am a software engineer.`,
+    description: `My name is Matt Park. I'm a New York City based software engineer.`,
     siteUrl: `https://mattpark.now.sh/`,
     social: {
       reddit: `mattparksolns`,
