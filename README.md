@@ -30,7 +30,6 @@ I'd like to hear from you!
 Thank you for visiting<br />
 my portfolio.
 
-<img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
-<br /><br />
-
-
+<a href="#">
+  <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
+</a>
