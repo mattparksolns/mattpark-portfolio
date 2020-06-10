@@ -1,7 +1,7 @@
 {
   "name": "mattpark-portfolio",
-  "private": true,
-  "description": "Matt Park - Software Engineer",
+  "private": false,
+  "description": "My name is Matt Park. I'm a New York City based software engineer.",
   "version": "0.1.0",
   "author": {
     "name": "Matt Park <mattparksolns@gmail.com>",
