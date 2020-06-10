@@ -20,7 +20,7 @@ const ThemeProvider = ({ children, themeType, setThemeType }) => {
     getBaseTheme({ themeType }),[themeType])
 
   // use <Suspense fallback={<Loader />} ></Suspense> for loader? I may not want to use suspense for the entire app
-  return (
+  return isClient && (
     <StylesProvider>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
