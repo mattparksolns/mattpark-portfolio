@@ -15,7 +15,7 @@ const ContactPage = withStyles(theme => ({
   },
 }))(({ classes }) => {
   return (
-    <Box className={classes.root}>
+    <Box className={`${classes.root} contentWrapper`}>
       <ContactInfo />
       <ContactForm />
     </Box>

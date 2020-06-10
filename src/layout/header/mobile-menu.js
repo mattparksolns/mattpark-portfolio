@@ -1,8 +1,7 @@
 import { Link as GatsbyLink } from 'gatsby'
 import React, { useState } from "react";
-import { withStyles, Link, IconButton, Menu, MenuItem } from '@material-ui/core'
+import { withStyles, useMediaQuery, Link, IconButton, Menu, MenuItem } from '@material-ui/core'
 import { Close, Menu as MenuIcon } from '@material-ui/icons'
-import { grey, blueGrey } from '@material-ui/core/colors'
 
 const MobileMenu = withStyles(theme => ({
   icon: {
@@ -13,6 +12,9 @@ const MobileMenu = withStyles(theme => ({
     },
     padding: 0,
     zIndex: 1300,
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
   },
   opacityOverlay: {
     position: 'fixed',
@@ -30,16 +32,18 @@ const MobileMenu = withStyles(theme => ({
     width: '60vw',
   },
   list: {
-    '&, > li': {
+    '&, & li, & a': {
       padding: 0,
     },
     '& > li > a': {
+      fontFamily: 'markpro-black',
       height: '100%',
       width: '100%',
       textAlign: 'center',
     },
   },
 }))(({ classes }) => {
+  const isXs = useMediaQuery(theme => theme.breakpoints.down('xs'))
   const [anchorEl, setAnchorEl] = useState(null)
   const toggleMenu = e => {
     setAnchorEl(anchorEl ? null : e.currentTarget)
@@ -48,6 +52,7 @@ const MobileMenu = withStyles(theme => ({
     <>
       <IconButton className={classes.icon} color={"primary"}
                   aria-label='menu' aria-haspopup='true'
+                  disabled={!isXs}
                   onClick={toggleMenu}>
         { anchorEl ? <Close /> : <MenuIcon /> }</IconButton>
       { anchorEl && <div className={classes.opacityOverlay} /> }

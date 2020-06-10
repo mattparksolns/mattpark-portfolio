@@ -2,14 +2,14 @@ import React  from "react"
 import PropTypes from "prop-types"
 import { withStyles } from '@material-ui/core'
 
-import Cursor from './cursor'
-import "./layout.css"
+import "./index.scss"
 import Header from "./header"
 import Footer from './footer'
+import Cursor from './cursor'
 
 const Layout = withStyles(theme => ({
   '@global': {
-    'header, main, footer': {
+    'header, footer': {
       padding: '0 9.72222vw',
       [theme.breakpoints.down('sm')]: {
         padding: '0 3vw',
@@ -22,22 +22,24 @@ const Layout = withStyles(theme => ({
       }
     },
     main: {
+      position: 'relative',
       paddingTop: '11.11111vw',
       [theme.breakpoints.down('sm')]: {
         paddingTop: 100,
       },
       minHeight: '72vh',
+      backgroundImage: `linear-gradient(180deg, ${theme.palette.background.default}, ${theme.palette.background.paper})`,
     },
   },
-}))(({ location, children }) => {
+}))(({ classes, location, children }) => {
   return (
     <>
       <Header />
       <main>
         {children}
       </main>
-      <Footer />
-      <Cursor />
+      <Footer location={location} />
+      <Cursor location={location} />
     </>
   )
 })

@@ -6,14 +6,14 @@ import Copyright from './copyright'
 
 const Footer = withStyles(theme => ({
   root: {
-    background: `linear-gradient(180deg, ${theme.palette.background.default}, ${theme.palette.background.paper})`,
+    background: `linear-gradient(180deg, ${theme.palette.background.paper}, ${theme.palette.background.default})`,
   },
   divider: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     height: 2,
-    marginBottom: 7,
+    marginBottom: 5,
   },
-}))(({ classes }) => {
+}))(({ classes, location }) => {
   return (
     <footer className={classes.root}>
       { location.pathname !== '/contact/' && <ContactCard /> }

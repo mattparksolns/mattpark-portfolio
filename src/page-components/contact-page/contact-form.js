@@ -11,6 +11,7 @@ import { Send } from '@material-ui/icons'
 import emailjs from 'emailjs-com'
 
 import StyledTextField from './styled-text-field'
+import ValorantButton from '../../components/valorant-button'
 
 const ContactForm = withStyles(theme => ({
   form: {
@@ -102,10 +103,9 @@ const ContactForm = withStyles(theme => ({
                           checked={policyChecked} color={"primary"}
                           onChange={e => setPolicyChecked(!policyChecked)} />}
                         label={"I understand that Matt will securely hold my data in accordance with the privacy policy.*"} />
-      <Button aria-label={"send"}
-              variant={theme.isDark ? "outlined" : "contained"}
-              onClick={e => handleSubmit()}
-              endIcon={<Send />}>Send</Button>
+      <ValorantButton aria-label={"send"}
+                      handleSubmit={handleSubmit}
+                      endIcon={<Send />}>Send</ValorantButton>
     </form>
   )
 })

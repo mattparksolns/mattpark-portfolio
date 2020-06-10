@@ -4,8 +4,10 @@
       <w>avenir</w>
       <w>axios</w>
       <w>clsx</w>
+      <w>codepen</w>
       <w>contentinfo</w>
       <w>covid</w>
+      <w>ctf</w>
       <w>darkmode</w>
       <w>emailjs</w>
       <w>feedburner</w>
@@ -13,9 +15,14 @@
       <w>geodata</w>
       <w>linkedin</w>
       <w>loadershim</w>
+      <w>markpro</w>
       <w>mattpark</w>
+      <w>mattparksolns</w>
       <w>mattparksolutions</w>
       <w>matttpark</w>
+      <w>muli</w>
+      <w>navbar</w>
+      <w>netlify</w>
       <w>neue</w>
       <w>noninfringement</w>
       <w>noopener</w>
@@ -24,10 +31,17 @@
       <w>polyfilled</w>
       <w>preact</w>
       <w>prismjs</w>
+      <w>quora</w>
       <w>roboto</w>
       <w>segoe</w>
       <w>thankyou</w>
+      <w>valorant</w>
+      <w>varela</w>
+      <w>vercel</w>
       <w>woff</w>
+      <w>wordpress</w>
+      <w>workbox</w>
+      <w>ycombinator</w>
     </words>
   </dictionary>
 </component>

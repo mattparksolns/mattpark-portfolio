@@ -31,6 +31,10 @@ const Cursor = withStyles(theme => ({
       '-o-transform': 'translate(-10px, -10px)',
       '-ms-transform': 'translate(-10px, -10px)',
       transform: 'translate(-10px, -10px)',
+      /*
+          Set each transition individually so that mouseIndicator
+          does not have delay when moving mouse over activators
+      */
       '-webkit-transition': 'height 0.3s ease-out, width 0.3s ease-out, transform 0.3s ease-out',
       '-moz-transition': 'height 0.3s ease-out, width 0.3s ease-out, transform 0.3s ease-out',
       '-o-transition': 'height 0.3s ease-out, width 0.3s ease-out, transform 0.3s ease-out',
@@ -57,7 +61,7 @@ const Cursor = withStyles(theme => ({
       opacity: 1,
     },
   },
-}))(({ classes }) => {
+}))(({ classes, location }) => {
   useEffect(() => {
     document.body.addEventListener('mouseleave', e => {
       document.querySelector('.innerMouseIndicator')
@@ -79,12 +83,16 @@ const Cursor = withStyles(theme => ({
       setTimeout(() => {
       }, 100)
     })
-    const hoverElements = document.querySelectorAll('.MuiLink-root, .MuiButtonBase-root, .MuiFormControl-root, .MuiFormControlLabel-root')
+    const hoverElements = document.querySelectorAll('a, .MuiLink-root, .MuiButtonBase-root, .MuiFormControl-root, .MuiFormControlLabel-root')
     Array.prototype.forEach.call(hoverElements,element => {
       element.addEventListener('mouseover', e => {
         document.querySelector('.mouseIndicator')
           .classList.add('active')
       })
+      // element.addEventListener('click', e => {
+      //   document.querySelector('.mouseIndicator')
+      //     .classList.remove('active')
+      // })
       element.addEventListener('mouseleave', e => {
         document.querySelector('.mouseIndicator')
           .classList.remove('active')

@@ -1,12 +1,12 @@
 import React from "react"
-import { withStyles, Box, Typography } from '@material-ui/core'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core'
 
 import Intro from './intro'
 import Projects from './projects'
 
 const HomePage = withStyles(theme => ({
   miniStripe: {
-    // zIndex: 1,
     position: 'absolute',
     height: 2,
     width: '12.15277vw',
@@ -108,14 +108,6 @@ const HomePage = withStyles(theme => ({
   svg: {
     boxSizing: 'border-box',
   },
-  placeholder: {
-    marginTop: '10vh',
-    '& > h3': {
-      marginTop: '10vh',
-      textAlign: 'center',
-    },
-    marginBottom: '10vh'
-  }
 }))(({ classes }) => {
   return (
     <>
@@ -131,25 +123,11 @@ const HomePage = withStyles(theme => ({
       {/*  </svg>*/}
       {/*</div>*/}
       <Intro />
-      <Box className={classes.placeholder}>
-        <Typography variant={"h3"}>
-          Project 1
-        </Typography>
-        <Typography variant={"h3"}>
-          Project 2
-        </Typography>
-        <Typography variant={"h3"}>
-          Project 3
-        </Typography>
-        <Typography variant={"h3"}>
-          Project 4
-        </Typography>
-        <Typography variant={"h3"}>
-          Project 5
-        </Typography>
-      </Box>
       <Projects />
     </>
   )
 })
+HomePage.propTypes = {
+  classes: PropTypes.object,
+}
 export default HomePage

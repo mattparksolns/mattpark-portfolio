@@ -76,8 +76,10 @@ const ContactInfo = withStyles(theme => ({
       },
       '& > span': {
         marginLeft: '1.5vw',
+        // transition: 'all .8s cubic-bezier(.19,1,.9,1)',
       },
-    }
+      // transition: 'font-size .8s ease',
+    },
   },
   hoverIcon: {
     position: "absolute",
@@ -93,11 +95,14 @@ const ContactInfo = withStyles(theme => ({
     },
   },
   phoneLink: {
-    fontSize: '4vw',
+    fontSize: '2.9vw',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '10.5vw',
+      fontSize: '8vw',
     },
-    '@media only screen and (max-width: 360px)': {
+    '@media only screen and (max-width: 450px)': {
+      fontSize: 36,
+    },
+    '@media only screen and (max-width: 375px)': {
       fontSize: '10vw'
     },
   },
@@ -130,7 +135,7 @@ const ContactInfo = withStyles(theme => ({
         Matt Park
       </Typography>
       <div className={classes.myInfo}>
-        <Typography className={classes.contactInfo} variant="h2">
+        <div className={classes.contactInfo}>
           <Link className={classes.locationLink}
                 target={"_blank"} rel={"noopener noreferrer"}
                 href={"https://goo.gl/maps/qm8HMXfbXSABazKRA"}>
@@ -140,17 +145,17 @@ const ContactInfo = withStyles(theme => ({
               United States
             </span>
           </Link>
-          <Link className={classes.phoneLink}
-                target={"_top"} href={"tel:+1201-591-3323"}>
-            <FiPhoneCall className={classes.hoverIcon} /><FiPhone />
-            <span>(201) 591 - 3323</span>
-          </Link>
           <Link className={classes.emailLink}
                 target={"_top"} href={"mailto:mattparksolutions@gmail.com"}>
             <RiMailSendLine className={classes.hoverIcon} /><RiMailLine />
             <span>mattparksolutions@gmail.com</span>
           </Link>
-        </Typography>
+          <Link className={classes.phoneLink}
+                target={"_top"} href={"tel:+1201-591-3323"}>
+            <FiPhoneCall className={classes.hoverIcon} /><FiPhone />
+            <span>(201) 591 - 3323</span>
+          </Link>
+        </div>
         <Typography className={classes.socials} variant="h2">
           <Link title="GitHub" target="_blank" rel="noopener noreferrer"
                 href="https://github.com/mattparksolutions"><FiGithub /></Link>

@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles, TextField } from '@material-ui/core'
+import { withStyles, TextField, fade } from '@material-ui/core'
 
 const StyledTextField = withStyles(theme => ({
   root: {
     width: '100%',
     marginBottom: theme.spacing(2),
     '& > .MuiFormHelperText-root': {
-      margin: 0,
+      margin: '0px 0px 4px 0px',
     }
   },
   label: {
@@ -20,7 +20,10 @@ const StyledTextField = withStyles(theme => ({
   },
   outlinedInput: {
     borderRadius: 0,
-      '&$focused $notchedOutline': {
+    '&$focused': {
+      backgroundColor: theme.palette.background.default,
+    },
+    '&$focused $notchedOutline': {
       // borderColor: theme.text.primary,
     },
   },

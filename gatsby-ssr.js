@@ -1,7 +1,7 @@
 import { RootWrapper } from "./src/utils/provider-wrappers"
 export const wrapRootElement = RootWrapper
 
-import React, { createElement } from 'react'
+import React from 'react'
 import Terser from 'terser'
 export const onRenderBody = ({ setPreBodyComponents, setPostBodyComponents }) => {
   let themeScriptFn = () => {
@@ -34,14 +34,15 @@ export const onRenderBody = ({ setPreBodyComponents, setPostBodyComponents }) =>
   }
   themeScriptFn = `(${String(themeScriptFn)})()`
   themeScriptFn = Terser.minify(themeScriptFn).code
-
-  const ThemeScript = createElement('script', {
-    key: 'theme-script',
-    dangerouslySetInnerHTML: {
-      __html: themeScriptFn
-    }
-  })
-  setPreBodyComponents([ThemeScript])
+  const ThemeScript = (
+    <script key={"theme-script"} dangerouslySetInnerHTML={{ __html: themeScriptFn }} />
+  )
+  const NoiseBackground = (
+    <div key={"noise-background"} className={"noiseWrapper"}>
+      <div className={"noiseOverlay"} />
+    </div>
+  )
+  setPreBodyComponents([ThemeScript, NoiseBackground])
 
   // let mouseScriptFn = () => {
   //   let currentMousePos = { x: -1, y: -1 }

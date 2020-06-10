@@ -1,34 +1,33 @@
 import React from 'react'
-import { withStyles, fade, Typography, Link } from '@material-ui/core'
+import PropTypes from 'prop-types'
+import { withStyles, Typography, Link } from '@material-ui/core'
 
 const Intro = withStyles(theme => ({
-  hello: {
-    position: 'absolute',
-    top: 100,
-    fontWeight: 900,
-    fontSize: '30vw',
-    color: theme.palette.background.default,
-    textShadow: `-1px -1px 3px ${theme.palette.text.hello1}, 2px 2px 4px ${theme.palette.text.hello2}`,
-    zIndex: -2,
+  root: {
+    position: 'relative',
+    // backgroundImage: `linear-gradient(180deg, ${theme.palette.background.default}, ${theme.palette.background.paper})`,
+    paddingBottom: theme.spacing(5),
   },
   intro: {
+    position: 'relative',
     width: 850,
-    fontSize: 76,
+    fontSize: 89,
     [theme.breakpoints.down('sm')]: {
       width: '90%',
-      fontSize: '8vw',
+      fontSize: '8.57vw',
     },
     [theme.breakpoints.down('xs')]: {
       width: '100%',
-      fontSize: '8.5vw',
+      fontSize: '9.2vw',
     },
     '& > a': {
-      fontWeight: 'bold',
+      fontWeight: 900,
     }
   },
   description: {
+    position: 'relative',
     textAlign: 'right',
-    fontSize: '3vw',
+    fontSize: 38.4,
     [theme.breakpoints.down('sm')]: {
       fontSize: '4vw',
     },
@@ -39,23 +38,23 @@ const Intro = withStyles(theme => ({
   },
 }))(({ classes }) => {
   return (
-    <section className={classes.root}>
-      <Typography className={classes.hello} variant={"h1"} data-text={"Hello"}>
-        Hello
-      </Typography>
+    <section className={`${classes.root} contentWrapper`}>
       <Typography className={classes.intro} variant="h1" gutterBottom>
         My name is
         <Link title="LinkedIn" color={"secondary"}
               target={"_blank"} rel={"noopener noreferrer"}
               href={"https://linkedin.com/in/mattparksolutions"}> Matt Park. </Link>
-        I am from the greater New York area.
+        I'm a New York City based software engineer.
       </Typography>
       <Typography className={classes.description} variant="h1">
-        Forward Thinker,<br />
-        Problem Solver,<br />
-        and Web Tinkerer.
+        Forward Thinker<br />
+        Problem Solver<br />
+        Web Tinkerer<br />
       </Typography>
     </section>
   )
 })
+Intro.propTypes = {
+  classes: PropTypes.object,
+}
 export default Intro

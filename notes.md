@@ -8,11 +8,11 @@
 * [surge](https://mattpark.surge.sh/)
 
 ## About
-> Adaptable and self motivated learner that's passionate about the
+> Adaptable and self-motivated learner that's passionate about the
 > latest and greatest technologies with an emphasis on security
 > research/analysis and penetration testing.
-> I enjoy doing ctf's in my spare time and writing scripts using either
-> bash or python to simplify workflow that becomes too repetitive.
+> I enjoy doing CTF's in my spare time and writing scripts using either
+> bash or python to simplify workflows that becomes too repetitive.
 > My willingness to learn and adapt may surely be an asset to you, your
 > team and your company; with time, relevant skills, right mindset and
 > a chance, I believe anyone can be valuable to any company.
@@ -39,7 +39,8 @@
 
 ## hmm
 * menuitem link how to set link to full height of parent?
-* contact info - how to setup centered icon + text without flex row?
-* why does socials icon not fill entire div in header?
-* why does gatsby-background-image not work?
-* how to setup blur on navbar to blur everything correctly?
+* why does cursor stay active on first menu open
+* why does socials icon not fill entire div in the header?
+* why does gatsby-background-image show more noise?
+* how to blur the entire navbar background correctly?
+* contact info - how to center icon + text without flex row?

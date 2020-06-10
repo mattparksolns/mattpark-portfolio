@@ -29,13 +29,57 @@ const Header = withStyles(theme => ({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  '@keyframes logoAnimation': {
+    '10%': {
+      backgroundPosition: '10% center',
+    },
+    // '50%': {
+    //   backgroundPosition: '100% center',
+    // },
+    '100%': {
+      backgroundPosition: '130% center',
+    },
+    // '20%': {
+    //   backgroundPosition: '100% center',
+    // },
+    // '30%': {
+    //   backgroundPosition: '150% center',
+    // },
+    // '40%': {
+    //   backgroundPosition: '200% center',
+    // },
+    // '50%': {
+    //   backgroundPosition: '250% center',
+    // },
+    // '60%': {
+    //   backgroundPosition: '300% center',
+    // },
+    // '70%': {
+    //   backgroundPosition: '350% center',
+    // },
+    // '80%': {
+    //   backgroundPosition: '400% center',
+    // },
+    // '90%': {
+    //   backgroundPosition: '450% center',
+    // },
+    // '100%': {
+    //   backgroundPosition: '500% center',
+    // },
+  },
   logo: {
-    fontSize: 20,
+    fontFamily: 'tungsten',
+    fontSize: 35,
+    fontWeight: 900,
     '& > a': {
-      color: theme.palette.text.logo,
-      '&:hover': {
-        color: theme.palette.text.logo,
-      },
+      color: theme.palette.text.primary,
+      background: `linear-gradient(to right, ${theme.palette.text.primary}, ${theme.palette.secondary.main})`,
+      backgroundClip: 'text',
+      '-webkit-background-clip': 'text',
+      backgroundSize: '500% auto',
+      textFillColor: 'transparent',
+      '-webkit-text-fill-color': 'transparent',
+      animation: '$logoAnimation 15.5s linear infinite',
     },
   },
   pageLinks: {
@@ -45,14 +89,15 @@ const Header = withStyles(theme => ({
     [theme.breakpoints.down('xs')]: {
       opacity: 0,
     },
+    fontFamily: 'markpro-black',
     '& > a': {
-      fontSize: 16,
+      fontSize: 18,
       marginLeft: theme.spacing(2),
       paddingBottom: theme.spacing(1.5),
       height: '100%',
       borderBottom: '2px solid transparent',
       '&:hover': {
-        borderBottom: `2px solid ${theme.palette.text.linkHover}`,
+        borderBottom: `2px solid ${theme.palette.secondary.main}`,
       }
     },
   },
@@ -110,12 +155,12 @@ const Header = withStyles(theme => ({
         </div>
         <div className={classes.grow} />
         <div className={classes.rightNav}>
-          <div className={classes.socials}>
+          <Typography className={classes.socials}>
             <Link title="GitHub" target="_blank" rel="noopener noreferrer"
                   href="https://github.com/mattparksolutions"><FiGithub /></Link>
             <Link title="LinkedIn" target="_blank" rel="noopener noreferrer"
                   href="https://linkedin.com/in/mattparksolutions"><FaLinkedinIn /></Link>
-          </div>
+          </Typography>
           <DarkModeSwitch />
           <MobileMenu />
         </div>

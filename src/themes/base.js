@@ -1,41 +1,64 @@
 import { createMuiTheme } from '@material-ui/core'
-import { grey, red, blueGrey } from '@material-ui/core/colors'
-
 
 const getBaseTheme = ({ themeType }) => {
   const isDark = themeType === 'dark'
+  const colors = {
+    blackText: '#242424',
+    black: '#111111',
+    lightBlack: '#242424',
+    whiteText: '#ece8e1',
+    white: '#ffffff',
+    darkWhite: '#ece8e1',
+    lighterGrey: '#d0d0d0',
+    lightGrey: '#a5a29e',
+    grey: '#8b978f',
+    darkGrey: '#7e7e7e',
+    darkerGrey: '#768079',
+    blueBlack: '#0f1923',
+    lightPink: '#fe4666',
+    valorantPink: '#ff4655', // valorant pink
+    // pink: '#d13654', // valorant darker-pink
+    // pink: 'rgb(215,0,73)', // jungle-juice pink
+    pink: '#ff0049',
+    darkPink: '#e4373c',
+    darkerPink: '#d13654',
+    red: '#ff0034',
+  }
   return createMuiTheme({
     typography: {
-      fontFamily: ['Montserrat'].join(','),
+      fontFamily: ['montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
+      h1: {
+        fontFamily: ['muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
+      },
+      h2: {
+        fontFamily: ['tungsten', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
+      },
       button: {
         fontSize: '1.2rem',
       },
     },
     isDark: isDark,
+    colors,
     palette: {
       type: themeType || 'light',
       background: {
-        paper: isDark ? '#191919' : '#f8f8f8',
-        default: isDark ? '#121212' : '#ffffff',
+        paper: isDark ? colors.lightBlack : colors.darkWhite,
+        default: isDark ? colors.black : colors.white,
       },
       text: {
-        primary: isDark ? '#ffffff' : '#121212',
-        linkHover: isDark ? grey[500] : grey[600],
-        logo: isDark ? grey[300] : grey[800],
-        hello1: isDark ? grey[900] : grey[300],
-        hello2: isDark ? grey[800] : grey[400],
-        mouseIndicator: isDark ? grey[700] : grey[400],
-        innerMouseIndicator: isDark ? '#ffffff': '#121212',
+        primary: isDark ? colors.whiteText : colors.blackText,
+        mouseIndicator: isDark ? colors.darkerGrey : colors.lightGrey,
+        innerMouseIndicator: isDark ? colors.darkWhite: colors.lightBlack,
       },
       primary: {
-        main: isDark ? '#ffffff' : '#121212',
+        main: isDark ? colors.whiteText : colors.blackText,
         contrastText: '#ffffff',
       },
       secondary: {
-        main: isDark ? grey[400] : grey[700],
+        main: colors.pink,
       },
       error: {
-        main: isDark ? red[500] : red[900]
+        main: colors.red,
       },
       sand: {
         main: '#f4decb'
@@ -56,18 +79,6 @@ const getBaseTheme = ({ themeType }) => {
     overrides: {
       MuiCssBaseline: {
         '@global': {
-          html: {
-            cursor: 'none',
-            boxSizing: 'border-box',
-            // height: '100vh',
-            overflowY: 'scroll',
-            overflowX: 'hidden',
-            '-ms-text-size-adjust': '100%',
-            '-webkit-text-size-adjust': '100%',
-          },
-          'input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active': {
-            transition: 'background-color 5000s ease-in-out 0s'
-          },
         },
       },
       MuiButtonBase: {
@@ -77,39 +88,8 @@ const getBaseTheme = ({ themeType }) => {
       },
       MuiButton: {
         root: {
-          borderRadius: 0,
-          width: '10rem',
-          height: '3rem',
-          fontSize: '1.1rem',
-          '& > span': {
-            transition: 'all .8s cubic-bezier(.19,1,.9,1)',
-            transform: 'translate(12px)',
-          },
-          '& > span > span > svg': {
-            width: 20,
-            height: 20,
-            opacity: 0,
-            transition: 'opacity .5s cubic-bezier(.19,1,.22,1)',
-          },
-          '&:hover': {
-            '& > span': {
-              transform: 'translate(0px)'
-            },
-            '& > span > span > svg': {
-              opacity: 1,
-            }
-          }
         },
-        contained: {
-          '& > *': {
-            color: '#ffffff'
-          },
-          backgroundColor: '#191919',
-          '&:hover': {
-            backgroundColor: '#191919',
-          }
-        },
-        outlined: {
+        outlinedSecondary: {
           '&:hover': {
           }
         }
@@ -127,7 +107,7 @@ const getBaseTheme = ({ themeType }) => {
           textDecoration: 'none',
           cursor: 'none',
           '&:hover': {
-            color: isDark ? grey[500] : grey[600]
+            color: colors.pink,
           }
         }
       },
