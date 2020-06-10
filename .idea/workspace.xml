@@ -26,17 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/icons/github.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/icons/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/icons/linkedin.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/icons/mattpark-favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/icons/mattpark-readme-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/icons/twitter.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/images/mattpark-avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/images/mattpark-favicon.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +208,7 @@
       <workItem from="1591787982844" duration="4001000" />
       <workItem from="1591792190691" duration="1193000" />
       <workItem from="1591793419778" duration="98000" />
-      <workItem from="1591793545914" duration="5129000" />
+      <workItem from="1591793545914" duration="5324000" />
     </task>
     <task id="LOCAL-00001" summary="webstorm stuff">
       <created>1591788057121</created>
@@ -289,7 +280,28 @@
       <option name="project" value="LOCAL" />
       <updated>1591796173477</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="icons">
+      <created>1591798815971</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1591798815971</updated>
+    </task>
+    <task id="LOCAL-00012" summary="icons path">
+      <created>1591798841914</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1591798841914</updated>
+    </task>
+    <task id="LOCAL-00013" summary="readme">
+      <created>1591798893576</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1591798893576</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +340,10 @@
     <MESSAGE value="webstorm stuff" />
     <MESSAGE value="styling" />
     <MESSAGE value="setting up readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting up readme" />
+    <MESSAGE value="icons" />
+    <MESSAGE value="icons path" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
@@ -432,19 +447,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="490" y="154" width="540" height="540" key="StructurePopup/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591425615858" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1591796201979">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1591798898779">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591796201979" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591798898779" />
     <state x="577" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591790729831">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="577" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591790729831" />
-    <state x="829" y="143" width="707" height="624" key="find.popup" timestamp="1591788772289">
+    <state x="829" y="143" width="707" height="624" key="find.popup" timestamp="1591798791357">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="327" y="-949" width="1105" height="584" key="find.popup/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1589741673012" />
-    <state x="829" y="143" width="707" height="624" key="find.popup/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591788772289" />
+    <state x="829" y="143" width="707" height="624" key="find.popup/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591798791357" />
     <state x="529" y="250" key="git4idea.ui.GitTagDialog" timestamp="1591790490871">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

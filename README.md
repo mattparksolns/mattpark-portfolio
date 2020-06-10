@@ -26,11 +26,8 @@ my portfolio.<br />
 <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
 
 <a title="LinkedIn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mattparksolns/">
-  <img alt="linkedin" src="./static/assets/icons/linkedin.svg" width="16" />
-</a>
+  <img alt="linkedin" src="./static/assets/icons/linkedin.svg" width="16" /></a>
 <a title="Twitter" target="_blank" rel="noopener noreferrer" href="https://twitter.com/mattparksolns">
-  <img alt="twitter" src="./static/assets/icons/twitter.svg" width="16" />
-</a>
+  <img alt="twitter" src="./static/assets/icons/twitter.svg" width="16" /></a>
 <a title="Instagram" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/mattparksolns/">
-  <img alt="instagram" src="./static/assets/icons/instagram.svg" width="16" />
-</a>
+  <img alt="instagram" src="./static/assets/icons/instagram.svg" width="16" /></a>
