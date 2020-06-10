@@ -1,5 +1,5 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p style="text-align:center">
+<p style="text-align:center;">
   <a title="Matt Park - Software Engineer" target="_blank" rel="noopener noreferrer" href="https://mattpark.now.sh">
     <img alt="Matt Park" src="./static/assets/images/mattpark-avatar.png" width="60" />
   </a>
