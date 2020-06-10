@@ -7,7 +7,7 @@
   Matt Park's portfolio
 </h1>
 
-### My name is <b>Matt<br />Park.</b> I'm a New York<br />City based software<br />engineer.
+### My name is Matt Park.<br />I'm a New York City based<br />software engineer.
 
 Forward Thinker<br />
 Problem Solver<br />
