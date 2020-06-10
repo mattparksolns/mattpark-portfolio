@@ -1,7 +1,6 @@
 import React  from 'react'
 import { connect } from "react-redux";
 import { withStyles, Switch } from '@material-ui/core'
-import { grey, blueGrey } from '@material-ui/core/colors'
 
 const DarkModeSwitch = withStyles(theme => ({
   root: {

@@ -60,8 +60,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  color: #121212;
+  color: #242424;
   font-family: Montserrat, georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -72,7 +71,8 @@ body {
   font-feature-settings: "kern", "liga", "clig", "calt";
 }
 body.dark {
-  background: #121212;
+  background: #111111;
+  color: #ece8e1;
 }
 a {
   text-decoration: none;
