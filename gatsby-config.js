@@ -39,14 +39,18 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Matt Park Portfolio`,
+        name: `mattpark-portfolio`,
         short_name: `mattpark`,
-        start_url: `/`,
-        background_color: `#121317`,
-        theme_color: `#121317`,
-        display: `minimal-ui`,
+        description: `My name is Matt Park. I'm a New York City based software engineer.`,
+        lang: `en`,
+        display: `standalone`,
         icon: `static/assets/icons/mattpark-favicon.png`,
-        cache_busting_mode: 'none',
+        start_url: `/`,
+        background_color: `#111111`,
+        theme_color: `#ff0049`,
+        theme_color_in_head: false,
+        cache_busting_mode: `none`,
+        crossOrigin: `use-credentials`, // `use-credentials` or `anonymous`
       },
     },
     {
@@ -58,15 +62,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        // host: `https://mattpark.now.sh`,
-        // sitemap: `https://mattpark.now.sh/sitemap.xml`,
+        host: `https://mattpark.now.sh`,
+        sitemap: `https://mattpark.now.sh/sitemap.xml`,
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }]
+            policy: [{ userAgent: '*' }]
           },
           // Netlify Settings (look up gatsby-plugin-robots-txt)
           'branch-deploy': {
@@ -142,9 +146,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
-        // stylesProvider: {
-        //   injectFirst: true,
-        // }
+        stylesProvider: {
+          injectFirst: true,
+        }
       }
     },
     {
