@@ -14,13 +14,13 @@ const ThemeProvider = ({ children, themeType, setThemeType }) => {
     window.__onThemeChange = () => {
       setThemeType(window.__theme)
     }
-  }, [])
+  }, [setThemeType])
 
   const theme = useMemo(() =>
     getBaseTheme({ themeType }),[themeType])
 
   // use <Suspense fallback={<Loader />} ></Suspense> for loader? I may not want to use suspense for the entire app
-  return isClient && (
+  return (
     <StylesProvider>
       <MuiThemeProvider theme={theme}>
         <CssBaseline />

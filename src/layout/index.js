@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { withStyles } from '@material-ui/core'
 
 import "./index.scss"
+import ThemeProvider from '../themes'
 import Header from "./header"
 import Footer from './footer'
 import Cursor from './cursor'
@@ -33,17 +34,18 @@ const Layout = withStyles(theme => ({
   },
 }))(({ classes, location, children }) => {
   return (
-    <>
+    <ThemeProvider>
       <Header />
       <main>
         {children}
       </main>
       <Footer location={location} />
       <Cursor location={location} />
-    </>
+    </ThemeProvider>
   )
 })
 Layout.propTypes = {
+  location: PropTypes.object,
   children: PropTypes.node.isRequired,
 }
 export default Layout
