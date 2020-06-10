@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+<p style="text-align:center">
+  <a title="Matt Park - Software Engineer" target="_blank" rel="noopener noreferrer" href="https://mattpark.now.sh">
+    <img alt="Matt Park" src="./static/assets/images/mattpark-avatar.png" width="60" />
   </a>
 </p>
 <h1 align="center">
