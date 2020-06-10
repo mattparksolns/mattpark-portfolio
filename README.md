@@ -12,10 +12,11 @@
 Forward Thinker<br />
 Problem Solver<br />
 Web Tinkerer<br />
+<br /><br />
 
 ---
 
-<a title="Email" href="mailto:mattparksolns@gmail.com" style="color:#ff0049">
+<h3><a title="Email" href="mailto:mattparksolns@gmail.com" style="color:#ff0049">
 <b><em>Drop me a line,</em></b></a>
 I'd like to hear from you!
 <br /><br />
@@ -25,11 +26,12 @@ I'd like to hear from you!
   <img alt="twitter" src="./static/assets/icons/twitter.svg" width="16" /></a> &nbsp;
 <a title="Instagram" href="https://www.instagram.com/mattparksolns/">
   <img alt="instagram" src="./static/assets/icons/instagram.svg" width="16" /></a> &nbsp; 
+  </h3>
 <br /><br /><br />
 
 Thank you for visiting<br />
 my portfolio.
 
-<a href="#">
+<a href="#--matt-parks-portfolio">
   <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
 </a>
