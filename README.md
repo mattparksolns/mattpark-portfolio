@@ -16,8 +16,7 @@ Web Tinkerer<br />
 This is my portfolio.
 
 <a title="Email" target="_top" href="mailto:mattparksolns@gmail.com" style="color:#ff0049">
-<b><em>Drop me a line,</em></b>
-</a>
+<b><em>Drop me a line,</em></b></a>
 I'd like to hear from you!
 <br /><br />
 
