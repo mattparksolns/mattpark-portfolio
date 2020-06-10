@@ -4,11 +4,11 @@ module.exports = {
     author: {
       name: `Matt Park`,
       username: `@mattparksolns`,
-      summary: `Web Tinkerer`,
+      summary: `Software Engineer`,
     },
     description: `My name is Matt Park. I'm a New York City based software engineer.`,
     siteUrl: `https://mattpark.now.sh/`,
-    social: {
+    socials: {
       reddit: `mattparksolns`,
       facebook: `mattparksolns`,
       instagram: `mattparksolns`,
@@ -90,6 +90,13 @@ module.exports = {
         workboxConfig: {
           globPatterns: ['**/*'],
         },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // TODO: correct this
+        trackingId: `UA-165323903-1`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -245,12 +252,6 @@ module.exports = {
             }
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: `UA-165323903-1`,
       },
     },
   ],
