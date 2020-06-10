@@ -20,12 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/mattpark-client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mattpark-portfolio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/scopes/No_Build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scopes/No_Build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page-components/contact-page/contact-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page-components/contact-page/contact-form.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +38,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Matt Park &lt;mattparksolns@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
   <component name="IlluminatedCloudWorkspaceSettings">
     <option name="projectWorkspaceSettings">
@@ -187,7 +189,7 @@
       <workItem from="1591666705434" duration="22305000" />
       <workItem from="1591745755487" duration="26458000" />
       <workItem from="1591787389996" duration="559000" />
-      <workItem from="1591787982844" duration="1637000" />
+      <workItem from="1591787982844" duration="1951000" />
     </task>
     <task id="LOCAL-00001" summary="webstorm stuff">
       <created>1591788057121</created>
@@ -196,7 +198,21 @@
       <option name="project" value="LOCAL" />
       <updated>1591788057121</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="webstorm stuff">
+      <created>1591789940776</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591789940776</updated>
+    </task>
+    <task id="LOCAL-00003" summary="mattparksolutions -&gt; mattparksolns">
+      <created>1591789961013</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591789961013</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +233,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="webstorm stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="webstorm stuff" />
+    <MESSAGE value="mattparksolutions -&gt; mattparksolns" />
+    <MESSAGE value="no more clsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="no more clsx" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
