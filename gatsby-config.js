@@ -3,16 +3,37 @@ module.exports = {
     title: `Matt Park - Software Engineer`,
     author: {
       name: `Matt Park`,
-      username: `@mattparksolutions`,
+      username: `@mattparksolns`,
       summary: `Web Tinkerer`,
     },
     description: `My name is Matt Park and I am from the greater New York area. I am a software engineer.`,
     siteUrl: `https://mattpark.now.sh/`,
     social: {
-      twitter: `@matttpark`,
-      linkedIn: `mattparksolutions`,
-      gitHub: `mattparksolutions`,
+      reddit: `mattparksolns`,
+      facebook: `mattparksolns`,
+      instagram: `mattparksolns`,
+      twitter: `@mattparksolns`,
+      quora: `mattparksolns`,
+      tumblr: `mattparksolns`,
+      medium: `mattparksolns`,
+      ycombinator: `mattparksolns`,
+      linkedin: `mattparksolns`,
+      apollo: `mattparksolns`,
+      github: `mattparksolns`,
+      atlassian: `mattparksolns`,
+      docker: `mattparksolns`,
+      stackOverflow: `mattparksolns`,
+      wordpress: `mattparksolns`,
+      codepen: `mattparksolns`,
+      pinterest: `mattparksolns`,
+      email: `mattparksolns@gmail.com`,
+      phone: `+1 (201) 591 - 3323`,
     },
+    socialLinks: {
+      twitter: ``,
+      linkedin: ``,
+      github: ``,
+    }
   },
   plugins: [
     {
@@ -21,10 +42,54 @@ module.exports = {
         name: `Matt Park Portfolio`,
         short_name: `mattpark`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#121317`,
+        theme_color: `#121317`,
         display: `minimal-ui`,
-        icon: `static/assets/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `static/assets/images/mattpark-favicon.png`,
+        cache_busting_mode: 'none',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/admin`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        // host: `https://mattpark.now.sh`,
+        // sitemap: `https://mattpark.now.sh/sitemap.xml`,
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          },
+          // Netlify Settings (look up gatsby-plugin-robots-txt)
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null,
+          },
+        },
+      },
+    },
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          globPatterns: ['**/*'],
+        },
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -32,13 +97,9 @@ module.exports = {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
         siteUrl: `https://mattpark.now.sh`,
-        noTrailingSlash: true,
         noQueryString: true,
       }
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -66,25 +127,23 @@ module.exports = {
         excludePattern: /(excluded-link|external)/,
       }
     },
-    // `gatsby-plugin-no-javascript`,
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-sass`,
       options: {
-        trackingId: `UA-165323903-1`,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-typography`,
-    //   options: {
-    //     pathToConfigModule: `src/utils/typography`,
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         // stylesProvider: {
         //   injectFirst: true,
         // }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout`)
       }
     },
     {
@@ -149,6 +208,14 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-react-svg`,
+      options: {
+        rule: {
+          include: /\.inline\.svg$/
+        }
+      }
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
@@ -171,8 +238,19 @@ module.exports = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          {
+            resolve: `gatsby-remark-smartypants`,
+            options: {
+              dashes: "oldschool",
+            }
+          },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-165323903-1`,
       },
     },
   ],

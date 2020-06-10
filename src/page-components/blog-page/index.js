@@ -1,14 +1,14 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 
 const BlogPage = ({ data, location }) => {
   return (
-    <>
-      <Typography variant="h1">My Blog</Typography>
-      <Typography variant="h4">
-        Under construction..
+    <Box className={`contentWrapper`}>
+      <Typography variant="h2">My Blog</Typography>
+      <Typography variant="body1">
+        Work in progress..
       </Typography>
-    </>
+    </Box>
   )
 }
 export default BlogPage

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { withStyles, Typography, IconButton } from '@material-ui/core'
 import { Close } from "@material-ui/icons"
 
-const AnnouncementBar = withStyles((theme) => ({
+const AnnouncementBar = withStyles(theme => ({
   root: {
     // backgroundColor: theme.text.primary,
     backgroundColor: 'black',

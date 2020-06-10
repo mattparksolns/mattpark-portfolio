@@ -1,16 +1,19 @@
-import { SsrRootWrapper, PageWrapper } from "./src/utils/provider-wrappers"
-export const wrapRootElement = SsrRootWrapper
-export const wrapPageElement = PageWrapper
+import { RootWrapper } from "./src/utils/provider-wrappers"
+export const wrapRootElement = RootWrapper
 
-import React, { createElement } from 'react'
-
+import React from 'react'
 import Terser from 'terser'
-export const onRenderBody = ({ setPreBodyComponents }) => {
-  const boundFn = () => {
+export const onRenderBody = ({ setPreBodyComponents, setPostBodyComponents }) => {
+  let themeScriptFn = () => {
     window.__onThemeChange = () => {};
     window.__setThemeType = themeType => {
       window.__theme = themeType;
       window.__onThemeChange();
+      if(themeType === 'dark') {
+        document.body.classList.add('dark')
+      } else {
+        document.body.classList.remove('dark')
+      }
       try {
         localStorage.setItem('themeType', themeType);
       } catch (error) {
@@ -27,55 +30,55 @@ export const onRenderBody = ({ setPreBodyComponents }) => {
     mql.addEventListener('change', e => {
       window.__setThemeType(e.matches ? 'dark' : 'light');
     })
-    window.__theme = preferredTheme || (mql.matches ? 'dark' : 'light')
-    document.documentElement.style.setProperty(
-      '--color-bg',
-      window.__theme === 'dark' ? '#121317' : '#ffffff')
+    window.__setThemeType(preferredTheme || (mql.matches ? 'dark' : 'light'))
   }
-  let calledFunction = `(${String(boundFn)})()`
-  calledFunction = Terser.minify(calledFunction).code
+  themeScriptFn = `(${String(themeScriptFn)})()`
+  themeScriptFn = Terser.minify(themeScriptFn).code
+  const ThemeScript = (
+    <script key={"theme-script"} dangerouslySetInnerHTML={{ __html: themeScriptFn }} />
+  )
+  const NoiseBackground = (
+    <div key={"noise-background"} className={"noiseWrapper"}>
+      <div className={"noiseOverlay"} />
+    </div>
+  )
+  setPreBodyComponents([ThemeScript, NoiseBackground])
 
-  const ThemeScript = createElement('script', {
-    key: 'theme-script',
-    dangerouslySetInnerHTML: {
-      __html: calledFunction
-    }
-  })
-  setPreBodyComponents([ThemeScript])
+  // let mouseScriptFn = () => {
+  //   let currentMousePos = { x: -1, y: -1 }
+  //
+  //   $(document).ready(() => {
+  //
+  //     $("body").hover(() =>{
+  //       $(".innerMouseIndicator, .mouseIndicator").addClass("show")
+  //     }, () => {
+  //       $(".innerMouseIndicator, .mouseIndicator").removeClass("show")
+  //     })
+  //
+  //     $(window).mousemove(e => {
+  //       $(".innerMouseIndicator, .mouseIndicator").addClass("show");
+  //       let currentX = currentMousePos.x = e.pageX
+  //       let currentY = currentMousePos.x = e.pageY - $(window).scrollTop()
+  //       $(".innerMouseIndicator").css({"transform":"translate3d(" + currentX + "px, " + currentY + "px, 0)"})
+  //       setTimeout(() =>{
+  //         $(".mouseIndicator").css({"transform":"translate3d(" + currentX + "px, " + currentY + "px, 0)"})
+  //       }, 100)
+  //     })
+  //
+  //     $(".activeMouse").hover(() => {
+  //       $(".mouseIndicator").addClass("active")
+  //     }, () => {
+  //       $(".mouseIndicator").removeClass("active")
+  //     })
+  //   })
+  // }
+  // mouseScriptFn = `(${String(mouseScriptFn)})()`
+  // mouseScriptFn = Terser.minify(mouseScriptFn).code
+  // const MouseScript = createElement('script', {
+  //   key: 'theme-script',
+  //   dangerouslySetInnerHTML: {
+  //     __html: mouseScriptFn
+  //   }
+  // })
+  // setPostBodyComponents([MouseScript])
 }
-
-import { Provider as ReduxProvider } from 'react-redux'
-import { renderToString } from 'react-dom/server'
-import { ServerStyleSheets, StylesProvider } from '@material-ui/core'
-import ThemeProvider from './src/themes'
-import configureAppStore from './src/store'
-// import { getPageContext } from './src/themes'
-import getBaseTheme from './src/themes/base'
-
-// export const replaceRenderer = ({
-//   bodyComponent,
-//   replaceBodyHTMLString,
-//   setHeadComponents,
-// }) => {
-//   const store = configureAppStore()
-//   const sheets = new ServerStyleSheets()
-//   const bodyHTML = renderToString(
-//     sheets.collect(
-//       <ReduxProvider store={store}>
-//         <ThemeProvider>
-//           {bodyComponent}
-//         </ThemeProvider>
-//       </ReduxProvider>
-//     )
-//   )
-//   replaceBodyHTMLString(bodyHTML)
-//   setHeadComponents([
-//     <style type={"text/css"}
-//            id={"jss-server-side"}
-//            key={"jss-server-side"}
-//            dangerouslySetInnerHTML={{
-//              __html: sheets.toString()
-//            }}/>
-//   ])
-// }
-
