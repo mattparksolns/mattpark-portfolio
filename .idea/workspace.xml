@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/MarkPro/MarkPro-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/MarkPro/MarkPro-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/assets/fonts/MarkPro/MarkPro-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layout/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/index.scss" afterDir="false" />
-    </list>
+    <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +176,7 @@
       <workItem from="1591490045435" duration="29771000" />
       <workItem from="1591664757678" duration="1725000" />
       <workItem from="1591666705434" duration="22305000" />
-      <workItem from="1591745755487" duration="24295000" />
+      <workItem from="1591745755487" duration="24773000" />
     </task>
     <servers />
   </component>
