@@ -21,7 +21,8 @@ I'd like to hear from you!
 <br /><br />
 
 Thank you for visiting<br />
-my portfolio.<br />
+my portfolio.
+
 <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
 
 <a title="LinkedIn" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mattparksolns/">
