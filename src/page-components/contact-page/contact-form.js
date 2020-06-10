@@ -2,11 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import validator from 'validator'
 import axios from 'axios'
-import clsx from 'clsx'
-import {
-  useTheme, withStyles, Button,
-  FormControlLabel, Checkbox,
-} from '@material-ui/core'
+import { withStyles, FormControlLabel, Checkbox, } from '@material-ui/core'
 import { Send } from '@material-ui/icons'
 import emailjs from 'emailjs-com'
 
@@ -32,7 +28,6 @@ const ContactForm = withStyles(theme => ({
     color: theme.palette.error.main,
   }
 }))(({ classes, userData }) => {
-  const theme = useTheme()
   emailjs.init('user_0egEnFumA4H3XIq2ocucl')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
@@ -97,7 +92,7 @@ const ContactForm = withStyles(theme => ({
                        onInput={e => setMessageError(false)}
                        onBlur={e => setMessageError(validator.isEmpty(message))}
                        multiline rows={8} />
-      <FormControlLabel className={clsx(classes.privacyPolicy, policyError && classes.error)}
+      <FormControlLabel className={`${classes.privacyPolicy} ${policyError && classes.error}`}
                         control={<Checkbox
                           inputProps={{ 'aria-label': 'privacy policy' }} required
                           checked={policyChecked} color={"primary"}
