@@ -6,18 +6,18 @@ const DarkModeSwitch = withStyles(theme => ({
   root: {
     transition: 'all .8s cubic-bezier(.19,1,.9,1)',
     [theme.breakpoints.down('xs')]: {
-      marginRight: theme.spacing(1)
+      marginRight: theme.spacing(2)
     },
     padding: 0,
-    width: 34,
-    height: 20,
+    width: 24,
+    height: 12,
   },
   switchBase: {
     padding: 0,
     color: theme.palette.primary.main,
     '&$checked': {
       color: theme.palette.primary.main,
-      transform: 'translateX(14px)',
+      transform: 'translateX(12px)',
       '& + $track': {
         backgroundColor: theme.palette.background.default,
         opacity: 1,
@@ -25,8 +25,8 @@ const DarkModeSwitch = withStyles(theme => ({
     },
   },
   thumb: {
-    width: 20,
-    height: 20,
+    width: 12,
+    height: 12,
   },
   track: {
     borderRadius: 26 / 2,
