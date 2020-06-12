@@ -1,3 +1,4 @@
+import './src/styles/global.scss'
 import { RootWrapper } from "./src/utils/provider-wrappers"
 export const wrapRootElement = RootWrapper
 
