@@ -1,7 +1,7 @@
 import React from 'react'
 import { withStyles, Divider } from '@material-ui/core'
 
-import ContactCard from './contact-card'
+import ContactMe from './contact-me'
 import Copyright from './copyright'
 
 const Footer = withStyles(theme => ({
@@ -16,7 +16,7 @@ const Footer = withStyles(theme => ({
 }))(({ classes, location }) => {
   return (
     <footer className={classes.root}>
-      { location.pathname !== '/contact/' && <ContactCard /> }
+      { location.pathname !== '/contact/' && <ContactMe /> }
       <Divider className={classes.divider} />
       <Copyright />
     </footer>
