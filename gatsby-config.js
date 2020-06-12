@@ -117,7 +117,18 @@ module.exports = {
       options: {
         siteUrl: `https://mattpark.now.sh`,
         noQueryString: true,
-      }
+      },
+    },
+    {
+      resolve: `gatsby-plugin-csp`,
+      options: {
+        disableOnDev: true,
+        mergeDefaultDirectives: true,
+        directives: {
+          "script-src": "'self' www.google-analytics.com",
+          "img-src": "'self' data: www.google-analytics.com",
+        }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
