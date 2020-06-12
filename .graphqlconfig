@@ -1,14 +1,15 @@
 {
-  "name": "Untitled GraphQL Schema",
+  "name": "mattpark-portfolio",
   "schemaPath": "schema.graphql",
   "extensions": {
     "endpoints": {
-      "Default GraphQL Endpoint": {
-        "url": "http://localhost:8080/graphql",
+      "Remote GraphQL Endpoint": {
+        "url": "http://localhost:8000/___graphql",
         "headers": {
-          "user-agent": "JS GraphQL"
+          "user-agent": "JS GraphQL",
+          "Authorization": "Bearer Token"
         },
-        "introspect": false
+        "introspect": true
       }
     }
   }
