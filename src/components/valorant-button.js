@@ -1,5 +1,5 @@
 import React from 'react'
-import { withStyles, useTheme, Button } from "@material-ui/core"
+import { withStyles, Button } from "@material-ui/core"
 
 const ValorantButton = withStyles(theme => ({
   root: {
@@ -13,7 +13,6 @@ const ValorantButton = withStyles(theme => ({
     height: 72,
     fontSize: '1.1rem',
     '& > *': {
-      // color: theme.colors.whiteText,
       color: theme.palette.secondary.main,
     },
     '& > span > span > svg': {
