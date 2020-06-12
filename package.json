@@ -106,7 +106,7 @@
     "eslint-plugin-react-hooks": "^4.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jaeger-client": "^3.18.0",
-    "jest": "^25.5.3",
+    "jest": "^26.0.1",
     "jest-emotion": "^10.0.32",
     "opentracing": "^0.14.4",
     "prettier": "2.0.4",
