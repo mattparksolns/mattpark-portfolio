@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from "gatsby"
 import React from 'react'
 import PropTypes from 'prop-types'
 import { withStyles, Typography, Link } from '@material-ui/core'
@@ -10,8 +11,7 @@ const Intro = withStyles(theme => ({
   },
   intro: {
     position: 'relative',
-    width: 850,
-    fontSize: 89,
+    fontSize: '5.41666667vw',
     [theme.breakpoints.down('sm')]: {
       width: '90%',
       fontSize: '8.57vw',
@@ -37,14 +37,32 @@ const Intro = withStyles(theme => ({
     },
   },
 }))(({ classes }) => {
+  const data = useStaticQuery(graphql`
+      query {
+          site {
+              siteMetadata {
+                  author {
+                      socials {
+                          linkedin {
+                              link
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  `)
+  const socials = data.site.siteMetadata.author.socials
   return (
     <section className={`${classes.root} contentWrapper`}>
       <Typography className={classes.intro} variant="h1" gutterBottom>
         My name is
         <Link title="LinkedIn" color={"secondary"}
               target={"_blank"} rel={"noopener noreferrer"}
-              href={"https://linkedin.com/in/mattparksolutions"}> Matt Park. </Link>
-        I'm a New York City based software engineer.
+              href={socials.linkedin.link}> Matt<br />Park. </Link>
+        I'm a New York<br />
+        City based software<br />
+        engineer.
       </Typography>
       <Typography className={classes.description} variant="h1">
         Forward Thinker<br />
