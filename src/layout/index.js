@@ -44,6 +44,7 @@ const Layout = withStyles(theme => ({
   )
 })
 Layout.propTypes = {
+  location: PropTypes.object,
   children: PropTypes.node.isRequired,
 }
 export default Layout

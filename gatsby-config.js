@@ -1,3 +1,12 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+
+console.log(`Using environment config: '${activeEnv}'`)
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Matt Park - Software Engineer`,
@@ -64,13 +73,12 @@ module.exports = {
       options: {
         host: `https://mattpark.now.sh`,
         sitemap: `https://mattpark.now.sh/sitemap.xml`,
-        resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }],
           },
           production: {
-            policy: [{ userAgent: '*' }]
+            policy: [{ userAgent: '*', allow: ['/'] }]
           },
           // Netlify Settings (look up gatsby-plugin-robots-txt)
           'branch-deploy': {
@@ -146,9 +154,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
-        stylesProvider: {
-          injectFirst: true,
-        }
+        // stylesProvider: {
+        //   injectFirst: true,
+        // }
       }
     },
     {

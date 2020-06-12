@@ -14,14 +14,3 @@ export const RootWrapper = ({ element }) => {
     </ReduxProvider>
   )
 }
-
-export const SsrRootWrapper = ({ element }) => {
-  const store = configureAppStore()
-  return (
-    <ReduxProvider store={store}>
-      <ThemeProvider>
-        {element}
-      </ThemeProvider>
-    </ReduxProvider>
-  )
-}

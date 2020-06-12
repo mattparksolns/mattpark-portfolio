@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
 import React from "react"
 import {
-  withStyles, Typography, fade,
+  withStyles, Typography,
   AppBar, Toolbar, Link,
 } from '@material-ui/core'
 import { FiGithub, FaLinkedinIn } from 'react-icons/all'
@@ -33,39 +33,9 @@ const Header = withStyles(theme => ({
     '10%': {
       backgroundPosition: '10% center',
     },
-    // '50%': {
-    //   backgroundPosition: '100% center',
-    // },
     '100%': {
       backgroundPosition: '130% center',
     },
-    // '20%': {
-    //   backgroundPosition: '100% center',
-    // },
-    // '30%': {
-    //   backgroundPosition: '150% center',
-    // },
-    // '40%': {
-    //   backgroundPosition: '200% center',
-    // },
-    // '50%': {
-    //   backgroundPosition: '250% center',
-    // },
-    // '60%': {
-    //   backgroundPosition: '300% center',
-    // },
-    // '70%': {
-    //   backgroundPosition: '350% center',
-    // },
-    // '80%': {
-    //   backgroundPosition: '400% center',
-    // },
-    // '90%': {
-    //   backgroundPosition: '450% center',
-    // },
-    // '100%': {
-    //   backgroundPosition: '500% center',
-    // },
   },
   logo: {
     fontFamily: 'tungsten',

@@ -14,7 +14,7 @@ const ThemeProvider = ({ children, themeType, setThemeType }) => {
     window.__onThemeChange = () => {
       setThemeType(window.__theme)
     }
-  }, [])
+  }, [setThemeType])
 
   const theme = useMemo(() =>
     getBaseTheme({ themeType }),[themeType])
