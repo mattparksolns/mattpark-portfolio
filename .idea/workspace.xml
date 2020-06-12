@@ -27,9 +27,9 @@
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/valorant-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/valorant-button.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/footer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/footer/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout/header/dark-mode-switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layout/header/dark-mode-switch.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +41,7 @@
       <list>
         <option value="tsconfig.json" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -126,6 +127,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="13.12.0" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.ember-template-lint" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.jscs" value="true" />
@@ -144,16 +146,16 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="node" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\bohee\MyData\dev\mattpark\mattpark-portfolio" />
-    <property name="settings.editor.selected.configurable" value="Settings.Markdown" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bohee\MyData\dev\mattpark\mattpark-portfolio\src\styles" />
+      <recent name="C:\Users\bohee\MyData\dev\mattpark\mattpark-portfolio\src\components" />
       <recent name="C:\Users\bohee\MyData\dev\mattpark\mattpark-client\src\components" />
       <recent name="C:\Users\bohee\MyData\dev\mattpark\mattpark-client\src\layout" />
       <recent name="C:\Users\bohee\MyData\dev\me\mattpark\mattpark-client\static" />
-      <recent name="C:\Users\bohee\MyData\dev\me\mattpark\mattpark-client\src\utils" />
-      <recent name="C:\Users\bohee\MyData\dev\me\mattpark\mattpark-client\src\features" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -212,20 +214,7 @@
       <workItem from="1591793419778" duration="98000" />
       <workItem from="1591793545914" duration="22270000" />
       <workItem from="1591950157013" duration="2736000" />
-    </task>
-    <task id="LOCAL-00001" summary="webstorm stuff">
-      <created>1591788057121</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1591788057121</updated>
-    </task>
-    <task id="LOCAL-00002" summary="webstorm stuff">
-      <created>1591789940776</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1591789940776</updated>
+      <workItem from="1591991795204" duration="1215000" />
     </task>
     <task id="LOCAL-00003" summary="mattparksolutions -&gt; mattparksolns">
       <created>1591789961013</created>
@@ -472,7 +461,105 @@
       <option name="project" value="LOCAL" />
       <updated>1591822603674</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="moved seo from features to components">
+      <created>1591991011364</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991011365</updated>
+    </task>
+    <task id="LOCAL-00039" summary="remove jekyll theme">
+      <created>1591991034360</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991034360</updated>
+    </task>
+    <task id="LOCAL-00040" summary="setting up dependabot">
+      <created>1591991047353</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991047353</updated>
+    </task>
+    <task id="LOCAL-00041" summary="using new socials component">
+      <created>1591991116702</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991116702</updated>
+    </task>
+    <task id="LOCAL-00042" summary="using styles/global.scss instead of layout.scss">
+      <created>1591991235048</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991235048</updated>
+    </task>
+    <task id="LOCAL-00043" summary="moved seo from features to components">
+      <created>1591991263234</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991263234</updated>
+    </task>
+    <task id="LOCAL-00044" summary="adding badges">
+      <created>1591991283916</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991283916</updated>
+    </task>
+    <task id="LOCAL-00045" summary="renamed from signature.inline.svg to signature.svg">
+      <created>1591991312492</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991312492</updated>
+    </task>
+    <task id="LOCAL-00046" summary="styling for wide screen + graphql siteMetadata for linkedin link">
+      <created>1591991502256</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1591991502256</updated>
+    </task>
+    <task id="LOCAL-00047" summary="badges">
+      <created>1591992865794</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1591992865794</updated>
+    </task>
+    <task id="LOCAL-00048" summary="refactored socials">
+      <created>1591992891503</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1591992891503</updated>
+    </task>
+    <task id="LOCAL-00049" summary="removed xml tag">
+      <created>1591992916557</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1591992916557</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added dividers and outline">
+      <created>1591992939485</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1591992939485</updated>
+    </task>
+    <task id="LOCAL-00051" summary="removed seo and Box">
+      <created>1591992977383</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1591992977383</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,14 +591,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mattparksolutions -&gt; mattparksolns" />
-    <MESSAGE value="no more clsx" />
-    <MESSAGE value="cleanup" />
-    <MESSAGE value="avatar" />
-    <MESSAGE value="webstorm stuff" />
-    <MESSAGE value="styling" />
-    <MESSAGE value="setting up readme" />
-    <MESSAGE value="icons" />
     <MESSAGE value="icons path" />
     <MESSAGE value="readme" />
     <MESSAGE value="removed unused imports" />
@@ -523,7 +602,21 @@
     <MESSAGE value="dotenv" />
     <MESSAGE value="moved themeprovider from wraprootelement to layout" />
     <MESSAGE value="refractor and back to csr app" />
-    <option name="LAST_COMMIT_MESSAGE" value="refractor and back to csr app" />
+    <MESSAGE value="remove jekyll theme" />
+    <MESSAGE value="setting up dependabot" />
+    <MESSAGE value="using new socials component" />
+    <MESSAGE value="using styles/global.scss instead of layout.scss" />
+    <MESSAGE value="moved seo from features to components" />
+    <MESSAGE value="adding badges" />
+    <MESSAGE value="renamed from signature.inline.svg to signature.svg" />
+    <MESSAGE value="styling for wide screen + graphql siteMetadata for linkedin link" />
+    <MESSAGE value="badges" />
+    <MESSAGE value="refactored socials" />
+    <MESSAGE value="removed xml tag" />
+    <MESSAGE value="added dividers and outline" />
+    <MESSAGE value="removed seo and Box" />
+    <MESSAGE value="refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
@@ -618,11 +711,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="147" key="IDE.errors.dialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591793595005" />
-    <state x="555" y="50" key="SettingsEditor" timestamp="1591793979185">
+    <state x="347" y="115" key="SettingsEditor" timestamp="1591992209464">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="-1023" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1589740631846" />
-    <state x="555" y="50" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591793979185" />
+    <state x="347" y="115" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591992209464" />
     <state x="490" y="154" width="540" height="540" key="StructurePopup" timestamp="1591425615858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
