@@ -12,37 +12,31 @@ module.exports = {
     title: `Matt Park - Software Engineer`,
     author: {
       name: `Matt Park`,
-      username: `@mattparksolns`,
-      summary: `Software Engineer`,
+      username: `mattparksolns`,
+      email: `mattparksolns@gmail.com`,
+      phone: `+1 (201) 591 - 3323`,
+      socials: {
+        reddit: { username: `mattparksolns`, link: ``, },
+        facebook: { username: `mattparksolns`, link: `https://www.facebook.com/mattparksolns`, },
+        instagram: { username: `mattparksolns`, link: `https://www.instagram.com/mattparksolns/`, },
+        twitter: { username: `mattparksolns`, link: `https://twitter.com/mattparksolns`, },
+        quora: { username: `mattparksolns`, link: ``, },
+        tumblr: { username: `mattparksolns`, link: ``, },
+        medium: { username: `mattparksolns`, link: ``, },
+        ycombinator: { username: `mattparksolns`, link: ``, },
+        linkedin: { username: `mattparksolns`, link: `https://www.linkedin.com/in/mattparksolns/`, },
+        apollo: { username: `mattparksolns`, link: ``, },
+        github: { username: `mattparksolns`, link: `https://github.com/mattparksolns`, },
+        atlassian: { username: `mattparksolns`, link: ``, },
+        docker: { username: `mattparksolns`, link: ``, },
+        stackOverflow: { username: `mattparksolns`, link: ``, },
+        wordpress: { username: `mattparksolns`, link: ``, },
+        codepen: { username: `mattparksolns`, link: ``, },
+        pinterest: { username: `mattparksolns`, link: ``, },
+      }
     },
     description: `My name is Matt Park. I'm a New York City based software engineer.`,
     siteUrl: `https://mattpark.now.sh/`,
-    socials: {
-      reddit: `mattparksolns`,
-      facebook: `mattparksolns`,
-      instagram: `mattparksolns`,
-      twitter: `@mattparksolns`,
-      quora: `mattparksolns`,
-      tumblr: `mattparksolns`,
-      medium: `mattparksolns`,
-      ycombinator: `mattparksolns`,
-      linkedin: `mattparksolns`,
-      apollo: `mattparksolns`,
-      github: `mattparksolns`,
-      atlassian: `mattparksolns`,
-      docker: `mattparksolns`,
-      stackOverflow: `mattparksolns`,
-      wordpress: `mattparksolns`,
-      codepen: `mattparksolns`,
-      pinterest: `mattparksolns`,
-      email: `mattparksolns@gmail.com`,
-      phone: `+1 (201) 591 - 3323`,
-    },
-    socialLinks: {
-      twitter: ``,
-      linkedin: ``,
-      github: ``,
-    }
   },
   plugins: [
     {
@@ -241,10 +235,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-react-svg`,
       options: {
-        rule: {
-          include: /\.inline\.svg$/
-        }
-      }
+        // rule: {
+        //   include: /\.inline\.svg$/,
+        // },
+      },
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
