@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles, Box, Typography } from "@material-ui/core";
-import SEO from '../../features/seo'
+import { withStyles, Typography } from "@material-ui/core";
 
 const WorkPage = withStyles(theme => ({
   root: {
@@ -15,10 +14,9 @@ const WorkPage = withStyles(theme => ({
   }
 }))(({ classes }) => {
   return (
-    <Box className={`${classes.root} contentWrapper`}>
-      <SEO pageTitle="Work" />
+    <div className={`${classes.root} contentWrapper`}>
       <Typography variant="h2">Projects</Typography>
-      <Box className={classes.placeholder}>
+      <div className={classes.placeholder}>
         <Typography variant={"h3"}>
           Project 1
         </Typography>
@@ -34,8 +32,8 @@ const WorkPage = withStyles(theme => ({
         <Typography variant={"h3"}>
           Project 5
         </Typography>
-      </Box>
-    </Box>
+      </div>
+    </div>
   )
 })
 WorkPage.propTypes = {
