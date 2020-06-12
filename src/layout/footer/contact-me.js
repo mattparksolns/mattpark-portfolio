@@ -1,11 +1,11 @@
 import { Link as GatsbyLink } from 'gatsby'
 import React from 'react'
-import { withStyles, Box, Typography, Link, SvgIcon } from '@material-ui/core'
+import { withStyles, Typography, Link, SvgIcon } from '@material-ui/core'
 
-import Signature from '../../../static/assets/images/signature.inline.svg'
-import { FaLinkedinIn, FiGithub } from "react-icons/all"
+import Socials from '../../components/socials'
+import Signature from '../../../static/assets/images/signature.svg'
 
-const ContactCard = withStyles(theme => ({
+const ContactMe = withStyles(theme => ({
   root: {
     display: 'flex',
     flexDirection: 'column',
@@ -41,9 +41,7 @@ const ContactCard = withStyles(theme => ({
     },
     '& > a': {
       fontStyle: 'italic',
-      // color: theme.text.hover2
       '&:hover': {
-        // color: theme.text.hover
       }
     }
   },
@@ -62,10 +60,10 @@ const ContactCard = withStyles(theme => ({
   },
   socials: {
     marginTop: 5,
-    '& > a': {
+    '& svg': {
       fontSize: 20,
     },
-    '& > a:nth-of-type(1)': {
+    '& > a:nth-last-of-type(n+2)': {
       marginRight: '1.3888889vw',
       [theme.breakpoints.down('sm')]: {
         marginRight: 20,
@@ -100,24 +98,20 @@ const ContactCard = withStyles(theme => ({
       fontFamily: 'tungsten',
       fontWeight: 900,
       whiteSpace: 'nowrap',
+      position: 'absolute',
       width: '100%',
       height: '100%',
       textAlign: 'center',
-      // padding: '0.85vw 2.2vw',
-      margin: '0.37vw 0.2vw',
-      fontSize: '9.5vw',
+      fontSize: '9.9vw',
       [theme.breakpoints.down('xs')]: {
-        // padding: '4px 0 0 3.9px',
         fontSize: 54.144,
       },
       '@media only screen and (max-width: 390px)': {
-        // padding: '1.77vw 0 0 0.77vw',
-        // marginTop: -3,
         fontSize: '14vw',
       },
     }
   },
-  signature: {
+  msgAndSign: {
     position: 'absolute',
     top: '20%',
     left: 'calc(50% + 9.027777vw)',
@@ -155,7 +149,7 @@ const ContactCard = withStyles(theme => ({
   },
 }))(({ classes }) => {
   return (
-    <Box className={classes.root}>
+    <div className={classes.root}>
       <div className={classes.header}>
         <Typography className={classes.message} variant={"h1"}>
           <Link color={"secondary"} component={GatsbyLink} to="/contact/">Drop me a line,</Link> I'd like to hear from you!
@@ -164,19 +158,14 @@ const ContactCard = withStyles(theme => ({
           <Typography variant={"body1"}>
             Lets connect!
           </Typography>
-          <div className={classes.socials}>
-            <Link title="GitHub" target="_blank" rel="noopener noreferrer"
-                  href="https://github.com/mattparksolutions"><FiGithub /></Link>
-            <Link title="LinkedIn" target="_blank" rel="noopener noreferrer"
-                  href="https://linkedin.com/in/mattparksolutions"><FaLinkedinIn /></Link>
-          </div>
+          <Socials className={classes.socials} />
         </div>
       </div>
       <div className={classes.thankyou}>
         <div className={classes.logo}>
           <Typography variant={"h2"}>MP</Typography>
         </div>
-        <div className={classes.signature}>
+        <div className={classes.msgAndSign}>
           <Typography variant={"body1"}>
             Thank you for visiting<br />
             my portfolio!
@@ -184,7 +173,7 @@ const ContactCard = withStyles(theme => ({
           <SvgIcon component={Signature} viewBox={"0 0 204.13 35.46"} />
         </div>
       </div>
-    </Box>
+    </div>
   )
 })
-export default ContactCard
+export default ContactMe

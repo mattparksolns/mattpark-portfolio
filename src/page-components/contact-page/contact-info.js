@@ -4,8 +4,9 @@ import {
   MdLocationCity, GoLocation,
   FiPhone, FiPhoneCall,
   RiMailLine, RiMailSendLine,
-  FiGithub, FaLinkedinIn
 } from 'react-icons/all'
+
+import Socials from '../../components/socials'
 
 const ContactInfo = withStyles(theme => ({
   root: {
@@ -146,7 +147,7 @@ const ContactInfo = withStyles(theme => ({
             </span>
           </Link>
           <Link className={classes.emailLink}
-                target={"_top"} href={"mailto:mattparksolutions@gmail.com"}>
+                target={"_top"} href={"mailto:mattparksolns@gmail.com"}>
             <RiMailSendLine className={classes.hoverIcon} /><RiMailLine />
             <span>mattparksolutions@gmail.com</span>
           </Link>
@@ -156,12 +157,7 @@ const ContactInfo = withStyles(theme => ({
             <span>(201) 591 - 3323</span>
           </Link>
         </div>
-        <Typography className={classes.socials} variant="h2">
-          <Link title="GitHub" target="_blank" rel="noopener noreferrer"
-                href="https://github.com/mattparksolutions"><FiGithub /></Link>
-          <Link title="LinkedIn" target="_blank" rel="noopener noreferrer"
-                href="https://linkedin.com/in/mattparksolutions"><FaLinkedinIn /></Link>
-        </Typography>
+        <Socials className={classes.socials} />
       </div>
     </Box>
   )

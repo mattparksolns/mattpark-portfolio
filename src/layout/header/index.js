@@ -7,6 +7,7 @@ import {
 import { FiGithub, FaLinkedinIn } from 'react-icons/all'
 
 // import AnnouncementBar from './announcement-bar'
+import Socials from '../../components/socials'
 import DarkModeSwitch from './dark-mode-switch'
 import MobileMenu from './mobile-menu'
 
@@ -89,10 +90,9 @@ const Header = withStyles(theme => ({
     position: 'relative',
     top: 3,
     '& > a': {
-      fontSize: 18,
-      marginRight: theme.spacing(3),
-      [theme.breakpoints.down('xs')]: {
-        marginRight: theme.spacing(2),
+      marginRight: 20,
+      '& > svg': {
+        fontSize: 20,
       },
     },
   }
@@ -102,19 +102,22 @@ const Header = withStyles(theme => ({
           site {
               siteMetadata {
                   title
+                  author {
+                      name
+                  }
               }
           }
       }
   `)
-  const siteTitle = data.site.siteMetadata.title
+  const { title, author } = data.site.siteMetadata
 
   return (
     <AppBar className={classes.appBar} color={"inherit"}>
       {/*<AnnouncementBar />*/}
       <Toolbar className={classes.toolbar} component={"nav"}>
         <Typography className={classes.logo} variant="h1">
-          <Link component={GatsbyLink} title={siteTitle} to="/">
-            Matt Park
+          <Link component={GatsbyLink} title={title} to="/">
+            {author.name}
           </Link>
         </Typography>
         <div className={classes.pageLinks}>
@@ -125,12 +128,7 @@ const Header = withStyles(theme => ({
         </div>
         <div className={classes.grow} />
         <div className={classes.rightNav}>
-          <Typography className={classes.socials}>
-            <Link title="GitHub" target="_blank" rel="noopener noreferrer"
-                  href="https://github.com/mattparksolutions"><FiGithub /></Link>
-            <Link title="LinkedIn" target="_blank" rel="noopener noreferrer"
-                  href="https://linkedin.com/in/mattparksolutions"><FaLinkedinIn /></Link>
-          </Typography>
+          <Socials className={classes.socials} />
           <DarkModeSwitch />
           <MobileMenu />
         </div>
