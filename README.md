@@ -9,6 +9,7 @@
 
 ![Node.js CI](https://github.com/mattparksolns/mattpark-portfolio/workflows/Node.js%20CI/badge.svg?branch=master)
 ![Dependabot Badge](https://flat.badgen.net/dependabot/mattparksolns/mattpark-portfolio?icon=dependabot)
+<img src="https://flat.badgen.net/dependabot/mattparksolns/mattpark-portfolio?icon=dependabot" alt="Dependabot Badge" />
 [![Crowdin](https://badges.crowdin.net/mattpark-portfolio/localized.svg)](https://crowdin.com)
 
 ### My name is Matt Park.<br />I'm a New York City based<br />software engineer.
@@ -25,7 +26,7 @@ Web Tinkerer<br />
 <b><em>Drop me a line,</em></b></a>
 I'd like to hear from you!
 <br /><br />
-<a title="LinkedIn" href="https://www.linkedin.com/in/mattparksolns/" style="margin-right: 20px">
+<a title="LinkedIn" href="https://www.linkedin.com/in/mattparksolns/">
   <img alt="linkedin" src="./static/assets/icons/linkedin.svg" width="16" /></a> &nbsp;
 <a title="Twitter" href="https://twitter.com/mattparksolns">
   <img alt="twitter" src="./static/assets/icons/twitter.svg" width="16" /></a> &nbsp;
