@@ -4,8 +4,11 @@
   </a>
 </p>
 <h1 align="center">
-  Matt Park's portfolio
+  Matt Park - Software Engineer
 </h1>
+
+![Node.js CI](https://github.com/mattparksolns/mattpark-portfolio/workflows/Node.js%20CI/badge.svg?branch=master)
+[![Crowdin](https://badges.crowdin.net/mattpark-portfolio/localized.svg)](https://crowdin.com)
 
 ### My name is Matt Park.<br />I'm a New York City based<br />software engineer.
 
@@ -34,5 +37,5 @@ Thank you for visiting<br />
 my portfolio.
 
 <a href="#drop-me-a-lineid-like-to-hear-from-you------------">
-  <img alt="signature" src="./static/assets/images/signature.inline.svg" width="150" />
+  <img alt="signature" src="static/assets/images/signature.svg" width="150" />
 </a>
