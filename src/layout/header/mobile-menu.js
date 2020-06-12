@@ -26,10 +26,12 @@ const MobileMenu = withStyles(theme => ({
     opacity: theme.isDark ? 0.4 : 0.1,
   },
   paper: {
+    // boxSizing: 'border-box',
     borderRadius: 0,
-    backgroundColor: theme.palette.background.default,
-    // border: theme.isDark && `1px solid ${blueGrey[900]}`,
-    width: '60vw',
+    boxShadow: 'none',
+    background: theme.isDark ? theme.palette.background.default : theme.palette.background.paper,
+    outline: theme.isDark ? `rgba(255, 255, 255, 0.12) solid 1px` : `rgba(0, 0, 0, 0.12) solid 1px`,
+    width: '50vw',
   },
   list: {
     '&, & li, & a': {
@@ -69,10 +71,10 @@ const MobileMenu = withStyles(theme => ({
               paper: classes.paper,
               list: classes.list,
             }}>
-        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/about/'>About</Link></MenuItem>
-        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/work/'>Work</Link></MenuItem>
-        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/blog/'>Blog</Link></MenuItem>
-        <MenuItem><Link component={GatsbyLink} onClick={toggleMenu} to='/contact/'>Contact</Link></MenuItem>
+        <MenuItem divider><Link component={GatsbyLink} onClick={toggleMenu} to='/about/'>About</Link></MenuItem>
+        <MenuItem divider><Link component={GatsbyLink} onClick={toggleMenu} to='/work/'>Work</Link></MenuItem>
+        <MenuItem divider><Link component={GatsbyLink} onClick={toggleMenu} to='/blog/'>Blog</Link></MenuItem>
+        <MenuItem divider><Link component={GatsbyLink} onClick={toggleMenu} to='/contact/'>Contact</Link></MenuItem>
       </Menu>
     </>
   )
