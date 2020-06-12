@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 
 import ContactPage from '../page-components/contact-page'
-import SEO from '../features/seo'
+import SEO from '../components/seo'
 
 const Contact = ({
   location

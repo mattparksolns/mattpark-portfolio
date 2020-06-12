@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 
 import WorkPage from '../page-components/work-page/index'
-import SEO from '../features/seo'
+import SEO from '../components/seo'
 
 const Work = ({
   location

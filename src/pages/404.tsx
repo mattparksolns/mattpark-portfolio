@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes, { InferProps } from 'prop-types'
 import { Typography } from '@material-ui/core'
 
-import SEO from "../features/seo"
+import SEO from "../components/seo"
 
 const NotFoundPage = ({
   location

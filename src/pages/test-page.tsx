@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 import { Typography } from '@material-ui/core'
 
-import SEO from "../features/seo"
+import SEO from "../components/seo"
 
 export const pageQuery = graphql`
     query TestQuery($path: String!) {

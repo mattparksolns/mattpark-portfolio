@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 
 import HomePage from '../page-components/home-page/index'
-import SEO from '../features/seo'
+import SEO from '../components/seo'
 
 const Home = ({
   location

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes, { InferProps } from "prop-types";
 
 import AboutPage from '../page-components/about-page'
-import SEO from '../features/seo'
+import SEO from '../components/seo'
 
 const About = ({
   location

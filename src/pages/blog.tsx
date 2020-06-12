@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 
 import BlogPage from '../page-components/blog-page'
-import SEO from '../features/seo'
+import SEO from '../components/seo'
 
 const Blog = ({
   location
