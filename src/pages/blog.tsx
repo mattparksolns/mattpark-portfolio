@@ -4,15 +4,13 @@ import PropTypes, { InferProps } from 'prop-types'
 import BlogPage from '../page-components/blog-page'
 import SEO from '../components/seo'
 
-const Blog = ({
-  location
-}: InferProps<typeof Blog.propTypes>) => (
-  <>
-    <SEO pageTitle="Blog" />
-    <BlogPage location={location} />
-  </>
+const Blog = ({ location }: InferProps<typeof Blog.propTypes>) => (
+    <>
+        <SEO pageTitle="Blog" />
+        <BlogPage location={location} />
+    </>
 )
 Blog.propTypes = {
-  location: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired,
 }
 export default Blog
