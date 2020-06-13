@@ -9,32 +9,36 @@ import ContactInfo from './contact-info'
 
 const mockStore = configureStore([])
 
-describe("ContactInfo", () => {
-  let store
-  let tree
+describe('ContactInfo', () => {
+    let store
+    let tree
 
-  beforeEach(() => {
-    store = mockStore({
-      app: {
-        themeType: 'light',
-        ipv4: '',
-        ipv6: '',
-        geoData: '',
-      }
+    beforeEach(() => {
+        store = mockStore({
+            app: {
+                themeType: 'light',
+                ipv4: '',
+                ipv6: '',
+                geoData: '',
+            },
+        })
+
+        tree = renderer
+            .create(
+                <Provider store={store}>
+                    <MuiThemeProvider
+                        theme={getBaseTheme(store.getState().app.themeType)}
+                    >
+                        <ContactInfo />
+                    </MuiThemeProvider>
+                </Provider>
+            )
+            .toJSON()
     })
-
-    tree = renderer.create(
-      <Provider store={store}>
-        <MuiThemeProvider theme={getBaseTheme(store.getState().app.themeType)}>
-          <ContactInfo />
-        </MuiThemeProvider>
-      </Provider>
-    ).toJSON()
-  })
-  // it("renders correctly", () => {
-  //   expect(tree).toMatchSnapshot()
-  // })
-  it("passes", () => {
-    expect(true).toBe(true)
-  })
+    // it("renders correctly", () => {
+    //   expect(tree).toMatchSnapshot()
+    // })
+    it('passes', () => {
+        expect(true).toBe(true)
+    })
 })
