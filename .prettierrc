@@ -6,7 +6,7 @@
     "arrowParens": "avoid",
     "overrides": [
         {
-            "files": ".graphqlrc",
+            "files": ".graphqlconfig",
             "options": {
                 "parser": "json"
             }
