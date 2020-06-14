@@ -27,24 +27,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.graphqlrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/global.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/global.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.graphqlconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cypress/videos/accessibility.test.js.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/videos/accessibility.test.js.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/valorant-button.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/valorant-button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/work.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/work.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,49 +264,7 @@
       <workItem from="1591995482656" duration="3543000" />
       <workItem from="1591999088373" duration="552000" />
       <workItem from="1591999685389" duration="18687000" />
-      <workItem from="1592087233805" duration="2825000" />
-    </task>
-    <task id="LOCAL-00055" summary="webstorm">
-      <created>1591993086947</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1591993086947</updated>
-    </task>
-    <task id="LOCAL-00056" summary="setup graphql">
-      <created>1591994164826</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1591994164826</updated>
-    </task>
-    <task id="LOCAL-00057" summary="updated npm packages">
-      <created>1591994260519</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1591994260519</updated>
-    </task>
-    <task id="LOCAL-00058" summary="webstorm">
-      <created>1591994269162</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1591994269163</updated>
-    </task>
-    <task id="LOCAL-00059" summary="webstorm">
-      <created>1591995045633</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1591995045633</updated>
-    </task>
-    <task id="LOCAL-00060" summary="dependabot settings">
-      <created>1591995061756</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1591995061756</updated>
+      <workItem from="1592087233805" duration="3283000" />
     </task>
     <task id="LOCAL-00061" summary="target_branch">
       <created>1591995958937</created>
@@ -622,7 +567,49 @@
       <option name="project" value="LOCAL" />
       <updated>1592095693295</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="prettier">
+      <created>1592095722247</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1592095722247</updated>
+    </task>
+    <task id="LOCAL-00105" summary="prettier">
+      <created>1592095736470</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1592095736470</updated>
+    </task>
+    <task id="LOCAL-00106" summary="eslintrc">
+      <created>1592095778280</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1592095778280</updated>
+    </task>
+    <task id="LOCAL-00107" summary="graphqlrc">
+      <created>1592095809739</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1592095809739</updated>
+    </task>
+    <task id="LOCAL-00108" summary="sass">
+      <created>1592095860365</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1592095860365</updated>
+    </task>
+    <task id="LOCAL-00109" summary="webstorm">
+      <created>1592096172451</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1592096172451</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,9 +651,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="moved themeprovider from wraprootelement to layout" />
-    <MESSAGE value="refractor and back to csr app" />
-    <MESSAGE value="remove jekyll theme" />
     <MESSAGE value="setting up dependabot" />
     <MESSAGE value="using new socials component" />
     <MESSAGE value="using styles/global.scss instead of layout.scss" />
@@ -687,9 +671,12 @@
     <MESSAGE value="dependabot settings" />
     <MESSAGE value="target_branch" />
     <MESSAGE value="dependabot badge" />
-    <MESSAGE value="webstorm" />
     <MESSAGE value="prettier" />
-    <option name="LAST_COMMIT_MESSAGE" value="prettier" />
+    <MESSAGE value="eslintrc" />
+    <MESSAGE value="graphqlrc" />
+    <MESSAGE value="sass" />
+    <MESSAGE value="webstorm" />
+    <option name="LAST_COMMIT_MESSAGE" value="webstorm" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
