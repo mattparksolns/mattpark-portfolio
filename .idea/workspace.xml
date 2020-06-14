@@ -27,11 +27,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/bohee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/bohee.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cypress/videos/accessibility.test.js.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/cypress/videos/accessibility.test.js.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema.graphql" beforeDir="false" afterPath="$PROJECT_DIR$/schema.graphql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,70 +263,7 @@
       <workItem from="1591995482656" duration="3543000" />
       <workItem from="1591999088373" duration="552000" />
       <workItem from="1591999685389" duration="18687000" />
-      <workItem from="1592087233805" duration="3283000" />
-    </task>
-    <task id="LOCAL-00061" summary="target_branch">
-      <created>1591995958937</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1591995958938</updated>
-    </task>
-    <task id="LOCAL-00062" summary="dependabot badge">
-      <created>1592001308433</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1592001308434</updated>
-    </task>
-    <task id="LOCAL-00063" summary="webstorm">
-      <created>1592001315638</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1592001315638</updated>
-    </task>
-    <task id="LOCAL-00064" summary="prettier">
-      <created>1592087810551</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1592087810551</updated>
-    </task>
-    <task id="LOCAL-00065" summary="prettier">
-      <created>1592087834850</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1592087834850</updated>
-    </task>
-    <task id="LOCAL-00066" summary="prettier">
-      <created>1592087842608</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1592087842608</updated>
-    </task>
-    <task id="LOCAL-00067" summary="prettier">
-      <created>1592087862322</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1592087862322</updated>
-    </task>
-    <task id="LOCAL-00068" summary="prettier">
-      <created>1592087869478</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1592087869478</updated>
-    </task>
-    <task id="LOCAL-00069" summary="prettier">
-      <created>1592088023990</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1592088023991</updated>
+      <workItem from="1592087233805" duration="5178000" />
     </task>
     <task id="LOCAL-00070" summary="prettier">
       <created>1592088033709</created>
@@ -609,7 +545,70 @@
       <option name="project" value="LOCAL" />
       <updated>1592096172451</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="webstorm">
+      <created>1592096193304</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1592096193304</updated>
+    </task>
+    <task id="LOCAL-00111" summary="prettier">
+      <created>1592096329428</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1592096329428</updated>
+    </task>
+    <task id="LOCAL-00112" summary="graphql">
+      <created>1592096336692</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1592096336692</updated>
+    </task>
+    <task id="LOCAL-00113" summary="prettier">
+      <created>1592096822227</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1592096822227</updated>
+    </task>
+    <task id="LOCAL-00114" summary="idk">
+      <created>1592097763073</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1592097763073</updated>
+    </task>
+    <task id="LOCAL-00115" summary="init again">
+      <created>1592097798333</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1592097798333</updated>
+    </task>
+    <task id="LOCAL-00116" summary="graphqlschema">
+      <created>1592097806782</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1592097806783</updated>
+    </task>
+    <task id="LOCAL-00117" summary="prettier and eslint">
+      <created>1592097845179</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1592097845179</updated>
+    </task>
+    <task id="LOCAL-00118" summary="idk">
+      <created>1592097864673</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1592097864673</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,11 +650,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="setting up dependabot" />
-    <MESSAGE value="using new socials component" />
-    <MESSAGE value="using styles/global.scss instead of layout.scss" />
-    <MESSAGE value="moved seo from features to components" />
-    <MESSAGE value="adding badges" />
     <MESSAGE value="renamed from signature.inline.svg to signature.svg" />
     <MESSAGE value="styling for wide screen + graphql siteMetadata for linkedin link" />
     <MESSAGE value="badges" />
@@ -671,12 +665,17 @@
     <MESSAGE value="dependabot settings" />
     <MESSAGE value="target_branch" />
     <MESSAGE value="dependabot badge" />
-    <MESSAGE value="prettier" />
     <MESSAGE value="eslintrc" />
     <MESSAGE value="graphqlrc" />
     <MESSAGE value="sass" />
     <MESSAGE value="webstorm" />
-    <option name="LAST_COMMIT_MESSAGE" value="webstorm" />
+    <MESSAGE value="graphql" />
+    <MESSAGE value="prettier" />
+    <MESSAGE value="init again" />
+    <MESSAGE value="graphqlschema" />
+    <MESSAGE value="prettier and eslint" />
+    <MESSAGE value="idk" />
+    <option name="LAST_COMMIT_MESSAGE" value="idk" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
@@ -731,10 +730,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="492" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1590223960113" />
-    <state x="618" y="352" key="#com.intellij.ide.util.TreeDirectoryChooserDialog" timestamp="1589934579258">
+    <state x="492" y="83" width="806" height="586" key="#com.intellij.ide.util.TreeDirectoryChooserDialog" timestamp="1592097993417">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="618" y="352" key="#com.intellij.ide.util.TreeDirectoryChooserDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1589934579258" />
+    <state x="492" y="83" width="806" height="586" key="#com.intellij.ide.util.TreeDirectoryChooserDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592097993417" />
     <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1591389957436">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -751,10 +750,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592026392864" />
-    <state x="523" y="83" width="674" height="687" key="EditFileWatcherDialog" timestamp="1592029470469">
+    <state x="523" y="83" width="674" height="687" key="EditFileWatcherDialog" timestamp="1592096685561">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="523" y="83" width="674" height="687" key="EditFileWatcherDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592029470469" />
+    <state x="523" y="83" width="674" height="687" key="EditFileWatcherDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592096685561" />
     <state x="1065" y="170" key="FileChooserDialogImpl" timestamp="1592029429658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -763,31 +762,31 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="313" key="Github.Dialog.Accounts.Choose/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591790273855" />
-    <state width="1493" height="294" key="GridCell.Tab.0.bottom" timestamp="1592023804228">
+    <state width="1493" height="294" key="GridCell.Tab.0.bottom" timestamp="1592097203920">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592023804228" />
-    <state width="1493" height="294" key="GridCell.Tab.0.center" timestamp="1592023804228">
+    <state width="1493" height="294" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592097203920" />
+    <state width="1493" height="294" key="GridCell.Tab.0.center" timestamp="1592097203920">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592023804228" />
-    <state width="1493" height="294" key="GridCell.Tab.0.left" timestamp="1592023804227">
+    <state width="1493" height="294" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592097203920" />
+    <state width="1493" height="294" key="GridCell.Tab.0.left" timestamp="1592097203919">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592023804227" />
-    <state width="1493" height="294" key="GridCell.Tab.0.right" timestamp="1592023804228">
+    <state width="1493" height="294" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592097203919" />
+    <state width="1493" height="294" key="GridCell.Tab.0.right" timestamp="1592097203920">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="294" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592023804228" />
+    <state width="1493" height="294" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592097203920" />
     <state x="349" y="147" key="IDE.errors.dialog" timestamp="1591999611538">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="349" y="147" key="IDE.errors.dialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591999611538" />
-    <state x="190" y="54" width="981" height="754" key="SettingsEditor" timestamp="1592029543316">
+    <state x="190" y="54" width="981" height="754" key="SettingsEditor" timestamp="1592096686389">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="-1023" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1589740631846" />
-    <state x="190" y="54" width="981" height="754" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592029543316" />
+    <state x="190" y="54" width="981" height="754" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592096686389" />
     <state x="490" y="154" width="540" height="540" key="StructurePopup" timestamp="1591425615858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
