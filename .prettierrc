@@ -1,4 +1,15 @@
 {
-  "arrowParens": "avoid",
-  "semi": false
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "overrides": [
+        {
+            "files": ".graphqlrc",
+            "options": {
+                "parser": "json"
+            }
+        }
+    ]
 }
