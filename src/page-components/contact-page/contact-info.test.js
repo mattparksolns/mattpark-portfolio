@@ -1,39 +1,15 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
-import configureStore from 'redux-mock-store'
-import { MuiThemeProvider } from '@material-ui/core'
+import ShallowRenderer from 'react-test-renderer/shallow'
 
-import getBaseTheme from '../../themes/base'
 import ContactInfo from './contact-info'
 
-const mockStore = configureStore([])
-
 describe('ContactInfo', () => {
-    let store
+    const renderer = ShallowRenderer.createRenderer()
     let tree
 
     beforeEach(() => {
-        store = mockStore({
-            app: {
-                themeType: 'light',
-                ipv4: '',
-                ipv6: '',
-                geoData: '',
-            },
-        })
-
-        tree = renderer
-            .create(
-                <Provider store={store}>
-                    <MuiThemeProvider
-                        theme={getBaseTheme(store.getState().app.themeType)}
-                    >
-                        <ContactInfo />
-                    </MuiThemeProvider>
-                </Provider>
-            )
-            .toJSON()
+        renderer.render(<ContactInfo />)
+        tree = renderer.getRenderOutput()
     })
     // it("renders correctly", () => {
     //   expect(tree).toMatchSnapshot()
