@@ -1,16 +1,16 @@
 {
-    "name": 'mattpark-portfolio',
-    "schemaPath": 'schema.graphql',
+    "name": "mattpark-portfolio",
+    "schemaPath": "schema.graphql",
     "extensions": {
         "endpoints": {
-            'Remote GraphQL Endpoint': {
-                url: 'http://localhost:8000/___graphql',
-                headers: {
-                    'user-agent': 'JS GraphQL',
-                    Authorization: 'Bearer Token',
+            "Remote GraphQL Endpoint": {
+                "url": "http://localhost:8000/___graphql",
+                "headers": {
+                    "user-agent": "JS GraphQL",
+                    "Authorization": "Bearer Token"
                 },
-                introspect: true,
-            },
-        },
-    },
+                "introspect": true
+            }
+        }
+    }
 }
