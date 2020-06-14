@@ -4,6 +4,8 @@
     "semi": false,
     "singleQuote": true,
     "arrowParens": "avoid",
+    "jsxSingleQuote": false,
+    "htmlWhitespaceSensitivity": "strict",
     "overrides": [
         {
             "files": ".graphqlconfig",
