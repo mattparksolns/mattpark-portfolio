@@ -9,32 +9,36 @@ import ContactPage from './index'
 
 const mockStore = configureStore([])
 
-describe("ContactPage", () => {
-  let store
-  let tree
+describe('ContactPage', () => {
+    let store
+    let tree
 
-  beforeEach(() => {
-    store = mockStore({
-      app: {
-        themeType: 'light',
-        ipv4: '',
-        ipv6: '',
-        geoData: '',
-      }
+    beforeEach(() => {
+        store = mockStore({
+            app: {
+                themeType: 'light',
+                ipv4: '',
+                ipv6: '',
+                geoData: '',
+            },
+        })
+
+        tree = renderer
+            .create(
+                <Provider store={store}>
+                    <MuiThemeProvider
+                        theme={getBaseTheme(store.getState().app.themeType)}
+                    >
+                        <ContactPage />
+                    </MuiThemeProvider>
+                </Provider>
+            )
+            .toJSON()
     })
-
-    tree = renderer.create(
-      <Provider store={store}>
-        <MuiThemeProvider theme={getBaseTheme(store.getState().app.themeType)}>
-          <ContactPage />
-        </MuiThemeProvider>
-      </Provider>
-    ).toJSON()
-  })
-  // it("renders correctly", () => {
-  //   expect(tree).toMatchSnapshot()
-  // })
-  it("passes", () => {
-    expect(true).toBe(true)
-  })
+    // it("renders correctly", () => {
+    //   expect(tree).toMatchSnapshot()
+    // })
+    it('passes', () => {
+        expect(true).toBe(true)
+    })
 })
