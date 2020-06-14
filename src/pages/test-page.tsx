@@ -1,9 +1,9 @@
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import React from 'react'
 import PropTypes, { InferProps } from 'prop-types'
 import { Typography } from '@material-ui/core'
 
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 export const pageQuery = graphql`
     query TestQuery($path: String!) {
@@ -18,26 +18,20 @@ export const pageQuery = graphql`
     }
 `
 
-const TestPage = ({
-  data,
-  location,
-}: InferProps<typeof TestPage.propTypes>) => {
+const TestPage = ({}: InferProps<typeof TestPage.propTypes>) => {
+    // const { markdownRemark: post } = data // data.markdownRemark holds your post data
+    // const { frontmatter, html } = post
 
-  // const { markdownRemark: post } = data // data.markdownRemark holds your post data
-  // const { frontmatter, html } = post
-
-  return (
-    <>
-      <SEO pageTitle="TestPage"/>
-      <Typography variant="h1">Test Page</Typography>
-      <Typography variant="h2">
-        testing shit..
-      </Typography>
-    </>
-  )
+    return (
+        <>
+            <SEO pageTitle="TestPage" />
+            <Typography variant="h1">Test Page</Typography>
+            <Typography variant="h2">testing shit...</Typography>
+        </>
+    )
 }
 TestPage.propTypes = {
-  data: PropTypes.object,
-  location: PropTypes.object
+    data: PropTypes.object,
+    location: PropTypes.object,
 }
 export default TestPage
