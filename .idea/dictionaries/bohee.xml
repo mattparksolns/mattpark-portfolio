@@ -11,10 +11,15 @@
       <w>darkmode</w>
       <w>emailjs</w>
       <w>feedburner</w>
+      <w>flowtype</w>
       <w>frontmatter</w>
       <w>geodata</w>
+      <w>graphqlconfig</w>
+      <w>graphqlrc</w>
+      <w>graphqlschema</w>
       <w>linkedin</w>
       <w>loadershim</w>
+      <w>lockfiles</w>
       <w>markpro</w>
       <w>mattpark</w>
       <w>mattparksolns</w>
@@ -38,6 +43,7 @@
       <w>valorant</w>
       <w>varela</w>
       <w>vercel</w>
+      <w>webstorm</w>
       <w>woff</w>
       <w>wordpress</w>
       <w>workbox</w>
