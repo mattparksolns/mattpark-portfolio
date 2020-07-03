@@ -1,6 +1,8 @@
 {
-    "trailingComma": "es5",
+    "trailingComma": "all",
+    "eol": "lf",
     "tabWidth": 4,
+    "printWidth": 120,
     "semi": false,
     "singleQuote": true,
     "arrowParens": "avoid",
@@ -8,7 +10,7 @@
     "htmlWhitespaceSensitivity": "strict",
     "overrides": [
         {
-            "files": ".graphqlconfig",
+            "files": [".graphqlconfig"],
             "options": {
                 "parser": "json"
             }
