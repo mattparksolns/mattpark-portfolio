@@ -15,43 +15,13 @@
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dev" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dependabot" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:npm_and_yarn" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:dev" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/dependabot/npm_and_yarn/dev/gatsby-2.23.20" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="idea">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,6 +110,7 @@
   </component>
   <component name="ProjectId" id="1bv3OoHXTZOSSNLzZ2T4UQwylaF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -180,12 +151,12 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettier.files.pattern" value="{**/*,*}.{js,jsx,ts,tsx}" />
+    <property name="prettier.files.pattern" value="{**/*,*}.{js,jsx,ts,tsx,json,md}" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="node" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\bohee\MyData\dev\mattpark\mattpark.tk\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
     <property name="ts.external.directory.path" value="C:\Users\bohee\MyData\dev\mattpark\mattpark.tk\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -253,11 +224,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="test:e2e:ci" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="type-check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="test:e2e:ci" />
+        <script value="type-check" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -267,17 +238,17 @@
       <item itemvalue="npm.build" />
       <item itemvalue="npm.develop" />
       <item itemvalue="npm.lint" />
-      <item itemvalue="npm.test:e2e:ci" />
       <item itemvalue="npm.clean" />
       <item itemvalue="npm.serve" />
+      <item itemvalue="npm.type-check" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.serve" />
         <item itemvalue="npm.develop" />
-        <item itemvalue="npm.clean" />
+        <item itemvalue="npm.type-check" />
         <item itemvalue="npm.lint" />
-        <item itemvalue="npm.test:e2e:ci" />
+        <item itemvalue="npm.serve" />
+        <item itemvalue="npm.clean" />
       </list>
     </recent_temporary>
   </component>
@@ -347,34 +318,7 @@
       <workItem from="1593496084770" duration="46564000" />
       <workItem from="1593765742259" duration="1121000" />
       <workItem from="1593770122987" duration="4947000" />
-    </task>
-    <task id="LOCAL-00136" summary="react, unicorn and flowtype">
-      <created>1593772437466</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772437467</updated>
-    </task>
-    <task id="LOCAL-00137" summary="eol=lf">
-      <created>1593772454351</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772454351</updated>
-    </task>
-    <task id="LOCAL-00138" summary="mattpark-portfolio -&gt; mattpark.tk">
-      <created>1593772469717</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772469717</updated>
-    </task>
-    <task id="LOCAL-00139" summary="added ignore files, coverage and __snapshots__">
-      <created>1593772499186</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772499186</updated>
+      <workItem from="1593776404634" duration="3223000" />
     </task>
     <task id="LOCAL-00140" summary="eol, trailingComma and printWidth">
       <created>1593772535581</created>
@@ -691,7 +635,35 @@
       <option name="project" value="LOCAL" />
       <updated>1593775788255</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="prettier">
+      <created>1593779909256</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1593779909256</updated>
+    </task>
+    <task id="LOCAL-00186" summary="prettier">
+      <created>1593779921566</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1593779921566</updated>
+    </task>
+    <task id="LOCAL-00187" summary="skipLibCheck = true">
+      <created>1593779950051</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1593779950051</updated>
+    </task>
+    <task id="LOCAL-00188" summary="initialize window.__onThemeChange">
+      <created>1593779966311</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1593779966311</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -714,17 +686,6 @@
           <value>
             <State>
               <option name="BEK_SORT_TYPE" value="1" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/dependabot/npm_and_yarn/dev/gatsby-2.23.20" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
             </State>
           </value>
         </entry>
@@ -734,8 +695,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="useStaticQuery" />
-    <MESSAGE value="snapshots" />
     <MESSAGE value="tsx -&gt; jsx" />
     <MESSAGE value="use only 3 -" />
     <MESSAGE value="snapshot" />
@@ -746,7 +705,6 @@
     <MESSAGE value="idea copyright" />
     <MESSAGE value="should i setup heap analytics?" />
     <MESSAGE value="prettier and unicorn" />
-    <MESSAGE value="prettier" />
     <MESSAGE value="package json" />
     <MESSAGE value="provider-wrappers -&gt; root-wrapper" />
     <MESSAGE value="eslint, typescript and other random stuff" />
@@ -759,7 +717,10 @@
     <MESSAGE value="eol" />
     <MESSAGE value="update dependencies" />
     <MESSAGE value="idea" />
-    <option name="LAST_COMMIT_MESSAGE" value="idea" />
+    <MESSAGE value="prettier" />
+    <MESSAGE value="skipLibCheck = true" />
+    <MESSAGE value="initialize window.__onThemeChange" />
+    <option name="LAST_COMMIT_MESSAGE" value="initialize window.__onThemeChange" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
@@ -858,25 +819,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="313" key="Github.Dialog.Accounts.Choose/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591790273855" />
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom" timestamp="1593775693896">
+    <state width="1493" height="299" key="GridCell.Tab.0.bottom" timestamp="1593779976844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593775693896" />
+    <state width="1493" height="299" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
     <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593285203799" />
-    <state width="1493" height="299" key="GridCell.Tab.0.center" timestamp="1593775693896">
+    <state width="1493" height="299" key="GridCell.Tab.0.center" timestamp="1593779976844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593775693896" />
+    <state width="1493" height="299" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
     <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593285203798" />
-    <state width="1493" height="299" key="GridCell.Tab.0.left" timestamp="1593775693896">
+    <state width="1493" height="299" key="GridCell.Tab.0.left" timestamp="1593779976844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593775693896" />
+    <state width="1493" height="299" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
     <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593285203798" />
-    <state width="1493" height="299" key="GridCell.Tab.0.right" timestamp="1593775693896">
+    <state width="1493" height="299" key="GridCell.Tab.0.right" timestamp="1593779976844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593775693896" />
+    <state width="1493" height="299" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
     <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593285203799" />
     <state x="349" y="147" key="IDE.errors.dialog" timestamp="1593513310842">
       <screen x="0" y="0" width="1536" height="824" />
@@ -890,11 +851,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="648" y="278" width="373" height="267" key="MultipleFileMergeDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593774974210" />
-    <state x="2" y="70" width="1198" height="754" key="SettingsEditor" timestamp="1593774454186">
+    <state x="167" y="21" width="1198" height="754" key="SettingsEditor" timestamp="1593777164765">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="-1023" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1589740631846" />
-    <state x="2" y="70" width="1198" height="754" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593774454186" />
+    <state x="167" y="21" width="1198" height="754" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593777164765" />
     <state x="490" y="154" width="540" height="540" key="StructurePopup" timestamp="1591425615858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -903,10 +864,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593775790779" />
-    <state x="577" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593775553288">
+    <state x="577" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593776531395">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="577" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593775553288" />
+    <state x="577" y="322" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593776531395" />
     <state x="93" y="93" width="1350" height="638" key="dock-window-1" timestamp="1592573733841">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
