@@ -1,25 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
-function SEO({ pageTitle, description, lang, meta, canonical }) {
-    const { site } = useStaticQuery(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        title
-                        description
-                        author {
-                            name
-                        }
-                        siteUrl
+// type MetaItem = {
+//     name: string
+//     content: string
+// }
+// type SEOProps = {
+//     pageTitle?: string
+//     description?: string
+//     lang?: string
+//     meta?: MetaItem[]
+//     canonical?: string
+// }
+
+const SEO = ({ pageTitle, description, lang = 'en', meta = [], canonical }) => {
+    const { site } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                    siteUrl
+                    description
+                    author {
+                        name
                     }
                 }
             }
-        `
-    )
+        }
+    `)
 
     const metaDescription = description || site.siteMetadata.description
 
@@ -30,34 +40,31 @@ function SEO({ pageTitle, description, lang, meta, canonical }) {
             }}
             title={site.siteMetadata.title}
             titleTemplate={pageTitle ? `${pageTitle} | %s` : `%s`}
-            link={
-                canonical
-                    ? [{ rel: 'canonical', key: canonical, href: canonical }]
-                    : []
-            }
+            // TODO: try with &&
+            link={canonical ? [{ rel: 'canonical', key: canonical, href: canonical }] : []}
             meta={[
                 {
                     name: `description`,
                     content: metaDescription,
                 },
                 {
-                    property: `og:title`,
+                    name: `og:title`,
                     content: site.siteMetadata.title,
                 },
                 {
-                    property: `og:description`,
+                    name: `og:description`,
                     content: metaDescription,
                 },
                 {
-                    property: `og:type`,
+                    name: `og:type`,
                     content: `website`,
                 },
                 {
-                    property: `og:locale`,
+                    name: `og:locale`,
                     content: `en_US`,
                 },
                 {
-                    property: `og:url`,
+                    name: `og:url`,
                     content: site.siteMetadata.siteUrl,
                 },
                 {
@@ -80,17 +87,11 @@ function SEO({ pageTitle, description, lang, meta, canonical }) {
         />
     )
 }
-SEO.defaultProps = {
-    pageTitle: ``,
-    description: ``,
-    lang: `en`,
-    meta: [],
-}
 SEO.propTypes = {
     pageTitle: PropTypes.string,
     description: PropTypes.string,
     lang: PropTypes.string,
-    meta: PropTypes.arrayOf(PropTypes.object),
+    meta: PropTypes.array,
     canonical: PropTypes.string,
 }
 export default SEO
