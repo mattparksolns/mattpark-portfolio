@@ -2,7 +2,7 @@ import React from 'react'
 import Terser from 'terser'
 
 const themeScriptFn = () => {
-    // window.__onThemeChange = () => {}
+    window.__onThemeChange = () => {}
     window.__setThemeType = themeType => {
         window.__theme = themeType
         window.__onThemeChange()
