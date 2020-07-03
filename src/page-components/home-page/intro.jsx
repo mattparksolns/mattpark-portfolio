@@ -1,42 +1,45 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import PropTypes from 'prop-types'
-import { withStyles, Typography, Link } from '@material-ui/core'
+import { graphql, useStaticQuery } from 'gatsby'
+import { makeStyles, createStyles, Typography, Link } from '@material-ui/core'
 
-const Intro = withStyles(theme => ({
-    root: {
-        position: 'relative',
-        // backgroundImage: `linear-gradient(180deg, ${theme.palette.background.default}, ${theme.palette.background.paper})`,
-        paddingBottom: theme.spacing(5),
-    },
-    intro: {
-        position: 'relative',
-        fontSize: '5.41666667vw',
-        [theme.breakpoints.down('sm')]: {
-            width: '90%',
-            fontSize: '8.57vw',
+const useStyles = makeStyles(({ spacing, breakpoints }) =>
+    createStyles({
+        root: {
+            position: 'relative',
+            // backgroundImage: `linear-gradient(180deg, ${palette.background.default}, ${palette.background.paper})`,
+            paddingBottom: spacing(5),
         },
-        [theme.breakpoints.down('xs')]: {
-            width: '100%',
-            fontSize: '9.2vw',
+        intro: {
+            position: 'relative',
+            fontSize: '5.41666667vw',
+            [breakpoints.down('sm')]: {
+                width: '90%',
+                fontSize: '8.57vw',
+            },
+            [breakpoints.down('xs')]: {
+                width: '100%',
+                fontSize: '9.2vw',
+            },
+            '& > a': {
+                fontWeight: 900,
+            },
         },
-        '& > a': {
-            fontWeight: 900,
+        description: {
+            position: 'relative',
+            textAlign: 'right',
+            fontSize: 38.4,
+            [breakpoints.down('sm')]: {
+                fontSize: '4vw',
+            },
+            [breakpoints.down('xs')]: {
+                fontSize: '5vw',
+                textAlign: 'left',
+            },
         },
-    },
-    description: {
-        position: 'relative',
-        textAlign: 'right',
-        fontSize: 38.4,
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '4vw',
-        },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: '5vw',
-            textAlign: 'left',
-        },
-    },
-}))(({ classes }) => {
+    }),
+)
+const Intro = () => {
+    const classes = useStyles()
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -69,7 +72,7 @@ const Intro = withStyles(theme => ({
                     <br />
                     Park.{' '}
                 </Link>
-                I'm a New York
+                I&#39;m a New York
                 <br />
                 City based software
                 <br />
@@ -85,8 +88,5 @@ const Intro = withStyles(theme => ({
             </Typography>
         </section>
     )
-})
-Intro.propTypes = {
-    classes: PropTypes.object,
 }
 export default Intro
