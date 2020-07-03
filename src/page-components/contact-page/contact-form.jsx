@@ -1,33 +1,40 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { useSelector } from 'react-redux'
 import validator from 'validator'
 import axios from 'axios'
-import { withStyles, FormControlLabel, Checkbox } from '@material-ui/core'
+import { makeStyles, createStyles, FormControlLabel, Checkbox } from '@material-ui/core'
 import { Send } from '@material-ui/icons'
 import emailjs from 'emailjs-com'
 
 import StyledTextField from './styled-text-field'
 import ValorantButton from '../../components/valorant-button'
 
-const ContactForm = withStyles(theme => ({
-    form: {
-        marginTop: theme.spacing(2),
-        width: '50%',
-        [theme.breakpoints.down('sm')]: {
-            width: '100%',
+const useStyles = makeStyles(({ palette, spacing, breakpoints }) =>
+    createStyles({
+        form: {
+            marginTop: spacing(2),
+            width: '50%',
+            [breakpoints.down('sm')]: {
+                width: '100%',
+            },
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
         },
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'flex-end',
-    },
-    privacyPolicy: {
-        width: '100%',
-        marginBottom: theme.spacing(2),
-    },
-    error: {
-        color: theme.palette.error.main,
-    },
-}))(({ classes, userData }) => {
+        privacyPolicy: {
+            width: '100%',
+            marginBottom: spacing(2),
+        },
+        error: {
+            color: palette.error.main,
+        },
+    }),
+)
+
+const ContactForm = () => {
+    const classes = useStyles()
+    const userData = useSelector(state => state.app.userData)
+
     emailjs.init('user_0egEnFumA4H3XIq2ocucl')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -46,12 +53,7 @@ const ContactForm = withStyles(theme => ({
         setPolicyError(false)
     }
     const handleSubmit = () => {
-        if (
-            !validator.isEmpty(name) &&
-            validator.isEmail(email) &&
-            !validator.isEmpty(message) &&
-            policyChecked
-        ) {
+        if (!validator.isEmpty(name) && validator.isEmail(email) && !validator.isEmpty(message) && policyChecked) {
             // emailjs.send('gmail', 'contact_form_email_template', {
             //   name, email, message, ipv4, ipv6, geoData
             // }).then(response => {
@@ -84,70 +86,56 @@ const ContactForm = withStyles(theme => ({
     }
 
     return (
-        <form
-            id={'#contactForm'}
-            className={classes.form}
-            onSubmit={handleSubmit}
-        >
+        <form id={'#contactForm'} className={classes.form} onSubmit={handleSubmit}>
             <StyledTextField
                 inputProps={{ 'aria-label': 'name' }}
                 label={'Name'}
                 value={name}
                 error={nameError}
-                helperText={nameError && 'Cannot be empty.'}
-                onChange={e => setName(e.target.value)}
-                onInput={e => setNameError(false)}
-                onBlur={e => setNameError(validator.isEmpty(name))}
+                helperText={nameError ? 'Cannot be empty.' : ''}
+                onChange={event => setName(event.target.value)}
+                onInput={() => setNameError(false)}
+                onBlur={() => setNameError(validator.isEmpty(name))}
             />
             <StyledTextField
                 inputProps={{ 'aria-label': 'email' }}
                 label={'Email'}
                 value={email}
                 error={emailError}
-                helperText={emailError && 'Please provide a valid email.'}
-                onChange={e => setEmail(e.target.value)}
-                onInput={e => setEmailError(false)}
-                onBlur={e => setEmailError(!validator.isEmail(email))}
+                helperText={emailError ? 'Please provide a valid email.' : ''}
+                onChange={event => setEmail(event.target.value)}
+                onInput={() => setEmailError(false)}
+                onBlur={() => setEmailError(!validator.isEmail(email))}
             />
             <StyledTextField
                 inputProps={{ 'aria-label': 'message' }}
                 label={'Message'}
                 value={message}
                 error={messageError}
-                helperText={messageError && 'Cannot be empty.'}
-                onChange={e => setMessage(e.target.value)}
-                onInput={e => setMessageError(false)}
-                onBlur={e => setMessageError(validator.isEmpty(message))}
+                helperText={messageError ? 'Cannot be empty.' : ''}
+                onChange={event => setMessage(event.target.value)}
+                onInput={() => setMessageError(false)}
+                onBlur={() => setMessageError(validator.isEmpty(message))}
                 multiline
                 rows={8}
             />
             <FormControlLabel
-                className={`${classes.privacyPolicy} ${
-                    policyError && classes.error
-                }`}
+                className={`${classes.privacyPolicy} ${policyError && classes.error}`}
                 control={
                     <Checkbox
                         inputProps={{ 'aria-label': 'privacy policy' }}
                         required
                         checked={policyChecked}
                         color={'primary'}
-                        onChange={e => setPolicyChecked(!policyChecked)}
+                        onChange={() => setPolicyChecked(!policyChecked)}
                     />
                 }
-                label={
-                    'I understand that Matt will securely hold my data in accordance with the privacy policy.*'
-                }
+                label={'I understand that Matt will securely hold my data in accordance with the privacy policy.*'}
             />
-            <ValorantButton
-                aria-label={'send'}
-                handleSubmit={handleSubmit}
-                endIcon={<Send />}
-            >
+            <ValorantButton aria-label={'send'} onClick={() => handleSubmit()} endIcon={<Send />}>
                 Send
             </ValorantButton>
         </form>
     )
-})
-export default connect(state => ({
-    userData: state.app.userData,
-}))(ContactForm)
+}
+export default ContactForm
