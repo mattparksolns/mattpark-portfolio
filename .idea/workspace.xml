@@ -20,9 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05ae3e48-c60f-4cb1-93d6-09537d48dba4" name="Default Changelist" comment="idea">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/bohee.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/bohee.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,8 +127,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="$PROJECT_DIR$/.cache/tmp-19916-1AiXXVK25iox&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/.env&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/node_modules/@types/react/index.d.ts&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/node_modules/gatsby-plugin-material-ui/gatsby-browser.js&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/node_modules/gatsby/dist/commands/develop.js&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/public/index.html&#10;C:/Users/bohee/MyData/dev/mattpark/mattpark-client/.cache/default-html.js&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/.cache/commonjs/app.js&#10;C:/Users/bohee/MyData/dev/me/mattpark/mattpark-client/.cache/default-html.js" />
     <property name="javascript.nodejs.core.library.configured.version" value="13.12.0" />
-    <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/.bin/sass" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.ember-template-lint" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -144,7 +142,7 @@
     <property name="node.js.path.for.package.stylelint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.ember-template-lint" value="" />
-    <property name="node.js.selected.package.eslint" value="C:\Users\bohee\MyData\dev\mattpark\mattpark.tk\node_modules\eslint" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.jscs" value="" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.stylelint" value="" />
@@ -156,7 +154,7 @@
     <property name="prettierjs.PrettierConfiguration.NodeInterpreter" value="node" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\bohee\MyData\dev\mattpark\mattpark.tk\node_modules\prettier" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
     <property name="ts.external.directory.path" value="C:\Users\bohee\MyData\dev\mattpark\mattpark.tk\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
@@ -318,56 +316,8 @@
       <workItem from="1593496084770" duration="46564000" />
       <workItem from="1593765742259" duration="1121000" />
       <workItem from="1593770122987" duration="4947000" />
-      <workItem from="1593776404634" duration="3223000" />
-    </task>
-    <task id="LOCAL-00140" summary="eol, trailingComma and printWidth">
-      <created>1593772535581</created>
-      <option name="number" value="00140" />
-      <option name="presentableId" value="LOCAL-00140" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772535581</updated>
-    </task>
-    <task id="LOCAL-00141" summary="prettier">
-      <created>1593772570416</created>
-      <option name="number" value="00141" />
-      <option name="presentableId" value="LOCAL-00141" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772570416</updated>
-    </task>
-    <task id="LOCAL-00142" summary="tsx -&gt; jsx">
-      <created>1593772641459</created>
-      <option name="number" value="00142" />
-      <option name="presentableId" value="LOCAL-00142" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772641459</updated>
-    </task>
-    <task id="LOCAL-00143" summary="js -&gt; jsx">
-      <created>1593772741034</created>
-      <option name="number" value="00143" />
-      <option name="presentableId" value="LOCAL-00143" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772741034</updated>
-    </task>
-    <task id="LOCAL-00144" summary="gatsby files: prettier">
-      <created>1593772827582</created>
-      <option name="number" value="00144" />
-      <option name="presentableId" value="LOCAL-00144" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772827582</updated>
-    </task>
-    <task id="LOCAL-00145" summary="js -&gt; jsx">
-      <created>1593772895243</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772895243</updated>
-    </task>
-    <task id="LOCAL-00146" summary="js -&gt; jsx">
-      <created>1593772911517</created>
-      <option name="number" value="00146" />
-      <option name="presentableId" value="LOCAL-00146" />
-      <option name="project" value="LOCAL" />
-      <updated>1593772911517</updated>
+      <workItem from="1593776404634" duration="5196000" />
+      <workItem from="1593782064260" duration="689000" />
     </task>
     <task id="LOCAL-00147" summary="tsx -&gt; jsx">
       <created>1593772919224</created>
@@ -663,7 +613,56 @@
       <option name="project" value="LOCAL" />
       <updated>1593779966311</updated>
     </task>
-    <option name="localTasksCounter" value="189" />
+    <task id="LOCAL-00189" summary="keywords, format, lint, type-check, cy -&gt; cypress, backstopjs, eslint-plugin-babel, eslint-plugin-unicorn, gatsby-cli, source-map-control, ts-node, typescript and vercel">
+      <created>1593780071508</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1593780071509</updated>
+    </task>
+    <task id="LOCAL-00190" summary="keywords, format, lint, type-check, cy -&gt; cypress, backstopjs, eslint-plugin-babel, eslint-plugin-unicorn, gatsby-cli, source-map-control, ts-node, typescript and vercel">
+      <created>1593780080177</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1593780080192</updated>
+    </task>
+    <task id="LOCAL-00191" summary="backstopjs">
+      <created>1593780102722</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1593780102722</updated>
+    </task>
+    <task id="LOCAL-00192" summary="idea">
+      <created>1593780114938</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1593780114938</updated>
+    </task>
+    <task id="LOCAL-00193" summary="JetBrains">
+      <created>1593782695429</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1593782695431</updated>
+    </task>
+    <task id="LOCAL-00194" summary="prettier">
+      <created>1593782745281</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1593782745281</updated>
+    </task>
+    <task id="LOCAL-00195" summary="smart find eslintrc">
+      <created>1593782775342</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1593782775342</updated>
+    </task>
+    <option name="localTasksCounter" value="196" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -695,10 +694,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="tsx -&gt; jsx" />
-    <MESSAGE value="use only 3 -" />
-    <MESSAGE value="snapshot" />
-    <MESSAGE value="withStyles -&gt; makeStyles" />
     <MESSAGE value="eslint" />
     <MESSAGE value="copyright" />
     <MESSAGE value="js -&gt; jsx" />
@@ -716,11 +711,15 @@
     <MESSAGE value="scripts" />
     <MESSAGE value="eol" />
     <MESSAGE value="update dependencies" />
-    <MESSAGE value="idea" />
-    <MESSAGE value="prettier" />
     <MESSAGE value="skipLibCheck = true" />
     <MESSAGE value="initialize window.__onThemeChange" />
-    <option name="LAST_COMMIT_MESSAGE" value="initialize window.__onThemeChange" />
+    <MESSAGE value="keywords, format, lint, type-check, cy -&gt; cypress, backstopjs, eslint-plugin-babel, eslint-plugin-unicorn, gatsby-cli, source-map-control, ts-node, typescript and vercel" />
+    <MESSAGE value="backstopjs" />
+    <MESSAGE value="idea" />
+    <MESSAGE value="JetBrains" />
+    <MESSAGE value="prettier" />
+    <MESSAGE value="smart find eslintrc" />
+    <option name="LAST_COMMIT_MESSAGE" value="smart find eslintrc" />
   </component>
   <component name="WindowStateProjectService">
     <state x="648" y="311" key="#Custom_Plugin_Repositories" timestamp="1590588363616">
@@ -811,33 +810,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="523" y="83" width="674" height="687" key="EditFileWatcherDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593766004321" />
-    <state x="1065" y="170" key="FileChooserDialogImpl" timestamp="1593498758825">
+    <state x="1065" y="170" key="FileChooserDialogImpl" timestamp="1593781573907">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1065" y="170" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593498758825" />
+    <state x="1065" y="170" key="FileChooserDialogImpl/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593781573907" />
     <state x="626" y="313" key="Github.Dialog.Accounts.Choose" timestamp="1591790273855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="626" y="313" key="Github.Dialog.Accounts.Choose/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1591790273855" />
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom" timestamp="1593779976844">
+    <state width="1493" height="299" key="GridCell.Tab.0.bottom" timestamp="1593782032782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
+    <state width="1493" height="299" key="GridCell.Tab.0.bottom/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593782032782" />
     <state width="1493" height="211" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593285203799" />
-    <state width="1493" height="299" key="GridCell.Tab.0.center" timestamp="1593779976844">
+    <state width="1493" height="299" key="GridCell.Tab.0.center" timestamp="1593782032782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
+    <state width="1493" height="299" key="GridCell.Tab.0.center/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593782032782" />
     <state width="1493" height="211" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593285203798" />
-    <state width="1493" height="299" key="GridCell.Tab.0.left" timestamp="1593779976844">
+    <state width="1493" height="299" key="GridCell.Tab.0.left" timestamp="1593782032781">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
+    <state width="1493" height="299" key="GridCell.Tab.0.left/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593782032781" />
     <state width="1493" height="211" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593285203798" />
-    <state width="1493" height="299" key="GridCell.Tab.0.right" timestamp="1593779976844">
+    <state width="1493" height="299" key="GridCell.Tab.0.right" timestamp="1593782032782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="299" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593779976844" />
+    <state width="1493" height="299" key="GridCell.Tab.0.right/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593782032782" />
     <state width="1493" height="211" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593285203799" />
     <state x="349" y="147" key="IDE.errors.dialog" timestamp="1593513310842">
       <screen x="0" y="0" width="1536" height="824" />
@@ -851,11 +850,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="648" y="278" width="373" height="267" key="MultipleFileMergeDialog/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593774974210" />
-    <state x="167" y="21" width="1198" height="754" key="SettingsEditor" timestamp="1593777164765">
+    <state x="167" y="21" width="1198" height="754" key="SettingsEditor" timestamp="1593782640181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="-1023" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1589740631846" />
-    <state x="167" y="21" width="1198" height="754" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593777164765" />
+    <state x="167" y="21" width="1198" height="754" key="SettingsEditor/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593782640181" />
     <state x="490" y="154" width="540" height="540" key="StructurePopup" timestamp="1591425615858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -872,11 +871,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="dock-window-1/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1592573733841" />
-    <state x="829" y="143" width="707" height="624" key="find.popup" timestamp="1593774497604">
+    <state x="829" y="143" width="707" height="624" key="find.popup" timestamp="1593782523638">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="327" y="-949" width="1105" height="584" key="find.popup/0.0.1536.824/0.-1080.1536.824@0.-1080.1536.824" timestamp="1589741673012" />
-    <state x="829" y="143" width="707" height="624" key="find.popup/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593774497604" />
+    <state x="829" y="143" width="707" height="624" key="find.popup/0.0.1536.824/0.-1080.1536.824@0.0.1536.824" timestamp="1593782523638" />
     <state x="0" y="43" key="git4idea.branch.GitSmartOperationDialog" timestamp="1592602683376">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
