@@ -1,6 +1,15 @@
+.prettierignore
+.gitignore
+.gitattributes
+.eslintignore
+
 .cache
 package-lock.json
 public
 .graphqlschema.graphql
 
 *.mp4
+
+coverage/
+__snapshots__
+
