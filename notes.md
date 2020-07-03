@@ -38,6 +38,7 @@
 * [material-ui colorManipulator](https://github.com/mui-org/material-ui/blob/master/packages/material-ui/src/styles/colorManipulator.js)
 
 ## hmm
+* should i setup heap analytics?
 * menuitem link how to set link to full height of parent?
 * why does cursor stay active on first menu open
 * why does socials icon not fill entire div in the header?
