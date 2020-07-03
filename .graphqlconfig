@@ -1,5 +1,5 @@
 {
-    "name": "mattpark-portfolio",
+    "name": "mattpark.tk",
     "schemaPath": ".graphqlschema.graphql",
     "extensions": {
         "endpoints": {
