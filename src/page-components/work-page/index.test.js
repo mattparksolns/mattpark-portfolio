@@ -1,17 +1,22 @@
 import React from 'react'
-// import renderer from 'react-test-renderer'
-import WorkPage from './index'
+import ShallowRenderer from 'react-test-renderer/shallow'
+
+import WorkPage from '.'
 
 describe('WorkPage', () => {
-    // let tree
+    const renderer = ShallowRenderer.createRenderer()
+    let tree
 
     beforeEach(() => {
-        // tree = renderer.create(<WorkPage />).toJSON()
+        renderer.render(<WorkPage />)
+        tree = renderer.getRenderOutput()
     })
+
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot()
+    })
+
     it('passes', () => {
         expect(true).toBe(true)
     })
-    // it("renders correctly", () => {
-    //   expect(tree).toMatchSnapshot()
-    // })
 })

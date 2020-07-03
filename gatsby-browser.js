@@ -1,5 +1,6 @@
-import './src/styles/global.scss'
-import { RootWrapper } from './src/utils/provider-wrappers'
+import './src/styles/global.css'
+
+import RootWrapper from './src/components/root-wrapper'
 export const wrapRootElement = RootWrapper
 
 export const onClientEntry = () => {
@@ -11,11 +12,8 @@ export const onClientEntry = () => {
 }
 
 export const onServiceWorkerUpdateReady = () => {
-    const answer = window.confirm(
-        `This application has been updated.` +
-            `Reload to display the latest version?`
-    )
-    if (answer === true) {
+    const answer = window.confirm(`This application has been updated.` + `Reload to display the latest version?`)
+    if (answer) {
         window.location.reload()
     }
 }

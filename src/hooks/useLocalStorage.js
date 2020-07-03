@@ -11,8 +11,7 @@ export const useLocalStorage = (name, initialValue) => {
     })
 
     useEffect(() => {
-        if (windowGlobal)
-            windowGlobal.localStorage.setItem(name, JSON.stringify(value))
+        if (windowGlobal) windowGlobal.localStorage.setItem(name, JSON.stringify(value))
     }, [name, value, windowGlobal])
     return [value, setValue]
 }

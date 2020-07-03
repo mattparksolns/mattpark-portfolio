@@ -1,6 +1,6 @@
 import { createMuiTheme } from '@material-ui/core'
 
-const getBaseTheme = ({ themeType }) => {
+const getBaseTheme = (themeType = 'dark') => {
     const isDark = themeType === 'dark'
     const colors = {
         blackText: '#242424',
@@ -26,27 +26,12 @@ const getBaseTheme = ({ themeType }) => {
     }
     return createMuiTheme({
         typography: {
-            fontFamily: ['montserrat', 'roboto', 'arial', 'sans-serif'].join(
-                ','
-            ),
+            fontFamily: ['montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             h1: {
-                fontFamily: [
-                    'muli',
-                    'montserrat',
-                    'roboto',
-                    'arial',
-                    'sans-serif',
-                ].join(','),
+                fontFamily: ['muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             },
             h2: {
-                fontFamily: [
-                    'tungsten',
-                    'muli',
-                    'montserrat',
-                    'roboto',
-                    'arial',
-                    'sans-serif',
-                ].join(','),
+                fontFamily: ['tungsten', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             },
             button: {
                 fontSize: '1.2rem',
@@ -55,17 +40,13 @@ const getBaseTheme = ({ themeType }) => {
         isDark: isDark,
         colors,
         palette: {
-            type: themeType || 'light',
+            type: themeType,
             background: {
                 paper: isDark ? colors.lightBlack : colors.darkWhite,
                 default: isDark ? colors.black : colors.white,
             },
             text: {
                 primary: isDark ? colors.whiteText : colors.blackText,
-                mouseIndicator: isDark ? colors.darkerGrey : colors.lightGrey,
-                innerMouseIndicator: isDark
-                    ? colors.darkWhite
-                    : colors.lightBlack,
             },
             primary: {
                 main: isDark ? colors.whiteText : colors.blackText,
@@ -77,18 +58,22 @@ const getBaseTheme = ({ themeType }) => {
             error: {
                 main: colors.red,
             },
-            sand: {
-                main: '#f4decb',
+            warning: {
+                main: '#ff9800',
             },
-            shell: {
-                main: '#f8eee7',
+            info: {
+                main: '#2196f3',
             },
-            status: {
-                danger: '#b71c1c',
+            success: {
+                main: '#4caf50',
             },
             action: {
                 // active: isDark ? '#ffffff' : '#121212',
                 // hover: isDark ? '#ffffff' : '#121212'
+            },
+            cursor: {
+                mouseIndicator: isDark ? colors.darkerGrey : colors.lightGrey,
+                innerMouseIndicator: isDark ? colors.darkWhite : colors.lightBlack,
             },
             contrastThreshold: 3,
             tonalOffset: 0.2,

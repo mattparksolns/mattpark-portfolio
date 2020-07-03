@@ -1,7 +1,7 @@
 import React from 'react'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
-import ContactPage from './index'
+import ContactPage from '.'
 
 describe('ContactPage', () => {
     const renderer = ShallowRenderer.createRenderer()
@@ -11,9 +11,11 @@ describe('ContactPage', () => {
         renderer.render(<ContactPage />)
         tree = renderer.getRenderOutput()
     })
-    // it("renders correctly", () => {
-    //   expect(tree).toMatchSnapshot()
-    // })
+
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot()
+    })
+
     it('passes', () => {
         expect(true).toBe(true)
     })

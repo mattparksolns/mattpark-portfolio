@@ -7,16 +7,8 @@ module.exports = {
         '.+\\.(jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': `<rootDir>/__mocks__/file-mock.js`,
         'socials.js': `<rootDir>/__mocks__/file-mock.js`,
     },
-    testPathIgnorePatterns: [
-        `node_modules`,
-        `cypress`,
-        `\\.cache`,
-        `<rootDir>.*/public`,
-    ],
-    transformIgnorePatterns: [
-        `node_modules/(?!(gatsby|react-icons)/)`,
-        `cypress`,
-    ],
+    testPathIgnorePatterns: [`node_modules`, `cypress`, `\\.cache`, `<rootDir>.*/public`],
+    transformIgnorePatterns: [`node_modules/(?!(gatsby|react-icons)/)`, `cypress`],
     globals: {
         __PATH_PREFIX__: ``,
     },

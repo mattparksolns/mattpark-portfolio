@@ -1,5 +1,4 @@
-const activeEnv =
-    process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
 console.log(`Using environment config: '${activeEnv}'`)
 
@@ -10,6 +9,8 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         title: `Matt Park - Software Engineer`,
+        description: `My name is Matt Park. I'm a New York City based software engineer.`,
+        siteUrl: `https://mattpark.tk/`,
         author: {
             name: `Matt Park`,
             username: `mattparksolns`,
@@ -17,31 +18,16 @@ module.exports = {
             phone: `+1 (201) 591 - 3323`,
             socials: {
                 reddit: { username: `mattparksolns`, link: `` },
-                facebook: {
-                    username: `mattparksolns`,
-                    link: `https://www.facebook.com/mattparksolns`,
-                },
-                instagram: {
-                    username: `mattparksolns`,
-                    link: `https://www.instagram.com/mattparksolns/`,
-                },
-                twitter: {
-                    username: `mattparksolns`,
-                    link: `https://twitter.com/mattparksolns`,
-                },
+                facebook: { username: `mattparksolns`, link: `https://www.facebook.com/mattparksolns` },
+                instagram: { username: `mattparksolns`, link: `https://www.instagram.com/mattparksolns/` },
+                twitter: { username: `mattparksolns`, link: `https://twitter.com/mattparksolns` },
                 quora: { username: `mattparksolns`, link: `` },
                 tumblr: { username: `mattparksolns`, link: `` },
                 medium: { username: `mattparksolns`, link: `` },
                 ycombinator: { username: `mattparksolns`, link: `` },
-                linkedin: {
-                    username: `mattparksolns`,
-                    link: `https://www.linkedin.com/in/mattparksolns/`,
-                },
+                linkedin: { username: `mattparksolns`, link: `https://www.linkedin.com/in/mattparksolns/` },
                 apollo: { username: `mattparksolns`, link: `` },
-                github: {
-                    username: `mattparksolns`,
-                    link: `https://github.com/mattparksolns`,
-                },
+                github: { username: `mattparksolns`, link: `https://github.com/mattparksolns` },
                 atlassian: { username: `mattparksolns`, link: `` },
                 docker: { username: `mattparksolns`, link: `` },
                 stackOverflow: { username: `mattparksolns`, link: `` },
@@ -50,8 +36,6 @@ module.exports = {
                 pinterest: { username: `mattparksolns`, link: `` },
             },
         },
-        description: `My name is Matt Park. I'm a New York City based software engineer.`,
-        siteUrl: `https://mattpark.now.sh/`,
     },
     plugins: [
         {
@@ -80,8 +64,8 @@ module.exports = {
         {
             resolve: `gatsby-plugin-robots-txt`,
             options: {
-                host: `https://mattpark.now.sh`,
-                sitemap: `https://mattpark.now.sh/sitemap.xml`,
+                host: `https://mattpark.tk`,
+                sitemap: `https://mattpark.tk/sitemap.xml`,
                 env: {
                     development: {
                         policy: [{ userAgent: '*', disallow: ['/'] }],
@@ -92,13 +76,13 @@ module.exports = {
                     // Netlify Settings (look up gatsby-plugin-robots-txt)
                     'branch-deploy': {
                         policy: [{ userAgent: '*', disallow: ['/'] }],
-                        sitemap: null,
-                        host: null,
+                        sitemap: undefined,
+                        host: undefined,
                     },
                     'deploy-preview': {
                         policy: [{ userAgent: '*', disallow: ['/'] }],
-                        sitemap: null,
-                        host: null,
+                        sitemap: undefined,
+                        host: undefined,
                     },
                 },
             },
@@ -124,18 +108,22 @@ module.exports = {
         {
             resolve: `gatsby-plugin-react-helmet-canonical-urls`,
             options: {
-                siteUrl: `https://mattpark.now.sh`,
+                siteUrl: `https://mattpark.tk`,
                 noQueryString: true,
             },
         },
         {
             resolve: `gatsby-plugin-csp`,
             options: {
-                disableOnDev: true,
+                // disableOnDev: true,
+                mergeStyleHashes: false,
                 mergeDefaultDirectives: true,
                 directives: {
-                    'script-src': "'self' www.google-analytics.com",
-                    'img-src': "'self' data: www.google-analytics.com",
+                    'default-src': `'self'`,
+                    'style-src': `'self' 'unsafe-inline'`,
+                    'script-src': `'self' www.google-analytics.com`,
+                    'img-src': `'self' data: www.google-analytics.com`,
+                    'connect-src': `'self' api.ipify.org api6.ipify.org geolocation-db.com`,
                 },
             },
         },
@@ -181,71 +169,60 @@ module.exports = {
         {
             resolve: `gatsby-plugin-layout`,
             options: {
-                component: require.resolve(`./src/layout`),
+                component: require.resolve(`./src/layouts/index.jsx`),
             },
         },
         {
             resolve: `gatsby-plugin-feed`,
             options: {
                 query: `
-          {
-            site {
-              siteMetadata {
-                title
-                description
-                siteUrl
-                site_url: siteUrl
-              }
-            }
-          }
-        `,
+                    {
+                        site {
+                            siteMetadata {
+                                title
+                                description
+                                siteUrl
+                                site_url: siteUrl
+                            }
+                        }
+                    }
+                `,
                 feeds: [
                     {
                         serialize: ({ query: { site, allMarkdownRemark } }) => {
                             return allMarkdownRemark.edges.map(edge => {
-                                return Object.assign(
-                                    {},
-                                    edge.node.frontmatter,
-                                    {
-                                        description: edge.node.excerpt,
-                                        date: edge.node.frontmatter.date,
-                                        url:
-                                            site.siteMetadata.siteUrl +
-                                            edge.node.fields.slug,
-                                        guid:
-                                            site.siteMetadata.siteUrl +
-                                            edge.node.fields.slug,
-                                        custom_elements: [
-                                            {
-                                                'content:encoded':
-                                                    edge.node.html,
-                                            },
-                                        ],
-                                    }
-                                )
+                                return Object.assign({}, edge.node.frontmatter, {
+                                    description: edge.node.excerpt,
+                                    date: edge.node.frontmatter.date,
+                                    url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                                    guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                                    custom_elements: [
+                                        {
+                                            'content:encoded': edge.node.html,
+                                        },
+                                    ],
+                                })
                             })
                         },
                         query: `
-              {
-                allMarkdownRemark(
-                  sort: { order: DESC, fields: [frontmatter___date] },
-                ) {
-                  edges {
-                    node {
-                      excerpt
-                      html
-                      fields {
-                        slug
-                      }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
+                            {
+                                allMarkdownRemark( sort: { order: DESC, fields: [frontmatter___date] }, ) {
+                                    edges {
+                                        node {
+                                            excerpt
+                                            html
+                                            fields {
+                                                slug
+                                            }
+                                            frontmatter {
+                                                title
+                                                date
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        `,
                         output: '/rss.xml',
                         title: "Your Site's RSS Feed",
                         // optional configuration to insert feed reference in pages:
@@ -276,7 +253,8 @@ module.exports = {
                 footnotes: true,
                 pedantic: true,
                 gfm: true,
-                timeToRead: (wordCount, html, rawMD) => wordCount / 42,
+                // timeToRead: (wordCount, html, rawMD) => wordCount / 42,
+                timeToRead: wordCount => wordCount / 42,
                 plugins: [
                     {
                         resolve: `gatsby-remark-images`,

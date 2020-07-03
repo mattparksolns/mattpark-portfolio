@@ -490,6 +490,7 @@ type MarkdownRemarkFrontmatter {
         "Configures the locale Moment.js will use to format the date."
         locale: String
     ): Date
+    description: String
     path: String
     template: String
     title: String
@@ -791,6 +792,7 @@ type SitePluginPluginOptions {
 type SitePluginPluginOptionsDirectives {
     img_src: String
     script_src: String
+    style_src: String
 }
 
 type SitePluginPluginOptionsEnv {
@@ -1228,6 +1230,7 @@ enum FileFieldsEnum {
     childMarkdownRemark___fields___slug @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     childMarkdownRemark___fileAbsolutePath @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     childMarkdownRemark___frontmatter___date
+    childMarkdownRemark___frontmatter___description
     childMarkdownRemark___frontmatter___path
     childMarkdownRemark___frontmatter___template
     childMarkdownRemark___frontmatter___title
@@ -1608,6 +1611,7 @@ enum MarkdownRemarkFieldsEnum {
     fields___slug @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     fileAbsolutePath @deprecated(reason : "Sorting on fields that need arguments to resolve is deprecated.")
     frontmatter___date
+    frontmatter___description
     frontmatter___path
     frontmatter___template
     frontmatter___title
@@ -2034,6 +2038,7 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___description
     pluginCreator___pluginOptions___directives___img_src
     pluginCreator___pluginOptions___directives___script_src
+    pluginCreator___pluginOptions___directives___style_src
     pluginCreator___pluginOptions___disableOnDev
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___exclude
@@ -2194,6 +2199,7 @@ enum SitePluginFieldsEnum {
     pluginOptions___description
     pluginOptions___directives___img_src
     pluginOptions___directives___script_src
+    pluginOptions___directives___style_src
     pluginOptions___disableOnDev
     pluginOptions___display
     pluginOptions___env___branch_deploy___policy
@@ -2533,6 +2539,7 @@ input MarkdownRemarkFilterInput {
 
 input MarkdownRemarkFrontmatterFilterInput {
     date: DateQueryOperatorInput
+    description: StringQueryOperatorInput
     path: StringQueryOperatorInput
     template: StringQueryOperatorInput
     title: StringQueryOperatorInput
@@ -2682,6 +2689,7 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 input SitePluginPluginOptionsDirectivesFilterInput {
     img_src: StringQueryOperatorInput
     script_src: StringQueryOperatorInput
+    style_src: StringQueryOperatorInput
 }
 
 input SitePluginPluginOptionsEnvBranch_deployFilterInput {

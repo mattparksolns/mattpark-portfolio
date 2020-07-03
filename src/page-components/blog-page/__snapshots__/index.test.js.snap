@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Blog renders correctly 1`] = `
+<div
+  className="contentWrapper"
+>
+  <WithStyles(ForwardRef(Typography))
+    variant="h2"
+  >
+    My Blog
+  </WithStyles(ForwardRef(Typography))>
+  <WithStyles(ForwardRef(Typography))
+    variant="body1"
+  >
+    Work in progress...
+  </WithStyles(ForwardRef(Typography))>
+</div>
+`;
