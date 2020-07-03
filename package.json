@@ -6,27 +6,27 @@
     "author": {
         "name": "Matt Park",
         "email": "mattparksolns@gmail.com",
-        "url": "https://mattpark.now.sh"
+        "url": "https://mattpark.tk"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/mattparksolutions/mattpark-portfolio"
+        "url": "https://github.com/mattparksolns/mattpark.tk"
     },
     "bugs": {
-        "url": "https://github.com/mattparksolutions/mattpark-portfolio/issues"
+        "url": "https://github.com/mattparksolns/mattpark.tk/issues"
     },
     "license": "MIT",
     "keywords": [
         "matt",
         "matt park",
-        "software engineer"
+        "software engineer",
+        "portfolio"
     ],
     "scripts": {
         "build": "gatsby build",
         "jaeger-build": "gatsby build --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
         "develop": "gatsby develop",
-        "dev": "npm run develop",
-        "jaeger-dev": "gatsby develop --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
+        "jaeger-develop": "gatsby develop --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
         "start": "npm run develop",
         "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
         "serve": "gatsby serve",
@@ -132,6 +132,7 @@
         "identity-obj-proxy": "^3.0.0",
         "jaeger-client": "^3.18.0",
         "jest": "^26.0.1",
+        "node-fetch": "^2.6.0",
         "opentracing": "^0.14.4",
         "prettier": "2.0.5",
         "prop-types": "^15.7.2",
