@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactInfo renders correctly 1`] = `
+<Unknown
+  classes={
+    Object {
+      "contactInfo": "Component-contactInfo-4",
+      "emailLink": "Component-emailLink-8",
+      "hoverIcon": "Component-hoverIcon-5",
+      "locationLink": "Component-locationLink-6",
+      "myInfo": "Component-myInfo-3",
+      "myName": "Component-myName-2",
+      "phoneLink": "Component-phoneLink-7",
+      "root": "Component-root-1",
+      "socials": "Component-socials-9",
+    }
+  }
+/>
+`;
