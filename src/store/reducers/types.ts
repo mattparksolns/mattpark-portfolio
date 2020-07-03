@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2020. Matt Park
- * All rights reserved
- */
-
 export type IPv4 = {
     ip: string
 }
