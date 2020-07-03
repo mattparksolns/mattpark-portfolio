@@ -51,6 +51,7 @@
         "@material-ui/styles": "^4.9.14",
         "@reduxjs/toolkit": "^1.4.0",
         "axios": "^0.19.2",
+        "dotenv": "^8.2.0",
         "emailjs-com": "^2.4.1",
         "gatsby": "^2.23.3",
         "gatsby-image": "^2.4.7",
@@ -79,6 +80,7 @@
         "gatsby-transformer-sharp": "^2.5.5",
         "intersection-observer": "^0.10.0",
         "node-sass": "^4.14.1",
+        "path": "^0.12.7",
         "prismjs": "^1.20.0",
         "react": "^16.12.0",
         "react-dom": "^16.13.1",
@@ -89,6 +91,7 @@
         "redux-promise": "^0.6.0",
         "redux-thunk": "^2.3.0",
         "terser": "^4.8.0",
+        "uuid": "^8.2.0",
         "validator": "^13.1.1"
     },
     "devDependencies": {
@@ -120,7 +123,6 @@
         "backstopjs": "^5.0.1",
         "cypress": "^4.8.0",
         "cypress-axe": "^0.8.1",
-        "dotenv": "^8.2.0",
         "enzyme": "^3.11.0",
         "eslint": "^7.2.0",
         "eslint-config-prettier": "^6.11.0",
