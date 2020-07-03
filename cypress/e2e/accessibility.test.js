@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+/// <reference @types="cypress" />
 describe('Accessibility tests', () => {
     beforeEach(() => {
         cy.visit('/').get('main').injectAxe()
@@ -21,15 +21,12 @@ describe('Accessibility tests', () => {
     })
 
     it('Navigates to Contact page and checks for accessibility violations', () => {
-        cy.findByText(/Drop me a line/i)
+        cy.findByText(/drop me a line/i)
             .click()
             .checkA11y()
     })
 
     it('Focuses on the footer link and asserts its attributes', () => {
-        cy.get('a')
-            .first()
-            .should('have.text', 'Matt Park')
-            .should('not.have.css', 'color', 'white')
+        cy.get('a').first().should('have.text', 'Matt Park').should('not.have.css', 'color', 'white')
     })
 })
