@@ -1,16 +1,22 @@
 import React from 'react'
-// import renderer from 'react-test-renderer'
-// import { render } from '@testing-library/react'
+import ShallowRenderer from 'react-test-renderer/shallow'
 
-import HomePage from './index'
+import HomePage from '.'
 
 describe('HomePage', () => {
+    const renderer = ShallowRenderer.createRenderer()
+    let tree
+
+    beforeEach(() => {
+        renderer.render(<HomePage />)
+        tree = renderer.getRenderOutput()
+    })
+
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot()
+    })
+
     it('passes', () => {
         expect(true).toBe(true)
     })
-
-    // it("renders correctly", () => {
-    //   const tree = render(<HomePage />)
-    //   expect(tree).toMatchSnapshot()
-    // })
 })

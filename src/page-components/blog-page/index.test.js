@@ -1,18 +1,21 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import ShallowRenderer from 'react-test-renderer/shallow'
 
-import BlogPage from './index'
+import BlogPage from '.'
 
 describe('Blog', () => {
+    const renderer = ShallowRenderer.createRenderer()
     let tree
 
     beforeEach(() => {
-        tree = renderer.create(<BlogPage />).toJSON()
+        renderer.render(<BlogPage />)
+        tree = renderer.getRenderOutput()
     })
 
-    // it("renders correctly", () => {
-    //   expect(tree).toMatchSnapshot()
-    // })
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot()
+    })
+
     it('passes', () => {
         expect(true).toBe(true)
     })

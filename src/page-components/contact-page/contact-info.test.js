@@ -11,9 +11,11 @@ describe('ContactInfo', () => {
         renderer.render(<ContactInfo />)
         tree = renderer.getRenderOutput()
     })
-    // it("renders correctly", () => {
-    //   expect(tree).toMatchSnapshot()
-    // })
+
+    it('renders correctly', () => {
+        expect(tree).toMatchSnapshot()
+    })
+
     it('passes', () => {
         expect(true).toBe(true)
     })
