@@ -3,7 +3,7 @@ module.exports = {
     parser: 'babel-eslint',
     parserOptions: {
         sourceType: 'module',
-        ecmaVersion: 2018,
+        ecmaVersion: 2020,
         ecmaFeatures: {
             jsx: true,
         },
@@ -18,9 +18,17 @@ module.exports = {
         react: {
             version: 'detect',
         },
+        'import/resolver': {
+            node: {
+                extensions: ['.js', '.jsx'],
+            },
+        },
     },
     plugins: [
         'prettier',
+        'babel',
+        'flowtype',
+        'unicorn',
         'import',
         'react',
         'react-hooks',
@@ -31,8 +39,13 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:prettier/recommended',
-        'prettier/react',
         'prettier/standard',
+        'prettier/babel',
+        'prettier/flowtype',
+        'prettier/unicorn',
+        'prettier/react',
+        'plugin:flowtype/recommended',
+        'plugin:unicorn/recommended',
         'plugin:import/errors',
         'plugin:import/warnings',
         'plugin:react/recommended',
@@ -43,19 +56,30 @@ module.exports = {
     ],
     rules: {
         'prettier/prettier': 'error',
-        'react/prop-types': 'off',
+        'unicorn/prevent-abbreviations': [
+            'error',
+            {
+                replacements: {
+                    props: false,
+                    env: false,
+                },
+            },
+        ],
+        'unicorn/filename-case': 'off',
+        'flowtype/no-types-missing-file-annotation': 'off',
+        // 'react/prop-@types': 'off',
     },
     overrides: [
         {
             files: ['**/*.ts', '**/*.tsx'],
             parser: '@typescript-eslint/parser',
             parserOptions: {
+                project: './tsconfig.json',
                 sourceType: 'module',
-                ecmaVersion: 2018,
+                ecmaVersion: 2020,
                 ecmaFeatures: {
                     jsx: true,
                 },
-                project: './tsconfig.json',
             },
             env: {
                 browser: true,
@@ -67,34 +91,23 @@ module.exports = {
                 react: {
                     version: 'detect',
                 },
+                'import/resolver': {
+                    node: {
+                        extensions: ['.ts', '.tsx', '.d.ts'],
+                    },
+                },
             },
-            plugins: [
-                '@typescript-eslint',
-                'prettier',
-                'import',
-                'react',
-                'react-hooks',
-                'jsx-a11y',
-            ],
+            plugins: ['@typescript-eslint'],
             extends: [
-                'eslint:recommended',
                 'plugin:@typescript-eslint/recommended',
-                'plugin:prettier/recommended',
                 'prettier/@typescript-eslint',
-                'prettier/react',
-                'prettier/standard',
-                'plugin:import/errors',
-                'plugin:import/warnings',
                 'plugin:react/recommended',
-                'plugin:react-hooks/recommended',
-                'plugin:jsx-a11y/recommended',
             ],
             rules: {
-                'prettier/prettier': 'warn',
-                'react/prop-types': 'off',
                 '@typescript-eslint/explicit-function-return-type': 'off',
-                '@typescript-eslint/no-explicit-any': 'off',
-                '@typescript-eslint/ban-ts-ignore': 'off',
+                '@typescript-eslint/explicit-module-boundary-types': 'off',
+                // '@typescript-eslint/no-explicit-any': 'off',
+                // '@typescript-eslint/ban-ts-ignore': 'off',
             },
         },
     ],
