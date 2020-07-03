@@ -1,3 +1,0 @@
-<component name="DependencyValidationManager">
-  <scope name="No Build" pattern="file[mattpark-portfolio]:*/&amp;&amp;!file[mattpark-portfolio]:.cache//*&amp;&amp;!file[mattpark-portfolio]:.github//*&amp;&amp;!file[mattpark-portfolio]:.idea//*&amp;&amp;!file[mattpark-portfolio]:.netlify//*&amp;&amp;!file[mattpark-portfolio]:.storybook//*&amp;&amp;!file[mattpark-portfolio]:backstop_data//*&amp;&amp;!file:package-lock.json&amp;&amp;!file[mattpark-portfolio]:public//*" />
-</component>

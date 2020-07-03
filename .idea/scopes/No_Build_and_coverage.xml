@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="No Build and coverage" pattern="file[mattpark.tk]:*/&amp;&amp;!file[mattpark.tk]:.cache//*&amp;&amp;!file[mattpark.tk]:.github//*&amp;&amp;!file[mattpark.tk]:.idea//*&amp;&amp;!file[mattpark.tk]:.netlify//*&amp;&amp;!file[mattpark.tk]:.storybook//*&amp;&amp;!file[mattpark.tk]:backstop_data//*&amp;&amp;!file:package-lock.json&amp;&amp;!file[mattpark.tk]:public//*&amp;&amp;!file[mattpark.tk]:coverage//*" />
+</component>
