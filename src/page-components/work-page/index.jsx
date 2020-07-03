@@ -1,17 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { withStyles, Typography } from '@material-ui/core'
+import { makeStyles, createStyles, Typography } from '@material-ui/core'
 
-const WorkPage = withStyles(theme => ({
-    root: {},
-    placeholder: {
-        padding: theme.spacing(5, 0),
-        '& > h3': {
-            marginTop: '10vh',
-            textAlign: 'center',
+const useStyles = makeStyles(({ spacing }) =>
+    createStyles({
+        root: {},
+        placeholder: {
+            padding: spacing(5, 0),
+            '& > h3': {
+                marginTop: '10vh',
+                textAlign: 'center',
+            },
         },
-    },
-}))(({ classes }) => {
+    }),
+)
+
+const WorkPage = () => {
+    const classes = useStyles()
     return (
         <div className={`${classes.root} contentWrapper`}>
             <Typography variant="h2">Projects</Typography>
@@ -24,8 +28,5 @@ const WorkPage = withStyles(theme => ({
             </div>
         </div>
     )
-})
-WorkPage.propTypes = {
-    classes: PropTypes.object,
 }
 export default WorkPage
