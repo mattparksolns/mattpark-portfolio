@@ -115,12 +115,15 @@ module.exports = {
         {
             resolve: `gatsby-plugin-csp`,
             options: {
-                disableOnDev: true,
+                // disableOnDev: true,
+                mergeStyleHashes: false,
                 mergeDefaultDirectives: true,
                 directives: {
-                    'script-src': "'self' www.google-analytics.com",
-                    'style-src': "'self' 'unsafe-inline'",
-                    'img-src': "'self' data: www.google-analytics.com",
+                    'default-src': `'self'`,
+                    'style-src': `'self' 'unsafe-inline'`,
+                    'script-src': `'self' www.google-analytics.com`,
+                    'img-src': `'self' data: www.google-analytics.com`,
+                    'connect-src': `'self' api.ipify.org api6.ipify.org geolocation-db.com`,
                 },
             },
         },
