@@ -1,5 +1,5 @@
 {
-    "name": "mattpark-portfolio",
+    "name": "mattpark.tk",
     "private": false,
     "description": "My name is Matt Park. I'm a New York City based software engineer.",
     "version": "0.1.0",
@@ -40,6 +40,7 @@
         "test": "jest --verbose",
         "test:watch": "jest --watchAll --verbose",
         "test:coverage": "jest --verbose --coverage",
+        "test:update-snapshots": "jest --verbose -u",
         "test:e2e": "start-server-and-test develop http://localhost:8000 cypress:open",
         "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cypress:run",
         "storybook": "set 'NODE_ENV=production' && start-storybook -p 6006",

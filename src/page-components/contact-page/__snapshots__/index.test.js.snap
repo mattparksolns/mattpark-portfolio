@@ -1,11 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ContactPage renders correctly 1`] = `
-<Unknown
-  classes={
-    Object {
-      "root": "Component-root-1",
-    }
-  }
-/>
+<div
+  className="makeStyles-root-1 contentWrapper"
+>
+  <ContactInfo />
+  <ContactForm />
+</div>
 `;

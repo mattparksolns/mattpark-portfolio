@@ -1,19 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ContactInfo renders correctly 1`] = `
-<Unknown
-  classes={
-    Object {
-      "contactInfo": "Component-contactInfo-4",
-      "emailLink": "Component-emailLink-8",
-      "hoverIcon": "Component-hoverIcon-5",
-      "locationLink": "Component-locationLink-6",
-      "myInfo": "Component-myInfo-3",
-      "myName": "Component-myName-2",
-      "phoneLink": "Component-phoneLink-7",
-      "root": "Component-root-1",
-      "socials": "Component-socials-9",
-    }
-  }
-/>
+<div
+  className="makeStyles-root-1"
+>
+  <WithStyles(ForwardRef(Typography))
+    className="makeStyles-myName-2"
+    variant="h1"
+  >
+    Matt Park
+  </WithStyles(ForwardRef(Typography))>
+  <div
+    className="makeStyles-myInfo-3"
+  >
+    <div
+      className="makeStyles-contactInfo-4"
+    >
+      <WithStyles(ForwardRef(Link))
+        className="makeStyles-locationLink-6"
+        href="https://goo.gl/maps/qm8HMXfbXSABazKRA"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <GoLocation
+          className="makeStyles-hoverIcon-5"
+        />
+        <MdLocationCity />
+        <span>
+          New York, New York
+          <br />
+          United States
+        </span>
+      </WithStyles(ForwardRef(Link))>
+      <WithStyles(ForwardRef(Link))
+        className="makeStyles-emailLink-8"
+        href="mailto:mattparksolns@gmail.com"
+        target="_top"
+      >
+        <RiMailSendLine
+          className="makeStyles-hoverIcon-5"
+        />
+        <RiMailLine />
+        <span>
+          mattparksolutions@gmail.com
+        </span>
+      </WithStyles(ForwardRef(Link))>
+      <WithStyles(ForwardRef(Link))
+        className="makeStyles-phoneLink-7"
+        href="tel:+1201-591-3323"
+        target="_top"
+      >
+        <FiPhoneCall
+          className="makeStyles-hoverIcon-5"
+        />
+        <FiPhone />
+        <span>
+          (201) 591 - 3323
+        </span>
+      </WithStyles(ForwardRef(Link))>
+    </div>
+    <Socials
+      className="makeStyles-socials-9"
+    />
+  </div>
+</div>
 `;

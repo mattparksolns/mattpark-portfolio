@@ -1,15 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage renders correctly 1`] = `
-<Unknown
-  classes={
-    Object {
-      "letter": "Component-letter-3",
-      "letterText": "Component-letterText-4",
-      "miniStripe": "Component-miniStripe-1",
-      "stripe": "Component-stripe-2",
-      "svg": "Component-svg-5",
-    }
-  }
-/>
+<React.Fragment>
+  <div
+    className="makeStyles-miniStripe-1"
+  />
+  <Intro />
+  <Projects />
+</React.Fragment>
 `;

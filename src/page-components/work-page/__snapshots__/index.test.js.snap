@@ -1,12 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`WorkPage renders correctly 1`] = `
-<Unknown
-  classes={
-    Object {
-      "placeholder": "Component-placeholder-2",
-      "root": "Component-root-1",
-    }
-  }
-/>
+<div
+  className="makeStyles-root-1 contentWrapper"
+>
+  <WithStyles(ForwardRef(Typography))
+    variant="h2"
+  >
+    Projects
+  </WithStyles(ForwardRef(Typography))>
+  <div
+    className="makeStyles-placeholder-2"
+  >
+    <WithStyles(ForwardRef(Typography))
+      variant="h3"
+    >
+      Project 1
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Typography))
+      variant="h3"
+    >
+      Project 2
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Typography))
+      variant="h3"
+    >
+      Project 3
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Typography))
+      variant="h3"
+    >
+      Project 4
+    </WithStyles(ForwardRef(Typography))>
+    <WithStyles(ForwardRef(Typography))
+      variant="h3"
+    >
+      Project 5
+    </WithStyles(ForwardRef(Typography))>
+  </div>
+</div>
 `;
