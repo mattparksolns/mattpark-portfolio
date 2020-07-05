@@ -8,12 +8,8 @@
 </h1>
 
 ![Node.js CI](https://github.com/mattparksolns/mattpark.tk/workflows/Node.js%20CI/badge.svg?branch=master)
-![Dependabot Badge](https://flat.badgen.net/dependabot/mattparksolns/mattpark.tk?icon=dependabot)
-<img src="https://flat.badgen.net/dependabot/mattparksolns/mattpark.tk?icon=dependabot" alt="Dependabot Badge" />
-[![Crowdin](https://badges.crowdin.net/mattpark.tk/localized.svg)](https://crowdin.com)
 
 ### My name is Matt Park.<br />I'm a New York City based<br />software engineer.
-
 
 Forward Thinker<br />
 Problem Solver<br />
