@@ -534,7 +534,7 @@ type Query {
     file(absolutePath: StringQueryOperatorInput, accessTime: DateQueryOperatorInput, atime: DateQueryOperatorInput, atimeMs: FloatQueryOperatorInput, base: StringQueryOperatorInput, birthTime: DateQueryOperatorInput, birthtime: DateQueryOperatorInput, birthtimeMs: FloatQueryOperatorInput, blksize: IntQueryOperatorInput, blocks: IntQueryOperatorInput, changeTime: DateQueryOperatorInput, childImageSharp: ImageSharpFilterInput, childMarkdownRemark: MarkdownRemarkFilterInput, children: NodeFilterListInput, ctime: DateQueryOperatorInput, ctimeMs: FloatQueryOperatorInput, dev: IntQueryOperatorInput, dir: StringQueryOperatorInput, ext: StringQueryOperatorInput, extension: StringQueryOperatorInput, gid: IntQueryOperatorInput, id: StringQueryOperatorInput, ino: FloatQueryOperatorInput, internal: InternalFilterInput, mode: IntQueryOperatorInput, modifiedTime: DateQueryOperatorInput, mtime: DateQueryOperatorInput, mtimeMs: FloatQueryOperatorInput, name: StringQueryOperatorInput, nlink: IntQueryOperatorInput, parent: NodeFilterInput, prettySize: StringQueryOperatorInput, publicURL: StringQueryOperatorInput, rdev: IntQueryOperatorInput, relativeDirectory: StringQueryOperatorInput, relativePath: StringQueryOperatorInput, root: StringQueryOperatorInput, size: IntQueryOperatorInput, sourceInstanceName: StringQueryOperatorInput, uid: IntQueryOperatorInput): File
     imageSharp(children: NodeFilterListInput, fixed: ImageSharpFixedFilterInput, fluid: ImageSharpFluidFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, original: ImageSharpOriginalFilterInput, parent: NodeFilterInput, resize: ImageSharpResizeFilterInput, resolutions: ImageSharpResolutionsFilterInput, sizes: ImageSharpSizesFilterInput): ImageSharp
     markdownRemark(children: NodeFilterListInput, excerpt: StringQueryOperatorInput, excerptAst: JSONQueryOperatorInput, fields: MarkdownRemarkFieldsFilterInput, fileAbsolutePath: StringQueryOperatorInput, frontmatter: MarkdownRemarkFrontmatterFilterInput, headings: MarkdownHeadingFilterListInput, html: StringQueryOperatorInput, htmlAst: JSONQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, rawMarkdownBody: StringQueryOperatorInput, tableOfContents: StringQueryOperatorInput, timeToRead: IntQueryOperatorInput, wordCount: MarkdownWordCountFilterInput): MarkdownRemark
-    site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, pathPrefix: StringQueryOperatorInput, polyfill: BooleanQueryOperatorInput, port: DateQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
+    site(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, host: StringQueryOperatorInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput, port: DateQueryOperatorInput, siteMetadata: SiteSiteMetadataFilterInput): Site
     siteBuildMetadata(buildTime: DateQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, parent: NodeFilterInput): SiteBuildMetadata
     sitePage(children: NodeFilterListInput, component: StringQueryOperatorInput, componentChunkName: StringQueryOperatorInput, componentPath: StringQueryOperatorInput, context: SitePageContextFilterInput, id: StringQueryOperatorInput, internal: InternalFilterInput, internalComponentName: StringQueryOperatorInput, isCreatedByStatefulCreatePages: BooleanQueryOperatorInput, matchPath: StringQueryOperatorInput, parent: NodeFilterInput, path: StringQueryOperatorInput, pluginCreator: SitePluginFilterInput, pluginCreatorId: StringQueryOperatorInput): SitePage
     sitePlugin(browserAPIs: StringQueryOperatorInput, children: NodeFilterListInput, id: StringQueryOperatorInput, internal: InternalFilterInput, name: StringQueryOperatorInput, nodeAPIs: StringQueryOperatorInput, packageJson: SitePluginPackageJsonFilterInput, parent: NodeFilterInput, pluginFilepath: StringQueryOperatorInput, pluginOptions: SitePluginPluginOptionsFilterInput, resolve: StringQueryOperatorInput, ssrAPIs: StringQueryOperatorInput, version: StringQueryOperatorInput): SitePlugin
@@ -556,8 +556,6 @@ type Site implements Node {
     id: ID!
     internal: Internal!
     parent: Node
-    pathPrefix: String
-    polyfill: Boolean
     port(
         "Returns the difference between this date and the current time. Defaults to \"milliseconds\" but you can also pass in as the measurement \"years\", \"months\", \"weeks\", \"days\", \"hours\", \"minutes\", and \"seconds\"."
         difference: String,
@@ -757,7 +755,6 @@ type SitePluginPluginOptions {
     dashes: String
     description: String
     directives: SitePluginPluginOptionsDirectives
-    disableOnDev: Boolean
     display: String
     env: SitePluginPluginOptionsEnv
     exclude: [String]
@@ -772,6 +769,7 @@ type SitePluginPluginOptions {
     legacy: Boolean
     maxWidth: Int
     mergeDefaultDirectives: Boolean
+    mergeStyleHashes: Boolean
     name: String
     noQueryString: Boolean
     path: String
@@ -790,6 +788,8 @@ type SitePluginPluginOptions {
 }
 
 type SitePluginPluginOptionsDirectives {
+    connect_src: String
+    default_src: String
     img_src: String
     script_src: String
     style_src: String
@@ -875,7 +875,7 @@ type SiteSiteMetadata {
 type SiteSiteMetadataAuthor {
     email: String
     name: String
-    phone: String
+    phone_number: String
     socials: SiteSiteMetadataAuthorSocials
     username: String
 }
@@ -1864,12 +1864,10 @@ enum SiteFieldsEnum {
     parent___parent___internal___type
     parent___parent___parent___children
     parent___parent___parent___id
-    pathPrefix
-    polyfill
     port
     siteMetadata___author___email
     siteMetadata___author___name
-    siteMetadata___author___phone
+    siteMetadata___author___phone_number
     siteMetadata___author___username
     siteMetadata___description
     siteMetadata___siteUrl
@@ -2036,10 +2034,11 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___crossOrigin
     pluginCreator___pluginOptions___dashes
     pluginCreator___pluginOptions___description
+    pluginCreator___pluginOptions___directives___connect_src
+    pluginCreator___pluginOptions___directives___default_src
     pluginCreator___pluginOptions___directives___img_src
     pluginCreator___pluginOptions___directives___script_src
     pluginCreator___pluginOptions___directives___style_src
-    pluginCreator___pluginOptions___disableOnDev
     pluginCreator___pluginOptions___display
     pluginCreator___pluginOptions___exclude
     pluginCreator___pluginOptions___excludePattern
@@ -2058,6 +2057,7 @@ enum SitePageFieldsEnum {
     pluginCreator___pluginOptions___legacy
     pluginCreator___pluginOptions___maxWidth
     pluginCreator___pluginOptions___mergeDefaultDirectives
+    pluginCreator___pluginOptions___mergeStyleHashes
     pluginCreator___pluginOptions___name
     pluginCreator___pluginOptions___noQueryString
     pluginCreator___pluginOptions___path
@@ -2197,10 +2197,11 @@ enum SitePluginFieldsEnum {
     pluginOptions___crossOrigin
     pluginOptions___dashes
     pluginOptions___description
+    pluginOptions___directives___connect_src
+    pluginOptions___directives___default_src
     pluginOptions___directives___img_src
     pluginOptions___directives___script_src
     pluginOptions___directives___style_src
-    pluginOptions___disableOnDev
     pluginOptions___display
     pluginOptions___env___branch_deploy___policy
     pluginOptions___env___deploy_preview___policy
@@ -2223,6 +2224,7 @@ enum SitePluginFieldsEnum {
     pluginOptions___legacy
     pluginOptions___maxWidth
     pluginOptions___mergeDefaultDirectives
+    pluginOptions___mergeStyleHashes
     pluginOptions___name
     pluginOptions___noQueryString
     pluginOptions___path
@@ -2599,8 +2601,6 @@ input SiteFilterInput {
     id: StringQueryOperatorInput
     internal: InternalFilterInput
     parent: NodeFilterInput
-    pathPrefix: StringQueryOperatorInput
-    polyfill: BooleanQueryOperatorInput
     port: DateQueryOperatorInput
     siteMetadata: SiteSiteMetadataFilterInput
 }
@@ -2687,6 +2687,8 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 }
 
 input SitePluginPluginOptionsDirectivesFilterInput {
+    connect_src: StringQueryOperatorInput
+    default_src: StringQueryOperatorInput
     img_src: StringQueryOperatorInput
     script_src: StringQueryOperatorInput
     style_src: StringQueryOperatorInput
@@ -2772,7 +2774,6 @@ input SitePluginPluginOptionsFilterInput {
     dashes: StringQueryOperatorInput
     description: StringQueryOperatorInput
     directives: SitePluginPluginOptionsDirectivesFilterInput
-    disableOnDev: BooleanQueryOperatorInput
     display: StringQueryOperatorInput
     env: SitePluginPluginOptionsEnvFilterInput
     exclude: StringQueryOperatorInput
@@ -2787,6 +2788,7 @@ input SitePluginPluginOptionsFilterInput {
     legacy: BooleanQueryOperatorInput
     maxWidth: IntQueryOperatorInput
     mergeDefaultDirectives: BooleanQueryOperatorInput
+    mergeStyleHashes: BooleanQueryOperatorInput
     name: StringQueryOperatorInput
     noQueryString: BooleanQueryOperatorInput
     path: StringQueryOperatorInput
@@ -2835,7 +2837,7 @@ input SitePluginSortInput {
 input SiteSiteMetadataAuthorFilterInput {
     email: StringQueryOperatorInput
     name: StringQueryOperatorInput
-    phone: StringQueryOperatorInput
+    phone_number: StringQueryOperatorInput
     socials: SiteSiteMetadataAuthorSocialsFilterInput
     username: StringQueryOperatorInput
 }
