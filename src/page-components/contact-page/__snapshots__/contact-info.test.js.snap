@@ -42,12 +42,12 @@ exports[`ContactInfo renders correctly 1`] = `
         />
         <RiMailLine />
         <span>
-          mattparksolutions@gmail.com
+          mattparksolns@gmail.com
         </span>
       </WithStyles(ForwardRef(Link))>
       <WithStyles(ForwardRef(Link))
         className="makeStyles-phoneLink-7"
-        href="tel:+1201-591-3323"
+        href="tel:+2015913323"
         target="_top"
       >
         <FiPhoneCall
@@ -55,7 +55,7 @@ exports[`ContactInfo renders correctly 1`] = `
         />
         <FiPhone />
         <span>
-          (201) 591 - 3323
+          015 913323
         </span>
       </WithStyles(ForwardRef(Link))>
     </div>
