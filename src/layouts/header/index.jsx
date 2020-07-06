@@ -41,8 +41,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             },
         },
         logo: {
-            fontFamily: 'tungsten',
-            fontSize: 35,
+            // fontFamily: 'tungsten',
+            fontFamily: 'cyberpunk',
+            // fontSize: 35,
+            fontSize: 18,
             fontWeight: 900,
             '& > a': {
                 color: palette.text.primary,
