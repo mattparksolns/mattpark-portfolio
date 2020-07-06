@@ -12,6 +12,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) =>
         intro: {
             position: 'relative',
             fontSize: '5.41666667vw',
+            width: '70%',
             [breakpoints.down('sm')]: {
                 width: '90%',
                 fontSize: '8.57vw',
@@ -19,6 +20,9 @@ const useStyles = makeStyles(({ spacing, breakpoints }) =>
             [breakpoints.down('xs')]: {
                 width: '100%',
                 fontSize: '9.2vw',
+            },
+            '@media only screen and (max-width: 250px)': {
+                fontSize: '8.666667vw',
             },
             '& > a': {
                 fontWeight: 900,
@@ -40,11 +44,22 @@ const useStyles = makeStyles(({ spacing, breakpoints }) =>
 )
 const Intro = () => {
     const classes = useStyles()
-    const data = useStaticQuery(graphql`
+
+    const {
+        site: {
+            siteMetadata: {
+                author: {
+                    name,
+                    socials: { linkedin },
+                },
+            },
+        },
+    } = useStaticQuery(graphql`
         query {
             site {
                 siteMetadata {
                     author {
+                        name
                         socials {
                             linkedin {
                                 link
@@ -55,7 +70,7 @@ const Intro = () => {
             }
         }
     `)
-    const socials = data.site.siteMetadata.author.socials
+    // const socials = data.site.siteMetadata.author.socials
     return (
         <section className={`${classes.root} contentWrapper`}>
             <Typography className={classes.intro} variant="h1" gutterBottom>
@@ -65,18 +80,12 @@ const Intro = () => {
                     color={'secondary'}
                     target={'_blank'}
                     rel={'noopener noreferrer'}
-                    href={socials.linkedin.link}
+                    href={linkedin.link}
                 >
-                    {' '}
-                    Matt
-                    <br />
-                    Park.{' '}
+                    {` ${name}. `}
+                    {/*Matt Park.{' '}*/}
                 </Link>
-                I&#39;m a New York
-                <br />
-                City based software
-                <br />
-                engineer.
+                I&#39;m a New York City based software engineer.
             </Typography>
             <Typography className={classes.description} variant="h1">
                 Forward Thinker
