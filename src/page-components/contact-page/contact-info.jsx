@@ -1,6 +1,9 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 import { makeStyles, createStyles, Typography, Link } from '@material-ui/core'
 import { MdLocationCity, GoLocation, FiPhone, FiPhoneCall, RiMailLine, RiMailSendLine } from 'react-icons/all'
+import { parsePhoneNumber } from 'libphonenumber-js'
 
 import Socials from '../../components/socials'
 
@@ -128,12 +131,24 @@ const useStyles = makeStyles(({ breakpoints }) =>
         },
     }),
 )
-const ContactInfo = () => {
+
+export const PureContactInfo = ({
+    data: {
+        site: {
+            siteMetadata: {
+                author: { name, email, phone_number },
+            },
+        },
+    },
+    ...props
+}) => {
     const classes = useStyles()
+    const phoneNumber = parsePhoneNumber(phone_number)
+
     return (
-        <div className={classes.root}>
+        <div className={classes.root} {...props}>
             <Typography className={classes.myName} variant="h1">
-                Matt Park
+                {name}
             </Typography>
             <div className={classes.myInfo}>
                 <div className={classes.contactInfo}>
@@ -151,20 +166,51 @@ const ContactInfo = () => {
                             United States
                         </span>
                     </Link>
-                    <Link className={classes.emailLink} target={'_top'} href={'mailto:mattparksolns@gmail.com'}>
+                    <Link className={classes.emailLink} target={'_top'} href={`mailto:${email}`}>
                         <RiMailSendLine className={classes.hoverIcon} />
                         <RiMailLine />
-                        <span>mattparksolutions@gmail.com</span>
+                        <span>{email}</span>
                     </Link>
-                    <Link className={classes.phoneLink} target={'_top'} href={'tel:+1201-591-3323'}>
+                    <Link className={classes.phoneLink} target={'_top'} href={phoneNumber.getURI()}>
                         <FiPhoneCall className={classes.hoverIcon} />
                         <FiPhone />
-                        <span>(201) 591 - 3323</span>
+                        <span>{phoneNumber.formatNational()}</span>
                     </Link>
                 </div>
                 <Socials className={classes.socials} />
             </div>
         </div>
     )
+}
+PureContactInfo.propTypes = {
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                author: PropTypes.shape({
+                    name: PropTypes.string.isRequired,
+                    email: PropTypes.string.isRequired,
+                    phone_number: PropTypes.string.isRequired,
+                }).isRequired,
+            }).isRequired,
+        }).isRequired,
+    }).isRequired,
+}
+
+const ContactInfo = props => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    author {
+                        name
+                        email
+                        phone_number
+                    }
+                }
+            }
+        }
+    `)
+
+    return <PureContactInfo data={data} {...props} />
 }
 export default ContactInfo

@@ -9,7 +9,7 @@
 
 ![Node.js CI](https://github.com/mattparksolns/mattpark.tk/workflows/Node.js%20CI/badge.svg?branch=master)
 
-### My name is Matt Park.<br />I'm a New York City based<br />software engineer.
+## My name is <a style="color:#ff3388" title="LinkedIn" href="https://www.linkedin.com/in/mattparksolns/">Matt<br />Park.</a>I'm a New York<br />City based software<br />engineer.
 
 Forward Thinker<br />
 Problem Solver<br />
@@ -19,7 +19,7 @@ Web Tinkerer<br />
 ---
 
 <h3>
-    <a title="Email" href="mailto:mattparksolns@gmail.com" style="color:#ff0049">
+    <a title="Email" href="mailto:mattparksolns@gmail.com" style="color:#ff3388">
     <b><em>Drop me a line,</em></b></a>
     I'd like to hear from you!
     <br /><br />

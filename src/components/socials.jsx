@@ -11,7 +11,13 @@ import GitHubIcon from '../../static/assets/icons/github.svg'
 // }
 
 const Socials = ({ className }) => {
-    const { site } = useStaticQuery(graphql`
+    const {
+        site: {
+            siteMetadata: {
+                author: { socials },
+            },
+        },
+    } = useStaticQuery(graphql`
         query {
             site {
                 siteMetadata {
@@ -32,7 +38,7 @@ const Socials = ({ className }) => {
             }
         }
     `)
-    const socials = site.siteMetadata.author.socials
+
     return (
         <div className={className}>
             <Link title="Twitter" target="_blank" rel="noopener noreferrer" href={socials.twitter.link}>
