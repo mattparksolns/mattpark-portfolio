@@ -70,7 +70,7 @@ const Intro = () => {
             }
         }
     `)
-    // const socials = data.site.siteMetadata.author.socials
+
     return (
         <section className={`${classes.root} contentWrapper`}>
             <Typography className={classes.intro} variant="h1" gutterBottom>
@@ -83,7 +83,6 @@ const Intro = () => {
                     href={linkedin.link}
                 >
                     {` ${name}. `}
-                    {/*Matt Park.{' '}*/}
                 </Link>
                 I&#39;m a New York City based software engineer.
             </Typography>
