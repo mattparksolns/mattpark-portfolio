@@ -9,6 +9,7 @@ public
 .graphqlschema.graphql
 
 *.mp4
+*.png
 
 coverage/
 __snapshots__
