@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import { makeStyles, createStyles, Typography, Link } from '@material-ui/core'
 import { MdLocationCity, GoLocation, FiPhone, FiPhoneCall, RiMailLine, RiMailSendLine } from 'react-icons/all'
@@ -130,33 +131,22 @@ const useStyles = makeStyles(({ breakpoints }) =>
         },
     }),
 )
-const ContactInfo = () => {
-    const classes = useStyles()
 
-    const {
+export const PureContactInfo = ({
+    data: {
         site: {
             siteMetadata: {
                 author: { name, email, phone_number },
             },
         },
-    } = useStaticQuery(graphql`
-        query {
-            site {
-                siteMetadata {
-                    author {
-                        name
-                        email
-                        phone_number
-                    }
-                }
-            }
-        }
-    `)
-
+    },
+    ...props
+}) => {
+    const classes = useStyles()
     const phoneNumber = parsePhoneNumber(phone_number)
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} {...props}>
             <Typography className={classes.myName} variant="h1">
                 {name}
             </Typography>
@@ -191,5 +181,36 @@ const ContactInfo = () => {
             </div>
         </div>
     )
+}
+PureContactInfo.propTypes = {
+    data: PropTypes.shape({
+        site: PropTypes.shape({
+            siteMetadata: PropTypes.shape({
+                author: PropTypes.shape({
+                    name: PropTypes.string.isRequired,
+                    email: PropTypes.string.isRequired,
+                    phone_number: PropTypes.string.isRequired,
+                }).isRequired,
+            }).isRequired,
+        }).isRequired,
+    }).isRequired,
+}
+
+const ContactInfo = props => {
+    const data = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    author {
+                        name
+                        email
+                        phone_number
+                    }
+                }
+            }
+        }
+    `)
+
+    return <PureContactInfo data={data} {...props} />
 }
 export default ContactInfo

@@ -1,14 +1,26 @@
 import React from 'react'
 import ShallowRenderer from 'react-test-renderer/shallow'
 
-import ContactInfo from './contact-info'
+import { PureContactInfo } from './contact-info'
+
+const renderer = ShallowRenderer.createRenderer()
 
 describe('ContactInfo', () => {
-    const renderer = ShallowRenderer.createRenderer()
     let tree
+    const data = {
+        site: {
+            siteMetadata: {
+                author: {
+                    name: 'Matt Park',
+                    email: 'mattparksolns@gmail.com',
+                    phone_number: '+2015913323',
+                },
+            },
+        },
+    }
 
     beforeEach(() => {
-        renderer.render(<ContactInfo />)
+        renderer.render(<PureContactInfo data={data} />)
         tree = renderer.getRenderOutput()
     })
 
