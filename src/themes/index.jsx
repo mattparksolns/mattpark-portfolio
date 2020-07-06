@@ -17,9 +17,8 @@ const ThemeProvider = ({ children }) => {
     const [isClient, setClient] = useState(false)
     useEffect(() => {
         setClient(true)
-        dispatch(setThemeType(window.__theme))
         window.__onThemeChange = () => {
-            setThemeType(window.__theme)
+            dispatch(setThemeType(window.__theme))
         }
     }, [dispatch])
 
