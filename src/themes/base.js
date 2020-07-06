@@ -19,7 +19,7 @@ const getBaseTheme = (themeType = 'dark') => {
         valorantPink: '#ff4655', // valorant pink
         // pink: '#d13654', // valorant darker-pink
         // pink: 'rgb(215,0,73)', // jungle-juice pink
-        pink: '#ff0049',
+        pink: '#ff3388',
         darkPink: '#e4373c',
         darkerPink: '#d13654',
         red: '#ff0034',
