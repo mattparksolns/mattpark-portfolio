@@ -1,49 +1,60 @@
 @font-face {
+    font-family: 'cyberpunk';
+    src: url('../../static/assets/fonts/Cyberpunk/Cyberpunk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
     font-family: 'tungsten';
-    src: url('../../static/assets/fonts/Tungsten/Tungsten.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/Tungsten/Tungsten.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'markpro';
-    src: url('../../static/assets/fonts/MarkPro/MarkPro-Regular.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/MarkPro/MarkPro-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'markpro-bold';
-    src: url('../../static/assets/fonts/MarkPro/MarkPro-Bold.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/MarkPro/MarkPro-Bold.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'markpro-black';
-    src: url('../../static/assets/fonts/MarkPro/MarkPro-Black.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/MarkPro/MarkPro-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT-Walsheim';
+    src: url('../../static/assets/fonts/GTWalsheimPro/GTWalsheimPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NanumPenScript';
+    src: url('../../static/assets/fonts/NanumPenScript/NanumPenScript-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'montserrat';
-    src: url('../../static/assets/fonts/Montserrat/Montserrat-Regular.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'roboto';
-    src: url('../../static/assets/fonts/Roboto/Roboto-Regular.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: 'muli';
-    src: url('../../static/assets/fonts/Muli/Muli-VariableFont_wght.ttf')
-        format('truetype');
+    src: url('../../static/assets/fonts/Muli/Muli-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -499,8 +510,8 @@ tt,
 code {
     background-color: hsla(0, 0%, 0%, 0.04);
     border-radius: 3px;
-    font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono',
-        'Liberation Mono', Menlo, Courier, monospace;
+    font-family: 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier,
+        monospace;
     padding: 0.2em 0;
 }
 pre code {

@@ -26,9 +26,9 @@ const getBaseTheme = (themeType = 'dark') => {
     }
     return createMuiTheme({
         typography: {
-            fontFamily: ['montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
+            fontFamily: ['GT-Walsheim', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             h1: {
-                fontFamily: ['muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
+                fontFamily: ['GT-Walsheim', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             },
             h2: {
                 fontFamily: ['tungsten', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
