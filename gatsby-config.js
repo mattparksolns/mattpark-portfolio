@@ -15,7 +15,7 @@ module.exports = {
             name: `Matt Park`,
             username: `mattparksolns`,
             email: `mattparksolns@gmail.com`,
-            phone: `+1 (201) 591 - 3323`,
+            phone_number: `+12015913323`,
             socials: {
                 reddit: { username: `mattparksolns`, link: `` },
                 facebook: { username: `mattparksolns`, link: `https://www.facebook.com/mattparksolns` },
