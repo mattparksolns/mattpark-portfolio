@@ -102,7 +102,15 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
 )
 const Header = ({ className }) => {
     const classes = useStyles()
-    const data = useStaticQuery(graphql`
+
+    const {
+        site: {
+            siteMetadata: {
+                title,
+                author: { name },
+            },
+        },
+    } = useStaticQuery(graphql`
         query {
             site {
                 siteMetadata {
@@ -114,7 +122,6 @@ const Header = ({ className }) => {
             }
         }
     `)
-    const { title, author } = data.site.siteMetadata
 
     return (
         <AppBar className={`${className} ${classes.appBar}`} color={'inherit'}>
@@ -122,7 +129,7 @@ const Header = ({ className }) => {
             <Toolbar className={classes.toolbar} component={'nav'}>
                 <Typography className={classes.logo} variant="h1">
                     <Link component={GatsbyLink} title={title} to="/">
-                        {author.name}
+                        {name}
                     </Link>
                 </Typography>
                 <div className={classes.pageLinks}>
