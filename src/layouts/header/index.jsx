@@ -95,13 +95,20 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             top: 3,
             '& > a': {
                 marginRight: 20,
+                [breakpoints.down('xs')]: {
+                    marginRight: 18,
+                },
                 '& > svg': {
                     fontSize: 20,
+                    [breakpoints.down('xs')]: {
+                        fontSize: 18,
+                    },
                 },
             },
         },
     }),
 )
+
 const Header = ({ className }) => {
     const classes = useStyles()
 
