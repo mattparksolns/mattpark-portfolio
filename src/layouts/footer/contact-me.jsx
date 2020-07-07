@@ -64,13 +64,14 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                 fontSize: 20,
             },
             '& > a:nth-last-of-type(n+2)': {
-                marginRight: '1.3888889vw',
-                [breakpoints.down('sm')]: {
-                    marginRight: 20,
-                },
+                marginRight: 20,
+                // marginRight: '1.3888889vw',
+                // [breakpoints.down('sm')]: {
+                //     marginRight: 20,
+                // },
             },
         },
-        thankyou: {
+        thankYou: {
             margin: '6.944vw 0',
             position: 'relative',
         },
@@ -111,9 +112,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                 },
             },
         },
-        msgAndSign: {
+        messageAndSignature: {
             position: 'absolute',
-            top: '20%',
+            // top: '20%',
+            top: '0%',
             left: 'calc(50% + 9.027777vw)',
             height: 'auto',
             width: '24vw',
@@ -125,14 +127,15 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                 left: '25.5vw',
             },
             '& > p': {
+                fontFamily: 'NanumPenScript',
                 marginBottom: '1vw',
                 fontStyle: 'italic',
-                fontSize: '1vw',
+                fontSize: '1.4vw',
                 [breakpoints.down('md')]: {
-                    fontSize: 14,
+                    fontSize: 17.99,
                 },
                 '@media only screen and (max-width: 390px)': {
-                    fontSize: '3.1vw',
+                    fontSize: '4.4vw',
                 },
             },
             '& > svg': {
@@ -149,8 +152,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
         },
     }),
 )
+
 const ContactMe = () => {
     const classes = useStyles()
+
     return (
         <div className={classes.root}>
             <div className={classes.header}>
@@ -165,11 +170,11 @@ const ContactMe = () => {
                     <Socials className={classes.socials} />
                 </div>
             </div>
-            <div className={classes.thankyou}>
+            <div className={classes.thankYou}>
                 <div className={classes.logo}>
                     <Typography variant={'h2'}>MP</Typography>
                 </div>
-                <div className={classes.msgAndSign}>
+                <div className={classes.messageAndSignature}>
                     <Typography variant={'body1'}>
                         Thank you for visiting
                         <br />
