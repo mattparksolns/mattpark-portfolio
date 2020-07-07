@@ -41,8 +41,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             },
         },
         logo: {
-            fontFamily: 'tungsten',
-            fontSize: 35,
+            // fontFamily: 'tungsten',
+            fontFamily: 'cyberpunk',
+            // fontSize: 35,
+            fontSize: 18,
             fontWeight: 900,
             '& > a': {
                 color: palette.text.primary,
@@ -93,13 +95,20 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             top: 3,
             '& > a': {
                 marginRight: 20,
+                [breakpoints.down('xs')]: {
+                    marginRight: 18,
+                },
                 '& > svg': {
                     fontSize: 20,
+                    [breakpoints.down('xs')]: {
+                        fontSize: 18,
+                    },
                 },
             },
         },
     }),
 )
+
 const Header = ({ className }) => {
     const classes = useStyles()
 

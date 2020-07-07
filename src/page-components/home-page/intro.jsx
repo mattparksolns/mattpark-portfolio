@@ -25,6 +25,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) =>
                 fontSize: '8.666667vw',
             },
             '& > a': {
+                fontFamily: 'cyberpunk',
                 fontWeight: 900,
             },
         },
