@@ -47,7 +47,7 @@
         "build-storybook": "set 'NODE_ENV=production' && build-storybook"
     },
     "dependencies": {
-        "@material-ui/core": "^4.10.2",
+        "@material-ui/core": "^4.11.0",
         "@material-ui/icons": "^4.9.1",
         "@material-ui/styles": "^4.9.14",
         "@reduxjs/toolkit": "^1.4.0",
