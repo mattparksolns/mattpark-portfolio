@@ -9,7 +9,7 @@
 
 ![Node.js CI](https://github.com/mattparksolns/mattpark.tk/workflows/Node.js%20CI/badge.svg?branch=master)
 
-## My name is <a style="color:#ff3388" title="LinkedIn" href="https://www.linkedin.com/in/mattparksolns/">Matt<br />Park.</a>I'm a New York<br />City based software<br />engineer.
+## My name is <a style="color:#ff3388" title="LinkedIn" href="https://www.linkedin.com/in/mattparksolns/">Matt<br />Park.</a> I'm a New York<br />City based software<br />engineer.
 
 Forward Thinker<br />
 Problem Solver<br />
