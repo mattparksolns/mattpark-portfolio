@@ -108,7 +108,7 @@ const ValorantButton = ({ children, ...props }) => {
         <Button
             className={classes.root}
             // variant={ theme.isDark ? "outlined" : "contained" }
-            // variant={'outlined'}
+            variant={'outlined'}
             {...props}
         >
             {/*<span className={classes.hoverBg} />*/}

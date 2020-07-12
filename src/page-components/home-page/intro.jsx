@@ -13,16 +13,19 @@ const useStyles = makeStyles(({ spacing, breakpoints }) =>
             position: 'relative',
             fontSize: '5.41666667vw',
             width: '70%',
+            '@media only screen and (max-width: 1040px)': {
+                fontSize: '5.333333vw',
+            },
             [breakpoints.down('sm')]: {
                 width: '90%',
-                fontSize: '8.57vw',
+                fontSize: '8vw',
             },
             [breakpoints.down('xs')]: {
                 width: '100%',
-                fontSize: '9.2vw',
+                fontSize: '8.8vw',
             },
-            '@media only screen and (max-width: 250px)': {
-                fontSize: '8.666667vw',
+            '@media only screen and (max-width: 400px)': {
+                fontSize: '8.111117vw',
             },
             '& > a': {
                 fontFamily: 'cyberpunk',
@@ -43,6 +46,7 @@ const useStyles = makeStyles(({ spacing, breakpoints }) =>
         },
     }),
 )
+
 const Intro = () => {
     const classes = useStyles()
 
