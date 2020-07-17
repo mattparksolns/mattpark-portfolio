@@ -207,7 +207,6 @@ const ContactMe = () => {
                             poster={GradientPoster}
                             // src={'../../../static/assets/videos/gradient.mp4'}
                             src={Gradient}
-                            type={'video/mp4'}
                         />
                     </span>
                     <svg viewBox="0 0 134 107" xmlns="http://www.w3.org/2000/svg" aria-hidden={'true'}>
