@@ -114,6 +114,14 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                     lineHeight: '19.2307vw',
                 },
             },
+            '& > svg': {
+                // height: '100%',
+                height: 'auto',
+                fontSize: '12.5vw',
+                [breakpoints.down('xs')]: {
+                    fontSize: 54.144,
+                },
+            },
         },
         gradient: {
             position: 'absolute',
@@ -124,12 +132,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             '& > video': {
                 height: '100%',
             },
-        },
-        mp: {
-            fontSize: '9.9vw',
-            fill: palette.secondary.main,
-            fontFamily: 'tungsten',
-            fontWeight: 900,
+            fontSize: '12.5vw',
+            [breakpoints.down('xs')]: {
+                fontSize: 54.144,
+            },
         },
         messageAndSignature: {
             position: 'absolute',
@@ -178,6 +184,11 @@ const ContactMe = () => {
     useEffect(() => {
         const { current: videoElement } = gradientReference
         videoElement.setAttribute('muted', '')
+        const interval = setInterval(() => gradientReference.current.play(), 1000)
+        // gradientReference.current.play()
+        return function cleanup() {
+            clearInterval(interval)
+        }
     })
 
     return (
@@ -213,7 +224,7 @@ const ContactMe = () => {
                         <defs>
                             <clipPath
                                 id={'logo-mask'}
-                                clipPathUnits={'objectBoundingBox'}
+                                // clipPathUnits={'objectBoundingBox'}
                                 // transform={'scale(0.003268, 0.0057'}
                             >
                                 <path
