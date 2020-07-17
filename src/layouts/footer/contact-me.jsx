@@ -211,7 +211,6 @@ const ContactMe = () => {
                             preload={'auto'}
                             poster={GradientPoster}
                             src={Gradient}
-                            loop
                         />
                     </span>
                     <svg viewBox="0 0 134 107" xmlns="http://www.w3.org/2000/svg" aria-hidden={'true'}>
