@@ -120,7 +120,7 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             width: '100%',
             height: '100%',
             zIndex: 2,
-            clipPath: 'url(#title-mask)',
+            clipPath: 'url(#logo-mask)',
             '& > video': {
                 height: '100%',
             },
@@ -210,24 +210,22 @@ const ContactMe = () => {
                             type={'video/mp4'}
                         />
                     </span>
-                    <svg
-                        id="mp"
-                        className={classes.mp}
-                        data-name="Layer 1"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 512 614.85"
-                    >
+                    <svg viewBox="0 0 134 107" xmlns="http://www.w3.org/2000/svg" aria-hidden={'true'}>
                         <defs>
                             <clipPath
-                                id="title-mask"
-                                clipPathUnits="objectBoundingBox"
-                                transform="scale(0.003268, 0.005747)"
-                            />
+                                id={'logo-mask'}
+                                clipPathUnits={'objectBoundingBox'}
+                                // transform={'scale(0.003268, 0.0057'}
+                            >
+                                <path
+                                    d="M31.169 0.555196L37.4037 64.8783L43.7903 0.555196H74.6593V107H53.6745V37.2026L45.6151 107H25.5427L17.4833 36.4423V107H0.452105V0.555196H31.169ZM103.565 70.0484V107H82.2756V0.555196H113.449C126.628 0.555196 133.217 7.14464 133.217 20.3235V50.2801C133.217 63.459 126.628 70.0484 113.449 70.0484H103.565ZM111.928 22.6045C111.928 20.0701 110.661 18.8029 108.126 18.8029H103.565V51.8008H108.126C110.661 51.8008 111.928 50.5336 111.928 47.9992V22.6045Z"
+                                    fill={'black'}
+                                    fillRule={'nonzero'}
+                                />
+                            </clipPath>
                         </defs>
-                        <text className={classes.mp} transform="translate(0.19 476.84)">
-                            MP
-                        </text>
                     </svg>
+
                     {/*<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 306 174" aria-hidden="true">*/}
                     {/*    <defs>*/}
                     {/*        <clipPath*/}
