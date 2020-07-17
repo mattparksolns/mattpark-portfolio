@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import { makeStyles, createStyles, Typography, Link, SvgIcon } from '@material-ui/core'
 
 import Socials from '../../components/socials'
+import GradientPoster from '../../../static/assets/images/gradient-poster.jpg'
+import Gradient from '../../../static/assets/videos/gradient.mp4'
 import Signature from '../../../static/assets/images/signature.svg'
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
@@ -65,10 +67,6 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             },
             '& > a:nth-last-of-type(n+2)': {
                 marginRight: 20,
-                // marginRight: '1.3888889vw',
-                // [breakpoints.down('sm')]: {
-                //     marginRight: 20,
-                // },
             },
         },
         thankYou: {
@@ -96,10 +94,10 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                 width: '19.2307vw',
             },
             '& > h2': {
+                position: 'absolute',
                 fontFamily: 'tungsten',
                 fontWeight: 900,
                 whiteSpace: 'nowrap',
-                // position: 'absolute',
                 width: '100%',
                 height: '12.5vw',
                 lineHeight: '12.5vw',
@@ -116,10 +114,27 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                     lineHeight: '19.2307vw',
                 },
             },
+            '& > svg': {
+                height: '100%',
+            },
+        },
+        gradient: {
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            zIndex: 2,
+            top: '23%',
+            left: '14.5%',
+            clipPath: 'url(#logo-mask)',
+            '& > video': {
+                position: 'absolute',
+                height: '100%',
+                top: '-24%',
+                left: '-180%',
+            },
         },
         messageAndSignature: {
             position: 'absolute',
-            // top: '20%',
             top: '0%',
             left: 'calc(50% + 9.027777vw)',
             height: 'auto',
@@ -160,6 +175,16 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
 
 const ContactMe = () => {
     const classes = useStyles()
+    const gradientReference = useRef()
+
+    useEffect(() => {
+        const { current: videoElement } = gradientReference
+        videoElement.setAttribute('muted', '')
+        const interval = setInterval(() => videoElement.play(), 1000)
+        return function cleanup() {
+            clearInterval(interval)
+        }
+    })
 
     return (
         <div className={classes.root}>
@@ -177,8 +202,28 @@ const ContactMe = () => {
             </div>
             <div className={classes.thankYou}>
                 <div className={classes.logo}>
-                    {/*MP*/}
                     <Typography variant={'h2'}>MP</Typography>
+                    <span className={classes.gradient}>
+                        <video
+                            ref={gradientReference}
+                            muted
+                            playsInline
+                            preload={'auto'}
+                            poster={GradientPoster}
+                            src={Gradient}
+                        />
+                    </span>
+                    <svg viewBox="0 0 134 107" xmlns="http://www.w3.org/2000/svg" aria-hidden={'true'}>
+                        <defs>
+                            <clipPath id={'logo-mask'} clipPathUnits={'objectBoundingBox'} transform={'scale(0.00537)'}>
+                                <path
+                                    d="M31.169 0.555196L37.4037 64.8783L43.7903 0.555196H74.6593V107H53.6745V37.2026L45.6151 107H25.5427L17.4833 36.4423V107H0.452105V0.555196H31.169ZM103.565 70.0484V107H82.2756V0.555196H113.449C126.628 0.555196 133.217 7.14464 133.217 20.3235V50.2801C133.217 63.459 126.628 70.0484 113.449 70.0484H103.565ZM111.928 22.6045C111.928 20.0701 110.661 18.8029 108.126 18.8029H103.565V51.8008H108.126C110.661 51.8008 111.928 50.5336 111.928 47.9992V22.6045Z"
+                                    fill={'black'}
+                                    fillRule={'nonzero'}
+                                />
+                            </clipPath>
+                        </defs>
+                    </svg>
                 </div>
                 <div className={classes.messageAndSignature}>
                     <Typography variant={'body1'}>
