@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 
 const Contact = () => (
     <>
-        <SEO pageTitle="Contact" />
+        <SEO pageTitle={'Contact'} />
         <ContactPage />
     </>
 )
