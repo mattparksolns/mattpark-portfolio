@@ -99,16 +99,21 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
                 fontFamily: 'tungsten',
                 fontWeight: 900,
                 whiteSpace: 'nowrap',
-                position: 'absolute',
+                // position: 'absolute',
                 width: '100%',
-                height: '100%',
+                height: '12.5vw',
+                lineHeight: '12.5vw',
                 textAlign: 'center',
                 fontSize: '9.9vw',
                 [breakpoints.down('xs')]: {
                     fontSize: 54.144,
+                    height: 75,
+                    lineHeight: '75px',
                 },
                 '@media only screen and (max-width: 390px)': {
                     fontSize: '14vw',
+                    height: '19.2307vw',
+                    lineHeight: '19.2307vw',
                 },
             },
         },
@@ -172,6 +177,7 @@ const ContactMe = () => {
             </div>
             <div className={classes.thankYou}>
                 <div className={classes.logo}>
+                    {/*MP*/}
                     <Typography variant={'h2'}>MP</Typography>
                 </div>
                 <div className={classes.messageAndSignature}>
