@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 
 const Work = () => (
     <>
-        <SEO pageTitle="Work" />
+        <SEO pageTitle={'Work'} />
         <WorkPage />
     </>
 )

@@ -78,10 +78,10 @@ const Intro = () => {
 
     return (
         <section className={`${classes.root} contentWrapper`}>
-            <Typography className={classes.intro} variant="h1" gutterBottom>
+            <Typography className={classes.intro} variant={'h1'} gutterBottom>
                 My name is
                 <Link
-                    title="LinkedIn"
+                    title={'LinkedIn'}
                     color={'secondary'}
                     target={'_blank'}
                     rel={'noopener noreferrer'}
@@ -91,7 +91,7 @@ const Intro = () => {
                 </Link>
                 I&#39;m a New York City based software engineer.
             </Typography>
-            <Typography className={classes.description} variant="h1">
+            <Typography className={classes.description} variant={'h1'}>
                 Forward Thinker
                 <br />
                 Problem Solver

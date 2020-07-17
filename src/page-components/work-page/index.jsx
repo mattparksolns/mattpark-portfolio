@@ -18,7 +18,7 @@ const WorkPage = () => {
     const classes = useStyles()
     return (
         <div className={`${classes.root} contentWrapper`}>
-            <Typography variant="h2">Projects</Typography>
+            <Typography variant={'h2'}>Projects</Typography>
             <div className={classes.placeholder}>
                 <Typography variant={'h3'}>Project 1</Typography>
                 <Typography variant={'h3'}>Project 2</Typography>
