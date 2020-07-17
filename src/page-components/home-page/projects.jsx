@@ -7,7 +7,6 @@ const useStyles = makeStyles(({ palette, spacing }) =>
             position: 'relative',
             padding: spacing(5, 0),
             '& > h2': {
-                fontFamily: 'tungsten',
                 fontSize: '10vw',
                 marginTop: spacing(5),
                 textAlign: 'center',
