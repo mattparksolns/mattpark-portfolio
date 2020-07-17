@@ -31,7 +31,7 @@ const getBaseTheme = (themeType = 'dark') => {
                 fontFamily: ['GT-Walsheim', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             },
             h2: {
-                fontFamily: ['tungsten', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
+                fontFamily: ['cyberpunk', 'tungsten', 'muli', 'montserrat', 'roboto', 'arial', 'sans-serif'].join(','),
             },
             button: {
                 fontSize: '1.2rem',
