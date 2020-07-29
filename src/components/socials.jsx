@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, useStaticQuery } from 'gatsby'
 import { Link, SvgIcon } from '@material-ui/core'
-import TwitterIcon from '../../static/assets/icons/twitter.svg'
-import LinkedInIcon from '../../static/assets/icons/linkedin.svg'
-import GitHubIcon from '../../static/assets/icons/github.svg'
+import TwitterIcon from '@static/assets/icons/twitter.svg'
+import LinkedInIcon from '@static/assets/icons/linkedin.svg'
+import GitHubIcon from '@static/assets/icons/github.svg'
 
 // type SocialsProps = {
 //     className?: string,

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import WorkPage from '../page-components/work-page'
-import SEO from '../components/seo'
+import WorkPage from '@page-components/work-page'
+import SEO from '@components/seo'
 
 const Work = () => (
     <>
