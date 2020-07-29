@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
 import { useTheme, makeStyles, createStyles, Typography, Link, SvgIcon } from '@material-ui/core'
 
-import Socials from '../../components/socials'
+import Socials from '@components/socials'
 import GradientPosterBlack from '@static/assets/images/gradient-poster-black.png'
 import GradientPosterWhite from '@static/assets/images/gradient-poster-white.png'
 // import GradientVideo from '@static/assets/videos/gradient.mp4'
