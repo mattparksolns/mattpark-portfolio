@@ -8,12 +8,6 @@ import Cursor from './cursor'
 
 const useStyles = makeStyles(({ palette, breakpoints }) =>
     createStyles({
-        // 'header, footer': {
-        //     padding: '0 9.72222vw',
-        //     [breakpoints.down('sm')]: {
-        //         padding: '0 3vw',
-        //     },
-        // },
         header: {
             padding: '0 9.722222vw',
             [breakpoints.down('sm')]: {
@@ -22,10 +16,7 @@ const useStyles = makeStyles(({ palette, breakpoints }) =>
         },
         footer: ({ path }) => ({
             position: 'relative',
-            padding: '0 9.722222vw',
-            [breakpoints.up('md')]: {
-                padding: path === '/contact/' ? '0 9.722222vw' : '0 16.66666vw',
-            },
+            padding: path === '/contact/' ? '0 9.722222vw' : '0 16.66666vw',
             [breakpoints.down('sm')]: {
                 padding: '0 3vw',
             },
