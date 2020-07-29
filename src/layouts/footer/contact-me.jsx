@@ -1,11 +1,13 @@
 import React, { useRef, useEffect } from 'react'
 import { Link as GatsbyLink } from 'gatsby'
-import { makeStyles, createStyles, Typography, Link, SvgIcon } from '@material-ui/core'
+import { useTheme, makeStyles, createStyles, Typography, Link, SvgIcon } from '@material-ui/core'
 
-import Socials from '../../components/socials'
-import GradientPoster from '../../../static/assets/images/gradient-poster.jpg'
-import Gradient from '../../../static/assets/videos/gradient.mp4'
-import Signature from '../../../static/assets/images/signature.svg'
+import Socials from '@components/socials'
+import GradientPosterBlack from '@static/assets/images/gradient-poster-black.png'
+import GradientPosterWhite from '@static/assets/images/gradient-poster-white.png'
+// import GradientVideo from '@static/assets/videos/gradient.mp4'
+import GradientVideo from '@static/assets/videos/gradient.mp4'
+import Signature from '@static/assets/images/signature.svg'
 
 const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
     createStyles({
@@ -123,8 +125,8 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
             width: '100%',
             height: '100%',
             zIndex: 2,
-            top: '23%',
-            left: '14.5%',
+            top: '22.8%',
+            left: '14.67%',
             clipPath: 'url(#logo-mask)',
             '& > video': {
                 position: 'absolute',
@@ -175,6 +177,7 @@ const useStyles = makeStyles(({ palette, breakpoints, spacing }) =>
 
 const ContactMe = () => {
     const classes = useStyles()
+    const theme = useTheme()
     const gradientReference = useRef()
 
     useEffect(() => {
@@ -209,8 +212,8 @@ const ContactMe = () => {
                             muted
                             playsInline
                             preload={'auto'}
-                            poster={GradientPoster}
-                            src={Gradient}
+                            poster={theme.isDark ? GradientPosterWhite : GradientPosterBlack}
+                            src={GradientVideo}
                         />
                     </span>
                     <svg viewBox="0 0 134 107" xmlns="http://www.w3.org/2000/svg" aria-hidden={'true'}>

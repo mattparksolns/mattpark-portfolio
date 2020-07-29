@@ -52,3 +52,4 @@
 -   why does gatsby-background-image show more noise?
 -   how to blur the entire navbar background correctly?
 -   contact info - how to center icon + text without flex row?
+-   do i need eslint-import-resolver-webpack?

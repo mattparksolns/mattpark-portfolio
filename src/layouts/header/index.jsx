@@ -4,7 +4,7 @@ import { graphql, useStaticQuery, Link as GatsbyLink } from 'gatsby'
 import { makeStyles, createStyles, Typography, AppBar, Toolbar, Link } from '@material-ui/core'
 
 // import AnnouncementBar from './announcement-bar'
-import Socials from '../../components/socials'
+import Socials from '@components/socials'
 import DarkModeSwitch from './dark-mode-switch'
 import MobileMenu from './mobile-menu'
 

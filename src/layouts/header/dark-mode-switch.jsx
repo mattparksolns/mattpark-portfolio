@@ -43,8 +43,9 @@ const useStyles = makeStyles(({ palette, breakpoints, transitions, spacing }) =>
     }),
 )
 const DarkModeSwitch = props => {
-    const themeType = useSelector(state => state.app.themeType)
     const classes = useStyles()
+    const themeType = useSelector(state => state.app.themeType)
+
     return (
         <Switch
             classes={{ ...classes }}

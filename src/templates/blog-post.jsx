@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { Typography } from '@material-ui/core'
 
-import SEO from '../components/seo'
+import SEO from '@components/seo'
 
 const BlogPostTemplate = ({ data }) => {
     const { markdownRemark: post } = data // data.markdownRemark holds your post data

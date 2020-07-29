@@ -4,6 +4,11 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
         config.resolve.alias = {
             ...config.resolve.alias,
             'react-dom': '@hot-loader/react-dom',
+            '@static': path.resolve('static'),
+            '@components': path.resolve('src/components'),
+            '@store': path.resolve('src/store'),
+            '@themes': path.resolve('src/themes'),
+            '@page-components': path.resolve('src/page-components'),
         }
     } else if (stage === 'build-html') {
         actions.setWebpackConfig({
