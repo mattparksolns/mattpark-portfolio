@@ -19,8 +19,15 @@ module.exports = {
             version: 'detect',
         },
         'import/resolver': {
-            node: {
-                extensions: ['.js', '.jsx'],
+            alias: {
+                map: [
+                    ['@static', './static'],
+                    ['@components', './src/components'],
+                    ['@store', './src/store'],
+                    ['@themes', './src/themes'],
+                    ['@page-components', './src/page-components'],
+                ],
+                extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
             },
         },
     },
