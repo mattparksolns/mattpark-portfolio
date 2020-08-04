@@ -7,7 +7,7 @@ import { Send } from '@material-ui/icons'
 import emailjs from 'emailjs-com'
 
 import StyledTextField from './styled-text-field'
-import ValorantButton from '../../components/valorant-button'
+import ValorantButton from '@components/valorant-button'
 
 const useStyles = makeStyles(({ palette, spacing, breakpoints }) =>
     createStyles({

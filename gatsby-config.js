@@ -94,6 +94,7 @@ module.exports = {
             options: {
                 workboxConfig: {
                     globPatterns: ['**/*'],
+                    maximumFileSizeToCacheInBytes: 1000000000,
                 },
             },
         },

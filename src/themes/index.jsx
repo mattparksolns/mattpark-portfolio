@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useDispatch, useSelector } from 'react-redux'
 import { StylesProvider, MuiThemeProvider, CssBaseline } from '@material-ui/core'
 
-import { setThemeType } from '../store/reducers'
+import { setThemeType } from '@store/reducers'
 import getBaseTheme from './base'
 
 // type ThemeProviderProps = {

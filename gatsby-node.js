@@ -1,5 +1,18 @@
+const path = require('path')
+
 exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
     const config = getConfig()
+    actions.setWebpackConfig({
+        resolve: {
+            alias: {
+                '@static': path.resolve('static'),
+                '@components': path.resolve('src/components'),
+                '@store': path.resolve('src/store'),
+                '@themes': path.resolve('src/themes'),
+                '@page-components': path.resolve('src/page-components'),
+            },
+        },
+    })
     if (stage.startsWith('develop') && config.resolve) {
         config.resolve.alias = {
             ...config.resolve.alias,
@@ -18,8 +31,6 @@ exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
         })
     }
 }
-
-const path = require('path')
 
 exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions

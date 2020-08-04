@@ -1,7 +1,7 @@
 import React from 'react'
 
-import BlogPage from '../page-components/blog-page'
-import SEO from '../components/seo'
+import BlogPage from '@page-components/blog-page'
+import SEO from '@components/seo'
 
 const Blog = () => (
     <>

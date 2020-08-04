@@ -5,7 +5,7 @@ import { makeStyles, createStyles, Typography, Link } from '@material-ui/core'
 import { MdLocationCity, GoLocation, FiPhone, FiPhoneCall, RiMailLine, RiMailSendLine } from 'react-icons/all'
 import { parsePhoneNumber } from 'libphonenumber-js'
 
-import Socials from '../../components/socials'
+import Socials from '@components/socials'
 
 const useStyles = makeStyles(({ breakpoints }) =>
     createStyles({
