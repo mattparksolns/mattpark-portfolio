@@ -78,7 +78,7 @@
         "gatsby-remark-smartypants": "^2.3.10",
         "gatsby-source-filesystem": "^2.3.23",
         "gatsby-transformer-remark": "^2.8.25",
-        "gatsby-transformer-sharp": "^2.5.11",
+        "gatsby-transformer-sharp": "^2.5.12",
         "intersection-observer": "^0.11.0",
         "libphonenumber-js": "^1.7.56",
         "node-sass": "^4.14.1",
