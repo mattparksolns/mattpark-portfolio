@@ -144,7 +144,7 @@
         "gatsby-cli": "^2.12.66",
         "identity-obj-proxy": "^3.0.0",
         "jaeger-client": "^3.18.0",
-        "jest": "^26.1.0",
+        "jest": "^26.2.2",
         "node-fetch": "^2.6.0",
         "opentracing": "^0.14.4",
         "prettier": "2.0.5",
