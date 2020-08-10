@@ -76,7 +76,7 @@
         "gatsby-remark-images": "^3.3.25",
         "gatsby-remark-prismjs": "^3.5.4",
         "gatsby-remark-smartypants": "^2.3.10",
-        "gatsby-source-filesystem": "^2.3.23",
+        "gatsby-source-filesystem": "^2.3.24",
         "gatsby-transformer-remark": "^2.8.28",
         "gatsby-transformer-sharp": "^2.5.12",
         "intersection-observer": "^0.11.0",
