@@ -25,6 +25,7 @@
         "portfolio"
     ],
     "scripts": {
+        "install": "npm install",
         "build": "gatsby build",
         "jaeger-build": "gatsby build --open-tracing-config-file node_modules/gatsby/dist/utils/tracer/jaeger-local.js",
         "develop": "gatsby develop",
