@@ -101,7 +101,7 @@
     "devDependencies": {
         "@babel/preset-typescript": "^7.10.4",
         "@hot-loader/react-dom": "^16.13.0",
-        "@storybook/addon-actions": "^5.3.18",
+        "@storybook/addon-actions": "^6.0.16",
         "@storybook/addon-links": "^6.0.0",
         "@storybook/addons": "^5.3.18",
         "@storybook/react": "^5.3.18",
