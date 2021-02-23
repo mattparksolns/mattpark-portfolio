@@ -103,7 +103,7 @@
         "@hot-loader/react-dom": "^16.13.0",
         "@storybook/addon-actions": "^5.3.18",
         "@storybook/addon-links": "^6.0.0",
-        "@storybook/addons": "^5.3.18",
+        "@storybook/addons": "^6.1.19",
         "@storybook/react": "^5.3.18",
         "@testing-library/cypress": "^6.0.0",
         "@testing-library/jest-dom": "^5.11.2",
